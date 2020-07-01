@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/welcome_fragment_last_name"
+        style="@style/welcome_fragment_fio_style"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/welcome_fragment_first_name"
+        style="@style/welcome_fragment_fio_style"
+        android:layout_below="@id/welcome_fragment_last_name" />
+
+    <TextView
+        android:id="@+id/welcome_fragment_middle_name"
+        style="@style/welcome_fragment_fio_style"
+        android:layout_below="@id/welcome_fragment_first_name" />
+
+    <TextView
+        android:id="@+id/tvRole"
+        style="@style/welcome_fragment_fio_style"
+        android:textSize="@dimen/welcome_activity_role_text_size"
+        android:layout_below="@id/welcome_fragment_middle_name"
+        android:layout_marginTop="@dimen/welcome_activity_textview_margins"
+        android:layout_marginBottom="@dimen/welcome_activity_role_margin_bottom" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/openShift"
+        style="@style/btn_blue_big"
+        android:layout_below="@id/tvRole"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="@string/open_shift"
+        android:textSize="64px"
+        android:visibility="gone" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/beginWork"
+        style="@style/btn_blue_big"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="@string/begin_work"
+        android:textSize="64px"
+        android:layout_below="@+id/openShift"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/rds_not_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/beginWork"
+        android:textSize="22sp"
+        android:visibility="gone" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/menu"
+        style="@style/btn_gray"
+        android:layout_width="680px"
+        android:layout_height="100px"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20px"
+        android:text="@string/menu" />
+
+</RelativeLayout>

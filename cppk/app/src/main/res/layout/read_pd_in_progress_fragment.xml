@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ru.ppr.core.ui.widget.CustomTextView
+        android:id="@+id/title_where_read_pd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal"
+        android:text="@string/read_barcode"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_large"
+        android:visibility="visible"
+        android:fontFamily="sans-serif" />
+
+    <ImageView
+        android:id="@+id/read_pd_tape_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@null"
+        android:src="@drawable/img_read_barcode"
+        android:layout_below="@id/title_where_read_pd" />
+
+    <ImageView
+        android:id="@+id/read_pd_timer_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/timer_4_sec"
+        android:contentDescription="@null"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

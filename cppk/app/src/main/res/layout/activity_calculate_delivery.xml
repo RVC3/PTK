@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/selection_activity_title"
+        style="@style/black_title_with_white_text"
+        android:text="@string/calculate_delivery_title"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/blue"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/sum"
+            style="@style/edit_text_style"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="25dp"
+            android:gravity="right|center_vertical"
+            android:hint="@string/calculate_delivery_received_sum"
+            android:inputType="numberDecimal"
+            android:maxLength="6"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/price"
+            style="@style/edit_text_style"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:gravity="right|center_vertical"
+            android:hint="@string/calculate_delivery_tickets_cost"
+            android:inputType="numberDecimal"
+            android:maxLength="6"
+            android:textStyle="bold" />
+
+        <View style="@style/separator_horizontal_blue" />
+
+        <RelativeLayout
+            android:id="@+id/delivery_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/calculate_delivery_delivery"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <View style="@style/separator_horizontal_blue" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/enter_pin_edit_text_margin">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/sell_new_pd"
+            style="@style/btn_gray"
+            android:layout_margin="0dp"
+            android:text="@string/calculate_delivery_sell_new_pd_btn" />
+    </RelativeLayout>
+
+</LinearLayout>

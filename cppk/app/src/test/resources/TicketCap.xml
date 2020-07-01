@@ -1,0 +1,27 @@
+<CapPD>
+
+    <PD>
+        <rawData>40 1C 5E D3 54</rawData>
+        <version>64</version>
+        <datetime>1423138332</datetime>
+    </PD>
+
+    <PD>
+        <rawData>40 DA 7F AA 54</rawData>
+        <version>64</version>
+        <datetime>1420459994</datetime>
+    </PD>
+
+    <PD>
+        <rawData>40 62 2B D3 54</rawData>
+        <version>64</version>
+        <datetime>1423125346</datetime>
+    </PD>
+
+    <PD>
+        <rawData>40 74 74 C5 52</rawData>
+        <version>64</version>
+        <datetime>1388672116</datetime>
+    </PD>
+
+</CapPD>

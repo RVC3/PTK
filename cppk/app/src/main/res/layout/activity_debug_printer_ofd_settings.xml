@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/ofdSettingsBigTitle"
+        style="@style/black_title_with_white_text"
+        android:layout_alignParentTop="true"
+        android:text="@string/ofd_settings_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ofdSettingsIpTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/ofd_settings_ip" />
+
+    <EditText
+        android:id="@+id/ofdSettingsIpValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:digits="0123456789."
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <TextView
+        android:id="@+id/ofdSettingsPortTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/ofd_settings_port" />
+
+    <EditText
+        android:id="@+id/ofdSettingsPortValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:digits="0123456789"
+        android:ems="10"
+        android:inputType="number" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <TextView
+        android:id="@+id/ofdSettingsTimeoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/ofd_settings_timeout_s" />
+
+    <EditText
+        android:id="@+id/ofdSettingsTimeoutValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:digits="0123456789"
+        android:ems="10"
+        android:inputType="number" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <Button
+        android:id="@+id/ofdSettingsReadBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ofd_settings_read" />
+
+    <Button
+        android:id="@+id/ofdSettingsWriteBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ofd_settings_write" />
+
+    <TextView
+        android:id="@+id/ofdSettingsReadyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/ofd_settings_ready"
+        android:textColor="@color/green"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/ofdSettingsErrorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/enter_e_ticket_main_padding">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ofd_settings_error_pic" />
+
+        <TextView
+            android:id="@+id/ofdSettingsErrorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/ofd_settings_error_ip_format"
+            android:textColor="@color/red"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/activityTitle"
+        android:gravity="center_horizontal"
+        android:text="@string/pos_binding_title" />
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/macAddress_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/port_holder"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:text="@string/pos_binding_mac_hint"
+                    android:textColor="#777777" />
+
+                <EditText
+                    android:id="@+id/macAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:ems="10"
+                    android:hint="@string/printer_binding_mac_hint"
+                    android:maxLength="17">
+
+                    <requestFocus />
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/port_holder"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:text="@string/pos_binding_port_hint"
+                    android:textColor="#777777" />
+
+                <EditText
+                    android:id="@+id/port"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="5" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/selectDeviceBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:onClick="onClick"
+            android:paddingEnd="20dp"
+            android:paddingStart="0dp"
+            android:text="@string/printer_binding_select_device" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/selectBuiltDeviceBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:onClick="onClick"
+            android:paddingStart="0dp"
+            android:paddingEnd="20dp"
+            android:text="@string/pos_builtin_select_device"
+            android:visibility="invisible" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/applyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:onClick="onClick"
+            android:text="@string/printer_binding_apply" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/skipBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:onClick="onClick"
+            android:text="@string/button_skip" />
+
+    </LinearLayout>
+
+</LinearLayout>

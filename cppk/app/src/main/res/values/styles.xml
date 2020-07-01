@@ -1,0 +1,681 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="tv_style_for_barcode_result_fragment">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AuthTextView">
+        <item name="android:textSize">50px</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="auth_screen_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">35px</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">48px</item>
+        <item name="android:background">@drawable/btn_menu_blue_bg</item>
+    </style>
+
+    <style name="settings_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:textSize">48px</item>
+    </style>
+
+    <style name="tvBscInfoField">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">30px</item>
+        <item name="android:layout_marginBottom">2px</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="tv_pd_info_field">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/pd_fragment_text_size</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingLeft">@dimen/margin_for_button</item>
+        <item name="android:paddingRight">@dimen/margin_for_button</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="tv_pd_info_field.countTrip" parent="tv_pd_info_field">
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="tv_pd_info_feild_for_one_pd">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/pd_fragment_text_size_large</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_marginLeft">@dimen/margin_for_button</item>
+        <item name="android:layout_marginRight">@dimen/margin_for_button</item>
+        <item name="android:layout_marginTop">@dimen/pd_fragment_horizontal_margin_large</item>
+        <item name="android:layout_marginBottom">@dimen/pd_fragment_horizontal_margin_large</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="tvTimeField">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">36px</item>
+        <item name="android:layout_marginBottom">40px</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingLeft">40px</item>
+        <item name="android:paddingRight">40px</item>
+        <item name="android:paddingBottom">10px</item>
+        <item name="android:paddingTop">10px</item>
+        <item name="android:layout_marginTop">50px</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@drawable/border_for_textview</item>
+    </style>
+
+    <style name="tvBscInfo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_margin">@dimen/bsc_info_text_view_margin</item>
+        <item name="android:textColor">@color/black</item>
+        <!-- <item name="android:visibility">gone</item> -->
+    </style>
+
+    <style name="tvBscInfoTitle" parent="@style/tvBscInfo">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="tvBscInfoValue" parent="@style/tvBscInfo">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="separator_for_bsc_info">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/white_dark</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="separator_horizontal_gray">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+
+    <style name="separator_horizontal_blue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@drawable/separator_blue</item>
+    </style>
+
+    <style name="separator_horizontal_gray_flat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <!-- Серая кнопка, при нажатии темно серая -->
+    <style name="btn_gray" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_for_button</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textColor">@drawable/tc_btn_wb_sep_xml</item>
+        <item name="android:textSize">@dimen/text_size_for_button</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@drawable/btn_gray_drawable</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginTop">@dimen/global_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/global_vertical_margin</item>
+        <item name="android:layout_marginLeft">@dimen/global_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_horizontal_margin</item>
+    </style>
+
+    <!-- Серая кнопка, при нажатии темно серая, серый цвет при дизейбленном состоянии -->
+    <style name="btn_gray_access_color_gray" parent="btn_gray">
+        <item name="android:textColor">@drawable/selector_white_black_gray</item>
+    </style>
+
+    <style name="btn_blue" parent="@android:style/Widget.Button">
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textColor">@color/btn_blue_text_color</item>
+        <item name="android:textSize">64px</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@drawable/btn_blue</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="btn_blue_big" parent="@style/btn_blue">
+        <item name="android:layout_width">@dimen/btn_blue_big_width</item>
+        <item name="android:layout_height">@dimen/btn_blue_big_height</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginLeft">@dimen/btn_blue_big_margin</item>
+        <item name="android:layout_marginRight">@dimen/btn_blue_big_margin</item>
+    </style>
+
+    <style name="btn_settings_white_blue" parent="@android:style/Widget.Button">
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:textColor">@drawable/tc_btn_wb_sep_xml</item>
+        <item name="android:textSize">36px</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@drawable/bg_btn_wb_sep_xml</item>
+        <item name="android:drawableEnd">@drawable/arrow_gray_white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:drawableBottom">@drawable/seperator_horizontal</item>
+    </style>
+
+    <style name="tvSettingsHeader">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingEnd">30px</item>
+        <item name="android:paddingStart">30px</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">28px</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">85px</item>
+    </style>
+
+    <style name="progress_bar_style">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="additional_settings_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/additional_settings_min_height_button</item>
+        <item name="android:paddingLeft">@dimen/additional_settings_sub_item_margin</item>
+        <item name="android:paddingRight">@dimen/additional_settings_main_item_margin</item>
+        <item name="android:paddingTop">@dimen/additional_settings_padding_for_button</item>
+        <item name="android:paddingBottom">@dimen/additional_settings_padding_for_button</item>
+    </style>
+
+    <style name="arrow_right_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:contentDescription">@null</item>
+        <item name="android:src">@drawable/arrow_right_black</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="activityTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="arrow_next">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:contentDescription">@null</item>
+        <item name="android:src">@drawable/arrow_right_black</item>
+    </style>
+
+    <style name="arrow_next_for_relative" parent="@style/arrow_next">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="arrow_checkbox">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:contentDescription">@null</item>
+        <item name="android:src">@drawable/check_</item>
+    </style>
+
+    <style name="adt_settings_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/additional_settings_sub_menu_text_size</item>
+    </style>
+
+    <style name="adt_setting_text_only" parent="@style/adt_settings_text">
+        <item name="android:paddingLeft">@dimen/additional_settings_sub_item_margin</item>
+        <item name="android:paddingRight">@dimen/additional_settings_main_item_margin</item>
+        <item name="android:paddingTop">@dimen/additional_settings_padding_for_button</item>
+        <item name="android:paddingBottom">@dimen/additional_settings_padding_for_button</item>
+        <item name="android:minHeight">70dp</item>
+    </style>
+
+    <!-- Применяется для текстовых полей с сообщениями об ошибках, действиях которые надо выполнить и т.д. -->
+    <style name="info_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="status_operations_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">50dp</item>
+    </style>
+
+    <!-- Применяется для главных заголовков в активити/фрагментах -->
+    <style name="title_for_fragment">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:textSize">@dimen/text_size_for_title</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">28px</item>
+        <item name="android:paddingRight">28px</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Применяется для подзаголовков в активити/фрагментах -->
+    <style name="sub_title_for_fragment">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_for_sub_title</item>
+        <item name="android:paddingLeft">@dimen/padding_for_sub_title_left_right</item>
+        <item name="android:paddingRight">@dimen/padding_for_sub_title_left_right</item>
+        <item name="android:paddingTop">@dimen/padding_for_sub_title_bottom_top</item>
+        <item name="android:paddingBottom">@dimen/padding_for_sub_title_bottom_top</item>
+    </style>
+
+    <!-- Применяется для подзаголовков в активити/фрагментах -->
+    <style name="regular_field">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_for_sub_title</item>
+        <item name="android:paddingLeft">@dimen/padding_for_sub_title_left_right</item>
+        <item name="android:paddingRight">@dimen/padding_for_sub_title_left_right</item>
+        <item name="android:paddingTop">@dimen/padding_for_sub_title_bottom_top</item>
+        <item name="android:paddingBottom">@dimen/padding_for_sub_title_bottom_top</item>
+    </style>
+
+    <!-- Применяется для элементов типа проверенных билетов -->
+    <style name="statistick_check_item_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Формирование отчетности -->
+    <style name="reports_shift_month_radio_button">
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/reports_shift_month_radio_button</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingTop">15dp</item>
+    </style>
+
+    <style name="reports_print_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="reports_shift_month_select">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/statistic_height_edit_text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/statistic_padding_for_edittext</item>
+
+    </style>
+
+    <!-- Стиль для view на экране ввода пин -->
+    <style name="enter_pin_error_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/enter_pin_text_size</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:paddingBottom">@dimen/enter_pin_edit_text_margin</item>
+    </style>
+
+    <!-- Стиль для синих кнопок -->
+    <style name="blue_main_button" parent="@style/btn_blue"></style>
+
+    <!-- Стиль для textview на welcomeFragment -->
+    <style name="welcome_fragment_fio_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/welcome_activity_fio_text_size</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_marginLeft">@dimen/welcome_activity_textview_margins</item>
+    </style>
+
+    <!-- Стиль для кнопок меню -->
+    <style name="additional_settings_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/additional_settings_sub_menu_text_size</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="additional_settings_button_value" parent="@style/additional_settings_button">
+        <item name="android:gravity">right</item>
+        <item name="android:layout_marginRight">@dimen/additional_settings_sub_menu_margin_right
+        </item>
+    </style>
+
+    <style name="send_docs_to_ofd_label">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="send_docs_to_ofd_value">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Тема приложение -->
+    <style name="AppThemeWhite" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="green_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/green</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="red_text_view" parent="@style/green_text_view">
+        <item name="android:background">@color/red</item>
+    </style>
+
+    <!-- Стили для окна Статистика продаж за последнюю смену -->
+    <style name="statisticsSaleForLastShift_1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/statistic_text_size_for_title</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serifs</item>
+    </style>
+
+    <style name="statistic_item_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/statistic_text_size_for_field</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:layout_marginRight">@dimen/statistic_item_margin_betwen_field</item>
+        <item name="android:layout_marginBottom">@dimen/statistic_item_margin_betwen_field</item>
+    </style>
+
+    <style name="statistic_item_value_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/statistic_text_size_for_field</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginRight">@dimen/statistic_item_margin_betwen_field</item>
+        <item name="android:layout_marginBottom">@dimen/statistic_item_margin_betwen_field</item>
+    </style>
+
+    <style name="statistics_green_field">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/statistic_margin_left_for_field</item>
+        <item name="android:paddingTop">@dimen/statistic_padding_for_green_field_vertical</item>
+        <item name="android:paddingBottom">@dimen/statistic_padding_for_green_field_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/statistic_text_size_for_field</item>
+        <item name="android:layout_marginBottom">@dimen/statistic_item_margin_betwen_field</item>
+    </style>
+
+    <style name="statistics_title_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/statistic_text_size_for_field</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">@dimen/statistic_item_margin_betwen_field</item>
+        <item name="android:layout_marginRight">@dimen/statistic_item_margin_betwen_field</item>
+    </style>
+
+    <!-- стиль для заголовков с белым шрифтом и текстом выровненным по середине -->
+    <style name="titles">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/enter_pin_title_margin</item>
+        <item name="android:layout_marginBottom">@dimen/enter_pin_title_marginBottom</item>
+        <item name="android:layout_marginLeft">@dimen/enter_pin_edit_text_margin</item>
+        <item name="android:layout_marginRight">@dimen/enter_pin_edit_text_margin</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/enter_pin_text_size</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- стиль для полей с возможностью ввода данных -->
+    <style name="edit_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">88px</item>
+        <item name="android:layout_marginLeft">@dimen/enter_pin_edit_text_margin</item>
+        <item name="android:layout_marginRight">@dimen/enter_pin_edit_text_margin</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:background">@drawable/bg_white_with_corners_5dp</item>
+        <item name="android:textSize">@dimen/enter_pin_text_size</item>
+        <item name="android:paddingLeft">@dimen/enter_pin_dit_text_padding</item>
+        <item name="android:paddingRight">@dimen/enter_pin_dit_text_padding</item>
+    </style>
+
+    <!-- стиль для полей с возможностью ввода данных -->
+    <style name="edit_text_style_grey_borders_square_corners" parent="edit_text_style">
+        <item name="android:background">@drawable/enter_pin_drawable_black</item>
+    </style>
+
+    <style name="black_title_with_white_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/default_height_for_activiti_title</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="start_open_shift_fragment_tv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/open_shift_margin_in_layout_horizontal</item>
+        <item name="android:textSize">@dimen/open_shift_title_text_size</item>
+        <item name="android:textColor">@color/start_open_shift_fragment_text_title_color</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="start_open_shift_fragment_tv_value_style" parent="@style/start_open_shift_fragment_tv_style">
+        <item name="android:textSize">@dimen/open_shift_value_text_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginRight">@dimen/open_shift_margin_in_layout_horizontal</item>
+    </style>
+
+    <style name="sell_pd_title_text_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/sell_pd_title_color</item>
+        <item name="android:textSize">@dimen/sell_pd_text_size</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Стиль для поля ввода текста в smart_autocompleate_text_view -->
+    <style name="smart_actv_edit_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sell_pd_text_size_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Стиль для слоев на экране продажи билета -->
+    <style name="sell_pd_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/toggle_button_vertical_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_horizontal_margin</item>
+        <item name="android:layout_marginLeft">@dimen/global_horizontal_margin</item>
+        <item name="android:layout_marginBottom">@dimen/toggle_button_vertical_margin</item>
+    </style>
+
+    <style name="cppk_dialog_text_style">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="check_box_reports_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@drawable/checkbox_selector</item>
+        <item name="android:paddingLeft">@dimen/margin_between_box_and_text</item>
+    </style>
+
+    <style name="white_text_view">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="fragment_default_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_marginBottom">80dp</item>
+    </style>
+
+    <!--фрагмент работы с терминалом-->
+    <style name="fragment_writings_2_top" parent="fragment_default_text">
+        <item name="android:layout_marginBottom">100dp</item>
+    </style>
+
+    <style name="fragment_writings_2_bottom" parent="fragment_default_text">
+        <item name="android:layout_marginTop">105dp</item>
+    </style>
+
+    <style name="fragment_buttons_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginBottom">@dimen/global_vertical_margin</item>
+    </style>
+
+    <style name="fragment_button" parent="btn_gray">
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="fragment_buttons_many_button" parent="fragment_button">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="fragment_icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/sell_pd_success_img_horizontal_margin</item>
+        <item name="android:layout_marginTop">@dimen/sell_pd_success_img_horizontal_margin</item>
+        <item name="android:contentDescription">@null</item>
+    </style>
+
+    <!--радио кнопка на синем экране-->
+    <style name="radio_style_blue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@drawable/radio_blue_selector</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">@color/toggle_button_text_color</item>
+        <item name="android:textSize">@dimen/sell_pd_text_size</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="ToggleButton">
+        <item name="android:layout_height">@dimen/toggle_button_height</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ToggleButton.Item" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/toggle_button_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:background">@drawable/my_toggle_button_color_scheme</item>
+    </style>
+
+    <style name="SendETicketButton" parent="">
+        <item name="android:textColor">@color/send_eticket_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:background">@drawable/btn_eticket_background</item>
+    </style>
+
+</resources>

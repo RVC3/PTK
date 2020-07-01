@@ -1,0 +1,58 @@
+include ':tarGz'
+project(":tarGz").projectDir = file("../common/tarGz")
+
+include ':androidFileBrowserExampleActivity'
+project(":androidFileBrowserExampleActivity").projectDir = file("../common/androidFileBrowserExampleActivity")
+
+include ':sft'
+project(":sft").projectDir = file("../common/sft")
+
+include ':utils'
+project(":utils").projectDir = file("../common/utils")
+
+include ':logger'
+project(":logger").projectDir = file("../common/logger")
+
+include ':pos'
+project(":pos").projectDir = file("../devices/pos")
+
+include ':inpas'
+project(":inpas").projectDir = file("../devices/inpas")
+
+include ':kkm'
+project(":kkm").projectDir = file("../devices/kkm")
+
+include ':moebius'
+project(":moebius").projectDir = file("../devices/moebius")
+
+include ':ingenico'
+project(":ingenico").projectDir = file("../devices/ingenico")
+
+include ':nsi_ptk'
+project(":nsi_ptk").projectDir = file("nsi_ptk")
+
+include ':security_ptk'
+project(":security_ptk").projectDir = file("security_ptk")
+
+include ':database'
+project(":database").projectDir = file("../common/database")
+
+include ':core'
+project(":core").projectDir = file("../common/core")
+
+include ':rfid'
+project(":rfid").projectDir = file("../devices/rfid")
+
+include ':rfidreal'
+project(":rfidreal").projectDir = file("../devices/rfidreal")
+
+include ':barcode'
+project(":barcode").projectDir = file("../devices/barcode")
+
+include ':barcodereal'
+project(":barcodereal").projectDir = file("../devices/barcodereal")
+
+include ':cpcpowermgmt'
+project(":cpcpowermgmt").projectDir = file("../libraries/cpcpowermgmt")
+
+include ':app'

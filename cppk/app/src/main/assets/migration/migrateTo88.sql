@@ -1,0 +1,1 @@
+ALTER TABLE UpdateEvent ADD COLUMN DataContractVersion INTEGER NOT NULL DEFAULT 0;

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:soundEffectsEnabled="false">
+
+    <FrameLayout
+        android:id="@+id/simpleLseViewImageProgressContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="40dp">
+
+        <ImageView
+            android:id="@+id/simpleLseViewImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:visibility="gone"
+            tools:src="@drawable/ic_lse_view_error"
+            tools:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/simpleLseViewProgressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+    <ru.ppr.core.ui.widget.CustomTextView
+        android:id="@+id/simpleLseViewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top|center_horizontal"
+        android:textSize="@dimen/simple_lse_view_default_text_msg_size"
+        tools:text="Сообщение об ошибке\nдлиною\nв 3 строки" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/simpleLseViewBtn1"
+        style="@style/Core.App.Widget.Button.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="Кнопка №1"
+        tools:visibility="visible" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/simpleLseViewBtn2"
+        style="@style/Core.App.Widget.Button.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="Кнопка №2"
+        tools:visibility="visible" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/simpleLseViewBtn3"
+        style="@style/Core.App.Widget.Button.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="Кнопка №3"
+        tools:visibility="visible" />
+</LinearLayout>

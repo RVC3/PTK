@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:text="Создать бекап"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backupAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Полный бекап" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backupLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Логи" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backupInfotecs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Безопасный билет" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backupLocalDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Локальная БД" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backupSecurityDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="База Безопасности" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backupRdsDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="НСИ" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backupPrinterDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Файловый принтер БД" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:text="Восстановить бекап"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/restoreBackupAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Полный бекап" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/restoreBackupInfotecs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Безопасный билет" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/restoreLocalDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Локальная БД" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/restoreSecurityDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="База Безопасности" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/restoreRdsDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="НСИ" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/restorePrinterDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Файловый принтер БД" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:text="Подменить файл базы данных"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/replaceLocalDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Локальная БД" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/replaceSecurityDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="База Безопасности" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/replaceRdsDb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="НСИ" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:text="Очистить базу"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/eraseLocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Локальная БД" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/eraseSecurity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="База Безопасности" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/eraseRDS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="НСИ" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/erasePrinter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Файловый принтер БД" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:text="Настройки"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/maxBackupFilesCountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:text="Максимум файлов бекапов: " />
+
+            <Spinner
+                android:id="@+id/maxBackupFilesCountSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:entries="@array/max_files_count_array" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,1 @@
+ALTER TABLE Exemption ADD COLUMN IssueDate DATE;

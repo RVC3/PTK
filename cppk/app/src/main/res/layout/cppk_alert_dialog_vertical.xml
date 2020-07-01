@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cppk_dialog_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_white_with_corners_5dp"
+    android:orientation="vertical"
+    android:padding="@dimen/global_horizontal_margin">
+
+    <TextView
+        android:id="@+id/cppk_dialog_title"
+        style="@style/cppk_dialog_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/cppk_dialog_message"
+        style="@style/cppk_dialog_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/cppk_dialog_margin"
+        android:layout_marginTop="@dimen/cppk_dialog_margin"
+        android:gravity="center"
+        android:singleLine="false"
+        android:textSize="@dimen/cppk_dialog_text_size" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/cppk_dialog_positive_button"
+        style="@style/btn_blue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cppk_dialog_hor_btn_height"
+        android:layout_margin="@dimen/cppk_dialog_vertical_buttons_margin"
+        android:background="@drawable/btn_blue_dialog_vertical"
+        android:text="Да"
+        android:textSize="@dimen/cppk_dialog_text_size" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/cppk_dilog_negative_butoon"
+        style="@style/btn_blue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cppk_dialog_hor_btn_height"
+        android:layout_marginRight="@dimen/cppk_dialog_vertical_buttons_margin"
+        android:layout_marginLeft="@dimen/cppk_dialog_vertical_buttons_margin"
+        android:layout_marginTop="@dimen/cppk_dialog_vertical_buttons_margin"
+        android:layout_marginBottom="@dimen/cppk_dialog_bottom_margin_for_bottom_button"
+        android:background="@drawable/btn_blue_dialog_vertical"
+        android:text="Нет"
+        android:textSize="@dimen/cppk_dialog_text_size" />
+
+</LinearLayout>

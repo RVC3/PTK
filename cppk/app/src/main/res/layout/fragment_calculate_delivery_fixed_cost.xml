@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/selection_activity_title"
+        style="@style/black_title_with_white_text"
+        android:text="@string/calculate_delivery_fixed_cost_title"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/cash"
+        style="@style/edit_text_style"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25dp"
+        android:gravity="right|center_vertical"
+        android:hint="@string/calculate_delivery_fixed_cost_received_sum"
+        android:inputType="numberDecimal"
+        android:maxLength="6"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/sep0"
+        style="@style/separator_horizontal_blue" />
+
+    <RelativeLayout
+        android:id="@+id/cost_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/calculate_delivery_fixed_cost_pd_cost"
+            android:textColor="@color/white_dark" />
+
+        <TextView
+            android:id="@+id/calculate_delivery_cost_pd_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="120" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/sep1"
+        style="@style/separator_horizontal_blue" />
+
+    <RelativeLayout
+        android:id="@+id/delivery_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/calculate_delivery_fixed_cost_delivery"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/calculate_delivery_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:text="30" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/sep2"
+        style="@style/separator_horizontal_blue" />
+
+</LinearLayout>

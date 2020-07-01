@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@color/gray_inactive"
+        android:id="@+id/additional_settings_ptk_number_layout"
+        style="@style/additional_settings_layout_style">
+
+        <TextView
+            android:id="@+id/additional_settings_ptk_number_title"
+            style="@style/additional_settings_button"
+            android:text="@string/ptk_number" />
+
+        <TextView
+            android:id="@+id/additional_setting_ptk_number_value"
+            style="@style/additional_settings_button_value"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:id="@+id/additional_settings_ptk_area_layout"
+        style="@style/additional_settings_layout_style">
+
+        <TextView
+            android:id="@+id/additional_settings_ptk_area_title"
+            style="@style/additional_settings_button"
+            android:text="@string/ptk_area" />
+
+        <TextView
+            android:id="@+id/additional_setting_ptk_area_value"
+            style="@style/additional_settings_button_value"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/additional_settings_ptk_area_more"
+            style="@style/arrow_next"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:id="@+id/additional_settings_ptk_binding_station_layout"
+        style="@style/additional_settings_layout_style">
+
+        <TextView
+            android:id="@+id/additional_settings_ptk_binding_station_title"
+            style="@style/additional_settings_button"
+            android:text="@string/ptk_binding_station" />
+
+        <TextView
+            android:id="@+id/additional_setting_ptk_binding_station_value"
+            style="@style/additional_settings_button_value"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/additional_settings_ptk_binding_station_more"
+            style="@style/arrow_next"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:id="@+id/additional_settings_mobile_cash_layout"
+        style="@style/additional_settings_layout_style">
+
+        <TextView
+            android:id="@+id/additional_settings_mobile_cash_register"
+            style="@style/additional_settings_button"
+            android:text="@string/mobile_cassa" />
+
+        <ImageView
+            android:id="@+id/additional_settings_mobile_cash_register_flag"
+            style="@style/arrow_checkbox"
+            android:layout_marginEnd="@dimen/additional_settings_sub_menu_margin_right" />
+
+        <ImageView
+            android:id="@+id/additional_settings_mobile_cash_register_more"
+            style="@style/arrow_next"
+            android:contentDescription="@null" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+</LinearLayout>

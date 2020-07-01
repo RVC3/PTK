@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Начертание текста приложения-->
+    <style name="Core.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!--Стиль TextView приложения-->
+    <style name="Core.App.Widget.TextView" parent="">
+        <item name="android:textAppearance">@style/Core.TextAppearance</item>
+    </style>
+
+    <!--Тема приложения-->
+    <style name="Core.App.Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textViewStyle">@style/Core.App.Widget.TextView</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--Серая кнопка-->
+    <style name="Core.App.Widget.Button.Gray" parent="">
+        <item name="android:background">@drawable/bg_btn_gray_xml</item>
+        <item name="android:minHeight">62dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_color_gray_btn</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!--Синия кнопка-->
+    <style name="Core.App.Widget.Button.Blue" parent="">
+        <item name="android:background">@drawable/bg_btn_blue_xml</item>
+        <item name="android:minHeight">62dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_color_blue_btn</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <!--Сине-белая кнопка с разделителем снизу-->
+    <style name="Core.App.Widget.Button.WhiteBlueSeparated" parent="">
+        <item name="android:gravity">center_vertical|start|left</item>
+        <item name="android:textColor">@drawable/tc_btn_wb_sep_xml</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@drawable/bg_btn_wb_sep_xml</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_right_black</item>
+    </style>
+
+</resources>

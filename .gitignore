@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+build
+common/edssft_real/src/main/libs
+common/edssft_real/src/main/obj
+common/kuznyechik/src/main/libs
+common/kuznyechik/src/main/obj
+
+
+/captures
+.externalNativeBuild

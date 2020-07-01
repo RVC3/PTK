@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:minHeight="?android:attr/listPreferredItemHeightSmall"
+             android:orientation="horizontal"
+             android:padding="10dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/monthShiftNumberTitle_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="@string/reports_shifts_list_item_number_title"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"/>
+
+            <TextView
+                android:id="@+id/monthShiftDateTitle_textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="1"
+                android:text="@string/reports_month_shifts_list_item_date_title"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                android:visibility="invisible"
+                tools:visibility="visible"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/monthShiftNumber_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                tools:text="100500"/>
+
+            <TextView
+                android:id="@+id/monthShiftDate_textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                tools:text="(30.08.2016 06:53)"/>
+        </TableRow>
+
+    </TableLayout>
+
+</FrameLayout>

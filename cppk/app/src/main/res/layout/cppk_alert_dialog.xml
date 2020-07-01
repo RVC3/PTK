@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cppk_dialog_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_white_with_corners_5dp"
+    android:padding="@dimen/global_horizontal_margin">
+
+    <TextView
+        android:id="@+id/cppk_dialog_title"
+        style="@style/cppk_dialog_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/cppk_dialog_message"
+        style="@style/cppk_dialog_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cppk_dialog_title"
+        android:layout_marginBottom="@dimen/cppk_dialog_margin"
+        android:layout_marginTop="@dimen/cppk_dialog_margin"
+        android:gravity="center"
+        android:singleLine="false"
+        android:textSize="@dimen/cppk_dialog_text_size" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/cppk_dialog_positive_button"
+        style="@style/btn_blue"
+        android:layout_width="@dimen/cppk_dialog_hor_btn_width"
+        android:layout_height="@dimen/cppk_dialog_hor_btn_height"
+        android:layout_below="@id/cppk_dialog_message"
+        android:layout_margin="@dimen/global_horizontal_margin"
+        android:background="@drawable/btn_blue_dialog_horizontal"
+        android:text="Да"
+        android:textSize="@dimen/cppk_dialog_text_size"
+        android:layout_alignParentLeft="true" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/cppk_dilog_negative_butoon"
+        style="@style/btn_blue"
+        android:layout_width="@dimen/cppk_dialog_hor_btn_width"
+        android:layout_height="@dimen/cppk_dialog_hor_btn_height"
+        android:layout_below="@id/cppk_dialog_message"
+        android:layout_margin="@dimen/global_horizontal_margin"
+        android:background="@drawable/btn_blue_dialog_horizontal"
+        android:text="Нет"
+        android:textSize="@dimen/cppk_dialog_text_size"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

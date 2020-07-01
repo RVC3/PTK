@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="Состояние"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/getStateResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="State" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/lastShift_resp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LastShift" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="События"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createAllEventResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All Events" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createShiftEventsResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ShiftEvents" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createTestTicketResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TestTicket" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createTicketContolResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TicketContol" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createServiceTicketContolResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ServiceTicketContol" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createTicketSalesResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TicketSales" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createTicketReturnsResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TicketReturns" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createTicketReSignsResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TicketReSigns" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createServiceSalesResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ServiceSales" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createTicketTapeEventResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TicketPaperRolls" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createMonthClosingResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MonthClosures" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createFinePaidEventsResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FinePaidEvents" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createBankTransactionsResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BankTransactionEvents" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="Настройки"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:text="Последнее обновление CommonSettings: "
+                    />
+                <TextView
+                    android:id="@+id/commonSettingsLastUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="10.08.2018 16:28"
+                    />
+            </LinearLayout>
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/exportCommonSettingsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ExportCommonSettings" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/importCommonSettingsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ImportCommonSettings" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/getPrivateSettingsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GetPrivateSettings" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/getTimeRespBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GetTimeResp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="ПО"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/updateApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NewVersion" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="Резервное копирование"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/syncBackup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SyncBackup" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="SFT"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/createTransmissionCompleteResp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TransmissionComplete" />
+
+        </LinearLayout>
+
+    </ScrollView>

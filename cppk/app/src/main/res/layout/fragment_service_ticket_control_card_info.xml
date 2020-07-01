@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scroll_ticket_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--        android:layout_weight="1"-->
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/horizontal_padding_for_item">
+
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/cardType"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="ИПК:" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/cardNumberView"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:textSize="30sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardType"
+                app:typeface="roboto_regular"
+                tools:text="0015 002819968" />
+
+            <View
+                android:id="@+id/cardInfoSeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/cardNumberView" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/cardStatusLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:text="@string/card_info_card_status_label"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardInfoSeparator" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/cardStatusValue"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:layout_marginRight="@dimen/margin_for_item"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardStatusLabel"
+                app:typeface="roboto_bold"
+                tools:background="@color/service_ticket_control_card_info_success"
+                tools:text="@string/card_info_card_status_valid" />
+
+            <View
+                android:id="@+id/cardStatusSeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/cardStatusValue" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/validToLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:text="@string/card_info_card_valid_to_label"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardStatusSeparator" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/validToValue"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/validToLabel"
+                app:layout_constraintLeft_toRightOf="@id/validToLabel"
+                app:typeface="roboto_regular"
+                tools:text="14.10.2017" />
+
+            <View
+                android:id="@+id/validToSeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/validToLabel" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/stopListReasonLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:text="@string/card_info_card_stop_list_reason_label"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/validToSeparator" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/stopListReasonValue"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:textAllCaps="true"
+                android:textColor="@color/service_ticket_control_card_info_error"
+                android:textSize="@dimen/repail_item_text_size"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stopListReasonLabel"
+                tools:text="Причина не указана" />
+
+            <View
+                android:id="@+id/stopListReasonSeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/stopListReasonValue" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/lastPassageLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:text="@string/card_info_last_passage"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/stopListReasonSeparator" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/lastPassageValue"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginEnd="@dimen/margin_for_item"
+                android:gravity="end"
+                android:textSize="@dimen/repail_item_text_size"
+                app:layout_constraintBottom_toTopOf="@id/lastPassageLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lastPassageLabel"
+                app:typeface="roboto_regular"
+                tools:text="14.10.2017\n04:30:23" />
+
+            <View
+                android:id="@+id/lastPassageSeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/lastPassageLabel" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/passageStationLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:text="@string/card_info_passage_station"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lastPassageSeparator" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/passageStationValue"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/margin_for_item"
+                android:gravity="right"
+                android:maxLines="3"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/text_size_for_sub_title"
+                app:layout_constraintBottom_toTopOf="@id/passageStationLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/passageStationLabel"
+                app:typeface="roboto_regular"
+                tools:text="Домодедово" />
+
+            <View
+                android:id="@+id/passageOutStationSeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/passageStationLabel" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_passage_mark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/passageOutStationSeparator">
+
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/passageOutStationLabel"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    android:layout_marginEnd="@dimen/margin_for_item"
+                    android:text="@string/card_info_passage_out_station"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/passageOutStationValue"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/margin_for_item"
+                    android:layout_marginEnd="@dimen/margin_for_item"
+                    android:gravity="right"
+                    android:maxLines="3"
+                    android:textAlignment="gravity"
+                    android:textSize="@dimen/text_size_for_sub_title"
+                    app:layout_constraintBottom_toTopOf="@id/passageOutStationLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/passageOutStationLabel"
+                    app:typeface="roboto_regular"
+                    tools:text="Домодедово" />
+
+                <View
+                    android:id="@+id/passageOutStatSeparator"
+                    style="@style/separator_horizontal_gray"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    app:layout_constraintTop_toBottomOf="@id/passageOutStationLabel" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/isValidProhodLabel"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginStart="@dimen/margin_for_item"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    android:text="@string/card_info_passage_intersect"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/passageOutStatSeparator" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/isValidProhodValue"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginRight="@dimen/margin_for_item"
+                    android:gravity="end"
+                    android:maxLines="2"
+                    android:text="@string/card_info_prohod_no_data"
+                    android:textColor="@color/service_ticket_control_card_info_error"
+                    android:textSize="@dimen/repail_item_text_size"
+                    app:layout_constraintBottom_toTopOf="@id/isValidProhodLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/isValidProhodLabel"
+                    app:typeface="roboto_regular" />
+
+                <View
+                    android:id="@+id/validProhodSeparator"
+                    style="@style/separator_horizontal_gray"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/isValidProhodLabel" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/ctv_wallet_data_label"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginStart="@dimen/margin_for_item"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    android:text="@string/card_info_wallet_units_left"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/validProhodSeparator" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/ctv_wallet_data"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginRight="@dimen/margin_for_item"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="@string/default_str"
+                    android:textSize="@dimen/repail_item_text_size"
+                    app:layout_constraintBottom_toTopOf="@id/ctv_wallet_data_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ctv_wallet_data_label"
+                    app:typeface="roboto_regular" />
+
+                <View
+                    android:id="@+id/v_wallet_units_separator"
+                    style="@style/separator_horizontal_gray"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ctv_wallet_data_label" />
+
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/ctv_troyka_poezdki_label"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginStart="@dimen/margin_for_item"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    android:text="@string/card_info_troyka_poezdki"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_wallet_units_separator" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/ctv_troyka_poezdki"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginRight="@dimen/margin_for_item"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="@string/default_str"
+                    android:textSize="@dimen/repail_item_text_size"
+                    app:layout_constraintBottom_toTopOf="@id/ctv_troyka_poezdki_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ctv_troyka_poezdki_label"
+                    app:typeface="roboto_regular" />
+
+                <View
+                    android:id="@+id/v_troyka_poezdki_separator"
+                    style="@style/separator_horizontal_gray"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ctv_troyka_poezdki_label" />
+
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/id_type_ticket_label"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginStart="@dimen/margin_for_item"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    android:text="@string/card_info_type_ticket"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_troyka_poezdki_separator" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/tv_type_ticket"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginRight="@dimen/margin_for_item"
+                    android:gravity="end"
+                    android:maxLines="2"
+                    android:text="@string/default_str"
+                    android:textSize="@dimen/repail_item_text_size"
+                    app:layout_constraintBottom_toTopOf="@id/id_type_ticket_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/id_type_ticket_label"
+                    app:typeface="roboto_regular" />
+
+                <View
+                    android:id="@+id/id_type_ticket_separator"
+                    style="@style/separator_horizontal_gray"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/id_type_ticket_label" />
+
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/id_validity_date_time_label"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginStart="@dimen/margin_for_item"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    android:text="@string/card_info_validity_date_time"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/id_type_ticket_separator" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/tv_validity_date_time"
+                    style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                    android:layout_marginEnd="@dimen/margin_for_item"
+                    android:gravity="end"
+                    android:text="@string/default_str"
+                    android:textSize="@dimen/repail_item_text_size"
+                    app:layout_constraintBottom_toTopOf="@id/id_validity_date_time_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/id_validity_date_time_label"
+                    app:typeface="roboto_regular"
+                    tools:text="14.10.2017\n04:30:23" />
+
+                <View
+                    android:id="@+id/id_validity_separator"
+                    style="@style/separator_horizontal_gray"
+                    android:layout_marginTop="@dimen/margin_for_item"
+                    app:layout_constraintTop_toBottomOf="@id/id_validity_date_time_label" />
+            </android.support.constraint.ConstraintLayout>
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/exemptionCodeValue"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:layout_marginEnd="@dimen/margin_for_item"
+                android:textColor="@color/service_ticket_control_card_info_success"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_passage_mark"
+                app:typeface="roboto_regular"
+                tools:text="2204" />
+
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/exemptionGroupName"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="@dimen/margin_for_item"
+                android:textColor="@color/service_ticket_control_card_info_success"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exemptionCodeValue"
+                app:typeface="roboto_regular"
+                tools:text="ОАО РЖД (по ЭТТ)" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/exemptionLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:text="@string/card_info_passage_exemption"
+                app:layout_constraintBottom_toBottomOf="@id/exemptionGroupName"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/exemptionCodeValue" />
+
+            <View
+                android:id="@+id/exemptionSeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/exemptionGroupName" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/fioLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:text="@string/card_info_passage_fio"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exemptionSeparator" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/fioValue"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginEnd="@dimen/margin_for_item"
+                android:gravity="end"
+                android:maxWidth="280dp"
+                android:maxLines="1"
+                app:layout_constraintBaseline_toBaselineOf="@id/fioLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:typeface="roboto_regular"
+                tools:text="Иванов И.И." />
+
+            <View
+                android:id="@+id/fioSeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/fioLabel" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/BirthdayLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:text="@string/card_info_passage_birthday"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fioSeparator" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/birthdayValue"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginEnd="@dimen/margin_for_item"
+                app:layout_constraintBaseline_toBaselineOf="@id/BirthdayLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:typeface="roboto_regular"
+                tools:text="01.01.75" />
+
+            <View
+                android:id="@+id/BirthdaySeparator"
+                style="@style/separator_horizontal_gray"
+                android:layout_marginTop="@dimen/margin_for_item"
+                app:layout_constraintTop_toBottomOf="@id/BirthdayLabel" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/exemptionPercentageLabel"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginStart="@dimen/margin_for_item"
+                android:layout_marginTop="@dimen/margin_for_item"
+                android:text="@string/card_info_passage_percentage"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/BirthdaySeparator" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/exemptionPercentageValue"
+                style="@style/ServiceTicketControl.CardInfo.FieldLabel"
+                android:layout_marginEnd="@dimen/margin_for_item"
+                app:layout_constraintBaseline_toBaselineOf="@id/exemptionPercentageLabel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:typeface="roboto_regular"
+                tools:text="100%" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+<!--
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/btn_open_ticket"
+        style="@style/Core.App.Widget.Button.Blue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="7"
+        android:text="@string/btn_open_passage_mark" />
+-->
+</LinearLayout>

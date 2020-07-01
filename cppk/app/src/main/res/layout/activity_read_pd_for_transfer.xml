@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <ru.ppr.core.ui.widget.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="70dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="@string/read_pd_for_transfer_msg"
+        android:textSize="21sp"
+        app:typeface="roboto_bold" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/readBscBtn"
+        style="@style/Core.App.Widget.Button.Blue"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="@string/main_screen_bsc_btn"
+        android:textSize="32sp" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/readBarcodeBtn"
+        style="@style/Core.App.Widget.Button.Blue"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="@string/main_screen_barcode_btn"
+        android:textSize="32sp" />
+
+</LinearLayout>

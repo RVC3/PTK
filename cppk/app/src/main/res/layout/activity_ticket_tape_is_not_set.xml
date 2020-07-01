@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/fragment_icon"
+        android:src="@drawable/icon_failed" />
+
+    <TextView
+        style="@style/fragment_default_text"
+        android:text="@string/error_msg_ticket_tape_is_not_set" />
+
+    <LinearLayout style="@style/fragment_buttons_layout">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/cancel"
+            style="@style/fragment_button"
+            android:text="@string/ticket_tape_is_not_set_view_cancel_btn" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/set_ticket_tape"
+            style="@style/fragment_button"
+            android:text="@string/ticket_tape_is_not_set_view_set_ticket_tape_btn" />
+
+    </LinearLayout>
+
+</FrameLayout>

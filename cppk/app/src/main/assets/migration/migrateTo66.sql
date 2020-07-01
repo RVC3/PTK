@@ -1,0 +1,1 @@
+UPDATE PtkSettingsPrivate SET isUseMobileData = 1 WHERE isDefault = 1;

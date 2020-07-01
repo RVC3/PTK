@@ -1,0 +1,28 @@
+<PassageMarks>
+
+    <PassageMark version="2">
+        <rawData>02 0C 00 37 8E 7C 5C 54 86 84 1E 00 00 00 00 00</rawData>
+        <counterCard>12</counterCard>
+        <turniketOne>55</turniketOne>
+        <timestamp>1415347342</timestamp>
+        <stationCode>2000006</stationCode>
+    </PassageMark>
+
+    <PassageMark version="2">
+        <rawData>02 02 00 41 91 05 5E 54 92 84 1E 00 00 00 00 00</rawData>
+        <counterCard>2</counterCard>
+        <turniketOne>65</turniketOne>
+        <timestamp>1415447953</timestamp>
+        <stationCode>2000018</stationCode>
+    </PassageMark>
+
+    <PassageMark version="2">
+        <rawData>02 01 00 4B 97 F8 65 54 92 84 1E 00 00 00 00 00</rawData>
+        <counterCard>1</counterCard>
+        <turniketOne>75</turniketOne>
+        <timestamp>1415968919</timestamp>
+        <stationCode>2000018</stationCode>
+    </PassageMark>
+
+
+</PassageMarks>

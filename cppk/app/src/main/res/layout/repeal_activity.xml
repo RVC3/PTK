@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/repail_title"
+        android:text="@string/repeal_title"
+        style="@style/title_for_fragment" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/repail_read_bsc"
+        style="@style/btn_blue_big"
+        android:text="@string/readRfidButton"
+        android:layout_below="@id/repail_title"
+        android:layout_margin="@dimen/btn_blue_big_margin" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/repail_read_barcode"
+        style="@style/btn_blue_big"
+        android:layout_below="@id/repail_read_bsc"
+        android:text="@string/readBarcodeBtn"
+        android:layout_marginBottom="@dimen/btn_blue_big_margin" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/repail_executed_pd"
+        style="@style/btn_blue_big"
+        android:text="@string/executed_pd"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/btn_blue_big_margin" />
+
+</RelativeLayout>

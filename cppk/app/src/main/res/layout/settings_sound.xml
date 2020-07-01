@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/activityTitle"
+        android:text="@string/sound" />
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <RelativeLayout
+        android:id="@+id/adtSettingSoundOnReadSuccess"
+        style="@style/additional_settings_layout_style"
+        android:onClick="onClick">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/adt_settings_text"
+            android:text="@string/sound_on_read_success" />
+
+        <ImageView
+            android:id="@+id/adtSettingSoundOnReadSuccessCheckbox"
+            style="@style/arrow_checkbox"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <RelativeLayout
+        android:id="@+id/adtSettingSoundOnReadError"
+        style="@style/additional_settings_layout_style"
+        android:onClick="onClick">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/adt_settings_text"
+            android:text="@string/sound_on_read_error" />
+
+        <ImageView
+            android:id="@+id/adtSettingSoundOnReadErrorCheckbox"
+            style="@style/arrow_checkbox"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <ru.ppr.core.ui.widget.CustomButton
+        android:id="@+id/adtSettingSoundSetSuccessSoundr"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/set_success_sound"
+        android:onClick="onClick" />
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <ru.ppr.core.ui.widget.CustomButton
+        android:id="@+id/adtSettingSoundSetFailSound"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/set_fail_sound"
+        android:onClick="onClick" />
+
+</LinearLayout>

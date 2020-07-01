@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/systemBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="46px"
+        android:background="@android:color/black"
+        android:orientation="horizontal"
+        android:paddingLeft="19px"
+        android:paddingRight="19px">
+
+        <ru.ppr.cppk.systembar.BatteryLevelView
+            android:id="@+id/batteryLevelView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ru.ppr.cppk.systembar.MobileDataSignalView
+            android:id="@+id/mobileDataSignalView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="end"
+            android:layout_toStartOf="@+id/customDigitalClock" />
+
+        <ru.ppr.cppk.systembar.CustomDigitalClock
+            android:id="@+id/customDigitalClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right|center_vertical"
+            android:layout_alignParentEnd="true"
+            android:lines="1"
+            android:text="time"
+            android:textColor="@color/statusBarTextColor" />
+    </RelativeLayout>
+
+</LinearLayout>

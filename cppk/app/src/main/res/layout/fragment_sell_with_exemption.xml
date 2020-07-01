@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/cancel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/fragment_writings_2_top"
+            android:text="@string/printing_pd_failed_need_cancel" />
+
+        <TextView
+            android:id="@+id/full_amount"
+            style="@style/fragment_writings_2_bottom"
+            android:textSize="50sp" />
+
+        <FrameLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/cancel_ok"
+                style="@style/fragment_button"
+                android:text="@string/btnOk" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <include
+        android:id="@+id/cancel_layout_2"
+        layout="@layout/layout_show_repeal_pd" />
+
+    <ru.ppr.core.ui.widget.SimpleLseView
+        android:id="@+id/simpleLseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:textMessageSize="28sp" />
+
+</FrameLayout>

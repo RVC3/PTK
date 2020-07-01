@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/adtSettingSetDateTime"
+        style="@style/additional_settings_layout_style">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/setTime"
+            style="@style/adt_settings_text"
+            android:text="@string/set_datetime" />
+
+        <ImageView
+            android:id="@+id/additional_setting_set_date_time_arrow"
+            style="@style/arrow_next_for_relative"
+            android:contentDescription="@null" />
+
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <RelativeLayout
+        android:id="@+id/adtSettingSyncTime"
+        style="@style/additional_settings_layout_style">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/additional_setting_sync_time_title"
+            style="@style/adt_settings_text"
+            android:text="@string/sync_time_on_connect" />
+
+        <ImageView
+            android:id="@+id/adtSettingSyncTimeCheckBox"
+            style="@style/arrow_checkbox"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <RelativeLayout
+        android:id="@+id/adtSettingPermissionToExcess"
+        style="@style/additional_settings_layout_style">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/additional_setting_permission_to_excess_title"
+            style="@style/adt_settings_text"
+            android:text="@string/permission_to_excess" />
+
+        <ImageView
+            android:id="@+id/adtSettingPermissionToExcessCheckbox"
+            style="@style/arrow_checkbox"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+</LinearLayout>

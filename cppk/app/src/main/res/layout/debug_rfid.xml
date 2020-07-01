@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Очистить карту"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearSKM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="СКМ" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearCPPK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CPPK" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearTRK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TRK" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearETT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ETT" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearSTR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="STR" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearUltralight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ul (C/Ev1)" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearEcpFromSkm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/clearEcpFromSkm" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/readCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Прочитать карту" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/testCardType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Тест CardType" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearSectorBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Очистить сектор" />
+
+        <EditText
+            android:id="@+id/sectorNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:digits="0123456789"
+            android:text="0" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Записать"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/writePD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ПД" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/writePassageMarkVersionFive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Метку v5" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/writePassageMarkVersionFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Метку v4" />
+
+    </LinearLayout>
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/startTestRfid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Запустить тестер RFID" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/clearLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Очистить лог" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/readerTypeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:text="Тип Ридера"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/readerType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/readerTypeTitle"
+            android:layout_weight="1" />
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/out"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine" />
+
+</LinearLayout>

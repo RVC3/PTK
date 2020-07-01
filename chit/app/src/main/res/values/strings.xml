@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">Chit</string>
+
+    <!--Welcome-->
+    <string name="welcome_menu">Меню</string>
+    <string name="welcome_start_trip_service">Начать обслуживание</string>
+
+    <!--Menu-->
+    <string name="menu_working_root">ROOT-меню</string>
+    <string name="menu_working_state">Сервис</string>
+
+    <!--ReadBscActivity-->
+    <string name="read_bsc_bring_bsc">Поднесите БСК\nк считывателю</string>
+    <string name="read_bsc_could_not_read">Информация с БСК\nне читается</string>
+    <string name="read_bsc_empty_card">Билеты на БСК\nотсутствуют</string>
+    <string name="read_bsc_repeat_btn">Повторить считывание</string>
+    <string name="read_bsc_cancel_btn">Отмена</string>
+
+    <!--ReadBarcodeActivity-->
+    <string name="read_barcode_read_barcode">Наведите\nсканер\nна штрихкод</string>
+    <string name="read_barcode_could_not_read">Информация с ШК\nне читается</string>
+    <string name="read_barcode_repeat_btn">Повторить считывание</string>
+    <string name="read_barcode_cancel_btn">Отмена</string>
+
+    <!--PassengerList-->
+    <string name="passenger_list_search_view_hint">Введите ФИО или № документа</string>
+
+    <!--TicketControl-->
+    <string name="ticket_control_ticket_label">Билет</string>
+    <string name="ticket_control_date">Дата</string>
+    <string name="ticket_control_train_number">№ поезда</string>
+    <string name="ticket_control_dep_station">От</string>
+    <string name="ticket_control_dest_station">До</string>
+    <string name="ticket_control_exemption">Льгота</string>
+    <string name="ticket_control_exemption_no_value">Нет</string>
+    <string name="ticket_control_car_number">Вагон</string>
+    <string name="ticket_control_seat_number">Место</string>
+    <string name="ticket_control_passenger">Пассажир</string>
+    <string name="ticket_control_document_type">Документ</string>
+    <string name="ticket_control_document_number">№</string>
+    <string name="ticket_control_approve_btn">Подтвердить</string>
+    <string name="ticket_control_deny_btn">Отказ</string>
+    <string name="ticket_control_back_btn">Назад</string>
+    <string name="ticket_control_data_carrier_type_barcode">Штрих-код</string>
+    <string name="ticket_control_data_carrier_type_bsc">БСК</string>
+    <string name="ticket_control_data_carrier_type_ticket_list">Список</string>
+    <string name="ticket_control_validation_res_probably_success_by_date">ВНИМАНИЕ. Проверьте дату и время\nотправления в ПД</string>
+    <string name="ticket_control_validation_res_invalid_eds_key">НЕВЕРНАЯ ЭЛЕКТРОННАЯ ПОДПИСЬ</string>
+    <string name="ticket_control_validation_res_revoked_eds_key">КЛЮЧ ЭЦП ОТОЗВАН</string>
+    <string name="ticket_control_validation_res_cancelled">ПД аннулирован</string>
+    <string name="ticket_control_validation_res_returned">ПД возвращён</string>
+    <string name="ticket_control_validation_res_invalid_data">Неверные реквизиты билета</string>
+    <string name="ticket_control_rebooking">Перебронирование</string>
+    <string name="ticket_control_new_car">Вагон изменен с %1$s на %2$s</string>
+    <string name="ticket_control_new_seat">Место изменено с %1$s на %2$s</string>
+    <string name="ticket_control_checking_progress">Выполняется проверка…</string>
+    <string name="ticket_control_no_data">Нет данных</string>
+
+    <!--WorkingState-->
+    <string name="working_state_terminal_id">Т. контроля</string>
+    <string name="working_state_wifi_ssid">Сеть</string>
+    <string name="working_state_bs_id">Баз. станция</string>
+    <string name="working_state_software_version">Версия ПО</string>
+    <string name="working_state_nsi_version">Версия НСИ</string>
+    <string name="working_state_last_exchange">Последний обмен</string>
+    <string name="working_state_not_exported">Непередано событий</string>
+    <string name="working_state_no_data">Нет данных</string>
+    <string name="working_state_ok">Ок</string>
+    <string name="working_state_error">Ошибка</string>
+    <string name="working_state_wifi_settings">Настройки подключения</string>
+    <string name="working_state_force_sync">Синхронизировать</string>
+    <string name="working_state_bs_connect">Подключиться</string>
+    <string name="working_state_sync_progress">Синхронизация&#8230;</string>
+    <string name="working_state_sync_error_title">Ошибка синхронизации</string>
+    <string name="working_state_connect_error_title">Ошибка подключения</string>
+
+    <!--Splash-->
+    <string name="splash_title">Splash</string>
+    <string name="splash_msg_init_eds_error">Ошибка инициализации ЭЦП</string>
+    <string name="splash_msg_init_eds_progress">Инициализация ЭЦП\nПодождите…</string>
+
+    <!--SetDeviceId-->
+    <string name="set_device_id_hint">Задайте номер ПТК</string>
+    <string name="set_device_id_done">Продолжить</string>
+    <string name="set_device_id_invalid_data">Некорректный номер\nПопробуйте еще раз</string>
+
+    <!--SetUser-->
+    <string name="set_user_title">Укажите Фамилию И. О.</string>
+    <string name="set_user_hint">Иванов И. И.</string>
+    <string name="set_user_done">Продолжить</string>
+
+    <string name="set_control_station_title">Станция контроля</string>
+    <string name="set_control_station_station_name_hint">Название станции</string>
+    <string name="set_control_station_done">Продолжить</string>
+
+    <!--Main-->
+    <string name="main_read_bsc_btn">Бск</string>
+    <string name="main_read_barcode_btn">Штрихкод</string>
+    <string name="main_passenger_list_btn">Список</string>
+    <string name="main_start_boarding_btn">Начать посадку</string>
+    <string name="main_end_boarding_btn">Завершить посадку</string>
+    <string name="main_end_trip_service_btn">Завершить поездку</string>
+    <string name="main_menu_btn">Меню</string>
+
+    <!--BatteryLevel-->
+    <string name="battery_level_percent">%1$d%%</string>
+
+    <!--TripServiceInfo-->
+    <string name="trip_service_info_train_number_label">№ Поезда</string>
+    <string name="trip_service_info_train_number_value">%1$s %2$s</string>
+    <string name="trip_service_info_user_name">Проводник</string>
+    <string name="trip_service_info_boarding_status_unknown">Контроль</string>
+    <string name="trip_service_info_boarding_status_started">Посадка</string>
+    <string name="trip_service_info_boarding_status_ended">Контроль</string>
+    <string name="trip_service_info_next_station">След. станция</string>
+    <string name="trip_service_info_no_data">Нет данных</string>
+
+    <!--ReadBsQrCode-->
+    <string name="read_bs_qr_code_read_barcode">Наведите\nсканер\nна QR-код</string>
+    <string name="read_bs_qr_code_could_not_read">Информация\nс QR-кода\nне читается</string>
+    <string name="read_bs_qr_code_repeat_btn">Повторить считывание</string>
+    <string name="read_bs_qr_code_cancel_btn">Отмена</string>
+
+    <!--RootAccess-->
+    <string name="root_access_password_hint">Введите пароль</string>
+    <string name="root_access_password_incorrect">Неверный пароль!</string>
+    <string name="root_access_try_again">Попробуйте еще раз</string>
+    <string name="root_access_done">Продолжить</string>
+
+    <!--Root-->
+    <string name="root_reserve_create_restore_title">Резервное копир/восст</string>
+    <string name="root_create_title">Копирование</string>
+    <string name="root_create_full_btn">Полное</string>
+    <string name="root_create_logs_btn">Логи</string>
+    <string name="root_create_dbs_btn">Базы</string>
+    <string name="root_create_full_progress">Создание\nполной резервной копии&#8230;</string>
+    <string name="root_create_logs_progress">Создание\nрезервной копии баз&#8230;</string>
+    <string name="root_create_dbs_progress">Создание\nрезервной копии логов&#8230;</string>
+    <string name="root_restore_full_progress">Восстановление\nполной резервной копии&#8230;</string>
+    <string name="root_restore_dbs_progress">Восстановление\nрезервной копии баз&#8230;</string>
+    <string name="root_restore_title">Восстановление</string>
+    <string name="root_restore_full_btn">Полное</string>
+    <string name="root_restore_dbs_btn">Базы</string>
+    <string name="root_eds_type_title">Тип ЭЦП</string>
+    <string name="root_barcode_type_title">Тип ШК</string>
+    <string name="root_rfid_type_title">Тип БСК</string>
+
+    <!--RegBrokenAndroidView-->
+    <string name="reg_broken_error_title">Ошибка подключения</string>
+    <string name="reg_broken_error_message">Нет подключения к базовой станции.\nПодключитись к БС</string>
+
+    <!--Dialog-->
+    <string name="dialog_error_title">Ошибка</string>
+    <string name="dialog_ok_button">ОК</string>
+
+
+</resources>

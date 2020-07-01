@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/validityLabel"
+            style="@style/tv_pd_info_feild_for_one_pd"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/pd_fragment_horizontal_margin_large"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            tools:background="@color/red"
+            tools:text="Не действует" />
+
+        <TextView
+            android:id="@+id/pdError"
+            style="@style/tv_pd_info_field"
+            android:textColor="@color/red"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="ПД в стоп листе"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/pdTitle"
+            style="@style/tv_pd_info_feild_for_one_pd"
+            tools:text="Разовый полный" />
+
+        <TextView
+            android:id="@+id/pdNumber"
+            style="@style/tv_pd_info_feild_for_one_pd"
+            android:layout_marginTop="-2dp"
+            tools:text="№000005" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/pd_fragment_horizontal_margin_large"
+            android:layout_marginRight="@dimen/pd_fragment_horizontal_margin_large"
+            app:alignContent="stretch"
+            app:alignItems="stretch"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                android:id="@+id/depStationName"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="0dp"
+                android:maxLines="2"
+                android:textStyle="bold"
+                tools:text="ЧЕХОВ" />
+
+            <ImageView
+                android:id="@+id/directionImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:src="@drawable/there_back_direction" />
+
+            <TextView
+                android:id="@+id/destStationName"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="0dp"
+                android:maxLines="2"
+                android:paddingEnd="7dp"
+                android:textStyle="bold"
+                tools:text="СЕРПУХОВ" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <TextView
+            android:id="@+id/trainCategoryName"
+            style="@style/tv_pd_info_feild_for_one_pd"
+            tools:text="Пассажирский" />
+
+        <FrameLayout
+            android:id="@+id/exemptionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exemptionLabel"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:layout_marginTop="0dp"
+                android:text="@string/exemption_title" />
+
+            <TextView
+                android:id="@+id/exemptionValue"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:layout_gravity="end"
+                android:textStyle="bold"
+                tools:text="Нет" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/pdDateTimeLabel"
+            style="@style/tv_pd_info_feild_for_one_pd"
+            android:layout_marginTop="0dp"
+            android:text="@string/sale_date_title" />
+
+        <TextView
+            android:id="@+id/pdDateTimeValue"
+            style="@style/tv_pd_info_feild_for_one_pd"
+            android:layout_gravity="end"
+            android:layout_marginTop="-6dp"
+            tools:text="15.04.2015 05:21" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/mobile_barcode_layout"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/mobile_barcode_layout_valid_caption"
+            style="@style/tv_pd_info_feild_for_one_pd"
+            android:gravity="center"
+            android:text="Активация билета" />
+
+        <TextView
+            android:id="@+id/mobile_barcode_layout_invalid_caption"
+            style="@style/tv_pd_info_field"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:textColor="@color/red"
+            android:text="Активация билета на ПТК уже произведена"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/date_title44444"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:text="Станция:" />
+
+            <TextView
+                android:id="@+id/mobile_staion_activation_name"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:layout_width="match_parent"
+                android:gravity="end"
+                android:text="Кунцево 1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/d_title444"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:text="Время:" />
+
+            <TextView
+                android:id="@+id/mobile_station_activation_time"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:layout_width="match_parent"
+                android:gravity="end"
+                android:text="12:05 20.08" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/validityPeriodLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/validityPeriodLabel"
+                style="@style/tv_pd_info_feild_for_one_pd"
+                android:text="@string/date_actions_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/validityPeriodFromValue"
+                    style="@style/tv_pd_info_feild_for_one_pd"
+                    tools:text="15.04.2015" />
+
+                <TextView
+                    android:id="@+id/validityPeriodDash"
+                    style="@style/tv_pd_info_feild_for_one_pd"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/validityPeriodToValue"
+                    style="@style/tv_pd_info_feild_for_one_pd"
+                    tools:text="15.04.2015" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/global_vertical_margin"
+            android:orientation="vertical">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/mobile_ticket_register_history"
+                style="@style/btn_gray"
+                android:text="Список активаций билета"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/saleExtraChargeBtn"
+                style="@style/btn_gray"
+                android:text="@string/sale_pd_extra_charge"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/saleTransferBtn"
+                style="@style/btn_gray"
+                android:text="@string/sale_transfer"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/isNotValidPd"
+                style="@style/btn_gray"
+                android:text="@string/ticket_is_not_valid"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator"
+            style="@style/separator_horizontal_gray_flat"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>

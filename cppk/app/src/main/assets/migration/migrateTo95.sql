@@ -1,0 +1,1 @@
+UPDATE Exemption SET RegionOkatoCode = null WHERE RegionOkatoCode='null';

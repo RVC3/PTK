@@ -1,0 +1,78 @@
+<PD>
+
+    <PD version="2">
+        <rawData>02 13 00 00 0f 00 00 00 a2 81 54 4c a1 81 54 9a 3d 06 00 13 00 00 00</rawData>
+        <versionPD>2</versionPD>
+        <term>0</term>
+        <direction>0</direction>
+        <ecpNumberPD>3221225513</ecpNumberPD>
+        <tariffCodePD>408986</tariffCodePD>
+        <exemptionCode>0</exemptionCode>
+        <numberPD>19</numberPD>
+        <saleDatetimePD>1417781760</saleDatetimePD>
+        <saleDatetimeSourcePD>1417781580</saleDatetimeSourcePD>
+        <deviceId>19</deviceId>
+        <orderNumberSourcePd>15</orderNumberSourcePd>
+    </PD>
+
+    <PD version="2">
+        <rawData>02 15 00 00 10 00 00 78 a2 81 54 4c a1 81 54 9a 3d 06 00 13 00 00 00</rawData>
+        <versionPD>2</versionPD>
+        <term>0</term>
+        <direction>0</direction>
+        <ecpNumberPD>3221225513</ecpNumberPD>
+        <tariffCodePD>408986</tariffCodePD>
+        <exemptionCode>0</exemptionCode>
+        <numberPD>21</numberPD>
+        <saleDatetimePD>1417781880</saleDatetimePD>
+        <saleDatetimeSourcePD>1417781580</saleDatetimeSourcePD>
+        <deviceId>19</deviceId>
+        <orderNumberSourcePd>16</orderNumberSourcePd>
+    </PD>
+
+    <PD version="2">
+        <rawData>02 14 00 00 10 00 00 3c a2 81 54 4c a1 81 54 9a 3d 06 00 13 00 00 00</rawData>
+        <versionPD>2</versionPD>
+        <term>0</term>
+        <direction>0</direction>
+        <ecpNumberPD>3221225513</ecpNumberPD>
+        <tariffCodePD>408986</tariffCodePD>
+        <exemptionCode>0</exemptionCode>
+        <numberPD>20</numberPD>
+        <saleDatetimePD>1417781820</saleDatetimePD>
+        <saleDatetimeSourcePD>1417781580</saleDatetimeSourcePD>
+        <deviceId>19</deviceId>
+        <orderNumberSourcePd>16</orderNumberSourcePd>
+    </PD>
+
+    <PD version="2">
+        <rawData>02 12 00 00 0e 00 00 c4 a1 81 54 4c a1 81 54 9a 3d 06 00 13 00 00 00</rawData>
+        <versionPD>2</versionPD>
+        <term>0</term>
+        <direction>0</direction>
+        <ecpNumberPD>3221225513</ecpNumberPD>
+        <tariffCodePD>408986</tariffCodePD>
+        <exemptionCode>0</exemptionCode>
+        <numberPD>18</numberPD>
+        <saleDatetimePD>1417781700</saleDatetimePD>
+        <saleDatetimeSourcePD>1417781580</saleDatetimeSourcePD>
+        <deviceId>19</deviceId>
+        <orderNumberSourcePd>14</orderNumberSourcePd>
+    </PD>
+
+    <PD version="2">
+        <rawData>02 11 00 00 0d 00 00 88 a1 81 54 4c a1 81 54 9a 3d 06 00 13 00 00 00</rawData>
+        <versionPD>2</versionPD>
+        <term>0</term>
+        <direction>0</direction>
+        <ecpNumberPD>3221225513</ecpNumberPD>
+        <tariffCodePD>408986</tariffCodePD>
+        <exemptionCode>0</exemptionCode>
+        <numberPD>17</numberPD>
+        <saleDatetimePD>1417781640</saleDatetimePD>
+        <saleDatetimeSourcePD>1417781580</saleDatetimeSourcePD>
+        <deviceId>19</deviceId>
+        <orderNumberSourcePd>13</orderNumberSourcePd>
+    </PD>
+
+</PD>

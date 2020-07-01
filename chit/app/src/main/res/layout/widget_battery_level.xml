@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <View
+                android:id="@+id/bl_percent_image"
+                android:layout_width="10.5dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="4.5dp"
+                android:background="@color/batteryLevelBatteryGreen" />
+
+            <ImageView
+                android:id="@+id/bl_battery_image"
+                android:layout_width="21dp"
+                android:layout_height="16.5dp"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/battery_level_battery" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/bl_percent_text"
+            style="@style/CapsText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="0.5dp"
+            android:gravity="end"
+            android:textColor="@color/batteryLevelTextColor"
+            android:textStyle="bold"
+            tools:text="100%" />
+
+    </LinearLayout>
+
+</merge>

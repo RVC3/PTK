@@ -1,0 +1,206 @@
+import org.apache.commons.io.FileUtils
+
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android-extensions'
+ext {
+    // Major app version number
+    majorAppVersion = 1
+    // Версия датаконтрактов
+    dataContractsVersion = 80
+    // Minor app version number
+    minorAppVersion = 201
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        applicationId "ru.ppr.cppk"
+        versionCode 1
+        versionName getAppVersionName()
+        multiDexEnabled true
+        // Константы
+        buildConfigField('int', 'SQLITE_STUDIO_SERVICE_PORT', '11404')
+        buildConfigField('int', 'DATA_CONTRACTS_VERSION', "$dataContractsVersion")
+        buildConfigField("boolean", "DISABLE_STUB_POS", "${isStubPosDisabled()}")
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+        preDexLibraries false
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("../platform_release.jks")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        release {
+            storeFile file("../platform_release.jks")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    productFlavors {
+        coppernicDevice {
+            ndk {
+                abiFilter "armeabi"
+            }
+            // Константы
+            buildConfigField("boolean", "USE_REAL_DEVICES_BY_DEFAULT", "true")
+        }
+        simulatorDevice {
+            ndk {
+                abiFilter "x86"
+            }
+            // Константы
+            buildConfigField("boolean", "USE_REAL_DEVICES_BY_DEFAULT", "false")
+        }
+        realArmDevice {
+            ndk {
+                abiFilter "armeabi"
+            }
+            // Константы
+            buildConfigField("boolean", "USE_REAL_DEVICES_BY_DEFAULT", "false")
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(output.outputFile.parent, "CPPK_${variant.versionName}.apk");
+        }
+
+        variant.assemble.doLast {
+            String projectDir = getProjectDir().getAbsolutePath();
+            String appConfigFileName = "app.config";
+            String appConfigSrc = projectDir + "/src/main/assets/" + appConfigFileName;
+            String appConfigDst = projectDir + "/build/outputs/apk/" + appConfigFileName;
+
+            FileUtils.copyFile(new File(appConfigSrc), new File(appConfigDst));
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+//    compile fileTree(include: ['*.jar'], dir: '../../libraries')
+    // compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlin_version"
+    compile 'com.facebook.stetho:stetho:1.5.1'
+    // Android support
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    // Other
+    compile 'eu.chainfire:libsuperuser:1.0.0.201811281328'
+    compile "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.10'
+    compile 'com.google.guava:guava:18.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+    compile 'org.aspectj:aspectjrt:1.8.8'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.google.android:flexbox:0.1.2'
+    compile project(':tarGz')
+    compile project(':kkm')
+    compile project(':moebius')
+    compile project(':shtrih')
+    compile project(':pos')
+    compile project(':inpas')
+    compile project(':ingenico')
+    compile project(':logger')
+    compile project(":lan4gate")
+    // Core ui
+    debugCompile project(path: ':core_ui', configuration: "debug")
+    releaseCompile project(path: ':core_ui', configuration: "release")
+    compile project(':core')
+    compile project(':ptk_data')
+    compile project(':kuznyechik')
+    // Dagger
+    compile "com.google.dagger:dagger:2.9"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.9"
+    provided 'javax.annotation:jsr250-api:1.0'
+    // MapStruct
+    compile 'org.glassfish:javax.annotation:3.1.1'
+    compile 'org.mapstruct:mapstruct:1.2.0.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+    testCompile 'org.robolectric:robolectric:3.0'
+    testCompile 'org.robolectric:shadows-multidex:3.0'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.6'
+    testCompile 'org.powermock:powermock-module-junit4-rule:1.6.6'
+    testCompile 'org.powermock:powermock-api-mockito:1.6.6'
+    testCompile 'org.powermock:powermock-classloading-xstream:1.6.6'
+
+    compile 'jp.wasabeef:blurry:3.0.0'
+}
+
+def getAppVersionName() {
+    String fullVersion = "$majorAppVersion.$dataContractsVersion.$minorAppVersion.${getBuildNumber()}"
+    println("fullVersion = $fullVersion")
+    println("##teamcity[buildNumber '$fullVersion']")
+    return fullVersion
+}
+
+def getBuildNumber() {
+    def buildNumber = "0"
+    if (hasProperty("teamcity")) {
+        buildNumber = teamcity["build.number"]
+    }
+    return "11287"//buildNumber
+}
+
+
+def isStubPosDisabled() {
+    return "true";
+/*    def stubPosDisabled = false
+    if (hasProperty("teamcity")) {
+        stubPosDisabled = Boolean.valueOf(teamcity["disable_stub_pos"])
+    }
+    println("stubPosDisabled = $stubPosDisabled")
+    return stubPosDisabled*/
+}
+

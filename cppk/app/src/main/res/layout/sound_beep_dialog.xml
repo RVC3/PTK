@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/sound_beep_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sound"
+        android:textSize="28sp"
+        android:padding="16dp" />
+
+    <LinearLayout
+        android:id="@+id/sound_beep_dialog_button_layout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/sound_beep_okey"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/save" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/sound_beep_cancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancelOperation" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/sound_beep_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sound_beep_title"
+        android:layout_above="@id/sound_beep_dialog_button_layout"
+        android:choiceMode="singleChoice"></ListView>
+
+</RelativeLayout>

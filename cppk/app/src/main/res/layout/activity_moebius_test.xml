@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/printerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/InitForNameBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Init По Имени" />
+
+            <EditText
+                android:id="@+id/printerMac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/InitForMacBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Init По Mac" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/IsConnectedBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onClick"
+                android:text="IsConnected" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/DiscoveryBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:enabled="true"
+                android:onClick="onClick"
+                android:text="Discovery" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onClick"
+                android:text="CheckDiscovery" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:onClick="onOpenShift"
+                android:text="OpenShift                 " />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:onClick="onCloseShift"
+                android:text="CloseShift" />
+
+
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/FullTestBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onFullTest"
+                android:text="Full Test" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/MyReceiptBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:onClick="onMyReceipt"
+                android:text="MyReceipt" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onClick"
+                android:text="SetVat" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/DisconnectBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:onClick="onClick"
+                android:text="Disconnect" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="CasherChg" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/sendBlockTestBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="sendBlockTest" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/checkConnAfterZReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="checkConnAfterZReport" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/print100lines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="print100lines" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/print100linesAndCheckPaper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="print100linesAndCheckPaper" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/printCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="printCheck" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/printTestShiftSheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="printTestShiftSheet" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/disconnectAfterPrintText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="disconnectAfterPrintText" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

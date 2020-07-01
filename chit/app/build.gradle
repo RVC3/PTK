@@ -1,0 +1,177 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'org.greenrobot.greendao'
+
+ext {
+    // Major app version number
+    majorAppVersion = 1
+    // Версия датаконтрактов
+    dataContractsVersion = 11
+    // Minor app version number
+    minorAppVersion = 201
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        applicationId "ru.ppr.chit"
+        versionCode 1
+        versionName getAppVersionName()
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // Константы
+        buildConfigField('int', 'SQLITE_STUDIO_SERVICE_PORT', '15878')
+        buildConfigField('int', 'DATA_CONTRACTS_VERSION', "$dataContractsVersion")
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("../platform_release.jks")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        release {
+            storeFile file("../platform_release.jks")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    productFlavors {
+        coppernicDevice {
+            ndk {
+                abiFilter "armeabi"
+            }
+        }
+        simulatorDevice {
+            ndk {
+                abiFilter "x86"
+            }
+        }
+        realArmDevice {
+            ndk {
+                abiFilter "armeabi"
+            }
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(output.outputFile.parent, "chit_${variant.versionName}.apk")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+configurations {
+    coppernicDeviceDebugCompile
+    coppernicDeviceReleaseCompile
+    simulatorDeviceDebugCompile
+    simulatorDeviceReleaseCompile
+    realArmDeviceDebugCompile
+    realArmDeviceReleaseCompile
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':core')
+    compile project(':edssft')
+    compile project(':edssft_real')
+    compile project(':logger')
+    // Chit api
+    coppernicDeviceDebugCompile project(path: ':chit_api', configuration: "coppernicDeviceDebug")
+    coppernicDeviceReleaseCompile project(path: ':chit_api', configuration: "coppernicDeviceRelease")
+    simulatorDeviceDebugCompile project(path: ':chit_api', configuration: "simulatorDeviceDebug")
+    simulatorDeviceReleaseCompile project(path: ':chit_api', configuration: "simulatorDeviceRelease")
+    realArmDeviceDebugCompile project(path: ':chit_api', configuration: "realArmDeviceDebug")
+    realArmDeviceReleaseCompile project(path: ':chit_api', configuration: "realArmDeviceRelease")
+    // Chit domain
+    coppernicDeviceDebugCompile project(path: ':chit_domain', configuration: "coppernicDeviceDebug")
+    coppernicDeviceReleaseCompile project(path: ':chit_domain', configuration: "coppernicDeviceRelease")
+    simulatorDeviceDebugCompile project(path: ':chit_domain', configuration: "simulatorDeviceDebug")
+    simulatorDeviceReleaseCompile project(path: ':chit_domain', configuration: "simulatorDeviceRelease")
+    realArmDeviceDebugCompile project(path: ':chit_domain', configuration: "realArmDeviceDebug")
+    realArmDeviceReleaseCompile project(path: ':chit_domain', configuration: "realArmDeviceRelease")
+    // Chit data
+    coppernicDeviceDebugCompile project(path: ':chit_data', configuration: "coppernicDeviceDebug")
+    coppernicDeviceReleaseCompile project(path: ':chit_data', configuration: "coppernicDeviceRelease")
+    simulatorDeviceDebugCompile project(path: ':chit_data', configuration: "simulatorDeviceDebug")
+    simulatorDeviceReleaseCompile project(path: ':chit_data', configuration: "simulatorDeviceRelease")
+    realArmDeviceDebugCompile project(path: ':chit_data', configuration: "realArmDeviceDebug")
+    realArmDeviceReleaseCompile project(path: ':chit_data', configuration: "realArmDeviceRelease")
+    compile project(':chit_localdb')
+    // Core ui
+    debugCompile project(path: ':core_ui', configuration: "debug")
+    releaseCompile project(path: ':core_ui', configuration: "release")
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile 'com.android.support:multidex:1.0.1'
+    // RxAndroid 2
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
+    // Dagger 2
+    compile 'com.google.dagger:dagger:2.9'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
+    // Retrofit 2
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    // Gson
+    compile 'com.google.code.gson:gson:2.8.2'
+    // MapStruct
+    compile 'org.glassfish:javax.annotation:3.1.1'
+    compile 'org.mapstruct:mapstruct:1.2.0.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+    // UnitTests
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.19'
+}
+
+def getAppVersionName() {
+    String fullVersion = "$majorAppVersion.$dataContractsVersion.$minorAppVersion.${getBuildNumber()}"
+    println("fullVersion = $fullVersion")
+    println("##teamcity[buildNumber '$fullVersion']")
+    return fullVersion
+}
+
+def getBuildNumber() {
+    def buildNumber = "0"
+    if (hasProperty("teamcity")) {
+        buildNumber = teamcity["build.number"]
+    }
+    return buildNumber
+}

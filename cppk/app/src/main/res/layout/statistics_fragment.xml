@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ru.ppr.core.ui.widget.CustomButton
+        android:id="@+id/statistics_sell_pd_for_last_shift"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/sell_pd_for_last_shift" />
+
+    <ru.ppr.core.ui.widget.CustomButton
+        android:id="@+id/statistics_check_pd_for_last_shit"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/check_pd_for_last_shift" />
+
+    <ru.ppr.core.ui.widget.CustomButton
+        android:id="@+id/statistics_check_ett_for_last_shift"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/check_ett_for_last_shift" />
+
+    <ru.ppr.core.ui.widget.CustomButton
+        android:id="@+id/statistics_tariffs"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/tariffs" />
+
+    <ru.ppr.core.ui.widget.CustomButton
+        android:id="@+id/statistics_updates_ptk"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/updates_ptk" />
+
+</LinearLayout>

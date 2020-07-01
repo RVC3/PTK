@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/statistic_check_ett_title"
+        style="@style/activityTitle"
+        android:text="@string/statistics_check_ett_title"/>
+
+    <View style="@style/separator_horizontal_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/dataContainer"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/statistic_check_ett_shift_title"
+                style="@style/regular_field"
+                android:layout_width="wrap_content"
+                android:text="@string/shift"/>
+
+            <TextView
+                android:id="@+id/statistic_check_ett_shift_number"
+                style="@style/regular_field"
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@id/statistic_check_ett_shift_title"/>
+
+            <TextView
+                android:id="@+id/statistic_check_ett_shiftState"
+                style="@style/regular_field"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/statistic_check_ett_shift_title"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/regular_field"
+                        android:layout_width="wrap_content"
+                        android:text="@string/statistic_shift_opened"/>
+
+                    <TextView
+                        android:id="@+id/statistic_check_ett_shiftOpeningTime"
+                        style="@style/regular_field"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/regular_field"
+                        android:layout_width="wrap_content"
+                        android:text="@string/statistic_shift_close"/>
+
+                    <TextView
+                        android:id="@+id/statistic_check_ett_shiftClosingTime"
+                        style="@style/regular_field"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/regular_field"
+                android:layout_width="wrap_content"
+                android:text="@string/statistics_check_ETT_total"/>
+
+            <TextView
+                android:id="@+id/statistic_check_ett_checkedTotalCount"
+                style="@style/regular_field"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+
+        <View style="@style/separator_horizontal_gray"/>
+
+        <ListView
+            android:id="@+id/statistic_check_ett_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:listSelector="@android:color/transparent"/>
+    </LinearLayout>
+</LinearLayout>

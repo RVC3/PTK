@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugInfoTecs"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/ecpTypeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:text="@string/DebugEcpType"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/ecpType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ecpTypeTitle"
+                    android:layout_weight="1" />
+
+            </RelativeLayout>
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/startTestSft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugInfoTecs" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugRFID"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/useSAMModuleCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/DebugUseSam" />
+
+                <LinearLayout
+                    android:id="@+id/samNumLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10px"
+                        android:text="@string/DebugSamNumber" />
+
+                    <Spinner
+                        android:id="@+id/spSamNb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:entries="@array/sam_nb_array" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/rfid1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/DebugRFID_1" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/rfid2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/DebugRFID_2" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/cardReadTimeToast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugReadTimeNotify" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugArmSync"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/syncControlBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/DebugCheckProtocol" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugBackup"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/backupAndRestoreBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/DebugBackupAndRestore" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugBarcode"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ru.ppr.core.ui.widget.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingEnd="30px"
+                        android:paddingStart="30px"
+                        android:text="@string/speed" />
+
+                    <Spinner
+                        android:id="@+id/spBaudrate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/testBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugTestBarcode" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/barcodeTypeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:text="@string/DebugBarcodeType"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/barcodeType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugPerformance"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/startNsiQueryTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugNsiQueryTest" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/startSqliteTransactionTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugSqliteTransactionTest" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugTppd"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/startTppdCouponTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugTppdCouponTest" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugPtkState"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ru.ppr.core.ui.widget.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingEnd="30px"
+                        android:paddingStart="30px"
+                        android:text="@string/DebugRole" />
+
+                    <Spinner
+                        android:id="@+id/spRole"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/addTestPDtoDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:text="@string/DebugAddEventPrintTestPd" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/changeWorkMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugChangeWorkMode" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/changeShiftState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugShiftStateControl" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/addSyncFinishedEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugAddSuccessSyncEvent" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/start_activity_test_battery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugBatteryTest" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/manage_common_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:text="@string/DebugCommonSettingsManagement" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/manage_private_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:text="@string/DebugPrivateSettingsManagement" />
+
+                <CheckBox
+                    android:id="@+id/useEmergencyModeCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugExitToEmergencyMode" />
+
+                <CheckBox
+                    android:id="@+id/enableErrorToast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugIsErrorNotify" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugPrint"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ru.ppr.core.ui.widget.SingleClickButton
+                        android:id="@+id/printMonthlySheet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:text="@string/DebugMonthlySheet" />
+
+                    <ru.ppr.core.ui.widget.SingleClickButton
+                        android:id="@+id/printShiftSheet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:text="@string/DebugShiftSheet" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ru.ppr.core.ui.widget.SingleClickButton
+                        android:id="@+id/printAuditTrail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:text="@string/DebugAuditTrail" />
+
+                    <ru.ppr.core.ui.widget.SingleClickButton
+                        android:id="@+id/printTestShiftSheet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:text="@string/DebugTestShiftSheet" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ru.ppr.core.ui.widget.SingleClickButton
+                        android:id="@+id/startTestPrinter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/DebugPrinterTest" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/usePrinterGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/usePrinterRealNewSDK"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DebugMoebiusNewSDK" />
+
+                    <RadioButton
+                        android:id="@+id/usePrinterRealVirtualEklz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DebugMoebiusVirtualEKLZ" />
+
+                    <RadioButton
+                        android:id="@+id/usePrinterFilePrinter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DebugFilePrinter" />
+
+                    <RadioButton
+                        android:id="@+id/usePrinterShtrih"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DebugShtrihPrinter" />
+
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugBankTerminal"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/test_terminal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugPosTest" />
+
+            <RadioGroup
+                android:id="@+id/use_pos_terminal_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/use_simulator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugPosSimulator" />
+
+                <RadioButton
+                    android:id="@+id/use_ingenico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugIngenico" />
+
+                <RadioButton
+                    android:id="@+id/use_inpas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DebugInpas" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugSystem"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/enableSystemBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/DebugEnableStatusBar" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/disableSystemBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/DebugDisableStatusBar" />
+            </LinearLayout>
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/startSystemSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugOpenSystemProperties" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/deleteApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/delete_app" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/startFileManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/start_file_manager" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/startCpcHdkCone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/start_cpchdkcone" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/start_wifi_configurator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugWiFiSettings" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:text="@string/DebugOther"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/logoutEmergensyModeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugLogoutToEmergencyMode" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/logoutBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DebugLogout" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

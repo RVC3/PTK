@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="@string/title_paired_devices"
+        android:textColor="@color/white" />
+
+    <ListView
+        android:id="@+id/paired_devices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="@string/title_other_devices"
+        android:textColor="@color/white" />
+
+    <ListView
+        android:id="@+id/new_devices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/button_scan"
+        style="@style/btn_gray"
+        android:text="@string/button_scan" />
+
+</LinearLayout>

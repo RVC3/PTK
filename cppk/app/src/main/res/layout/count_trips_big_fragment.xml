@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pdTitle"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:minHeight="30dp"
+            android:paddingStart="8dp"
+            tools:text="Разовый полный" />
+
+        <TextView
+            android:id="@+id/validityLabel"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            tools:background="@color/count_trips_error"
+            tools:text="Не действует" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pdNumber"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_width="0dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            tools:text="№000005" />
+
+        <TextView
+            android:id="@+id/errorDescription"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_width="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:textColor="@color/count_trips_error"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Ключ ЭЦП невалиден" />
+
+    </LinearLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start">
+
+        <TextView
+            android:id="@+id/departureStation"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:textStyle="bold"
+            tools:text="ЧЕХОВ" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:contentDescription="@null"
+            android:src="@drawable/there_back_direction" />
+
+        <TextView
+            android:id="@+id/destinationStation"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:textStyle="bold"
+            tools:text="ШАРАПОВА ОХОТА" />
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <TextView
+        android:id="@+id/trainCategory"
+        style="@style/CountTripsFragment.FieldLabel.Big"
+        android:layout_marginStart="8dp"
+        tools:text="Пассажирский" />
+
+    <LinearLayout
+        android:id="@+id/exemptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/exemptionLabel"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/count_trips_exemption_label" />
+
+        <TextView
+            android:id="@+id/exemptionValue"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_marginEnd="8dp"
+            android:text="@string/count_trips_exemption_value"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/validityTimeLabel"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:width="0dp"
+            android:text="@string/count_trips_validity_time_label" />
+
+        <TextView
+            android:id="@+id/validityFromDate"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:maxLines="1"
+            tools:text="12.12.2014" />
+
+        <TextView
+            android:id="@+id/validityFromDash"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:text="@string/count_trips_validity_time_from_to" />
+
+        <TextView
+            android:id="@+id/validityToDate"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_marginEnd="8dp"
+            android:maxLines="1"
+            tools:text="13.13.2013" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/classicGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/availableTripsClassicGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/availableTripsClassicLabel"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_width="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="@string/count_trips_available_trips_label" />
+
+            <TextView
+                android:id="@+id/availableTripsClassicCount"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                tools:text="18" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lastPassageClassicGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lastPassageClassicLabel"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_width="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="@string/count_trips_last_passage"
+                tools:text="@string/count_trips_last_passage" />
+
+            <TextView
+                android:id="@+id/lastPassageTimeClassicView"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_marginEnd="8dp"
+                tools:text="16.05.2017 15:04"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/noPassagesClassic"
+                style="@style/CountTripsFragment.RedTextView"
+                android:layout_marginEnd="8dp"
+                android:text="@string/count_trips_no_passages"
+                android:textSize="21sp"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/moreThanFourHoursClassic"
+            style="@style/CountTripsFragment.RedTextView"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:textAllCaps="true"
+            tools:text="Более 4-х часов назад" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/combinedGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/availableTripsCombinedLabel"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/count_trips_available_trips_label" />
+
+        <LinearLayout
+            android:id="@+id/availableTrips6000Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/availableTrips6000Label"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_width="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:text="@string/count_trips_available_trips_6000_label" />
+
+            <TextView
+                android:id="@+id/availableTrips6000Count"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                tools:text="9" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/availableTrips7000Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/availableTrips7000Label"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_width="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:text="@string/count_trips_available_trips_7000_label" />
+
+            <TextView
+                android:id="@+id/availableTrips7000Count"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                tools:text="9" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lastPassageCombinedLabel"
+            style="@style/CountTripsFragment.FieldLabel.Big"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/count_trips_last_passage_label" />
+
+        <LinearLayout
+            android:id="@+id/lastPassage6000Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/lastPassage6000Label"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_width="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:text="@string/count_trips_last_passage_6000" />
+
+            <TextView
+                android:id="@+id/lastPassageTime6000View"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_marginEnd="8dp"
+                tools:text="16.05.2017 15:04"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/noPassages6000"
+                style="@style/CountTripsFragment.RedTextView"
+                android:layout_marginEnd="8dp"
+                android:text="@string/count_trips_no_passages"
+                android:textSize="21sp"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/moreThanFourHours6000"
+            style="@style/CountTripsFragment.RedTextView"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            tools:text="Более 4-х часов назад"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/lastPassage7000Group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/lastPassage7000Label"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_width="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:text="@string/count_trips_last_passage_7000" />
+
+            <TextView
+                android:id="@+id/lastPassageTime7000View"
+                style="@style/CountTripsFragment.FieldLabel.Big"
+                android:layout_marginEnd="8dp"
+                tools:text="16.05.2017 15:04"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/noPassages7000"
+                style="@style/CountTripsFragment.RedTextView"
+                android:layout_marginEnd="8dp"
+                android:text="@string/count_trips_no_passages"
+                android:textSize="21sp"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/moreThanFourHours7000"
+            style="@style/CountTripsFragment.RedTextView"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            tools:text="Более 4-х часов назад"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/noPassageOnDepartureStation"
+        style="@style/CountTripsFragment.RedTextView"
+        android:layout_gravity="end"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/count_trips_no_passage_on_departure_station" />
+
+    <TextView
+        android:id="@+id/wrongTrainCategoryOnDepartureStation"
+        style="@style/CountTripsFragment.RedTextView"
+        android:layout_gravity="end"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/count_trips_wrong_train_category_on_departure_station" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/pdNotValidBtn"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/count_trips_pd_not_valid_btn" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/saleWithSurchargeBtn"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/count_trips_sale_with_surcharge_btn"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separator"
+        style="@style/separator_horizontal_gray_flat" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/decrementTripBtn"
+        style="@style/Core.App.Widget.Button.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:text="@string/count_trips_decrement_trip_btn"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

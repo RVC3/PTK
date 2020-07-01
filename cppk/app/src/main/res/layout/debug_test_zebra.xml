@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/out"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/clearLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Очистить окно лога" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#000000"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:text="Bluetooth"
+                android:textColor="#f6f2f2"
+                android:textSize="22dp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/openBluetoothSystemSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Настройки" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/startSearchActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Поиск Устройств" />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/macAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"></EditText>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#000000"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:text="Печать"
+                android:textColor="#f6f2f2"
+                android:textSize="22dp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/printBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Штрихкод" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/printText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Печатать текст" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#000000"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:text="Состояние"
+                android:textColor="#f6f2f2"
+                android:textSize="22dp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/getDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="getDate" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/connectFromUiThread"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Подкл. в UI" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/connectToPrinter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Подключиться" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/disconntFromPrinter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Отключиться" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dateFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="дата с"
+                    android:textSize="20sp"></TextView>
+
+                <TextView
+                    android:id="@+id/dateTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="дата по"
+                    android:textSize="20sp"></TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/shiftFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Смена с"
+                    android:inputType="numberDecimal"></EditText>
+
+                <EditText
+                    android:id="@+id/shiftTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Смена по"
+                    android:inputType="numberDecimal"></EditText>
+
+
+            </LinearLayout>
+
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/getShiftInfoBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Получить информацию по сменам" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#000000"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:text="Настройки"
+                android:textColor="#f6f2f2"
+                android:textSize="22dp"></TextView>
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/settingsBarcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Настройка ШК" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/transferShift"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Передать смену" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/debugPrinterOfdSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Связь с ОФД" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#000000"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:text="Фискальные операции"
+                android:textColor="#f6f2f2"
+                android:textSize="22dp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/openShift"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Открыть смену" />
+
+                <ru.ppr.core.ui.widget.SingleClickButton
+                    android:id="@+id/closeShift"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Закрыть смену" />
+
+            </LinearLayout>
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/printProbniyPd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Печатать пробный ПД" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#000000"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:text="Тесты"
+                android:textColor="#f6f2f2"
+                android:textSize="22dp"></TextView>
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/stressTests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Стресс тесты" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

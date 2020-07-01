@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ru.ppr.core.ui.widget.CustomTextView
+        android:id="@+id/dbInfo"
+        style="@style/adt_setting_text_only"
+        android:layout_width="match_parent"
+        android:drawableRight="@drawable/arrow_gray_white"
+        android:gravity="center_vertical"
+        android:text="@string/db_info" />
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:id="@+id/additional_settings_stop_list_action_day"
+        style="@style/additional_settings_layout_style"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/adt_settings_text"
+            android:text="@string/stop_list_action_day" />
+
+        <TextView
+            android:id="@+id/additional_setting_stop_list_count_day"
+            style="@style/adt_settings_text"
+            android:layout_height="match_parent"
+            android:layout_marginRight="14dp"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/additional_settings_stop_list_arrow"
+            style="@style/arrow_next_for_relative"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+</LinearLayout>

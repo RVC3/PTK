@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_for_fragment"
+        android:text="@string/fine_sale_preparation_title" />
+
+    <FrameLayout
+        android:id="@+id/fineContainer"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_white_with_corners_5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/fineLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/fine_sale_preparation_fine_label"
+            android:textColor="#cacaca" />
+
+        <Spinner
+            android:id="@+id/fineSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:listitem="@layout/item_spinner_fine_sale_fine" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/costGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <View
+            style="@style/separator_horizontal_blue"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:id="@+id/regionGroup"
+            style="@style/FineSalePreparation.Group"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/regionLabel"
+                style="@style/FineSalePreparation.FieldLabel"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/fine_sale_preparation_region_label" />
+
+            <TextView
+                android:id="@+id/regionValue"
+                style="@style/FineSalePreparation.FieldValue"
+                tools:text="Московская область" />
+        </LinearLayout>
+
+        <View style="@style/separator_horizontal_blue" />
+
+        <RelativeLayout style="@style/FineSalePreparation.Group">
+
+            <TextView
+                android:id="@+id/costValue"
+                style="@style/FineSalePreparation.FieldValue"
+                android:layout_alignParentEnd="true"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:text="300.00 р." />
+
+            <TextView
+                android:id="@+id/costLabel"
+                style="@style/FineSalePreparation.FieldValue"
+                android:layout_alignBaseline="@id/costValue"
+                android:text="@string/fine_sale_preparation_cost_label"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <View style="@style/separator_horizontal_blue" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/sendETicketBtn"
+            style="@style/SendETicketButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/fine_sale_preparation_send_e_ticket_btn" />
+
+        <View
+            android:id="@+id/separatorAfterETicketBtn"
+            style="@style/separator_horizontal_blue"
+            android:layout_marginTop="10dp" />
+
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <RadioGroup
+            android:id="@+id/paymentTypeGroup"
+            style="@style/FineSalePreparation.Group"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/paymentTypeCash"
+                style="@style/ToggleButton.Item"
+                android:layout_height="@dimen/toggle_button_height"
+                android:checked="true"
+                android:text="@string/fine_sale_preparation_payment_type_cash" />
+
+            <RadioButton
+                android:id="@+id/paymentTypeCard"
+                style="@style/ToggleButton.Item"
+                android:layout_height="@dimen/toggle_button_height"
+                android:text="@string/fine_sale_preparation_payment_type_card" />
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/formPdBtnContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:padding="5dp">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/formPdBtn"
+                style="@style/Core.App.Widget.Button.Gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/fine_sale_preparation_form_btn" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

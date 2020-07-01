@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/focusableContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_white_with_corners_5dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_title_opening_closure_trip"
+        style="@style/cppk_dialog_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/str_title_opening_trip"
+        android:textSize="@dimen/app_text_size_27sp"
+        android:visibility="visible" />
+    <LinearLayout
+        android:id="@+id/stationsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="@dimen/app_margin_30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="@dimen/app_margin_30dp"
+        android:background="@drawable/bg_black_with_corners_5dp">
+
+        <ru.ppr.cppk.ui.widget.StationEditText
+            android:id="@+id/departure_station_edit_text"
+            style="@style/TransferSalePreparation.Station"
+            android:hint="@string/ptk_station"
+            android:paddingBottom="@dimen/app_margin_10dp" />
+    </LinearLayout>
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/scb_validate_opening_closure_trip"
+        style="@style/Core.App.Widget.Button.Blue"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="@dimen/cppk_dialog_vertical_buttons_margin"
+        android:text="@string/str_validate_opening"
+        android:textSize="@dimen/app_text_size_22sp" />
+
+</LinearLayout>

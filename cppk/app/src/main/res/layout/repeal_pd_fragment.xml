@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/pdTitle"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:singleLine="false"
+            tools:text="Разовый полный" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pdNumber"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            tools:text="№000005" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/pd_fragment_horizontal_margin_large"
+        android:layout_marginRight="@dimen/pd_fragment_horizontal_margin_large">
+
+        <TextView
+            android:id="@+id/depStationName"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:textStyle="bold"
+            tools:text="МСК" />
+
+        <ImageView
+            android:id="@+id/directionImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/there_back_direction" />
+
+        <TextView
+            android:id="@+id/destStationName"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:textStyle="bold"
+            tools:text="ШАРАПОВА ОХОТА" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/trainCategoryName"
+        style="@style/tv_pd_info_field"
+        tools:text="Пассажирский" />
+
+    <LinearLayout
+        android:id="@+id/exemptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/exemptionLabel"
+            style="@style/tv_pd_info_field"
+            android:text="@string/exemption_title" />
+
+        <TextView
+            android:id="@+id/exemptionValue"
+            style="@style/tv_pd_info_field"
+            android:layout_width="match_parent"
+            android:gravity="end"
+            android:textStyle="bold"
+            tools:text="Нет" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/pdDateTimeLabel"
+            style="@style/tv_pd_info_field"
+            android:text="@string/sale_date_title" />
+
+        <TextView
+            android:id="@+id/pdDateTimeValue"
+            style="@style/tv_pd_info_field"
+            android:layout_width="match_parent"
+            android:gravity="end"
+            tools:text="15.04.2015" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2">
+
+            <TextView
+                style="@style/tv_pd_info_field"
+                android:layout_marginEnd="4dp"
+                android:text="@string/repeal_amount"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/repail_fragment_amount_value"
+                style="@style/tv_pd_info_field"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:text="100,00 р." />
+
+            <TextView
+                style="@style/tv_pd_info_field"
+                android:text="@string/repeal_fee_short" />
+
+            <TextView
+                android:id="@+id/repail_fragment_fee_value"
+                style="@style/tv_pd_info_field"
+                android:layout_gravity="end"
+                android:textSize="25sp"
+                tools:text="10,00 р." />
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/paymentType"
+            style="@style/tv_pd_info_field"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="10dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            tools:text="НАЛИЧНЫЕ" />
+    </LinearLayout>
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/repail_fragment_repail_button"
+        style="@style/btn_gray"
+        android:text="@string/repail_button"
+        android:visibility="gone" />
+
+</LinearLayout>

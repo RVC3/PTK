@@ -1,0 +1,28 @@
+CREATE TABLE ServiceTicketControlEvent (
+    _id                        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    EventId                    INTEGER NOT NULL,
+    CashRegisterWorkingShiftId INTEGER NOT NULL,
+    ControlDateTime            INTEGER NOT NULL,
+    EdsKeyNumber               INTEGER NOT NULL,
+    StopListId                 INTEGER NOT NULL,
+    ValidationResult           INTEGER,
+    CardNumber                 TEXT NOT NULL,
+    CardCristalId              TEXT NOT NULL,
+    TicketStorageType          INTEGER NOT NULL,
+    ValidFrom                  INTEGER NOT NULL,
+    ValidTo                    INTEGER,
+    ZoneType                   INTEGER,
+    ZoneValue                  INTEGER NOT NULL,
+    CanTravel                  BOOLEAN NOT NULL,
+    RequirePersonification     BOOLEAN NOT NULL,
+    RequireCheckDocument       BOOLEAN NOT NULL,
+    TicketNumber               INTEGER NOT NULL,
+    TicketWriteDateTime        INTEGER,
+    SmartCardUsageCount        INTEGER NOT NULL,
+    PassageSign                INTEGER NOT NULL,
+    TicketDeviceId             INTEGER NOT NULL,
+    Status                     INTEGER NOT NULL,
+
+    FOREIGN KEY(EventId) REFERENCES Event(_id),
+    FOREIGN KEY(CashRegisterWorkingShiftId) REFERENCES CashRegisterWorkingShift(_id)
+);

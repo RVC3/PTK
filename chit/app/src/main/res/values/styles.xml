@@ -1,0 +1,30 @@
+<resources>
+
+    <!--Тема приложения-->
+    <style name="App.Theme" parent="Core.App.Theme">
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="editTextStyle">@style/App.Widget.EditText</item>
+        <!--<item name="android:windowBackground">@drawable/bg_test</item>-->
+    </style>
+
+    <style name="CapsText">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="App.Widget.Button.Blue" parent="Core.App.Widget.Button.Blue">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="App.Widget.Button.WhiteBlueSeparated" parent="Core.App.Widget.Button.WhiteBlueSeparated">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="App.Widget.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_edit_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+</resources>

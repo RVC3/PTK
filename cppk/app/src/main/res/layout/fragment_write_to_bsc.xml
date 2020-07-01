@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.ppr.cppk.ui.widget.LoggableViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--WRITING-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/writing_w"
+            style="@style/fragment_default_text" />
+
+    </FrameLayout>
+
+    <!--WRITING_BUTTON-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/writing_button_icon"
+            style="@style/fragment_icon" />
+
+        <TextView
+            android:id="@+id/writing_button_w"
+            style="@style/fragment_default_text" />
+
+        <FrameLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_button_b"
+                style="@style/fragment_button" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <!--WRITING_BUTTONS_2_LONG-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/writing_buttons_2_long_icon"
+            style="@style/fragment_icon" />
+
+        <TextView
+            android:id="@+id/writing_buttons_2_long_w"
+            style="@style/fragment_default_text" />
+
+        <LinearLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_buttons_2_long_b_top"
+                style="@style/fragment_buttons_many_button" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_buttons_2_long_b_bottom"
+                style="@style/fragment_buttons_many_button" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!--WRITING_BUTTONS_3_LONG-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/writing_buttons_3_long_icon"
+            style="@style/fragment_icon" />
+
+        <TextView
+            android:id="@+id/writing_buttons_3_long_w"
+            style="@style/fragment_default_text" />
+
+        <LinearLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_buttons_3_long_b_top"
+                style="@style/fragment_buttons_many_button" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_buttons_3_long_b_mid"
+                style="@style/fragment_buttons_many_button" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_buttons_3_long_b_bottom"
+                style="@style/fragment_button" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!--WRITINGS_2-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/writings_2_w_top"
+            style="@style/fragment_writings_2_top" />
+
+        <TextView
+            android:id="@+id/writings_2_w_bottom"
+            style="@style/fragment_writings_2_bottom" />
+
+    </FrameLayout>
+
+    <!--CUSTOM_CANCEL-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/fragment_writings_2_top"
+            android:text="@string/printing_pd_failed_need_cancel" />
+
+        <TextView
+            android:id="@+id/custom_cancel_full_amount"
+            style="@style/fragment_writings_2_bottom"
+            android:textSize="50sp" />
+
+        <FrameLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/custom_cancel_ok"
+                style="@style/fragment_button"
+                android:text="@string/btnOk" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <!-- SHOW REPEAL PD -->
+    <include layout="@layout/layout_show_repeal_pd"/>
+
+    <!--<ViewStub-->
+        <!--android:id="@+id/show_repeal_pd_stub"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout="@layout/layout_show_repeal_pd"-->
+        <!--android:inflatedId="@+id/show_repeal_pd"/>-->
+
+</ru.ppr.cppk.ui.widget.LoggableViewFlipper>

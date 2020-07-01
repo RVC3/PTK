@@ -1,0 +1,33 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.2'
+    }
+}
+ext {
+    // sdk and tools
+    minSdkVersion = 17
+    targetSdkVersion = 17
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.2'
+    // dependencies versions
+    supportLibraryVersion = '25.3.1'
+}
+gitignore
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        flatDir {
+            dirs project(':database').file('aarLibs')
+            dirs project(':moebius').file('aarLibs')
+            dirs project(':rfidreal').file('aarLibs')
+            dirs project(':barcodereal').file('aarLibs')
+        }
+    }
+}

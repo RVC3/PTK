@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SimpleLseView">
+        <attr name="textButton1" format="string" />
+        <attr name="textButton2" format="string" />
+        <attr name="textButton3" format="string" />
+        <attr name="textMessage" format="string" />
+        <attr name="textMessageSize" format="dimension" />
+    </declare-styleable>
+
+    <dimen name="simple_lse_view_default_text_msg_size">34sp</dimen>
+</resources>

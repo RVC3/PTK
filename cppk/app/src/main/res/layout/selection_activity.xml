@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/selection_activity_title"
+        style="@style/black_title_with_white_text"
+        android:text="@string/ptk_area"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue">
+
+        <ru.ppr.cppk.ui.widget.SmartAutoCompleteTextView
+            android:id="@+id/selection_activity_edit_text_field"
+            style="@style/smart_actv_edit_text"
+            android:layout_width="match_parent"
+            app:height_for_edit_text="@dimen/smart_actv_height_edite_text_field_for_stations"
+            app:hint="@string/enter_ptk_area"
+            android:layout_margin="@dimen/horizontal_padding_for_item" />
+    </FrameLayout>
+
+</LinearLayout>

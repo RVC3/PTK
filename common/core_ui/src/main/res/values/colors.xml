@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_error">#ED1B24</color>
+    <color name="app_warn">#FFCC00</color>
+    <color name="app_success">#019354</color>
+    <color name="app_normal">@android:color/black</color>
+</resources>

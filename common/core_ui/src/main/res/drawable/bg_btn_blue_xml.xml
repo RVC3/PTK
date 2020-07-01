@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+android:insetBottom="@dimen/inset_bottom"
+android:insetLeft="@dimen/inset_horizontal"
+android:insetRight="@dimen/inset_horizontal"
+android:insetTop="@dimen/inset_top">
+<selector>
+    <item
+        android:drawable="@drawable/bg_btn_blue_xml_disabled"
+        android:state_enabled="false" />
+    <item
+        android:drawable="@drawable/bg_btn_blue_xml_pressed"
+        android:state_pressed="true" />
+    <item android:drawable="@drawable/bg_btn_blue_xml_default" />
+</selector>
+</inset>

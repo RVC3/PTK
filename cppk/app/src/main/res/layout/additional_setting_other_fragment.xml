@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/settingsUserData"
+        style="@style/additional_settings_layout_style">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/adt_settings_text"
+            android:text="@string/user_data" />
+
+        <ImageView
+            style="@style/arrow_next_for_relative"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <RelativeLayout
+        android:id="@+id/start_wifi_configurator"
+        style="@style/additional_settings_layout_style"
+        android:background="@drawable/btn_solid_white">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/start_wifi_configurator_writing"
+            android:textColor="@drawable/selector_disabled_only"
+            style="@style/adt_settings_text"
+            android:text="@string/wifi_settings" />
+
+        <ImageView
+            android:id="@+id/start_wifi_configurator_arrow"
+            style="@style/arrow_next_for_relative"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+</LinearLayout>

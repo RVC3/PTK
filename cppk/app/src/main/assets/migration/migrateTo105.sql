@@ -1,0 +1,1 @@
+DELETE FROM PtkSettingsCommon WHERE name='DURATION_OF_PD_NEXT_DAY';

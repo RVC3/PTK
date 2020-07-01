@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/open_shift_setting_title"
+        style="@style/black_title_with_white_text"
+        android:text="@string/shift_is_open"
+        android:textStyle="bold" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/printTestPdBtn"
+        style="@style/Core.App.Widget.Button.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/open_shift_setting_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/print_test_pd"
+        android:textSize="20sp" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/printTestShiftSheetBtn"
+        style="@style/Core.App.Widget.Button.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/printTestPdBtn"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/print_test_shift_sheet"
+        android:textSize="20sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/beginWork"
+        android:layout_below="@id/printTestShiftSheetBtn">
+
+        <LinearLayout
+            android:id="@+id/trainCategoryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/beginWork"
+        style="@style/Core.App.Widget.Button.Blue"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/begin_work"
+        android:textSize="32sp" />
+
+    <ru.ppr.core.ui.widget.SimpleLseView
+        android:id="@+id/simpleLseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

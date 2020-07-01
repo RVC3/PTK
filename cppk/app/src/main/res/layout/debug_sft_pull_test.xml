@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center_horizontal">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/startTest"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Start Test" />
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/stopTest"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Stop Test" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearLog"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear Log" />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/logET"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:singleLine="false" />
+
+</LinearLayout>

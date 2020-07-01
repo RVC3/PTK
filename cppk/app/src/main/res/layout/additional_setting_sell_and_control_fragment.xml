@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layoutChangeDayCode"
+        style="@style/additional_settings_layout_style">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/dayCode"
+            style="@style/additional_settings_button"
+            android:text="@string/day_code" />
+
+        <TextView
+            android:id="@+id/additional_settings_day_code"
+            style="@style/additional_settings_button_value"
+            android:gravity="end"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/additional_settings_day_code_arrow"
+            style="@style/arrow_next"
+            android:contentDescription="@null" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/additionalSettingsDayCodeAndTransferSellingPossibilitySeparator"
+        style="@style/separator_horizontal_gray" />
+
+    <RelativeLayout
+        android:id="@+id/additionalSettingsTransferSellingPossibilityLayout"
+        style="@style/additional_settings_layout_style"
+        android:onClick="onClick">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/adt_settings_text"
+            android:layout_toStartOf="@+id/additionalSettingsTransferSellingPossibilityCheckBox"
+            android:text="@string/transfer_selling_possibility" />
+
+        <ImageView
+            android:id="@+id/additionalSettingsTransferSellingPossibilityCheckBox"
+            style="@style/arrow_checkbox"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/additionalSettingsTransferSellingPossibilityAndControlTypeSeparator"
+        style="@style/separator_horizontal_gray" />
+
+    <RadioGroup
+        android:id="@+id/additional_settings_control_type_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/additional_setting_control_type_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/additional_settings_sub_item_margin">
+
+            <TextView
+                style="@style/additional_settings_button"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/control_type_mode" />
+
+            <View style="@style/separator_horizontal_gray" />
+        </LinearLayout>
+
+
+        <RadioButton
+            android:id="@+id/additional_setting_control_type_mode_bus"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:button="@null"
+            android:drawableEnd="@drawable/checkbox_selector"
+            android:focusable="false"
+            android:paddingLeft="@dimen/additional_settings_sub_item_margin"
+            android:paddingRight="@dimen/additional_settings_main_item_margin"
+            android:text="@string/control_type_mode_bus"
+            android:textColor="@color/black" />
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginLeft="@dimen/additional_settings_sub_item_margin" />
+
+        <RadioButton
+            android:id="@+id/additional_setting_control_type_mode_train"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:button="@null"
+            android:drawableEnd="@drawable/checkbox_selector"
+            android:focusable="false"
+            android:paddingLeft="@dimen/additional_settings_sub_item_margin"
+            android:paddingRight="@dimen/additional_settings_main_item_margin"
+            android:text="@string/control_type_mode_train"
+            android:textColor="@color/black" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/additionalSettingsControlTypeAndTrainTypeSeparator"
+        style="@style/separator_horizontal_gray" />
+
+    <RadioGroup
+        android:id="@+id/additional_settings_train_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/additional_setting_category_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/additional_settings_sub_item_margin">
+
+            <TextView
+                style="@style/additional_settings_button"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/train_category" />
+
+            <View style="@style/separator_horizontal_gray" />
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/additional_setting_train_6000"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:button="@null"
+            android:drawableEnd="@drawable/checkbox_selector"
+            android:focusable="false"
+            android:paddingLeft="@dimen/additional_settings_sub_item_margin"
+            android:paddingRight="@dimen/additional_settings_main_item_margin"
+            android:text="@string/train_6000"
+            android:textColor="@color/black" />
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginLeft="@dimen/additional_settings_sub_item_margin" />
+
+        <RadioButton
+            android:id="@+id/additional_setting_train_7000"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:button="@null"
+            android:drawableEnd="@drawable/checkbox_selector"
+            android:focusable="false"
+            android:paddingLeft="@dimen/additional_settings_sub_item_margin"
+            android:paddingRight="@dimen/additional_settings_main_item_margin"
+            android:text="@string/train_7000"
+            android:textColor="@color/black" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/additionalSettingsTransferLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/additionalSettingsChangeTransferRouteLayout"
+            style="@style/additional_settings_layout_style">
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/additionalSettingsTransferRouteTitle"
+                style="@style/additional_settings_button"
+                android:layout_weight="0.5"
+                android:text="@string/additional_settings_transfer_route" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/additionalSettingsTransferRouteDepStationValue"
+                    style="@style/additional_settings_button_value"
+                    android:gravity="end"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/additionalSettingsTransferRouteDestStationValue"
+                    style="@style/additional_settings_button_value"
+                    android:gravity="end"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/additionalSettingsTransferRouteArrow"
+                style="@style/arrow_next"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <View style="@style/separator_horizontal_gray" />
+
+        <LinearLayout
+            android:id="@+id/additionalSettingsChangeTransferRouteDirectionLayout"
+            style="@style/additional_settings_layout_style">
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/additionalSettingsTransferRouteDirectionTitle"
+                style="@style/additional_settings_button"
+                android:text="@string/additional_settings_transfer_route_direction" />
+
+            <TextView
+                android:id="@+id/additionalSettingsTransferRouteDirectionValue"
+                style="@style/additional_settings_button_value"
+                android:gravity="end"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/additionalSettingsTransferRouteDirectionArrow"
+                style="@style/arrow_next"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <View style="@style/separator_horizontal_gray" />
+
+        <LinearLayout
+            android:id="@+id/additionalSettingsTransferDepartureDateLayout"
+            style="@style/additional_settings_layout_style">
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/additionalSettingsTransferDepartureDateTitle"
+                style="@style/additional_settings_button"
+                android:text="@string/additional_settings_transfer_departure_date" />
+
+            <TextView
+                android:id="@+id/additionalSettingsTransferDepartureDateValue"
+                style="@style/additional_settings_button_value"
+                android:gravity="end"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/additionalSettingsTransferDepartureDateArrow"
+                style="@style/arrow_next"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginLeft="@dimen/additional_settings_sub_item_margin" />
+
+        <LinearLayout
+            android:id="@+id/additionalSettingsTransferDepartureTimeLayout"
+            style="@style/additional_settings_layout_style">
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/additionalSettingsTransferDepartureTimeTitle"
+                style="@style/additional_settings_button"
+                android:text="@string/additional_settings_transfer_departure_time" />
+
+            <TextView
+                android:id="@+id/additionalSettingsTransferDepartureTimeValue"
+                style="@style/additional_settings_button_value"
+                android:gravity="end"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/additionalSettingsTransferDepartureTimeArrow"
+                style="@style/arrow_next"
+                android:contentDescription="@null" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/additionalSettingsTransferRouteBottomSeparator"
+        style="@style/separator_horizontal_gray"
+        android:visibility="gone" />
+
+</LinearLayout>

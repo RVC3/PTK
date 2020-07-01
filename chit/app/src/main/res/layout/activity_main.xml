@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_status_bar" />
+
+    <include layout="@layout/include_trip_service_info" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/readBscBtn"
+            style="@style/App.Widget.Button.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/main_read_bsc_btn" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/readBarcodeBtn"
+            style="@style/App.Widget.Button.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/main_read_barcode_btn" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/passengerListBtn"
+            style="@style/App.Widget.Button.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/main_passenger_list_btn" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/startBoardingBtn"
+            style="@style/App.Widget.Button.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/main_start_boarding_btn" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/endBoardingBtn"
+            style="@style/App.Widget.Button.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/main_end_boarding_btn" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/endTripServiceBtn"
+            style="@style/App.Widget.Button.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/main_end_trip_service_btn" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/menuBtn"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_menu_btn" />
+
+    </LinearLayout>
+
+</LinearLayout>

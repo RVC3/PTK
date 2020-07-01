@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Текущее состояние" />
+
+        <TextView
+            android:id="@+id/debug_manage_shift_current_state_shift"
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Номер смены" />
+
+        <TextView
+            android:id="@+id/debug_manage_shift_current_number_statet"
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="ФИО пользователя" />
+
+        <TextView
+            android:id="@+id/debug_manage_shift_current_user"
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Учетная запись" />
+
+        <TextView
+            android:id="@+id/debug_manage_shift_current_user_login"
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="OfficialCode" />
+
+        <TextView
+            android:id="@+id/debug_manage_shift_official_code"
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Время открытия" />
+
+        <TextView
+            android:id="@+id/debug_manage_shift_open_time"
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Время изменения последнего состояния" />
+
+        <TextView
+            android:id="@+id/debug_manage_shift_last_status_time_change"
+            style="@style/regular_field"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/debug_manage_shift_open_shift"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Открыть смену" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/debug_manage_shift_transfer_shift"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Передать смену" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/debug_manage_shift_close_shift"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Закрыть смену" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/debug_manage_shift_time_to_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Перевести время за к интервалу вывода предупреждения"/>
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/debug_manage_shift_time_to_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Перевести время к окончанию смены" />
+
+</LinearLayout>

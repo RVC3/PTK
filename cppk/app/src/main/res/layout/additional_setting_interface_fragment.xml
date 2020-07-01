@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/additional_setting_repeal_time_layout"
+        style="@style/additional_settings_layout_style">
+
+        <TextView
+            style="@style/additional_settings_button"
+            android:layout_weight="2"
+            android:text="@string/time_of_repail" />
+
+        <TextView
+            android:id="@+id/additional_settings_time_of_repeal_value"
+            style="@style/additional_settings_button_value"
+            android:text="0"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/additional_settings_time_of_repeal_arrow"
+            style="@style/arrow_next"
+            android:contentDescription="@null" />
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:id="@+id/additional_setting_time_close_shift_layout"
+        style="@style/additional_settings_layout_style">
+
+        <TextView
+            android:id="@+id/additional_setting_time_close_shift_title"
+            style="@style/additional_settings_button"
+            android:layout_weight="2"
+            android:text="@string/time_close_shift" />
+
+        <TextView
+            android:id="@+id/additional_settings_time_close_shift_value"
+            style="@style/additional_settings_button_value"
+            android:text="0"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/additional_settings_time_close_shift_arrow"
+            style="@style/arrow_next"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:id="@+id/additional_setting_set_sound"
+        style="@style/additional_settings_layout_style">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/additional_settings_button"
+            android:text="@string/settings_sound" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            style="@style/arrow_next"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:id="@+id/to_fine_list_management"
+        style="@style/additional_settings_layout_style">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/additional_settings_button"
+            android:text="@string/interface_fine_list_management" />
+
+        <ImageView
+            style="@style/arrow_next"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+</LinearLayout>

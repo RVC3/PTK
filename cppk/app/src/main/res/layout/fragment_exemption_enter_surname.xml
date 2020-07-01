@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/expressCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2204" />
+
+        <TextView
+            android:id="@+id/groupName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/expressCode"
+            tools:text="ОАО РЖД (по ЭТТ)" />
+
+        <TextView
+            android:id="@+id/percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textSize="22sp"
+            tools:text="100%" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/fieldDocumentNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/exemption_enter_surname_document_number"
+        android:imeOptions="actionNext"
+        android:maxLength="20"
+        android:maxLines="1">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/fieldSurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/exemption_enter_surname_fio"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:maxLength="50"
+        android:maxLines="1" />
+
+
+    <ru.ppr.cppk.ui.widget.DateView
+        android:id="@+id/fieldIssueDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:hint="@string/exemption_enter_surname_issue_date" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/useExemptionBtn"
+        style="@style/Core.App.Widget.Button.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/exemption_enter_surname_use_exemption_btn" />
+
+</LinearLayout>

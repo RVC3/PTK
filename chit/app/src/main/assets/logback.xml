@@ -1,0 +1,68 @@
+<configuration>
+    <property name="LOG_DIR" value="/storage/emulated/0/CHIT/Logs/AppLogs" />
+
+    <!-- Ни к чему дублировать, у нас прям из кода в Logcat уже пишется-->
+    <!--<appender name="logcat" class="ch.qos.logback.classic.android.LogcatAppender">-->
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+            <!--<level>ERROR</level>-->
+        <!--</filter>-->
+
+        <!--<encoder>-->
+            <!--<pattern>%msg</pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+
+    <appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+
+        <file>${LOG_DIR}/info.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/info.log.%i.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>20</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="trace" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/trace.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/trace.log.%i.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>20</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<logger name="ppr="ERROR">-->
+        <!--<appender-ref ref="logcat" />-->
+    <!--</logger>-->
+
+    <logger name="ru.ppr" level="INFO">
+        <appender-ref ref="info" />
+    </logger>
+
+    <logger name="ru.ppr" level="TRACE">
+        <appender-ref ref="trace" />
+    </logger>
+
+    <root level="off" />
+</configuration>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:padding="@dimen/global_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/fragment_report_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/global_vertical_margin"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_list" />
+
+            <TextView
+                android:id="@+id/shiftDate"
+                style="@style/reports_shift_month_select"
+                android:layout_width="@dimen/width_for_enter_date_shift"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/fragment_report_ic"
+                android:background="@drawable/bg_white_with_corners_5dp"
+                android:hint="@string/reports_hint_shift_date" />
+
+            <ru.ppr.cppk.ui.widget.FilterEditText
+                android:id="@+id/shiftNum"
+                style="@style/reports_shift_month_select"
+                android:layout_width="@dimen/width_for_enter_date_shift"
+                android:layout_below="@id/fragment_report_ic"
+                android:background="@drawable/bg_white_with_corners_5dp"
+                android:digits="№ 0123456789"
+                android:hint="@string/reports_hint_shift_number"
+                android:imeOptions="actionDone"
+                android:inputType="numberSigned"
+                android:maxLength="6" />
+        </RelativeLayout>
+
+        <View style="@style/separator_horizontal_gray" />
+
+        <TextView
+            android:id="@+id/testPD"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/reports_test_PD" />
+
+        <TextView
+            android:id="@+id/testShiftSheet"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/reports_test_shift_sheet" />
+
+        <TextView
+            android:id="@+id/shiftSheet"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/reports_shift_sheet" />
+
+        <TextView
+            android:id="@+id/discountShiftSheet"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/reports_discount_shift_sheet" />
+
+        <TextView
+            android:id="@+id/salesForEttLog"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/reports_sales_for_ett_log" />
+
+        <TextView
+            android:id="@+id/reportsTerminalOperations"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/reports_terminal_operations" />
+
+        <TextView
+            android:id="@+id/reportsTerminalDayClose"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/reports_terminal_day_close" />
+
+        <TextView
+            android:id="@+id/auditTrail"
+            style="@style/btn_settings_white_blue"
+            android:clickable="false"
+            android:text="@string/reports_audit_taril" />
+
+        <LinearLayout
+            android:id="@+id/auditTrailDetailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:background="@color/reports_background_color_light"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/global_horizontal_margin">
+
+            <RadioGroup
+                android:id="@+id/auditTrailPeriodType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/auditTrailForShift"
+                    style="@style/check_box_reports_style"
+                    android:checked="true"
+                    android:paddingBottom="@dimen/margin_vertical_for_chekck_box"
+                    android:paddingTop="@dimen/margin_vertical_for_chekck_box"
+                    android:text="@string/reports_audit_taril_shift"
+                    android:textColor="@color/checkbox_text_color" />
+
+                <RadioButton
+                    android:id="@+id/auditTrailForPeriod"
+                    style="@style/check_box_reports_style"
+                    android:paddingBottom="@dimen/margin_vertical_for_chekck_box"
+                    android:paddingTop="@dimen/margin_vertical_for_chekck_box"
+                    android:text="@string/reports_audit_taril_period"
+                    android:textColor="@color/checkbox_text_color" />
+            </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_for_print_control_journal_btn"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/auditTrailPeriodStartPrefix"
+                    style="@style/reports_shift_month_select"
+                    android:layout_width="@dimen/width_for_enter_date_field_label"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/left_corners"
+                    android:enabled="false"
+                    android:text="@string/reports_hint_audit_taril_period_from" />
+
+                <TextView
+                    android:id="@+id/auditTrailPeriodStart"
+                    style="@style/reports_shift_month_select"
+                    android:layout_toRightOf="@id/auditTrailPeriodStartPrefix"
+                    android:background="@drawable/right_corners"
+                    android:enabled="false"
+                    android:hint="@string/reports_hint_audit_taril_period" />
+
+
+                <TextView
+                    android:id="@+id/auditTrailPeriodEndPrefix"
+                    style="@style/reports_shift_month_select"
+                    android:layout_width="@dimen/width_for_enter_date_field_label"
+                    android:layout_below="@id/auditTrailPeriodStartPrefix"
+                    android:background="@drawable/left_corners"
+                    android:enabled="false"
+                    android:text="@string/reports_hint_audit_taril_period_to" />
+
+                <TextView
+                    android:id="@+id/auditTrailPeriodEnd"
+                    style="@style/reports_shift_month_select"
+                    android:layout_below="@id/auditTrailPeriodStartPrefix"
+                    android:layout_toRightOf="@id/auditTrailPeriodEndPrefix"
+                    android:background="@drawable/right_corners"
+                    android:enabled="false"
+                    android:hint="@string/reports_hint_audit_taril_period" />
+            </RelativeLayout>
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/printAuditTrail"
+                style="@style/btn_gray"
+                android:layout_margin="0dp"
+                android:text="@string/reports_print_control_journal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/ostart_open_shift_title"
+        style="@style/black_title_with_white_text"
+        android:text="@string/opening_shift" />
+
+    <RelativeLayout
+        android:id="@+id/open_shift_day_code_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ostart_open_shift_title"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/day_code"
+            style="@style/start_open_shift_fragment_tv_value_style"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/open_shift_padding_in_layout_vertical"
+            android:layout_marginTop="@dimen/open_shift_padding_in_layout_vertical" />
+
+        <TextView
+            style="@style/start_open_shift_fragment_tv_style"
+            android:layout_alignBaseline="@id/day_code"
+            android:layout_alignParentStart="true"
+            android:text="@string/day_code" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/change_day_code"
+            style="@style/btn_gray"
+            android:layout_height="100px"
+            android:layout_below="@id/day_code"
+            android:layout_marginBottom="65px"
+            android:background="@drawable/btn_gray_drawable"
+            android:fontFamily="sans-serif"
+            android:text="@string/change_button"
+            android:textSize="40px" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/open_shift_sep_1"
+        style="@style/separator_horizontal_gray"
+        android:layout_below="@id/open_shift_day_code_layout" />
+
+    <RelativeLayout
+        android:id="@+id/open_shift_time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/open_shift_sep_1"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/startOpenShiftDateValue"
+            style="@style/start_open_shift_fragment_tv_value_style"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/open_shift_inner_view_padding"
+            android:layout_marginTop="@dimen/open_shift_padding_in_layout_vertical"
+            android:text="0000" />
+
+        <TextView
+            style="@style/start_open_shift_fragment_tv_style"
+            android:layout_alignBaseline="@id/startOpenShiftDateValue"
+            android:layout_alignParentStart="true"
+            android:text="@string/date" />
+
+        <TextView
+            android:id="@+id/time_value"
+            style="@style/start_open_shift_fragment_tv_value_style"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/startOpenShiftDateValue"
+            android:layout_marginBottom="@dimen/open_shift_padding_in_layout_vertical" />
+
+        <TextView
+            style="@style/start_open_shift_fragment_tv_style"
+            android:layout_alignBaseline="@id/time_value"
+            android:layout_below="@id/startOpenShiftDateValue"
+            android:text="@string/time" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/change_date_and_time"
+            style="@style/btn_gray"
+            android:layout_height="100px"
+            android:layout_below="@id/time_value"
+            android:layout_marginBottom="65px"
+            android:background="@drawable/btn_gray_drawable"
+            android:fontFamily="sans-serif"
+            android:text="@string/change_button"
+            android:textSize="40px" />
+    </RelativeLayout>
+
+    <View
+        style="@style/separator_horizontal_gray"
+        android:layout_below="@id/open_shift_time_layout" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/continueBtn"
+        style="@style/btn_blue_big"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:text="@string/openShift_Continue"
+        android:textSize="26sp" />
+
+    <ru.ppr.core.ui.widget.SimpleLseView
+        android:id="@+id/simpleLseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

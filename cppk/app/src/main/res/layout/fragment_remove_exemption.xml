@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/title_for_fragment"
+        android:text="@string/remove_exemption_title" />
+
+    <TextView
+        android:id="@+id/expressCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        tools:text="2204" />
+
+    <TextView
+        android:id="@+id/groupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/expressCode"
+        android:layout_below="@id/expressCode"
+        tools:text="ОАО РЖД (по ЭТТ)" />
+
+    <View
+        android:id="@+id/separator"
+        style="@style/separator_horizontal_gray"
+        android:layout_below="@id/groupName"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/separator"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/title"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:textSize="22sp"
+        tools:text="100%" />
+
+    <LinearLayout
+        android:id="@+id/fioLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/separator"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/remove_exemption_fio" />
+
+        <TextView
+            android:id="@+id/fio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Иваново Л.И." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/documentNumberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fioLayout"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fieldDocumentNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/remove_exemption_document_number" />
+
+        <TextView
+            android:id="@+id/documentNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="ФЫВФ 9457467823842" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/documentIssueDateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/documentNumberLayout"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/remove_exemption_document_issue_date" />
+
+        <TextView
+            android:id="@+id/documentIssueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="29.06.2017" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bscNumberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/documentIssueDateLayout"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/bscType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="ЭТТ:" />
+
+        <TextView
+            android:id="@+id/bscNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="20080097050800" />
+    </LinearLayout>
+
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/removeBtn"
+        style="@style/Core.App.Widget.Button.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:text="@string/remove_exemption_remove_btn" />
+
+</RelativeLayout>

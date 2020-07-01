@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="App.Widget.DateView" parent="android:Widget.Holo.Light.EditText">
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+    </style>
+
+    <style name="App.Widget.EditText" parent="android:Widget.Holo.Light.EditText">
+        <item name="android:soundEffectsEnabled">false</item>
+        <item name="android:background">@drawable/bg_edit_text_2016</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="App.Widget.Toolbar" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:minHeight">50dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="App.Widget.Title" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:insetTop">50dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Стиль с отлюченным отображением скроллбара в выпадающих списках -->
+    <style name="App.Widget.ListView.DropDown.NonScrollable" parent="android:Widget.Holo.ListView.DropDown">
+        <item name="android:scrollbars">none</item>
+        <item name="android:smoothScrollbar">false</item>
+    </style>
+
+
+    <!-- ExtraPaymentExecutionFragment -->
+
+    <style name="ExtraPaymentExecution.Group" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="ExtraPaymentExecution.DirectionRadioButton" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@drawable/radio_blue_selector</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="ExtraPaymentExecution.FieldLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/extra_payment_label_text_color</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="ExtraPaymentExecution.FieldValue" parent="ExtraPaymentExecution.FieldLabel">
+        <item name="android:textColor">@color/extra_payment_value_text_color</item>
+    </style>
+
+    <!-- FineSalePreparationFragment -->
+
+    <style name="FineSalePreparation.Group" parent="ExtraPaymentExecution.Group" />
+
+    <style name="FineSalePreparation.FieldLabel" parent="ExtraPaymentExecution.FieldLabel" />
+
+    <style name="FineSalePreparation.FieldValue" parent="ExtraPaymentExecution.FieldValue" />
+
+    <!-- PdSalePreparationFragment -->
+
+    <style name="PdSalePreparation.Group" parent="ExtraPaymentExecution.Group" />
+
+    <style name="PdSalePreparation.FieldLabel" parent="ExtraPaymentExecution.FieldLabel" />
+
+    <style name="PdSalePreparation.FieldValue" parent="ExtraPaymentExecution.FieldValue" />
+
+    <!-- PdSalePreparationFragment -->
+
+    <style name="TransferSalePreparation.Group" parent="ExtraPaymentExecution.Group" />
+
+    <style name="TransferSalePreparation.FieldLabel" parent="ExtraPaymentExecution.FieldLabel" />
+
+    <style name="TransferSalePreparation.FieldValue" parent="ExtraPaymentExecution.FieldValue" />
+
+    <style name="PdSalePreparation.Station" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:dropDownAnchor">@id/stationsLayout</item>
+        <item name="android:dropDownVerticalOffset">-60px</item>
+        <item name="android:paddingBottom">30dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/pd_sale_preparation_station_text_color</item>
+    </style>
+
+    <style name="TransferSalePreparation.Station" parent="PdSalePreparation.Station" />
+
+    <!-- ResultBarcodeCouponActivity -->
+    <style name="ResultBarcodeCouponActivity.FieldLabel" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_marginStart">@dimen/result_barcode_coupon_screen_margin</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="ResultBarcodeCouponActivity.FieldValue" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/result_barcode_coupon_screen_margin</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="ResultBarcodeCouponActivity.Button" parent="@style/btn_blue_big">
+        <item name="android:layout_marginBottom">@dimen/result_barcode_coupon_screen_margin</item>
+    </style>
+
+    <style name="ServiceTicketControl.Tab" parent="">
+        <item name="android:background">@drawable/bg_ticket_control_tab</item>
+        <item name="android:textColor">@color/text_tab_ticket_control</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="ServiceTicketControl.TicketInfo.FieldLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/service_ticket_control_ticket_info_normal</item>
+        <item name="android:textSize">23sp</item>
+        <item name="typeface">roboto_light</item>
+    </style>
+
+    <style name="ServiceTicketControl.CardInfo.FieldLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/service_ticket_control_card_info_normal</item>
+        <item name="android:textSize">25sp</item>
+        <item name="typeface">roboto_light</item>
+    </style>
+
+    <!--CountTripsFragment-->
+    <style name="CountTripsFragment.FieldLabel" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/count_trips_normal</item>
+    </style>
+
+    <style name="CountTripsFragment.FieldLabel.Big">
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="CountTripsFragment.RedTextView" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/count_trips_error</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!--ZoomPdFragment-->
+    <style name="ZoomPdFragment.FieldLabel" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">27sp</item>
+        <item name="android:textColor">@color/count_trips_normal</item>
+    </style>
+
+    <style name="ZoomPdFragment.RedTextView" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/zoom_pd_error</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ReadBscResult.Tab" parent="">
+        <item name="android:background">@drawable/bg_ticket_control_tab</item>
+        <item name="android:textColor">@color/text_tab_ticket_control</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+</resources>

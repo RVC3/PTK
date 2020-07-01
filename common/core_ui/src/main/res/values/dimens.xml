@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Button inset-->
+    <dimen name="inset_bottom">4dp</dimen>
+    <dimen name="inset_horizontal">4dp</dimen>
+    <dimen name="inset_top">4dp</dimen>
+</resources>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/black_title_with_white_text"
+            android:text="@string/tariffs" />
+
+        <LinearLayout
+            android:id="@+id/salePd_stationsLayout"
+            style="@style/sell_pd_layout_style"
+            android:orientation="horizontal">
+
+            <ru.ppr.cppk.ui.widget.SmartAutoCompleteTextView
+                android:id="@+id/statistics_tariffs_departureStation"
+                style="@style/smart_actv_edit_text"
+                android:layout_width="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                app:corners_to_draw="left"
+                app:height_for_edit_text="@dimen/smart_actv_height_edite_text_field_for_stations"
+                app:hint="@string/sale_pd_departure_station_hint" />
+
+            <ImageView
+                android:id="@+id/salePd_directionImg"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/smart_actv_height_edite_text_field_for_stations"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                android:contentDescription="@null"
+                android:src="@drawable/there_direction" />
+
+            <ru.ppr.cppk.ui.widget.SmartAutoCompleteTextView
+                android:id="@+id/statistics_tariffs_destinationStation"
+                style="@style/smart_actv_edit_text"
+                android:layout_width="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                app:corners_to_draw="right"
+                app:height_for_edit_text="@dimen/smart_actv_height_edite_text_field_for_stations"
+                app:hint="@string/sale_pd_destination_station_hint" />
+        </LinearLayout>
+
+        <View style="@style/separator_horizontal_blue" />
+
+        <RelativeLayout
+            android:id="@+id/statistics_tariffs_passenger_train_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/statistics_tariffs_passenger_train_title"
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/passenger_train"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_for_title"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/statistics_tariffs_passenger_train_title"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/extra_margin"
+                android:text="@string/full_pd"
+                android:textSize="@dimen/text_size_for_sub_title" />
+
+
+            <TextView
+                android:id="@+id/statistics_tariffs_cost_full_pd_for_passenger_train"
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/statistics_tariffs_passenger_train_title"
+                android:layout_marginBottom="8dp"
+                android:textSize="@dimen/text_size_for_sub_title"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/statistics_tariffs_cost_full_pd_for_passenger_train"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/extra_margin"
+                android:text="@string/kids_pd"
+                android:textSize="@dimen/text_size_for_sub_title" />
+
+            <TextView
+                android:id="@+id/statistics_tariffs_cost_kids_pd_for_passenger_train"
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/statistics_tariffs_cost_full_pd_for_passenger_train"
+                android:layout_marginBottom="8dp"
+                android:textSize="@dimen/text_size_for_sub_title"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/separator_horizontal_blue"
+                android:layout_below="@id/statistics_tariffs_cost_kids_pd_for_passenger_train" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/statistics_tariffs_fast_train_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/statistics_tariffs_fast_train_title"
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/fast_train"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_for_title"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/statistics_tariffs_fast_train_title"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/extra_margin"
+                android:text="@string/full_pd"
+                android:textSize="@dimen/text_size_for_sub_title" />
+
+            <TextView
+                android:id="@+id/statistics_tariffs_cost_full_pd_for_fast_train"
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/statistics_tariffs_fast_train_title"
+                android:layout_marginBottom="8dp"
+                android:textSize="@dimen/text_size_for_sub_title"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/statistics_tariffs_cost_full_pd_for_fast_train"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/extra_margin"
+                android:text="@string/kids_pd"
+                android:textSize="@dimen/text_size_for_sub_title" />
+
+            <TextView
+                android:id="@+id/statistics_tariffs_cost_kids_pd_for_fast_train"
+                style="@style/white_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/statistics_tariffs_cost_full_pd_for_fast_train"
+                android:layout_marginBottom="8dp"
+                android:textSize="@dimen/text_size_for_sub_title"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/separator_horizontal_blue"
+                android:layout_below="@id/statistics_tariffs_cost_kids_pd_for_fast_train" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ru.ppr.cppk.ui.widget.SelectStationMask
+        android:id="@+id/selectStationMask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/default_height_for_activiti_title"
+        android:visibility="invisible" />
+
+</FrameLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/black_title_with_white_text"
+            android:text="@string/menu"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/settingsGod"
+            style="@style/btn_settings_white_blue"
+            android:text="ROOT"
+            android:textColor="#FF0000"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/settingsControlDetailBtn"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/settings_control_detail_config_train_category"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/settingsAdt"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/settings"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/createReport"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/create_report"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/InfoService"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/info_service"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/uchetLenti"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/uchet_lenti"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/devices"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/devices"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/fineSale"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/menu_fine_sale"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/canselPD"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/canselPD"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/countChange"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/countChange"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/closeShift"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/closeShift"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/printNotSendDocsSheet"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/printNotSendDocsSheet"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/closePOSTerminalDay"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/close_pos_terminal_day"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/sendDocsToOfd"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/sendDocsToOfd"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/closeMounth"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/closeMonth"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/logout"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/logout"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backup"
+            style="@style/btn_settings_white_blue"
+            android:text="@string/backup"/>
+
+    </LinearLayout>
+
+</ScrollView>

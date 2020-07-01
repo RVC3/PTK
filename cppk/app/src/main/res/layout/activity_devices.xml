@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/printerBtn"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/device_printer" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/posTerminalBtn"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/device_pos_terminal" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/informationBtn"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/device_information" />
+
+</LinearLayout>

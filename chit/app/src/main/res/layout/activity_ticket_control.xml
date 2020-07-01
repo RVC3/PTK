@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_status_bar" />
+
+    <include layout="@layout/include_trip_service_info" />
+
+    <TableLayout
+        android:id="@+id/ticketData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/ticket_control_ticket_label" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/ticketNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    tools:text="№ 029383" />
+            </LinearLayout>
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/ticketType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="Полный взрослый" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/dataCarrier"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="Штрих-код" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="10dp">
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/ticket_control_date" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                tools:text="13.12.2017" />
+        </TableRow>
+
+        <TableRow>
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/ticket_control_train_number" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/trainNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                tools:text="7801" />
+        </TableRow>
+
+        <TableRow>
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/ticket_control_dep_station" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/depStation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                tools:text="Москва Киевская" />
+        </TableRow>
+
+        <TableRow>
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/ticket_control_dest_station" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/destStation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                tools:text="Малоярославец" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="10dp">
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/ticket_control_exemption" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/ticket_control_car_number" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/ticket_control_seat_number" />
+        </TableRow>
+
+        <TableRow>
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/exemption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="@string/ticket_control_exemption_no_value" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/actualCarNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="10" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/actualSeatNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="5" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="10dp">
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/ticket_control_passenger" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/ticket_control_document_type" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/ticket_control_document_number" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/passenger"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="Петров П.П." />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/documentType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="Пас. РФ" />
+
+            <ru.ppr.core.ui.widget.CustomTextView
+                android:id="@+id/documentNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="3461" />
+
+        </TableRow>
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/rebookingLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/ticket_control_rebooking"
+            android:textAllCaps="true"
+            android:textColor="@color/app_error" />
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/newCarLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/app_error"
+            tools:text="@string/ticket_control_new_car" />
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/newSeatLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/app_error"
+            tools:text="@string/ticket_control_new_seat" />
+
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/validationResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            tools:text="@string/ticket_control_validation_res_invalid_data"
+            tools:textColor="@color/app_error" />
+
+        <TableRow android:layout_marginTop="10dp">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/approveBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ticket_control_approve_btn" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/denyBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ticket_control_deny_btn" />
+
+        </TableRow>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/backBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ticket_control_back_btn" />
+
+    </TableLayout>
+
+    <ru.ppr.core.ui.widget.SimpleLseView
+        android:id="@+id/simpleLseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,156 @@
+[
+  {
+    "rawData": "01 06 00 01 d1 45 3e 54 4f 0d 03 00 00 00 59 47 00 00",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "1",
+    "ecpNumberPD": "18265",
+    "tariffCodePD": "200015",
+    "exemptionCode": "0",
+    "numberPD": "6",
+    "saleDatetimePD": "1413367249"
+  },
+  {
+    "rawData": "01 05 00 04 57 45 3e 54 4b 0d 03 00 00 00 59 47 00 00",
+    "versionPD": "1",
+    "term": "1",
+    "direction": "0",
+    "ecpNumberPD": "18265",
+    "tariffCodePD": "200011",
+    "exemptionCode": "0",
+    "numberPD": "5",
+    "saleDatetimePD": "1413367127"
+  },
+  {
+    "rawData": "01 04 00 00 e6 44 3e 54 4f 0d 03 00 00 00 59 47 00 00",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "0",
+    "ecpNumberPD": "18265",
+    "tariffCodePD": "200015",
+    "exemptionCode": "0",
+    "numberPD": "4",
+    "saleDatetimePD": "1413367014"
+  },
+  {
+    "rawData": "01 23 00 15 42 a5 53 54 4b 0d 03 00 00 00 13 00 00 00",
+    "versionPD": "1",
+    "term": "5",
+    "direction": "1",
+    "ecpNumberPD": "19",
+    "tariffCodePD": "200011",
+    "exemptionCode": "0",
+    "numberPD": "35",
+    "saleDatetimePD": "1414767938"
+  },
+  {
+    "rawData": "01 21 00 18 e9 a4 53 54 4b 0d 03 00 00 00 13 00 00 00",
+    "versionPD": "1",
+    "term": "6",
+    "direction": "0",
+    "ecpNumberPD": "19",
+    "tariffCodePD": "200011",
+    "exemptionCode": "0",
+    "numberPD": "33",
+    "saleDatetimePD": "1414767849"
+  },
+  {
+    "rawData": "01 03 00 00 de c4 44 54 51 0d 03 00 00 00 CB 01 00 00",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "0",
+    "ecpNumberPD": "459",
+    "tariffCodePD": "200017",
+    "exemptionCode": "0",
+    "numberPD": "3",
+    "saleDatetimePD": "1413792990"
+  },
+  {
+    "rawData": "01 1f 00 04 9f a4 53 54 4b 0d 03 00 00 00 13 00 00 00",
+    "versionPD": "1",
+    "term": "1",
+    "direction": "0",
+    "ecpNumberPD": "19",
+    "tariffCodePD": "200011",
+    "exemptionCode": "0",
+    "numberPD": "31",
+    "saleDatetimePD": "1414767775"
+  },
+  {
+    "rawData": "01 1e 00 10 65 a4 53 54 4b 0d 03 00 00 00 13 00 00 00",
+    "versionPD": "1",
+    "term": "4",
+    "direction": "0",
+    "ecpNumberPD": "19",
+    "tariffCodePD": "200011",
+    "exemptionCode": "0",
+    "numberPD": "30",
+    "saleDatetimePD": "1414767717"
+  },
+  {
+    "rawData": "01 1a 00 00 dd a3 53 54 4b 0d 03 00 00 00 13 00 00 00",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "0",
+    "ecpNumberPD": "19",
+    "tariffCodePD": "200011",
+    "exemptionCode": "0",
+    "numberPD": "26",
+    "saleDatetimePD": "1414767581"
+  },
+  {
+    "rawData": "01 16 00 00 9c dd 3b 54 e3 28 03 00 00 00 59 47 00 00",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "0",
+    "ecpNumberPD": "18265",
+    "tariffCodePD": "207075",
+    "exemptionCode": "0",
+    "numberPD": "22",
+    "saleDatetimePD": "1413209500"
+  },
+  {
+    "rawData": "01 14 00 00 8c 6f 64 54 09 1b 03 00 99 08 1C 00 00 C0",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "0",
+    "ecpNumberPD": "3221225500",
+    "tariffCodePD": "203529",
+    "exemptionCode": "2201",
+    "numberPD": "20",
+    "saleDatetimePD": "1415868300"
+  },
+  {
+    "rawData": "01 13 00 00 50 6f 64 54 4a 1a 03 00 16 0c 1C 00 00 C0",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "0",
+    "ecpNumberPD": "3221225500",
+    "tariffCodePD": "203338",
+    "exemptionCode": "3094",
+    "numberPD": "19",
+    "saleDatetimePD": "1415868240"
+  },
+  {
+    "rawData": "01 12 00 00 14 6f 64 54 9c 19 03 00 ca 09 1C 00 00 C0",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "0",
+    "ecpNumberPD": "3221225500",
+    "tariffCodePD": "203164",
+    "exemptionCode": "2506",
+    "numberPD": "18",
+    "saleDatetimePD": "1415868180"
+  },
+  {
+    "rawData": "01 0e 00 00 8e 0b 5a 54 92 29 03 00 00 00 1C 00 00 C0",
+    "versionPD": "1",
+    "term": "0",
+    "direction": "0",
+    "ecpNumberPD": "3221225500",
+    "tariffCodePD": "207250",
+    "exemptionCode": "0",
+    "numberPD": "14",
+    "saleDatetimePD": "1415187342"
+  }
+]

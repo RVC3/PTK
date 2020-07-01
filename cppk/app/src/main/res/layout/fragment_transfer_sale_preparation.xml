@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/black_title_with_white_text"
+        android:text="@string/transfer_sale_preparation_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/parent_pd_group"
+                style="@style/TransferSalePreparation.Group"
+                android:background="@color/white">
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/extra_payment_execution_parent_pd_base"
+                    android:textSize="17sp"
+                    app:typeface="roboto_bold" />
+
+                <ru.ppr.core.ui.widget.CustomTextView
+                    android:id="@+id/parent_pd_ticket_type"
+                    android:textSize="17sp"
+                    tools:text="АБ на 1 мес." />
+
+                <TextView
+                    android:id="@+id/parent_pd_number"
+                    android:textSize="17sp"
+                    tools:text="№ 000015" />
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ru.ppr.core.ui.widget.CustomTextView
+                        android:id="@+id/parent_pd_departure_station"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAllCaps="true"
+                        android:textSize="17sp"
+                        app:typeface="roboto_bold"
+                        tools:text="Москва Павелецкая" />
+
+                    <ImageView
+                        android:id="@+id/parent_pd_direction_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:adjustViewBounds="true"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/there_direction" />
+
+                    <ru.ppr.core.ui.widget.CustomTextView
+                        android:id="@+id/parent_pd_destination_station"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAllCaps="true"
+                        android:textSize="17sp"
+                        app:typeface="roboto_bold"
+                        tools:text="Домодедово" />
+
+                </LinearLayout>
+
+                <LinearLayout android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/transfer_sale_preparation_parent_pd_exemption"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/parent_pd_exemption_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/transfer_sale_preparation_parent_pd_exemption_no"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/parent_pd_train_category"
+                    android:textSize="17sp"
+                    tools:text="Пассажирский" />
+
+                <LinearLayout android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/transfer_sale_preparation_parent_pd_validity_dates"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/parent_pd_validity_dates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        tools:text="17.05.2017 - 17.06.2017" />
+
+                </LinearLayout>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:id="@+id/form_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TransferSalePreparation.FieldLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/transfer_sale_preparation_transfer_validity_dates" />
+
+                <TextView
+                    android:id="@+id/transferValidityDates"
+                    style="@style/TransferSalePreparation.FieldValue"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    tools:text="18.05.2017 - 19.05.2017" />
+
+                <TextView
+                    style="@style/TransferSalePreparation.FieldLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/transfer_sale_preparation_route" />
+
+                <TextView
+                    android:id="@+id/transferRoute"
+                    style="@style/TransferSalePreparation.FieldValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="end"
+                    android:lines="2"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    tools:text="Пл. Отдых -\nАэоропорт Жуковский" />
+
+                <FrameLayout
+                    android:id="@+id/ticketTypeContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/bg_white_with_corners_5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/transfer_sale_preparation_transfer_type"
+                        android:textColor="#cacaca" />
+
+                    <Spinner
+                        android:id="@+id/ticketTypeSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:paddingTop="17dp" />
+
+                </FrameLayout>
+
+                <View style="@style/separator_horizontal_blue" />
+
+                <LinearLayout
+                    android:id="@+id/cost_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/fee_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_disable_able_blue_group"
+                        android:paddingBottom="7dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="7dp">
+
+                        <TextView
+                            android:id="@+id/fee_value"
+                            style="@style/TransferSalePreparation.FieldValue"
+                            android:layout_gravity="end|center_vertical"
+                            android:text="@string/transfer_sale_preparation_fee_value_no"
+                            android:textStyle="bold"
+                            tools:text="100.00 р." />
+
+                        <CheckBox
+                            android:id="@+id/fee_check_box"
+                            style="@style/TransferSalePreparation.FieldLabel"
+                            android:layout_width="match_parent"
+                            android:button="@drawable/btn_extra_payment_checkbox"
+                            android:checked="true"
+                            android:paddingStart="10dp"
+                            tools:ignore="RtlSymmetry" />
+
+                    </FrameLayout>
+
+                    <View style="@style/separator_horizontal_blue" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="7dp">
+
+                        <TextView
+                            android:id="@+id/transfer_cost_label"
+                            style="@style/TransferSalePreparation.FieldLabel"
+                            android:text="@string/transfer_sale_preparation_transfer_cost" />
+
+                        <TextView
+                            android:id="@+id/transfer_cost_value"
+                            style="@style/TransferSalePreparation.FieldValue"
+                            android:layout_alignBaseline="@id/transfer_cost_label"
+                            android:layout_alignParentEnd="true"
+                            android:textStyle="bold"
+                            tools:text="42.50 р." />
+
+                        <TextView
+                            android:id="@+id/total_cost_label"
+                            style="@style/TransferSalePreparation.FieldValue"
+                            android:layout_alignStart="@id/transfer_cost_label"
+                            android:layout_below="@id/transfer_cost_label"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/transfer_sale_preparation_total_cost"
+                            android:textAllCaps="true"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/transfer_with_fee_cost_label"
+                            style="@style/TransferSalePreparation.FieldLabel"
+                            android:layout_alignStart="@id/transfer_cost_label"
+                            android:layout_below="@id/total_cost_label"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/pd_sale_preparation_cost_with_fee"
+                            android:textAllCaps="true"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/total_cost_value"
+                            style="@style/TransferSalePreparation.FieldValue"
+                            android:layout_alignBaseline="@id/transfer_with_fee_cost_label"
+                            android:layout_alignParentEnd="true"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            tools:text="142.50 р." />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            style="@style/separator_horizontal_blue"
+                            android:layout_marginBottom="8dp" />
+
+                        <RadioGroup
+                            android:id="@+id/payment_type_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/payment_type_cash"
+                                style="@style/ToggleButton.Item"
+                                android:layout_height="@dimen/toggle_button_height"
+                                android:checked="true"
+                                android:text="@string/transfer_sale_preparation_payment_type_cash" />
+
+                            <RadioButton
+                                android:id="@+id/payment_type_card"
+                                style="@style/ToggleButton.Item"
+                                android:layout_height="@dimen/toggle_button_height"
+                                android:text="@string/transfer_sale_preparation_payment_type_card" />
+
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/saleButtonsLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/green"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:visibility="visible">
+
+                            <ru.ppr.core.ui.widget.SingleClickButton
+                                android:id="@+id/writeToCardBtn"
+                                style="@style/Core.App.Widget.Button.Gray"
+                                android:layout_width="0dp"
+                                android:layout_height="74dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_btn_gray_small_2016"
+                                android:text="@string/transfer_sale_preparation_write_to_card_btn"
+                                android:visibility="visible" />
+
+                            <ru.ppr.core.ui.widget.SingleClickButton
+                                android:id="@+id/printPdBtn"
+                                style="@style/Core.App.Widget.Button.Gray"
+                                android:layout_width="0dp"
+                                android:layout_height="74dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_btn_gray_small_2016"
+                                android:text="@string/transfer_sale_preparation_print_btn"
+                                android:visibility="visible" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

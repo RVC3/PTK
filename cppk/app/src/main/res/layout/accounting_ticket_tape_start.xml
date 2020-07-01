@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tape_start_title"
+        style="@style/black_title_with_white_text"
+        android:text="@string/accounting_ticket_tape" />
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/titles"
+        android:text="@string/ticket_tape_series"
+        android:layout_below="@id/tape_start_title" />
+
+    <EditText
+        android:id="@+id/ticket_tape_series"
+        style="@style/edit_text_style"
+        android:hint="15014ФВ"
+        android:inputType="textCapCharacters"
+        android:textStyle="italic"
+        android:layout_below="@id/textView1"
+        android:maxLength="7">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/TextView01"
+        style="@style/titles"
+        android:text="@string/ticket_tape_number"
+        android:layout_below="@id/ticket_tape_series" />
+
+    <EditText
+        android:id="@+id/ticket_tape_number"
+        style="@style/edit_text_style"
+        android:hint="123456"
+        android:inputType="textCapCharacters|numberSigned"
+        android:textStyle="italic"
+        android:layout_below="@id/TextView01"
+        android:maxLength="6" />
+
+    <RelativeLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:paddingBottom="@dimen/margin_for_button"
+        android:layout_alignParentBottom="true">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/print_tape_start"
+            style="@style/btn_gray"
+            android:onClick="onClick"
+            android:text="@string/print_start_report" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/print_pd"
+            style="@style/btn_gray"
+            android:layout_below="@id/print_tape_start"
+            android:onClick="onClick"
+            android:text="@string/print_test_pd" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/openShift"
+            style="@style/btn_gray"
+            android:layout_below="@+id/print_pd"
+            android:onClick="onClick"
+            android:text="@string/open_shift" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/beginWork"
+            style="@style/btn_gray"
+            android:layout_below="@+id/print_pd"
+            android:onClick="onClick"
+            android:text="@string/begin_work" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/continue_work"
+            style="@style/btn_gray"
+            android:layout_below="@+id/print_pd"
+            android:onClick="onClick"
+            android:text="@string/terminal_next" />
+    </RelativeLayout>
+
+    <ru.ppr.core.ui.widget.SimpleLseView
+        android:id="@+id/simpleLseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

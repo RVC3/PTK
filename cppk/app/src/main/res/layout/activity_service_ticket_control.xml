@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/black"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/ticketInfo"
+            style="@style/ServiceTicketControl.Tab"
+            android:checked="true"
+            android:text="@string/service_ticket_control_ticket_info" />
+
+        <RadioButton
+            android:id="@+id/cardInfo"
+            style="@style/ServiceTicketControl.Tab"
+            android:text="@string/service_ticket_control_card_info" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp" />
+
+</FrameLayout>

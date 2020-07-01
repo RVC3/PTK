@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_status_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <LinearLayout
+            android:id="@+id/error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="135dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@null"
+                android:padding="25dp"
+                android:src="@drawable/ic_password_incorrect" />
+
+            <TextView
+                style="@style/CapsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="@string/root_access_password_incorrect"
+                android:textColor="@color/defaultRed"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/CapsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/root_access_try_again"
+                android:textColor="@color/defaultRed"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/root_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="@string/root_access_password_hint"
+            android:imeOptions="actionDone"
+            android:inputType="numberPassword"
+            android:maxLength="20"
+            android:maxLines="1">
+
+            <requestFocus />
+        </EditText>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/done"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/set_user_done" />
+
+    </LinearLayout>
+
+</LinearLayout>

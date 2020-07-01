@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android">
+    <selector>
+        <item
+            android:drawable="@drawable/bg_btn_wb_sep_xml_disabled"
+            android:state_enabled="false" />
+        <item
+            android:drawable="@drawable/bg_btn_wb_sep_xml_pressed"
+            android:state_pressed="true" />
+        <item android:drawable="@drawable/bg_btn_wb_sep_xml_default" />
+    </selector>
+</inset>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ru.ppr.core.ui.widget.SimpleLseView
+        android:id="@+id/simpleLseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:textMessageSize="28sp" />
+
+    <FrameLayout
+        android:id="@+id/cashPaymentCancelView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="80dp"
+            android:text="@string/printing_pd_failed_need_cancel"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/cashPaymentCancelAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="50sp"
+            tools:text="100 р." />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/cashPaymentCancelContinueBtn"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="@string/btnOk" />
+
+    </FrameLayout>
+
+</FrameLayout>

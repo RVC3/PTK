@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/sendDocsToOfdBigTitle"
+        style="@style/black_title_with_white_text"
+        android:layout_alignParentTop="true"
+        android:text="@string/send_docs_to_ofd_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sendDocsToOfdUnsentDocumentsTitle"
+        style="@style/send_docs_to_ofd_label"
+        android:text="@string/send_docs_to_ofd_unsent_documents" />
+
+    <TextView
+        android:id="@+id/sendDocsToOfdUnsentDocsCountValue"
+        style="@style/send_docs_to_ofd_value"
+        tools:text="0" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <TextView
+        android:id="@+id/sendDocsToOfdFirstUnsentDocNumberTitle"
+        style="@style/send_docs_to_ofd_label"
+        android:text="@string/send_docs_to_ofd_first_unsent_document_number" />
+
+    <TextView
+        android:id="@+id/sendDocsToOfdFirstUnsentDocNumberValue"
+        style="@style/send_docs_to_ofd_value"
+        tools:text="0" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <TextView
+        android:id="@+id/sendDocsToOfdFirstUnsentDocDateTimeTitle"
+        style="@style/send_docs_to_ofd_label"
+        android:text="@string/send_docs_to_ofd_first_unsent_document_datetime" />
+
+    <TextView
+        android:id="@+id/sendDocsToOfdFirstUnsentDocDateTimeValue"
+        style="@style/send_docs_to_ofd_value"
+        tools:text="0" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/sendDocsToOfdUpdateBtn"
+        style="style/btn_gray"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/send_docs_to_ofd_update" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/sendDocsToOfdSendBtn"
+        style="style/btn_gray"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/send_docs_to_ofd_send" />
+
+    <LinearLayout
+        android:id="@+id/sendDocsToOfdErrorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/enter_e_ticket_main_padding">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ofd_settings_error_pic" />
+
+        <TextView
+            android:id="@+id/sendDocsToOfdErrorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/send_docs_to_ofd_error"
+            android:textColor="@color/red"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

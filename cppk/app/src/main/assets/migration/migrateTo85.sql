@@ -1,0 +1,1 @@
+ALTER TABLE CPPKTicketControl ADD COLUMN IsRestoredTicket INTEGER NOT NULL default 0;

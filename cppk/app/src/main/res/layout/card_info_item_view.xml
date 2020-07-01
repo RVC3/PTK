@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:gravity="center"
+    android:layout_margin = "5dp"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_desc_card_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+        android:textAlignment="gravity"
+        android:textSize="@dimen/repail_item_text_size"
+        android:text="Desc"/>
+
+    <TextView
+        android:id="@+id/tv_value_card_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.5"
+        android:textAlignment="center"
+        android:textSize="@dimen/repail_item_text_size"
+        android:text="Value"/>
+</LinearLayout>

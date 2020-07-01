@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SystemBar -->
+    <string name="systemBarPersent">100%</string>
+
+    <string name="app_name">CPPK</string>
+    <string name="set_datetime">Установить дату и время</string>
+    <string name="rfid_test">Тест карты</string>
+    <string name="barcode_title">Штрихкод</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="get_fw">Get Fw</string>
+    <string name="scan">Scan</string>
+    <string name="test">Тест</string>
+    <string name="sync_time_on_connect">Синхронизировать время\nпри подключении ПТК к\nАРМ \"Загрузка данных\"</string>
+    <string name="permlab_setTime">Установка времени</string>
+    <string name="permdesc_setTime">Позволяет пользователю самому установить время</string>
+    <string name="BSC">БСК</string>
+    <string name="change_button">Изменить</string>
+    <string name="attempts_limit_is_exceeded">Вы исчерпали лимит попыток</string>
+    <string name="bring_bsc">Поднесите БСК\nк считывателю</string>
+    <string name="and_hold_to_success">и удерживайте до\nуспешного удаления\nПД с БСК</string>
+    <string name="error">Ошибка</string>
+    <string name="attention">Внимание</string>
+    <string name="barcode_howto">Чек разместить дальше 8 см и ближе 16 см от сканера.\n
+        Светить зелёным светом на нижний штрихкод.\n Перпендикулярно плоскости чека.\n
+        Чек не болтать.</string>
+    <string name="pin">ПИН-код</string>
+    <string name="surname">Фамилия</string>
+    <string name="please_wait">Пожалуйста подождите</string>
+
+    <!-- Main Menu -->
+    <string name="main_menu_transfer_from">от %1$s</string>
+    <string name="titleSell">Оформление</string>
+    <string name="PD">ПД</string>
+    <string name="tools">Багаж</string>
+    <string name="readBarcodeBtn">Штрихкод</string>
+    <string name="readRfidButton">БСК</string>
+    <string name="settingsButton">Меню</string>
+
+    <!-- Welcome Activity -->
+    <string name="open_shift">Открыть смену</string>
+    <string name="begin_work">Начать работу</string>
+
+    <!--CommonMenuActivity-->
+    <string name="common_menu_dialog_backup_attention_message">Вы действительно\nхотите создать\nрезервную копию?</string>
+    <string name="common_menu_dialog_backup_attention_yes">Да</string>
+    <string name="common_menu_dialog_backup_attention_no">Нет</string>
+    <string name="common_menu_dialog_backup_completed_message">Резервная копия\nсоздана\n%1$s</string>
+    <string name="common_menu_dialog_backup_completed_ok">Ок</string>
+
+    <!-- BluetoothDeviceSearchActivity -->
+    <string name="device_collection_item_empty_name">неизвестное устройство</string>
+
+    <!-- Result Fragment -->
+    <string name="direction_there">Туда</string>
+    <string name="direction_back">Обратно</string>
+    <string name="direction_there_back">Туда - Обратно</string>
+    <string name="shift">"Смена: "</string>
+    <string name="allert_confirm_PD">Укажите билет, по которому осуществляется проезд</string>
+
+    <!--RfidResultActivity-->
+    <string name="rfid_result_no_ticket_for_transfer_msg">На карте отсутствует исходный ПД, к которому может быть оформлен трансфер</string>
+    <string name="rfid_result_no_ticket_for_transfer_ok_btn">Закрыть</string>
+
+    <!--ResultBarcodeActivity-->
+    <string name="result_barcode_no_ticket_for_transfer_msg">К ПД не может быть оформлен трансфер</string>
+    <string name="result_barcode_no_ticket_for_transfer_ok_btn">Закрыть</string>
+
+    <!-- Barcode and Rfid Activity -->
+    <string name="read_barcode">Наведите\nсканер\nна штрихкод</string>
+    <string name="read_barcode_faild_title_2">не удалось.</string>
+    <string name="fail_read_from_bsc">Информация с БСК\nне читается</string>
+    <string name="fail_read_frim_barcode">Штрихкод не может\nбыть считан.</string>
+    <string name="sale_pd">Оформить новый ПД</string>
+    <string name="barcode_read_rules">Почему не читается</string>
+    <string name="read_pd_error_title_2_pd">Неправильный ПД</string>
+    <string name="exec_read_bsc">Идет считывание БСК,\nпожалуйста, не убирайте карту</string>
+    <string name="control">Контроль</string>
+    <string name="repeat_read">Повторить считывание</string>
+    <string name="action_is_not_avaliable">Действие недоступно</string>
+
+    <!-- SplashActivity -->
+    <string name="splash_version">Версия %1$s</string>
+    <string name="splash_emergency_mode">Аварийный режим</string>
+    <string name="splash_msg_bring_card">Для авторизации\nподнесите карту доступа\nк считывателю</string>
+    <string name="splash_msg_disabling_status_bar">Проверка системных\nразрешений\nПодождите\u2026</string>
+    <string name="splash_msg_no_root">Недостаточно прав</string>
+    <string name="splash_msg_init_eds_error">Ошибка инициализации ЭЦП</string>
+    <string name="splash_msg_init_eds_progress">Инициализация ЭЦП\nПодождите\u2026</string>
+    <string name="splash_msg_update_cache_progress">Кеширование данных\nПодождите\u2026</string>
+    <string name="splash_auth_btn">Авторизоваться</string>
+    <string name="splash_repeat_btn">Повторить</string>
+    <string name="splash_msg_invalid_time_zone">Некорректный\nчасовой пояс</string>
+    <string name="splash_msg_invalid_device_id">Обнаружено несанкционированное\nизменение настроек.\nЗапуск невозможен</string>
+    <string name="splash_msg_invalid_nsi">Некорректная\nверсия НСИ,\nсинхронизируйте ПТК</string>
+    <string name="splash_msg_invalid_security">Некорректная версия\nбазы безопасности,\nсинхронизируйте ПТК</string>
+    <string name="splash_msg_lock_more_than_one_day">Более суток</string>
+    <string name="splash_msg_time_to_unlock">ПТК заблокирован\nДо разблокировки осталось\n%1$s</string>
+    <string name="splash_msg_default_init_error">Ошибка инициализации</string>
+
+    <!-- Auth -->
+    <string name="Exit">Выход</string>
+    <string name="Yes">Да</string>
+    <string name="No">Нет</string>
+
+    <!-- BarcodeResultFragment -->
+    <string name="not_found">Не найдено</string>
+    <string name="Other">Прочие</string>
+
+    <!-- Settings menu -->
+    <string name="settings">НАСТРОЙКИ</string>
+    <string name="create_report">Формирование отчетности</string>
+    <string name="info_service">Статистика</string>
+    <string name="uchet_lenti">Учет билетной ленты</string>
+    <string name="devices">Устройства</string>
+    <string name="countChange">Рассчитать сдачу</string>
+    <string name="menu_fine_sale">Взимание штрафа</string>
+    <string name="canselPD">Аннулировать ПД</string>
+    <string name="closeShift">Закрыть смену</string>
+    <string name="printNotSendDocsSheet">Отчет о непереданных ФД</string>
+    <string name="close_pos_terminal_day">Закрыть день на POS-терминале</string>
+    <string name="sendDocsToOfd">Отправка документов в ОФД</string>
+    <string name="closeMonth">Закрыть месяц</string>
+    <string name="logout">Выйти</string>
+    <string name="backup">Резервное копирование</string>
+    <string name="sell_pd_for_last_shift">Статистика продаж за последнюю смену</string>
+    <string name="check_pd_for_last_shift">Статистика проверок ПД за последнюю смену</string>
+    <string name="check_ett_for_last_shift">Статистика проверок ЭТТ за последнюю смену</string>
+    <string name="tariffs">Маршруты и тарифы</string>
+    <string name="updates_ptk">Статистика обновлений ПТК</string>
+    <string name="statistics_update_version">Версия</string>
+    <string name="passenger_train">Пассажирский</string>
+    <string name="fast_train">Скорый</string>
+    <string name="full_pd">Полный</string>
+    <string name="kids_pd">Детский</string>
+    <string name="set_success_sound">Изменить звук удачного считывания</string>
+    <string name="set_fail_sound">Изменить звук НЕудачного считывания</string>
+    <string name="syncQuestion">Синхронизировать?</string>
+    <string name="settings_menu_progress_printing_not_sent_docs">Печать отчета о непереданных в ОФД документах</string>
+
+    <!-- Settings -->
+
+    <string name="default_str"> — </string>
+    <string name="db_info">Базы данных</string>
+    <string name="current_version_title">Текущая - </string>
+    <string name="new_version_title">Новая - </string>
+    <string name="settings_control_detail_config_train_category">Настроить категорию поезда\nконтроля</string>
+    <string name="settings_control_detail_config_transfer_route">Настроить маршрут трансфера</string>
+    <string name="user_data">Посмотреть данные пользователя</string>
+    <string name="wifi_settings">Настройка Wi-Fi</string>
+    <string name="settings_sound">Настроить звук</string>
+    <string name="delete_app">Удалить приложение</string>
+    <string name="start_file_manager">Запустить файл-менеджер</string>
+    <string name="start_cpchdkcone">Запустить CpcHdkCone</string>
+    <string name="save">Сохранить</string>
+    <string name="really_exit">Выйти?</string>
+    <string name="really_exit_to_emergensy_mode">Выйти в аварийный режим?</string>
+    <string name="transfer_selling_possibility">Доступность оформления трансфера</string>
+    <string name="control_type_mode">Режим контроля</string>
+    <string name="control_type_mode_train">в поезде</string>
+    <string name="control_type_mode_bus">в автобусе</string>
+    <string name="train_category">Категория поезда контроля</string>
+    <string name="train_6000">6000</string>
+    <string name="train_7000">7000</string>
+    <string name="additional_settings_transfer_route">Маршрут трансфера</string>
+    <string name="additional_settings_transfer_route_direction">Направление движения трансфера</string>
+    <string name="additional_settings_transfer_route_direction_value">от %1$s</string>
+    <string name="additional_settings_transfer_departure_date">Дата отправления</string>
+    <string name="additional_settings_transfer_departure_time">Время отправления</string>
+    <string name="speed">Скорость -</string>
+    <string name="eror_set_date">Дату может изменять только сотрудник ЦТО</string>
+    <string name="day_code">Код дня</string>
+    <string name="sell_and_control">Продажа и контроль</string>
+    <string name="about_ptk">Об устройстве</string>
+    <string name="date_and_time">Дата и время</string>
+    <string name="interfacEE">Интерфейс</string>
+    <string name="update">Обновления</string>
+    <string name="other">Прочее</string>
+    <string name="ptk_number">Номер ПТК</string>
+    <string name="ptk_area">Участок обслуживания</string>
+    <string name="ptk_binding_station">Станция привязки</string>
+    <string name="ptk_station">Станция</string>
+    <string name="mobile_cassa">Мобильная касса</string>
+    <string name="time_of_repail">Время на\nаннулирование ПД</string>
+    <string name="time_close_shift">Период времени\nдля вывода\nпредупреждений\nо закрытии смены</string>
+    <string name="new_workstation">Новая станция работы ПТК</string>
+    <string name="new_binding_station">Новая станция привязки ПТК</string>
+    <string name="permission_to_excess">Разрешение на превышение допустимого периода\nизменения времени</string>
+    <string name="short_minute">%1$2d мин</string>
+    <string name="accessFunctionError">Функция недоступна для пользователя</string>
+    <string name="not_specified">Не задано</string>
+    <string name="not_choose_work_station">Не выбрана станция работы ПТК</string>
+    <string name="menu">Меню</string>
+    <string name="stop_list_action_day">Срок действия\nверсии стоп-листов</string>
+    <string name="stop_list_action_day_count">%1$2d дней</string>
+    <string name="getVersionError">Не найдено</string>
+    <string name="enter_ptk_area">УКАЖИТЕ УЧАСТОК</string>
+
+    <!-- Settings ControlDetail layout -->
+    <string name="settings_control_detail_train_category">Категория поезда контроля</string>
+    <string name="settings_control_detail_transfer_route">Маршрут трансфера</string>
+
+    <!-- Enter pin layout -->
+    <string name="enter_pin">Введите ПИН-код</string>
+    <string name="pin_validation">Идёт проверка…</string>
+    <string name="pin_error_message">Неверный пин или Ошибка ЭЦП\nПопробуйте еще раз.</string>
+    <string name="attempt_count">Количество оставшихся\nпопыток:</string>
+    <string name="try_again">Попробуйте еще раз</string>
+    <string name="btnOk">Ок</string>
+    <string name="btnCancel">Отмена</string>
+    <string name="empty_pin">Значение ПИН-кода\nсодержит некорректные\nданные.</string>
+    <string name="pin_ok">Проверка ПИН успешно пройдена</string>
+    <string name="role_not_found">Роль не найдена</string>
+    <string name="unknown_message">Неизвестная ошибка</string>
+    <string name="start_time_error">Некорректна дата начала -</string>
+    <string name="end_time_off">Ваша карта просрочена. Срок истек </string>
+    <string name="end_time_ok">Дата окончания действия вашей карты</string>
+    <string name="no_card_date_limit">бессрочна</string>
+
+    <!-- PD fragments -->
+    <string name="simple_pd_no_exemption_for_fare_pd">-</string>
+    <string name="simple_pd_no_exemption_for_any_pd">Нет</string>
+    <string name="sale_date_title">Дата продажи:</string>
+    <string name="date_title">Дата проезда:</string>
+    <string name="valid">ДЕЙСТВУЕТ</string>
+    <string name="not_valid">НЕ ДЕЙСТВУЕТ</string>
+    <string name="validity">Срок\nдействия: </string>
+    <string name="validity_with">с</string>
+    <string name="validity_to">по</string>
+    <string name="left_trip_tite">Осталось поездок: </string>
+    <string name="last_passage">Последний\nпроход: </string>
+    <string name="decrement_trip">Списать поездку</string>
+    <string name="decrement_trip_dialog_msg">Списать поездку?</string>
+    <string name="fix_passage_mark_dialog_msg">Исправить метку прохода?</string>
+    <string name="exemption_title">Льгота</string>
+    <string name="sale_pd_extra_charge">Оформить доплату</string>
+    <string name="sale_transfer">Оформить трансфер</string>
+    <string name="ticket_is_not_valid">Билет НЕдействителен</string>
+    <string name="tickets_is_not_valid">Билеты НЕдействительны</string>
+    <string name="ticket_is_valid">Билет действителен</string>
+    <string name="date_actions_title">Срок действия: </string>
+    <string name="number_for_pd">№ %06d</string>
+    <string name="fare_category">Доплата до ск к док. № %06d</string>
+    <string name="more_n_hours">БОЛЕЕ %d ЧАСОВ НАЗАД</string>
+    <string name="no_passages">Проходов не было</string>
+    <string name="repail_button">Аннулировать</string>
+    <string name="pd_is_write">Записан</string>
+    <string name="simple_pd_fragment_error_msg_not_implemented">Доплата к\nльготному абонементу\nневозможна</string>
+
+    <!-- BSC info fragment -->
+    <string name="type_bsc">БСК:</string>
+    <string name="type_scm">СКМ:</string>
+    <string name="type_scmo">СКМО:</string>
+    <string name="type_ipk">ИПК:</string>
+    <string name="type_trk">Тройка:</string>
+    <string name="type_ett">ЭТТ:</string>
+    <string name="type_str">Стрелка:</string>
+    <string name="status_bsc">Статус БСК:</string>
+    <string name="status_yes_stop_list">В СТОП-ЛИСТЕ</string>
+    <string name="stop_list_message_with_reason">БСК находится в стоп-листе.\n(%s)</string>
+    <string name="FIO_title">ФИО:</string>
+    <string name="exemption_value_title">Размер льготы: </string>
+    <string name="name_station_pass_title">Станция\nпрохода:</string>
+    <string name="unknown_bsc_type">Неизвестный тип БСК</string>
+    <string name="incorrect_data">Некорректные данные</string>
+    <string name="reason_card_stop_list">Причина постановки БСК\nв стоп-лист</string>
+
+    <!-- ErrorFragment -->
+    <string name="error_fragment_invalid_device_id">Ключ ЭЦП невалиден</string>
+    <string name="error_fragment_not_pd_on_bsc">На БСК нет записанных ПД</string>
+    <string name="error_fragment_not_pd_for_cancel_not_found">Билет для аннулирования не найден</string>
+    <string name="error_fragment_tariff_not_found">Тариф продажи ПД не найден в НСИ</string>
+    <string name="error_fragment_incorrect_data">Некорректные данные</string>
+
+    <!-- Error message -->
+    <string name="incorrect_ecp_number">ЭЦП не прошла проверку</string>
+    <string name="set_time_5_minute_error">Вы не можете изменить время более чем на 5 мин.</string>
+    <string name="set_time_last_check_after_date_error">Нельзя установить время меньше времени печати последнего документа</string>
+    <string name="title_activity_s3_6__user_data">Данные пользователя</string>
+    <string name="user_not_found">Пользователь не найден!\nПроверьте ПИН-код</string>
+    <string name="card_not_found">Карта не найдена</string>
+    <string name="invalid_password">Пароль пользователя не валиден</string>
+    <string name="invalid_role">У пользователя нет ролей для участка</string>
+    <string name="invalid_role_new_card">Неизвестная роль пользователя. Выполните синхронизацию</string>
+    <string name="invalid_time">Дата начала действия карты еще не наступила</string>
+    <string name="card_not_active">Карта заблокирована</string>
+    <string name="authDisabledForThisRole">Авторизация недоступна для этой роли</string>
+    <string name="unknown_error">Неизвестная ошибка</string>
+    <string name="write_to_card_success">Запись успешна</string>
+    <string name="uid_does_not_mathc">Не совпали id исходной и записываемой карты</string>
+    <string name="can_not_search_card">Карта не найдена</string>
+    <string name="write_error">Ошибка при записи данных на карту</string>
+    <string name="incorrect_input">Некорректный ввод</string>
+    <string name="error_msg_ticket_tape_is_not_set">Билетная лента\nне установлена</string>
+    <string name="bsc_overflow_message">Карта заполнена.</string>
+    <string name="disabled_write_pd_to_this_bsk">Запрещена запись на данный тип БСК.</string>
+
+    <!-- Open Shift activity/fragment -->
+    <string name="print_test_pd">Напечатать пробный ПД</string>
+    <string name="openShift_Continue">Продолжить</string>
+    <string name="opening_shift">Открытие смены</string>
+    <string name="shift_is_open">Смена открыта</string>
+    <string name="print_test_shift_sheet">Напечатать пробную\nсменную ведомость</string>
+    <string name="stop_list_is_overdue">Смена не может быть открыта, т.к. истек срок действия стоп-листов</string>
+    <string name="choose_section">Смена не может быть открыта, сперва выберите участок!</string>
+    <string name="choose_binding_station">Смена не может быть открыта, сперва выберите станцию привязки!</string>
+    <string name="choose_work_station">Смена не может быть открыта, сперва выберите станцию работы!</string>
+    <string name="welcome_activity_shift_cant_be_opened_set_transfer_route">Смена не может быть открыта, не задан маршрут трансфера!</string>
+    <string name="set_ticket_tape">Смена не может быть открыта, сперва установите билетную ленту!</string>
+    <string name="rds_not_load">Требуется загрузить НСИ.\nСинхронизируйте ПТК</string>
+    <string name="attention_close_shit">Смена будет закрыта через %1$2d мин. Закрыть сейчас?</string>
+    <string name="critical_nsi_attention">Критичная версия НСИ не применена. Требуется переоткрыть смену через %1$2d мин.</string>
+    <string name="critical_nsi_close_message">Критичная версия НСИ не применена. Требуется переоткрыть смену.</string>
+    <string name="critical_nsi_close">Закрыть смену</string>
+    <string name="critical_nsi_close_ok">Ок</string>
+    <string name="date">Дата</string>
+    <string name="time">Время</string>
+
+    <!-- Enter user id -->
+    <string name="enter_user_id_hint">Задайте номер ПТК</string>
+    <string name="enter_serialNumber_hint">Задайте заводской номер ПТК</string>
+    <string name="incorrect_user_id">Некорректный номер</string>
+    <string name="toast_need_root">Требуются root права, для активации!</string>
+    <string name="system_bar_enabled">Статус-бар разрешен!</string>
+    <string name="system_bar_disabled">Статус-бар запрещен!</string>
+
+    <string-array name="baudrate">
+        <item>"9600"</item>
+        <item>"19200"</item>
+        <item>"38400"</item>
+        <item>"57600"</item>
+        <item>"115200"</item>
+    </string-array>
+
+    <!-- ErrorActivity -->
+    <string name="error_activity_ticket_not_found">Информация с БСК не может быть считана</string>
+    <string name="error_activity_repeal_incorrect_pd">Невозможно аннулировать данный ПД</string>
+    <string name="error_activity_read_barcode_fail_title_2">не удалось.</string>
+
+
+    <!-- DebugToasts -->
+
+    <!-- Debug -->
+    <string-array name="sam_nb_array">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- DebugBackupActivity -->
+    <string-array name="max_files_count_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <!-- PrinterDebug -->
+    <string name="select_device">Выберите устройство</string>
+    <string name="none_found">Устройства не найдены</string>
+    <string name="scanning">Поиск устройств&#8230;</string>
+    <string name="title_other_devices">Другие устройства</string>
+    <string name="title_paired_devices">Соединенные устройства</string>
+    <string name="button_scan">Сканирование</string>
+    <string name="button_skip">Пропустить</string>
+    <string name="none_paired">Ни одно устройстве не было подлкючено</string>
+
+    <!-- DebugRfid1Activity -->
+    <string name="readImage">Прочитать образ</string>
+    <string name="writeImage">Записать образ</string>
+    <string name="clearMarkUltralight">Очистить метку прохода с Ultralight (C/Ev1) (v5)</string>
+    <string name="setTrashToPassageMarkUltralight">Мусор в метку прохода Ultralight (C/Ev1) (FF)</string>
+    <string name="setPassageMarkV5ToUltralight">Записать метку прохода v5 Ultralight (C/Ev1)</string>
+    <string name="readPassageMarkFromUltralightC">Прочитать метку Ultralight (C/Ev1)</string>
+    <string name="clearEcpFromSkm">СКМ ЭЦП</string>
+    <string name="writeUlPd">Записать ПД на Ultralight</string>
+    <string name="readCard">Прочитать карту</string>
+    <string name="PassageMark_WriteOk">Запись успешна!</string>
+    <string name="PassageMark_ErrorWrite">Неудача (ошибка записи)</string>
+    <string name="PassageMark_ErrorRead">Неудача (ошибка чтения)</string>
+    <string name="PassageMark_ErrorReadAfterWrite">Неудача (ошибка чтения после записи)</string>
+    <string name="PassageMark_ErrorCardType">Неудача - карта не Ultralight</string>
+
+    <!-- DebugRfid2Activity -->
+    <string name="UlErrorCardType">Ошибка - карта не Ultralight</string>
+
+    <!-- BarcodeTestActivity -->
+    <string name="BarcodeTestStartScan">Сканировать</string>
+
+    <!-- Debug -->
+    <string name="DebugInfoTecs">InfoTecs</string>
+    <string name="DebugEcpType">Тип ЭЦП</string>
+    <string name="DebugRFID">RFID</string>
+    <string name="DebugUseSam">Использовать SAM</string>
+    <string name="DebugSamNumber">Номер SAM:</string>
+    <string name="DebugRFID_1">RFID_1</string>
+    <string name="DebugRFID_2">RFID_2</string>
+    <string name="DebugReadTimeNotify">Уведомление о потраченном на считывание карты времени</string>
+    <string name="DebugArmSync">Синхронизация с АРМ</string>
+    <string name="DebugCheckProtocol">Проверка протокола</string>
+    <string name="DebugBackup">Резервное копирование</string>
+    <string name="DebugBackupAndRestore">Backup And Restore</string>
+    <string name="DebugBarcode">Штрихкод</string>
+    <string name="DebugTestBarcode">Тест Сканера ШК</string>
+    <string name="DebugBarcodeType">Тип Баркода</string>
+    <string name="DebugTppd">ТППД</string>
+    <string name="DebugTppdCouponTest">Тест талонов</string>
+    <string name="DebugPerformance">Performance</string>
+    <string name="DebugNsiQueryTest">Тест запросов к nsi</string>
+    <string name="DebugSqliteTransactionTest">Тест транзакций sqlite</string>
+    <string name="DebugPtkState">Состояние ПТК</string>
+    <string name="DebugRole">Роль</string>
+    <string name="DebugAddEventPrintTestPd">Добавить событие печати тестового ПД</string>
+    <string name="DebugCommonSettingsManagement">Общие настройки</string>
+    <string name="DebugPrivateSettingsManagement">Частные настройки</string>
+    <string name="DebugChangeWorkMode">Изменить режим работы</string>
+    <string name="DebugShiftStateControl">Управление состоянием смены</string>
+    <string name="DebugAddSuccessSyncEvent">Добавить событие успешной синхронизации</string>
+    <string name="DebugBatteryTest">Тестирование аккумулятора</string>
+    <string name="DebugExitToEmergencyMode">Выход в аварийный режим</string>
+    <string name="DebugIsErrorNotify">Уведомления об ошибках</string>
+    <string name="DebugSalePdPossibility">Возможность продажи билетов</string>
+    <string name="DebugIsUseMobileDate">Использовать мобильные данные вместо Wi-Fi</string>
+    <string name="DebugPrint">Печать</string>
+    <string name="DebugMonthlySheet">MonthlySheet</string>
+    <string name="DebugShiftSheet">ShiftSheet</string>
+    <string name="DebugAuditTrail">AuditTrail</string>
+    <string name="DebugTestShiftSheet">TestShiftSheet</string>
+    <string name="DebugPrinterTest">PrinterTest</string>
+    <string name="DebugMoebiusNewSDK">Moebius (New SDK)</string>
+    <string name="DebugMoebiusVirtualEKLZ">Moebius Virtual EKLZ</string>
+    <string name="DebugFilePrinter">Файловый принтер</string>
+    <string name="DebugShtrihPrinter">Штрих</string>
+    <string name="DebugBankTerminal">Банковский терминал</string>
+    <string name="DebugPosTest">Тестирование банковского терминала</string>
+    <string name="DebugPosUsePossibility">Возможность использовать банковский терминал</string>
+    <string name="DebugPosSimulator">Симулятор банковского терминала</string>
+    <string name="DebugIngenico">Ingenico</string>
+    <string name="DebugInpas">Inpas</string>
+    <string name="DebugSystem">Система</string>
+    <string name="DebugEnableStatusBar">Разрешить статус-бар</string>
+    <string name="DebugDisableStatusBar">Запретить статус-бар</string>
+    <string name="DebugOpenSystemProperties">Открыть системные настройки</string>
+    <string name="DebugWiFiSettings">Настройка Wi-Fi</string>
+    <string name="DebugOther">Прочее</string>
+    <string name="DebugLogout">Выход</string>
+    <string name="DebugLogoutToEmergencyMode">Выход в аварийный режим</string>
+
+    <!-- ArmActivity -->
+    <string name="armSync">Синхронизация с АРМ</string>
+    <string name="armDetectApkUserArmMessage">Для установки обновления нажмите на ПТК «Установить», затем «Открыть»</string>
+
+    <!-- Sale PD -->
+    <string name="sale_pd_departure_station_hint">ОТКУДА</string>
+    <string name="sale_pd_destination_station_hint">КУДА</string>
+    <string name="fee">Сбор за оформление</string>
+    <string name="fee_for_train_category">Сбор за оформление\nв поезде</string>
+    <string name="fee_for_registration_at_destination">Сбор за оформление\nв пункте назначения</string>
+    <string name="cost_one_ticket">Стоимость 1 билета\u003A</string>
+    <string name="cost_one_baggage">Стоимость 1 квитанции\u003A</string>
+    <string name="totalCostPd">ИТОГО</string>
+    <string name="withFee">C УЧЕТОМ ЛЬГОТЫ И СБОРА</string>
+    <string name="bankCard">Банк. карта</string>
+    <string name="cash">Наличные</string>
+    <string name="sendETicket">Отправить электронный чек</string>
+    <string name="writePdToCard">Записать на\nБСК</string>
+    <string name="deletePdFromCard">Удаление билета</string>
+    <string name="printPd">Распечатать билет</string>
+    <string name="find_bsc">Поиск карты</string>
+    <string name="find_place_wor_write_pd">Поиск места для записи ПД</string>
+    <string name="read_bsc">Считывание данных с карты</string>
+    <string name="sign_data">Подпись данных</string>
+    <string name="pull_card_please">Поднесите БСК \n к считывателю</string>
+    <string name="card_is_full">ПД не может быть записан на карту\n(на карте уже есть\nдва ПД)</string>
+    <string name="card_not_found_while_write_pd">Карта не найдена</string>
+    <string name="error_write_pd_to_card">Билет не записан.\nОшибка записи</string>
+    <string name="one_off_without_money">Разовый безденежный</string>
+    <string name="one_off_with_exemption">Разовый льготный</string>
+    <string name="repeat">Повторить</string>
+    <string name="incorrect_type_card">На данную карту не может быть записан данный ПД</string>
+    <string name="error_while_make_ecp">Ошибка формирования ЭЦП</string>
+    <string name="pd_title">Разовый ПД</string>
+    <string name="baggage_title">Продажа квитанции</string>
+    <string name="issue">Оформить</string>
+    <string name="print_pd_success">Билет успешно \nраспечатан</string>
+    <string name="write_pd_success">Билет успешно \nзаписан</string>
+    <string name="calculate_delivery">Рассчитать сдачу</string>
+    <string name="bay_new_baggage">Докупить багаж</string>
+    <string name="sell_new_pd">Оформить новый ПД</string>
+    <string name="rub_cent_as_single">%.2f р.</string>
+    <!-- шаблон, когда надо отобразить цену как одно значение -->
+    <string name="rub_cent">%1$d р. %2$d к.</string>
+    <!-- шаблон, когда надо отобразить рубли и копейки как 2 значения -->
+    <string name="rub_only">%d р.</string>
+    <!-- шаблон, когда нужно отобразить рубли только рубли, без копеек -->
+    <string name="pd_cost">Стоимость билетов</string>
+    <string name="done">Готово</string>
+    <string name="saleDisabledInThisVersion">Продажа билетов запрещена в этой версии ПО</string>
+    <string name="using_exemption_title">Использование льготы</string>
+    <string name="print_pd">Распечатать ПД</string>
+    <string name="write_pd">Запись ПД</string>
+    <string name="sale_pd_msg_progress_pd_is_printing">Печать документа</string>
+    <string name="sale_pd_error_exemption_input_manually">При ручном вводе льготы нельзя записать на БСК!</string>
+    <string name="sale_pd_error_exemption_read_from_card">Если льгота считана с карты, нельзя распечатать билет</string>
+    <string name="sale_pd_tariff_plan_not_found">Тарифный план не найден</string>
+    <string name="sale_exemption_code_and_percentage">%1$d/%2$d%%</string>
+    <string name="time_for_shift_ended">Вышло 24 часа. Необходимо закрыть смену</string>
+    <string name="incorrect_fr_state">Некорректное состояние ФР. Необходимо закрыть смену</string>
+
+    <!-- Экран ввода льготы вручную-->
+    <string name="add_exemption_manual_msg_error_empty_fio">Укажите ФИО\nнапример: Иванов И. И.</string>
+    <string name="add_exemption_manual_msg_error_empty_snils_number">Укажите номер\nСНИЛСа</string>
+    <string name="add_exemption_manual_msg_error_empty_document_number">Укажите номер\nдокумента</string>
+    <string name="add_exemption_manual_msg_error_invalid_snils">Номер СНИЛС\nуказан не верно</string>
+    <string name="add_exemption_manual_msg_error_empty_issue_date">Укажите дату\nвыдачи документа</string>
+
+    <!-- globals_view -->
+
+    <!-- Check values -->
+
+    <!-- Repeal Activity -->
+    <string name="repeal_title">Аннулирование</string>
+    <string name="executed_pd">Оформленные ПД</string>
+    <string name="amount">Сумма:</string>
+    <string name="fee_short">Сбор:</string>
+    <string name="repeal_amount">Сумма всего:</string>
+    <string name="repeal_fee_short">вкл. сбор:</string>
+    <string name="double_repeal_message">Данный ПД уже был аннулирован</string>
+    <string name="repeal_time_end">Время аннулирования истекло</string>
+    <string name="repeal_question">Аннулировать?</string>
+    <string name="repeal_is_impossible">Аннулирование невозможно</string>
+    <string name="pd_sell_on_other_ptk">Билет продан на другом ПТК</string>
+    <string name="pd_sell_on_other_shift">Смена продажи билета закрыта</string>
+    <string name="repeal_is_possibly">Аннулирование возможно</string>
+    <string name="repeal_title_past">Аннулирован</string>
+    <string name="repeal_not_last_pd">Аннулируется не последний ПД</string>
+    <string name="repeal_sell_on_other_ptk_title">Ошибка аннулирования ПД</string>
+    <string name="success_repeal">Билет успешно аннулирован</string>
+    <string name="success_repeal_but_not_add_to_db">Ошибка при аннулировании ПД</string>
+    <string name="delete_pd_from_bsc">Удалить ПД с БСК?</string>
+    <string name="repeal_to_doc_number">Док. №</string>
+    <string name="repeal_reason">ПРИЧИНА</string>
+    <string name="repeal_check">ЧЕК ВОЗВРАТА ПРОДАЖИ</string>
+    <string name="repeal_sum_for_check">СУММА ЗА ДОКУМЕНТ</string>
+    <string name="print_repeal_pd_message">Подождите, идет печать чека аннулирования</string>
+    <string name="repeal_reason_title">Причина аннулирования</string>
+    <string name="repeal_error_no_reason">Отсутствуют причины аннулирования/nАннулирование невозможно</string>
+    <string name="fare">ДОПЛАТА ДО&#160;СК</string>
+    <string name="start_repeal">Начато удаление билета</string>
+    <string name="repeal_activity_dialog_fiscal_doc_state_sync_processing_message">Подождите, идет получение списка оформленных ПД.\nУбедитесь, что фискальный регистратор доступен</string>
+    <string name="repeal_activity_dialog_fiscal_doc_state_sync_retry_message">Операция не может быть выполнена.\nФискальный регистратор недоступен.</string>
+    <string name="repeal_activity_dialog_fiscal_doc_state_sync_retry_ok">Повтор.</string>
+    <string name="repeal_activity_dialog_fiscal_doc_state_sync_retry_close">Отмена</string>
+    <string name="repeal_activity_from_history_transfer_type">ТРАНСФЕР</string>
+    <string name="repeal_activity_from_history_transit_type">ТРАНЗИТ</string>
+    <string name="repeal_pd_fragment_transfer_type">ТРАНСФЕР</string>
+    <string name="repeal_pd_fragment_payment_type_cash">Наличные</string>
+    <string name="repeal_pd_fragment_payment_type_card">Банк. карта</string>
+
+    <!-- accounting ticket tape -->
+    <string name="accounting_ticket_tape">Учет билетной ленты</string>
+    <string name="print_end_report">Напечатать отчет\nокончания билетной ленты</string>
+    <string name="print_start_report">Напечатать отчет\nустановки билетной ленты</string>
+    <string name="ticket_tape_series">Серия (00000ХХ)</string>
+    <string name="ticket_tape_number">Номер (№000000)</string>
+    <string name="invalid_series">Серия указана неверно</string>
+    <string name="invalid_number">Номер указан неверно</string>
+    <string name="accounting_ticket_tape_start_print_tape_start_sheet_error">Ошибка печати\nотчета установки\nбилетной ленты</string>
+
+    <!-- update statistics -->
+    <string name="connection_to_arm">Подключение к АРМ\n«Загрузки данных»</string>
+    <string name="uploading_data">Выгрузка данных о\nконтроле и продаже\nПД</string>
+    <string name="updating_PO">Обновление ПО</string>
+    <string name="updating_NCI">Обновление НСИ</string>
+    <string name="updating_stop_lists">Обновление стоп-\nлистов</string>
+    <string name="statistics_update_no_data">Нет данных</string>
+
+    <!-- sound settings -->
+    <string name="sound">Звук</string>
+    <string name="sound_on_read_success">При удачном\nсчитывании БСК/ПД</string>
+    <string name="sound_on_read_error">При НЕудачном\nсчитывании БСК/ПД</string>
+
+    <!-- mobile cash -->
+    <string name="is_activated">Активирована</string>
+    <string name="output">На выход</string>
+    <string name="work_station">Станция работы ПТК</string>
+    <string name="is_not_activated_msg">Режим "Мобильная касса" не активирован</string>
+
+    <!-- binding station -->
+    <string name="binding_station">Станция привязки ПТК</string>
+
+    <!-- input dialogs -->
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_complete">Готово</string>
+    <string name="dialog_close">Закрыть</string>
+    <string name="dialog_warning_time_to_close_shift">Смена должна быть закрыта через {1} минут. При истечении времени работа на ПТК будет невозможна</string>
+    <string name="dialog_cur_day_code">Текущий код дня: </string>
+    <string name="dialog_new_day_code">Новый код дня</string>
+    <string name="dialog_cur_ptk_number">Текущий номер ПТК: </string>
+    <string name="dialog_new_ptk_number">Новый номер ПТК</string>
+    <string name="dialog_cur_time_for_annulate">Текущее время на аннулирование ПД, мин: </string>
+    <string name="dialog_new_time_for_annulate">Новое время на аннулирование ПД, мин</string>
+    <string name="dialog_ime_for_annulate">Время на аннулирование ПД</string>
+    <string name="dialog_cur_time_to_close_shift_message">Текущий период, мин: </string>
+    <string name="dialog_new_time_to_close_shift_message">Новый период, мин</string>
+    <string name="dialog_not_valid_msg">Некорректные данные</string>
+    <string name="dialog_enter_new_day_code">Введите код дня</string>
+    <string name="dialog_incorrect_day_code">Значение кода дня\nсодержит некорректные\nданные.</string>
+    <string name="dialog_set_stopList_day_count">Текущее количество дней:</string>
+    <string name="dialog_new_stop_list_action_days">Количество дней действия</string>
+    <string name="dialog_new_stop_list_action_days_title">Новое количество дней</string>
+    <string name="dialog_new_stop_list_action_days_error">Ошибка в воде количества дней</string>
+    <string name="dialog_incorrect_day_code_try_again">Попробуйте еще раз.</string>
+
+    <!-- Fare -->
+    <string name="fare_title">Оформление ПД по доплате</string>
+    <string name="fare_base">Основание\u003A</string>
+    <string name="fare_KTT">ID ККТ\u003A</string>
+    <string name="fare_cost">Стоимость доплаты\u003A</string>
+    <string name="fare_tariff">Тариф</string>
+    <string name="fare_tariff_not_found">Тариф доплаты не найден</string>
+
+    <!-- confirm dialogs -->
+    <string name="question_sell_new_pd">Оформить новый\nПД?</string>
+
+    <!-- Экран оформления ПД-->
+    <string name="sale_pd_station_select_dialog_error_check_sign_message">Ошибка компонента Безопасный билет</string>
+    <string name="sale_pd_station_select_dialog_error_check_sign_ok_btn">Закрыть</string>
+
+    <!-- Statistic -->
+    <string name="statistic_for_last_shift">Статистика продаж\nза последнюю смену</string>
+    <string name="statistic_OPENED">ОТКРЫТА</string>
+    <string name="statistic_SHIFT">СМЕНА</string>
+    <string name="statistic_shift_opened">Открытие:</string>
+    <string name="statistic_shift_close">Закрытие:</string>
+    <string name="statistic_count">Количество</string>
+    <string name="statistic_count_pd">ВСЕГО ПД</string>
+    <string name="statistic_count_baggage">ВСЕГО багаж</string>
+    <string name="statistic_count_transfer">ВСЕГО ТРАНСФЕР</string>
+    <string name="statistic_not_data">Нет данных</string>
+    <string name="statistic_check_without_place">ПД без места</string>
+    <string name="statistic_check_with_place">ПД c местом</string>
+    <string name="statistic_check_from_barcode">ПД со штрихкодом</string>
+    <string name="statistic_check_from_bsc">ПД на БСК</string>
+    <string name="statistic_check_with_exemption">Льготные ПД</string>
+
+    <!-- Статистика проверок ПД за последнюю смену -->
+    <string name="statistics_check_title">Статистика проверок ПД\nза последнюю смену</string>
+    <string name="statistics_check_ett_title">Статистика проверок ЭТТ"\nза последнюю смену</string>
+    <string name="statistics_check_total">ВСЕГО</string>
+    <string name="statistics_check_total_unique">из них уникальных</string>
+
+    <!-- Статистика проверок ЭТТ за последнюю смену -->
+    <string name="statistics_check_ETT_ETT">ЭТТ:</string>
+    <string name="statistics_check_ETT_PD">ПД:</string>
+    <string name="statistics_check_ETT_PD_date">Дата продажи ПД:</string>
+    <string name="statistics_check_ETT_total">Всего проверено ПД на ЭТТ:</string>
+
+    <!-- Connection state -->
+    <string name="connection_state_activity_title">Ошибка подключения\nк устройству</string>
+    <string name="connection_state_activity_device">Устройство:</string>
+    <string name="connection_state_activity_description">Описание:</string>
+    <string name="connected_device_rfid">RFID-модуль</string>
+    <string name="connected_device_barcode">Сканер штрих кодов</string>
+
+    <!-- ARM connected state -->
+    <string name="arm_connected_state_activity_title">РЕЖИМ СИНХРОНИЗАЦИИ</string>
+    <string name="finishSync">Прервать синхронизацию</string>
+    <string name="realyFinishSync">Вы действительно хотите прервать синхронизацию?</string>
+
+    <!-- Привязка PrinterBindingActivity -->
+    <string name="printer_binding_title">Привязка принтера</string>
+    <string name="printer_binding_mac_top_hint">(MAC-адрес)</string>
+    <string name="printer_binding_mac_hint">00:00:00:00:00:00</string>
+    <string name="printer_binding_serial_number_hint">(заводской номер)</string>
+    <string name="printer_binding_devices">Список устройств</string>
+    <string name="printer_binding_apply">Привязать</string>
+    <string name="printer_binding_select_device">Выбрать устройство</string>
+    <string name="printer_builtin_select_device">Выбрать встроенный принтер</string>
+    <string name="printer_builtin_str">Встроенный принтер</string>
+    <string name="printer_binding_invalid_MAC">Некорректный MAC-адрес</string>
+    <string name="printer_binding_error_get_data_from_printer">Ошибка получения данных с принтера</string>
+    <string name="printer_binding_error_get_Full_data_from_printer">ФР вернул не все значения!</string>
+    <string name="printer_binding_msg_changing_failed">Не удалось привязать принтер</string>
+    <string name="printer_binding_msg_changing_success">Принтер привязан</string>
+    <string name="printer_binding_invalid_mode">Некорректный тип устройства</string>
+    <string name="printer_binding_msg_printer_shift_should_be_closed">Смена на фискальном регистраторе открыта.\nЗакрыть смену на фискальном регистраторе?</string>
+    <string name="printer_binding_msg_printer_shift_should_be_closed_yes">Да</string>
+    <string name="printer_binding_msg_printer_shift_should_be_closed_no">Нет</string>
+    <string name="printer_binding_msg_printer_time">Время на ФР:\n%1$s\nПродолжить?</string>
+    <string name="printer_binding_msg_printer_time_ok">Да</string>
+    <string name="printer_binding_msg_printer_time_cancel">Отмена</string>
+
+    <!-- Привязка IPos-терминала -->
+    <string name="pos_binding_title">Привязка банковского терминала</string>
+    <string name="pos_builtin_select_device">Выбрать встроенный терминал</string>
+    <string name="pos_binding_invalid_port">Некорректный порт</string>
+    <string name="pos_binding_mac_hint">(MAC-адрес)</string>
+    <string name="pos_binding_port_hint">(порт)</string>
+    <string name="pos_binding_msg_changing_failed">Не удалось привязать терминал</string>
+    <string name="pos_binding_msg_changing_success">Терминал привязан</string>
+
+    <!-- Формирование отчетности -->
+    <string name="reports_shift">Смена</string>
+    <string name="reports_month">Месяц</string>
+    <string name="reports_test_PD">Пробный ПД</string>
+    <string name="reports_test_shift_sheet">Пробная сменная ведомость</string>
+    <string name="reports_shift_sheet">Сменная ведомость</string>
+    <string name="reports_discount_shift_sheet">Льготная сменная ведомость</string>
+    <string name="reports_sales_for_ett_log">Журнал оформления по ЭТТ</string>
+    <string name="reports_terminal_operations">Отчёт по операциям POS-терминала</string>
+    <string name="reports_terminal_operations_day_not_opened">День на POS-терминале не был открыт. Печать отчета недоступна.</string>
+    <string name="reports_terminal_day_close">Отчёт о закрытии дня на POS-терминале</string>
+    <string name="reports_audit_taril">Контрольный журнал</string>
+    <string name="reports_audit_taril_shift">Вся смена</string>
+    <string name="reports_hint_audit_taril_period">ДД:ММ:ГГГГ ЧЧ:ММ</string>
+    <string name="reports_hint_audit_taril_period_from">c</string>
+    <string name="reports_hint_audit_taril_period_to">по</string>
+    <string name="reports_audit_taril_period">Период</string>
+    <string name="reports_audit_taril_period_real">Выбранный период выходит за рамки смены, будет выведен отчет за период с {1} по {2}</string>
+    <string name="reports_audit_taril_period_invalid">Некорректный период</string>
+    <string name="reports_test_month_sheet">Пробная месячная ведомость</string>
+    <string name="reports_month_sheet">Месячная ведомость</string>
+    <string name="reports_discount_month_sheet">Льготная месячная ведомость</string>
+    <string name="reports_bt_monthly_sheet">Месячный отчёт по операциям POS-терминала</string>
+    <string name="reports_select_date_title">Выберите дату</string>
+    <string name="reports_no_shifts_at_date_msg">В указанную дату\nнет смен</string>
+    <string name="reports_shifts_list_title">Смены</string>
+    <string name="reports_shifts_list_item_number_title">Номер</string>
+    <string name="reports_shifts_list_item_date_title">Открыта</string>
+    <string name="reports_month_shifts_list_item_date_title">Открыт</string>
+    <string name="reports_no_shifts_with_number_msg">Нет смены\nс указанным номером</string>
+    <string name="reports_no_months_at_date_msg">В указанную дату\nзакрытых месяцев нет</string>
+    <string name="reports_months_list_title">Месяцы</string>
+    <string name="reports_no_months_with_number_msg">Нет месяца\nс указанным номером</string>
+    <string name="reports_hint_shift_number">Номер смены</string>
+    <string name="reports_hint_shift_date">Дата смены</string>
+    <string name="reports_hint_month_number">Номер месяца</string>
+    <string name="reports_hint_month_date">Дата месяца</string>
+    <string name="reports_print_control_journal">Печать контрольного журнала</string>
+    <!-- Ошибки при работе с принтером -->
+    <string name="printer_error_PrinterIsNotConnected">Нет связи с принтером!</string>
+
+
+    <!-- Текущая работа с принтером -->
+    <string name="printer_PrinterIsConnected">Установлена связь с принтером!</string>
+    <string name="printer_PrintingNow">Идет печать</string>
+    <string name="printer_errorFunctionDisabledAtThisMoment">Эта функция недоступна в данный момент</string>
+
+    <!-- Экран открытия смены-->
+    <string name="shift_open_progress_preparing_for_open_shift">Подготовка к открытию смены</string>
+    <string name="shift_open_progress_opening_shift">Открытие смены</string>
+    <string name="shift_open_progress_printing_test_pd">Печать пробного ПД</string>
+    <string name="shift_open_progress_printing_test_shift_sheet">Печать пробной сменной ведомости</string>
+    <string name="shift_open_error_month_is_not_opened">Месяц не открыт</string>
+    <string name="shift_open_error_incorrect_shift_start_time">Смена была закрыта на %1$d ч. %2$d мин. позже</string>
+    <string name="shift_open_error_incorrect_minute_shift_start_time">Смена была закрыта меньше минуты назад, подождите %1$d с</string>
+    <string name="shift_open_failed_msg">Ошибка открытия смены</string>
+
+    <!-- Экран настроек смены после открытия-->
+    <string name="shift_open_settings_error_could_not_print_test_pd">Ошибка печати пробного ПД</string>
+    <string name="shift_open_settings_printing_test_pd">Печать пробного ПД</string>
+
+    <!-- Экран закрытия дня на POS-терминале-->
+    <string name="terminal_day_close_ask_init">Инициировать\nзакрытие дня на\nPOS-терминале?</string>
+    <string name="terminal_day_close_yes">Да</string>
+    <string name="terminal_day_close_no">Нет</string>
+    <string name="terminal_day_close_ok">OK</string>
+    <string name="terminal_day_close_closing_at_terminal">Закрытие дня на POS-терминале</string>
+    <string name="terminal_day_close_printing_slip">Печать отчета о закрытии дня\nна POS-терминале</string>
+    <string name="terminal_day_close_printing_slip_failed_msg">Ошибка\nпечати отчета</string>
+    <string name="terminal_day_close_success_msg">День №%d\nуспешно закрыт</string>
+    <string name="terminal_day_close_failed_msg">Ошибка\nзакрытия дня</string>
+
+    <!-- Экран закрытия смены-->
+    <string name="shift_close_ask_init">Инициировать закрытие смены?</string>
+    <string name="shift_close_ask_print_discount_shift_sheet">Печатать льготную сменную ведомость?</string>
+    <string name="shift_close_ask_print_clearing_shift_sheet">Печатать ведомость гашения смены?</string>
+    <string name="shift_close_ask_print_shift_sheet">Печатать сменную ведомость?</string>
+    <string name="shift_close_progress_preparing_for_close_shift">Подготовка к закрытию смены</string>
+    <string name="shift_close_progress_sync_fiscal_doc_state">Синхронизация состояния чека</string>
+    <string name="shift_close_progress_printing_discount_shift_sheet">Печать льготной сменной ведомости</string>
+    <string name="shift_close_progress_printing_clearing_shift_sheet">Печать ведомости гашения смены</string>
+    <string name="shift_close_progress_printing_shift_sheet">Печать сменной ведомости</string>
+    <string name="shift_close_progress_getting_odometer_value">Получение показаний одометра</string>
+    <string name="shift_close_progress_getting_cash_in_fr">Получение суммы в ФР</string>
+    <string name="shift_close_progress_repealing_must_have_to_sales">Завершаем незавершенные аннулирования продаж</string>
+    <string name="shift_close_progress_printing_z_report">Печать Z-отчёта</string>
+    <string name="shift_close_progress_closing_at_terminal">Закрытие дня на POS-терминале</string>
+    <string name="shift_close_progress_send_docs_to_ofd">Отправка данных в ОФД</string>
+    <string name="shift_close_progress_check_shift_state">Проверка текущего состояния смены на ПТК</string>
+    <string name="shift_close_progress_closing_at_ptk">Закрытие смены на ПТК</string>
+    <string name="shift_close_success_msg">Смена №%d\nуспешно закрыта</string>
+    <string name="shift_close_success_with_unsent_docs_msg">Смена №%1$d\nуспешно закрыта.\n%2$d документа(ов)\nне отправлены в ОФД.\nОтправить?</string>
+    <string name="shift_close_success_with_error_to_get_ofd_state_msg">Смена №%d\nуспешно закрыта. Не удалось получить информацию по неотправленным в ОФД документам. Отправить документы?</string>
+    <string name="shift_close_failed_msg">Ошибка закрытия смены</string>
+    <string name="shift_close_change_printer_btn">Заменить фиск.регистратор</string>
+    <string name="shift_close_bt_day_close_failed_msg">Информация: Ошибка закрытия смены на POS-терминале</string>
+    <string name="shift_close_ask_ticketTape_attention_msg">До окончания билетной ленты осталось менее %1$d см, заменить?</string>
+    <string name="shift_close_ask_ticketTape_attention_ok">Да</string>
+    <string name="shift_close_ask_ticketTape_attention_no">Нет</string>
+
+    <!-- Экран закрытия месяца-->
+    <string name="month_close_ask_init">Инициировать закрытие месяца?</string>
+    <string name="month_close_ask_print_discount_month_sheet">Печатать льготную месячную ведомость?</string>
+    <string name="month_close_ask_print_clearing_month_sheet">Печатать ведомость гашения месяца?</string>
+    <string name="month_close_ask_print_month_sheet">Печатать месячную ведомость?</string>
+    <string name="month_close_ask_print_bt_month_sheet">Печатать месячный отчёт по операциям POS-терминала?</string>
+    <string name="month_close_progress_printing_discount_month_sheet">Печать льготной месячной ведомости</string>
+    <string name="month_close_progress_printing_clearing_month_sheet">Печать ведомости гашения месяца</string>
+    <string name="month_close_progress_printing_month_sheet">Печать месячной ведомости</string>
+    <string name="month_close_progress_printing_month_sheet_footer">Завершение печати месячной ведомости</string>
+    <string name="month_close_progress_printing_bt_monthly_sheet">Печать месячного отчёта по операциям POS-терминала</string>
+    <string name="month_close_progress_closing_at_ptk">Закрытие месяца на ПТК</string>
+    <string name="month_close_success_msg">Месяц №%d\nуспешно закрыт</string>
+    <string name="month_close_failed_msg">Ошибка закрытия месяца</string>
+
+    <!-- Экран расчета сдачи (Фиксированная стоимость ПД)-->
+    <string name="calculate_delivery_fixed_cost_title">Расчет сдачи</string>
+    <string name="calculate_delivery_fixed_cost_pd_cost">Стоимость билетов</string>
+    <string name="calculate_delivery_fixed_cost_delivery">Сдача:</string>
+    <string name="calculate_delivery_fixed_cost_received_sum">Полученная сумма</string>
+
+    <!--Экран расчета сдачи-->
+    <string name="calculate_delivery_title">Расчет сдачи</string>
+    <string name="calculate_delivery_delivery">Сдача:</string>
+    <string name="calculate_delivery_received_sum">Полученная сумма</string>
+    <string name="calculate_delivery_tickets_cost">Стоимость билетов</string>
+    <string name="calculate_delivery_sell_new_pd_btn">Оформить новый ПД</string>
+
+    <!-- Экран печати отчетов-->
+    <string name="printing_reports_progress_printing">Печать отчета</string>
+    <string name="printing_reports_msg_success">Успешно</string>
+    <string name="printing_reports_msg_failed">Ошибка</string>
+
+    <!-- Printer-->
+    <string name="printer_not_found_msg">Операция не может быть выполнена.\nФискальный регистратор недоступен.</string>
+    <string name="printer_repeat_connection">Повторить попытку соединения</string>
+    <string name="printer_cancel_connection">Аварийный режим</string>
+    <string name="printer_cancel_connection_2">Отмена</string>
+    <string name="printer_eklz_activation_required_msg">Требуется\nактивизация ЭКЛЗ/\nФискального накопителя на фискальном регистраторе</string>
+    <string name="printer_eklz_activation_required_activate">Выполнить</string>
+
+    <!-- Работа с банковским терминалом -->
+    <string name="terminal_establishing_connection">СОЕДИНЕНИЕ\nС БАНКОВСКИМ\nТЕРМИНАЛОМ</string>
+    <string name="terminal_no_connection">Нет соединения!</string>
+    <string name="terminal_reboot">ПЕРЕЗАГРУЗИТЕ\nБАНКОВСКИЙ\nТЕРМИНАЛ</string>
+    <string name="terminal_connected_sale">ОПЛАТА\nБАНКОВСКОЙ КАРТОЙ</string>
+    <string name="terminal_connected_cancel">ОТМЕНА ОПЛАТЫ\nБАНКОВСКОЙ КАРТОЙ</string>
+    <string name="terminal_see_terminal">Следуйте инструкциям\nна экране банковского\nтерминала</string>
+    <string name="terminal_sale_success">Успешная оплата</string>
+    <string name="terminal_cancel_success">Отмена оплаты на\nбанковском терминале\nпроизведена</string>
+    <string name="terminal_printing_slip">ИДЁТ ПЕЧАТЬ ЧЕКА</string>
+    <string name="terminal_cut_slip">ОТОРВИТЕ ЧЕК</string>
+    <string name="terminal_is_slip_n_printed">Печать чека успешная?</string>
+    <string name="terminal_printing_slip_failed">Не удалось\nнапечатать чек</string>
+    <string name="terminal_next">Продолжить</string>
+    <string name="terminal_cancel">Отменить оплату</string>
+    <string name="terminal_retry">Повторить печать</string>
+    <string name="terminal_cancelling_transaction">Отмена платежа по\nбансковской карте&#8230;</string>
+    <string name="terminal_is_busy">Банковский терминал сейчас занят,\nпопробуйте через несколько секунд!</string>
+    <string name="terminal_operation_rejected" formatted="false">Операция не прошла\n(%s)</string>
+    <string name="terminal_operation_rejected_reason_unknown">Операция не прошла</string>
+    <string name="terminal_just_printing">Идёт печать результата</string>
+    <string name="terminal_just_print_success">Печать результата успешна</string>
+    <string name="terminal_just_print_empty">Результат пустой</string>
+    <string name="terminal_just_print_failed">Ошибка печати результата</string>
+    <string name="terminal_get_transaction_journal_empty">Журнал операций пуст</string>
+    <string name="terminal_is_not_available">POS-терминал недоступен!</string>
+    <string name="terminal_close_day_error_timeout">Операция закрытия дня на терминале прервана по таймауту!</string>
+    <string name="terminal_close_day_error">Ошибка закрытия дня на терминале\n(%s)</string>
+
+    <!-- Диалог с подтверждением намерений отмены -->
+    <string name="dialog_cancel_message">Вы действительно хотите отменить оплату?</string>
+    <string name="dialog_cancel_repeat">ПОВТОР</string>
+    <string name="dialog_cancel_ok">ДА</string>
+    <string name="dialog_cancel_nope">НЕТ</string>
+    <string name="dialog_cancel_cancel">ОТМЕНА</string>
+
+    <!-- Печать ПД -->
+    <string name="printing_pd">Идёт печать ПД</string>
+    <string name="printing_pd_pd_with_invalid_sign">Запись запрещена.\nНа карте имеется ПД\nс невалидной ЭЦП.</string>
+    <string name="printing_pd_pd_with_revoked_sign_key">Запись запрещена.\nНа карте имеется ПД\nс отозванным ключом ЭЦП.</string>
+    <string name="printing_pd_failed">Не удалось\nнапечатать ПД</string>
+    <string name="printing_pd_failed_need_cancel">Верните оплату</string>
+    <string name="printing_pd_failed_need_cancel_warning">Данный ПД\nнеобходимо\nаннулировать!</string>
+    <string name="printing_pd_success_title">Билет\nраспечатан</string>
+    <string name="printing_pd_success_renting">Рассчитать сдачу</string>
+    <string name="printing_pd_success_baggage">Докупить багаж</string>
+    <string name="printing_pd_success_new_pd">Оформить новый ПД</string>
+    <string name="printing_pd_success_next_ticket">Печать следующего билета</string>
+    <string name="printing_pd_cost">Стоимость билетов:</string>
+    <string name="printing_rub_sign">р.</string>
+
+    <!-- запись на БСК -->
+    <string name="write_to_bsc_bring_card">Поднесите БСК\nк считывателю</string>
+    <string name="write_to_bsc_reading_bsc">ИДЁТ СЧИТЫВАНИЕ КАРТЫ</string>
+    <string name="write_to_bsc_card_not_found">БСК не найдена</string>
+    <string name="write_to_bsc_pd_cant_be_written">На данный тип карты не\nможет быть записан ПД</string>
+    <string name="print_paper_pd_banned_for_this_exemption">%1$s\nОформление бумажного ПД запрещено\nдля данной льготы</string>
+    <string name="print_paper_pd_banned_for_this_ticket_storage_type">%1$s\nОформление бумажного ПД запрещено\nдля данного типа ПД</string>
+    <string name="write_to_bsc_bsc_pattern" formatted="false">%s %s</string>
+    <string name="write_to_bsc_printing_ticket">ИДЁТ ПЕЧАТЬ\nКВИТАНЦИИ</string>
+    <string name="write_to_bsc_printing_ticket_failed">Не удалось напечатать\nквитанцию</string>
+    <string name="write_to_bsc_writing_pd">ИДЁТ ЗАПИСЬ\nПД НА БСК</string>
+    <string name="write_to_bsc_writing_transfer">ИДЁТ ЗАПИСЬ\nТРАНСФЕРА НА БСК</string>
+    <string name="write_to_bsc_writing_bsc_failed">Ошибка записи на БСК</string>
+    <string name="write_to_bsc_writing_bsc_failed_printing_msg">Печать сообщения об ошибке записи на БСК</string>
+    <string name="write_to_bsc_writing_bsc_failed_printing_msg_failed">Ошибка печати\nсообщения об ошибке\nзаписи на БСК</string>
+    <string name="write_to_bsc_deleting_bsc_failed">Ошибка удаления билета с БСК</string>
+    <string name="write_to_bsc_card_not_match">Приложите карту с номером\n%1$s</string>
+    <string name="write_to_bsc_error_read_card">Ошибка чтения карты</string>
+    <string name="write_to_bsc_card_is_expired">Срок действия карты истек.</string>
+    <string name="write_to_bsc_disabled_write_to_ticket_storage_type">Запрещена запись ПД на карту данного типа.</string>
+    <string name="write_to_bsc_card_is_full">Карта заполнена.</string>
+    <string name="write_to_bsc_has_pd_with_invalid_sign">Запись запрещена.\nНа карте имеется ПД\nс невалидной ЭЦП</string>
+    <string name="write_to_bsc_has_pd_with_revoked_sign_key">Запись запрещена.\nНа карте имеется ПД\nс отозванным ключом ЭЦП</string>
+    <string name="write_to_bsc_transfer_must_be_written_to_passenger_bound_card">Запись запрещена.\nТрансфер может\nбыть записан только\nна карту, к которой привязаны ФИО</string>
+    <string name="write_to_bsc_cancel_payment">Отменить оплату</string>
+
+    <string name="cancelOperation">Отменить</string>
+    <string name="error_while_make_pd">Ошибка формирования ПД</string>
+    <string name="some_error">Неизвестная ошибка</string>
+
+    <!-- UpdateInfoActivity -->
+    <string name="stopListBsc">Стоп-лист БСК</string>
+    <string name="stopListPd">Стоп-лист ПД</string>
+    <string name="WhiteListPd">Белый список ПД</string>
+    <string name="PacketOpenKeys">Пакет открытых ключей</string>
+    <string name="PO">ПО</string>
+    <string name="NSI">НСИ</string>
+    <string name="SecurityDatabase">База безопасности</string>
+
+    <!-- аннулирование с использованием БТ -->
+    <string name="repeal_bt_finish_activity_preparing">Подготовка&#8230;</string>
+    <string name="repeal_bt_finish_activity_handling">Обработка&#8230;</string>
+    <string name="repeal_bt_finish_activity_operation_broken">ОПЕРАЦИЯ ПРЕРВАНА</string>
+    <string name="repeal_bt_finish_activity_break_operation">Прервать операцию</string>
+    <string name="repeal_bt_finish_activity_check_printing">ИДЁТ ПЕЧАТЬ\nЧЕКА АННУЛИРОВАНИЯ</string>
+    <string name="repeal_bt_finish_activity_check_printing_success">Успешное\nаннулирование ПД</string>
+    <string name="repeal_bt_finish_activity_check_printing_failed">Не удалось напечатать\nчек аннулирования</string>
+
+    <!-- Devices -->
+    <string name="device_pos_terminal">Pos-терминал</string>
+    <string name="device_printer">Фискальный регистратор</string>
+    <string name="device_information">Информация</string>
+
+    <string name="device_any_connection">Подключение</string>
+    <string name="device_any_test_connection">Тест подключения</string>
+    <string name="device_any_test_connection_available">Устройство доступно</string>
+    <string name="device_any_test_connection_not_available">Устройство не доступно</string>
+    <string name="device_any_bind_device">Найти устройство</string>
+    <string name="device_any_operations">Сервисные операции</string>
+    <string name="device_any_clear_log">Очистить окно лога</string>
+
+    <!-- настройки Pos-терминала -->
+    <string name="settings_pos_terminal_test_host">Тест хоста</string>
+    <string name="settings_pos_terminal_admin_menu">Меню администратора</string>
+    <string name="settings_pos_terminal_sync_with_tms">Синхронизация с TMS</string>
+    <string name="settings_pos_terminal_dialog">Идёт работа с Pos-терминалом</string>
+    <string name="settings_pos_terminal_test_host_success">Успешно</string>
+    <string name="settings_pos_terminal_test_host_failure">Неуспешно</string>
+    <string name="settings_pos_terminal_msg_success">Операция выполнена успешно</string>
+    <string name="settings_pos_terminal_msg_error">Ошибка при выполнении операции</string>
+    <string name="settings_pos_terminal_msg_day_will_be_closed">День на банковском терминале №%1$d не был закрыт. Рекомендуется подключить его и закрыть день. Продолжить подключение нового терминала?</string>
+
+    <!-- настройки принтера -->
+    <string name="settings_printer_mac_address_label">MAC-адрес:</string>
+    <string name="settings_printer_print_adjusting_table">Печать настроечной таблицы</string>
+    <string name="settings_printer_activate_eklz">Активизация ЭКЛЗ/ФН</string>
+    <string name="settings_printer_activating_eklz">Активизация ЭКЛЗ</string>
+    <string name="settings_printer_binding">Замена принтера</string>
+    <string name="settings_printer_closing_shift_at_printer">Закрытие смены на принтере</string>
+    <string name="settings_printer_msg_success">Операция выполнена успешно</string>
+    <string name="settings_printer_msg_error">Ошибка при выполнении операции</string>
+    <string name="settings_printer_msg_shift_will_be_closed">Смена на ПТК\nбудет закрыта\nавтоматически.\n Продолжить?</string>
+    <string name="settings_printer_msg_printer_shift_should_be_closed">Смена на фискальном регистраторе открыта.\nЗакрыть смену на фискальном регистраторе?</string>
+    <string name="settings_printer_msg_printer_shift_should_be_closed_yes">Да</string>
+    <string name="settings_printer_msg_printer_shift_should_be_closed_no">Нет</string>
+    <string name="settings_printer_msg_eklz_activation_does_not_required">Активизация ЭКЛЗ\nне требуется</string>
+    <string name="settings_printer_msg_checking_eklz_state">Проверка необходимости\nзамены ЭКЛЗ</string>
+    <string name="settings_printer_msg_printer_time">Время на ФР:\n%1$s\nПродолжить?</string>
+    <string name="settings_printer_msg_printer_time_ok">Да</string>
+    <string name="settings_printer_msg_printer_time_cancel">Отмена</string>
+
+    <!-- DevicesInformation -->
+    <string name="devicesInformation_Title">Информация об устройствах</string>
+    <string name="devicesInformation_Bsc">Считыватель БСК</string>
+    <string name="devicesInformation_Barcode">Считыватель ШК</string>
+    <string name="devicesInformation_Phone">ПТК</string>
+    <string name="devicesInformation_Model">Модель: </string>
+    <string name="devicesInformation_Firmware">Прошивка: </string>
+    <string name="devicesInformation_Wait">подождите...</string>
+    <string name="devicesInformation_NoData">нет данных</string>
+
+    <!-- Экран выбора льготы -->
+    <string name="select_exemption_searching_in_database">Получение сведений о льготе…</string>
+
+    <!-- TicketTapeIsNotSetView -->
+    <string name="ticket_tape_is_not_set_view_cancel_btn">Отмена</string>
+    <string name="ticket_tape_is_not_set_view_set_ticket_tape_btn">Установить ленту</string>
+
+    <string name="sell_ett_denied">На ПТК запрещена продажа билета с использованием ЭТТ</string>
+
+    <!-- simpleLseView -->
+    <string name="sev_btn_cancel">Отмена</string>
+    <string name="sev_btn_repeat">Повторить</string>
+    <string name="sev_btn_emergency_mode">Аварийный режим</string>
+
+    <string name="read_bsc_error_pd_in_stop_list">ПД в стоп-листе</string>
+    <string name="read_bsc_error_ecp_error">Ошибка цифровой подписи</string>
+    <string name="read_bsc_error_ecp_revoked">Ключ ЭЦП отозван</string>
+    <string name="read_bsc_error_is_annulled">ПД аннулирован</string>
+
+    <string name="battery_test_need_prepare_these">Система не смогла пройти автоматическую подготовку по следующим пунктам: \n</string>
+    <string name="battery_test_need_prepare_bluetooth">- включение Bluetooth\n</string>
+    <string name="battery_test_need_prepare_mobile_data">- включение Мобильных данных\n</string>
+    <string name="battery_test_need_prepare_device_admin">- получение прав администратора устройства\n</string>
+    <string name="battery_test_need_prepare_run">Пожалуйста, запустите\nподготовку системы вручную.\n</string>
+    <string name="battery_test_prepared">Система готова к запуску теста!\n</string>
+    <string name="battery_test_action_prepare">Подготовить систему</string>
+    <string name="battery_test_action_run_test">Запустить тест</string>
+    <string name="battery_test_action_end_test">Закончить тест</string>
+    <string name="battery_test_still_preparing">Идёт подготовка системы&#8230;</string>
+    <string name="battery_test_still_running">Идёт тестирование&#8230;\n</string>
+    <string name="battery_test_last_result_title">Результаты последнего тестирования:\n</string>
+    <string name="battery_test_last_result_data" formatted="false">Время выполнения: %s\nПотрачено заряда батареи: %d%%\n</string>
+
+    <!--EKLZ Activation Activity-->
+    <string name="eklz_activation_title">Активизация ЭКЛЗ</string>
+    <string name="eklz_activation_close_shift">Закрыть смену принудительно</string>
+    <string name="eklz_activation_activate_eklz">Активизировать ЭКЛЗ</string>
+    <string name="eklz_activation_activating">Активизация ЭКЛЗ…</string>
+
+    <string name="root_access_request_activity_password_hint">Введите пароль</string>
+    <string name="root_access_request_activity_password_incorrect">Некорректный пароль!</string>
+
+    <!-- Экран блокировки -->
+    <string name="lock_screen_title">Экран блокировки</string>
+    <string name="lock_screen_pin_label">ПИН-код</string>
+    <string name="lock_screen_pin_hint">Введите ПИН-код</string>
+    <string name="lock_screen_change_user">Сменить пользователя</string>
+    <string name="lock_screen_msg_error_empty_pin">Значение ПИН-кода\nсодержит некорректные\nданные</string>
+    <string name="lock_screen_msg_error_invalid_pin">Неверный ПИН-код.\nКоличество оставшихся\nпопыток: %1$d</string>
+
+    <!-- Экран обратной связи -->
+    <string name="feedback_screen_title">Отчет об ошибке</string>
+    <string name="feedback_screen_message">Введите описание ошибки</string>
+    <string name="feedback_screen_send">Отправить</string>
+    <string name="feedback_screen_cancel">Отменить</string>
+
+
+    <!-- Диалоговое окно валидирования поездки -->
+    <string name="btn_open_passage_mark">Открыть поездку</string>
+    <string name="btn_close_passage_mark">Закрыть поездку</string>
+    <string name="str_title_opening_trip">Открытие поездки</string>
+    <string name="str_title_closure_trip">Закрытие поездки</string>
+    <string name="str_select_opening_closure_trip">Выберите станцию</string>
+    <string name="str_validate_opening_closure_trip">Валидировать</string>
+    <string name="str_validate_opening">Открыть</string>
+    <string name="str_validate_closure">Закрыть</string>
+    <string name="str_cancel_opening_closure_trip">Отменить</string>
+
+    <!-- Логи проверки БСК карты -->
+    <string name="card_type">Тип карты:&#160;</string>
+    <string name="check_time">Дата проверки:&#160;</string>
+    <string name="card_reading">Чтение карты:&#160;</string>
+    <string name="data_parcing">Парсинг данных:&#160;</string>
+    <string name="esp_control">Проверка ЭЦП:&#160;</string>
+    <string name="data_base_interaction">Взаимодействие с БД:&#160;</string>
+    <string name="total">Итого:&#160;</string>
+    <string name="milliseconds">&#160;мс</string>
+
+    <!--ExtraPaymentExecutionFragment-->
+    <string name="extra_payment_execution_title">Оформление ПД по доплате</string>
+    <string name="extra_payment_execution_parent_pd_base">Основание:</string>
+    <string name="extra_payment_execution_parent_pd_exemption">Льгота</string>
+    <string name="extra_payment_execution_parent_pd_exemption_no">Нет</string>
+    <string name="extra_payment_execution_parent_pd_start_date">Дата проезда:</string>
+    <string name="extra_payment_execution_parent_pd_id_kkt">ID ККТ:</string>
+    <string name="extra_payment_execution_tariff_label">Тариф</string>
+    <string name="extra_payment_execution_departure_station_label">Откуда</string>
+    <string name="extra_payment_execution_destination_station_label">Куда</string>
+    <string name="extra_payment_execution_exemption_label">Льгота</string>
+    <string name="extra_payment_execution_exemption_no">Нет</string>
+    <string name="extra_payment_execution_fee_label_in_train">Сбор за оформление\nв поезде</string>
+    <string name="extra_payment_execution_fee_no">Нет</string>
+    <string name="extra_payment_execution_one_ticket_cost">Стоимость доплаты:</string>
+    <string name="extra_payment_execution_total_cost">Итого:</string>
+    <string name="extra_payment_execution_cost_with_fee">C учетом льготы и сбора</string>
+    <string name="extra_payment_execution_payment_type_cash">Наличные</string>
+    <string name="extra_payment_execution_payment_type_card">Банк. карта</string>
+    <string name="extra_payment_execution_form_btn">Оформить</string>
+    <string name="extra_payment_execution_non_exemption_payment_for_exemption_pd_attention_dialog_message">К льготному ПД оформляется доплата без льготы.\nПродолжить?</string>
+    <string name="extra_payment_execution_non_exemption_payment_for_exemption_pd_attention_dialog_positive">Да</string>
+    <string name="extra_payment_execution_non_exemption_payment_for_exemption_pd_attention_dialog_negative">Нет</string>
+    <string name="extra_payment_execution_unhandled_error_occurred_dialog_message">Невозможно вычислить цену билета</string>
+    <string name="extra_payment_execution_unhandled_error_occurred_dialog_positive">Ок</string>
+
+    <!--ExemptionManualInputFragment-->
+    <string name="exemption_manual_input_code_field_label">Введите код льготы</string>
+    <string name="exemption_manual_input_or_label">или</string>
+    <string name="exemption_manual_input_read_from_card_btn">Считать льготу с карты</string>
+    <string name="exemption_manual_input_close_dialog_btn">Закрыть</string>
+    <string name="exemption_manual_input_msg_not_found">Льгота с кодом %1$2d не найдена</string>
+
+    <!--ExemptionEnterSurnameFragment-->
+    <string name="exemption_enter_surname_percentage">%1$d%%</string>
+    <string name="exemption_enter_surname_document_number">Номер документа</string>
+    <string name="exemption_enter_surname_fio">Фамилия И. О.</string>
+    <string name="exemption_enter_surname_issue_date">Дата выдачи</string>
+    <string name="exemption_enter_surname_snils_number">Введите номер СНИЛС</string>
+    <string name="exemption_enter_surname_use_exemption_btn">Использовать льготу</string>
+
+    <!--ExemptionReadFromCardFragment-->
+    <string name="exemption_read_from_card_waiting_card">Поднесите БСК\nк считывателю</string>
+    <string name="exemption_read_from_card_reading_card">Идёт считывание карты</string>
+    <string name="exemption_read_from_card_reading_card_percentage">%1$d%%</string>
+    <string name="exemption_read_from_card_use_exemption_btn">Использовать льготу</string>
+    <string name="exemption_read_from_card_bsc_type">%1$s:</string>
+    <string name="exemption_read_from_card_unknown_bsc_type">Неизвестный тип БСК</string>
+    <string name="exemption_read_from_card_fio">ФИО:</string>
+    <string name="exemption_read_from_card_not_founded">Карта не найдена</string>
+    <string name="exemption_read_from_card_read_error">Информация с БСК\nне читается</string>
+    <string name="exemption_read_from_card_no_exemption">На карте\nотсутствуют льготы</string>
+    <string name="exemption_read_from_card_in_stop_list">БСК находится в стоп-листе.\n(%s)</string>
+    <string name="exemption_read_from_card_expired">Срок действия карты истек.</string>
+    <string name="exemption_read_from_card_close_dialog_btn">Закрыть</string>
+    <string name="exemption_read_from_card_retry_btn">Повторить</string>
+    <string name="exemption_read_from_card_cancel_btn">Отмена</string>
+    <string name="exemption_read_from_card_msg_not_found">Льгота с кодом %1$2d не найдена</string>
+
+    <!--RemoveExemptionFragment-->
+    <string name="remove_exemption_title">Льгота</string>
+    <string name="remove_exemption_percentage">%1$d%%</string>>
+    <string name="remove_exemption_bsc_type">%1$s:</string>
+    <string name="remove_exemption_fio">ФИО:</string>
+    <string name="remove_exemption_document_number">Номер документа:</string>
+    <string name="remove_exemption_snils_number">Номер СНИЛС:</string>
+    <string name="remove_exemption_document_issue_date">Дата выдачи документа:</string>
+    <string name="remove_exemption_remove_btn">Удалить льготу</string>
+    <string name="remove_exemption_unknown_group">Не определена</string>
+
+    <!-- ExemptionCheckResultStringifyer -->
+    <string name="exemption_check_result_invalid_express_code">Код льготы\nне соответствует\nкоду льготы\nосновного ПД.</string>
+    <string name="exemption_check_result_invalid_card_id">Для ввода используйте льготную карту,\nна которой записан основной ПД.</string>
+    <string name="exemption_check_result_in_cppk_registry_ban">Продажа билета по льготе %1$2d запрещена.</string>
+    <string name="exemption_check_result_invalid_period">Продажа билета по льготе %1$2d невозможна. Срок действия льготы истек.</string>
+    <string name="exemption_check_result_denied_for_region">Продажа билета в данном регионе по льготе %1$2d запрещена.</string>
+    <string name="exemption_check_result_banned_device">Продажа билета на ПТК по льготе %1$2d запрещена.</string>
+    <string name="exemption_check_result_denied_for_tariff_plan">Льгота %1$2d запрещает проезд по выбранному тарифу.</string>
+    <string name="exemption_check_result_denied_for_manual_input">Ручной ввод данных по льготе %1$2d запрещен.</string>
+    <string name="exemption_check_result_social_card_required">Для оформления билета требуется предъявление соц. карты.</string>
+    <string name="exemption_check_result_denied_for_ticket_storage_type">Продажа билета %2$2s по льготе %1$2d невозможна.</string>
+    <string name="exemption_check_result_denied_for_ticket_type">Нельзя применить льготу %1$2d для данных категории поезда и типа билета</string>
+    <string name="exemption_check_result_denied_for_child_ticket">Продажа детского ПД по льготе %1$2d запрещена.</string>
+    <string name="exemption_check_result_denied_for_repeated_sale">Продажа билета по льготе %1$2d невозможна. Не прошло достаточно времени с предыдущего оформления билета по данной льготе.</string>
+    <string name="exemption_check_result_denied_for_beneficiary_category">Продажа билета %1$2s для данной категории льготного пассажира невозможна.</string>
+    <string name="exemption_check_result_denied_for_extra_sale_for_season_ticket_on_ett">Доплата к абонементу на ЭТТ оформляется за полную стоимость.</string>
+
+    <!-- EnterETicketDataActivity -->
+    <string name="e_ticket">Электронный чек</string>
+    <string name="e_ticket_write_email_or_phone">Укажите e-mail / или телефон</string>
+    <string name="e_ticket_email_phone">E-mail / телефон</string>
+    <string name="e_ticket_10_digit">(10 цифр)</string>
+    <string name="e_ticket_cancel">Отмена</string>
+    <string name="e_ticket_ok">Ок</string>
+    <string name="e_ticket_email_and_phone_error">Внимание!\nНекорректный email\nили телефон</string>
+
+    <!-- FineSalePreparationFragment -->
+    <string name="fine_sale_preparation_title">Оформление штрафа</string>
+    <string name="fine_sale_preparation_fine_label">Штраф</string>
+    <string name="fine_sale_preparation_region_label">Регион:</string>
+    <string name="fine_sale_preparation_cost_label">Стоимость:</string>
+    <string name="fine_sale_preparation_cost_value">%.2f р.</string>
+    <string name="fine_sale_preparation_send_e_ticket_btn">Отправить электронный чек</string>
+    <string name="fine_sale_preparation_payment_type_cash">Наличные</string>
+    <string name="fine_sale_preparation_payment_type_card">Банк. карта</string>
+    <string name="fine_sale_preparation_form_btn">Оформить</string>
+    <string name="fine_sale_preparation_no_fines_available_dialog_message">Нет доступных штрафов</string>
+    <string name="fine_sale_preparation_no_fines_available_dialog_close">Закрыть</string>
+    <string name="fine_sale_preparation_really_want_fine_dialog_message">Оформить штраф?</string>
+    <string name="fine_sale_preparation_really_want_fine_dialog_message_with_name_and_cost">Оформить штраф?\n%1$s\n%2$.2f р.</string>
+    <string name="fine_sale_preparation_really_want_fine_dialog_positive">Да</string>
+    <string name="fine_sale_preparation_really_want_fine_dialog_negative">Нет</string>
+
+    <!-- PrintFineCheckFragment -->
+    <string name="print_fine_check_printing_msg">Печать чека</string>
+    <string name="print_fine_check_fail_cancel_btn">Отменить оплату</string>
+    <string name="print_fine_check_fail_repeat_btn">Повторить печать</string>
+    <string name="print_fine_check_fail_msg">Не удалось\nнапечатать чек</string>
+    <string name="print_fine_check_success_msg">Чек успешно \nраспечатан</string>
+    <string name="print_fine_check_calculate_delivery">Рассчитать сдачу</string>
+    <string name="print_fine_check_eklz_activation_required_msg">Требуется\nактивизация ЭКЛЗ</string>
+    <string name="print_fine_check_eklz_activation_start">Выполнить</string>
+    <string name="print_fine_check_eklz_activation_cancel">Отмена</string>
+    <string name="print_fine_check_shift_timeout_msg">Вышло 24 часа. Необходимо закрыть смену</string>
+    <string name="print_fine_check_shift_timeout_close_btn">Закрыть смену</string>
+    <string name="print_fine_check_shift_timeout_cancel_btn">Отмена</string>
+    <string name="print_fine_check_incorrect_fr_state_error_msg">Некорректное состояние ФР. Необходимо закрыть смену</string>
+    <string name="print_fine_check_incorrect_fr_state_error_close_btn">Закрыть смену</string>
+    <string name="print_fine_check_incorrect_fr_state_error_cancel_btn">Отмена</string>
+    <string name="print_fine_check_return_money_confirm_msg">Вы действительно хотите отменить оплату?</string>
+    <string name="print_fine_check_return_money_yes">Да</string>
+    <string name="print_fine_check_return_money_no">Нет</string>
+    <string name="print_fine_check_fine_created_print_fail_msg">Штраф оформлен.\nОшибка печати</string>
+    <string name="print_fine_check_fine_created_print_fail_repeat_btn">Повторить</string>
+    <string name="print_fine_check_fine_created_print_fail_cancel_btn">Отменить</string>
+
+    <!-- CashPaymentCancelFragment -->
+    <string name="cash_payment_cancel_return_msg">Верните оплату</string>
+    <string name="cash_payment_cancel_amount">%.2f р.</string>
+    <string name="cash_payment_cancel_continue_btn">Ок</string>
+
+    <!-- PdSalePrintFragment -->
+    <string name="pd_sale_print_success_msg">Билет\nраспечатан</string>
+    <string name="pd_sale_print_success_print_next_btn">Печать следующего билета</string>
+    <string name="pd_sale_print_fail_cancel_required_msg">Ошибка печати.\nДанный ПД необходимо аннулировать!</string>
+    <string name="pd_sale_print_fail_cancel_required_back_btn">Назад</string>
+
+    <!-- ExtraPaymentPrintFragment -->
+    <string name="extra_payment_print_fail_cancel_required_msg">Ошибка печати.\nДанный ПД необходимо аннулировать!</string>
+    <string name="extra_payment_print_fail_cancel_required_back_btn">Назад</string>
+
+    <!-- PdSaleWriteWithExemptionFragment -->
+    <string name="pd_sale_write_with_exemption_fail_cancel_required_msg">Ошибка печати.\nДанный ПД необходимо аннулировать!</string>
+    <string name="pd_sale_write_with_exemption_fail_cancel_required_back_btn">Назад</string>
+
+    <!-- PdSaleWriteFragment -->
+    <string name="pd_sale_write_fail_cancel_required_msg">Ошибка печати.\nДанный ПД необходимо аннулировать!</string>
+    <string name="pd_sale_write_fail_cancel_required_back_btn">Назад</string>
+
+    <!-- PdSalePreparationFragment -->
+    <string name="pd_sale_preparation_single_title">Разовый ПД</string>
+    <string name="pd_sale_preparation_baggage_title">Продажа квитанции</string>
+    <string name="pd_sale_preparation_fee_type_in_train">Сбор за оформление\nв поезде</string>
+    <string name="pd_sale_preparation_fee_type_at_destination_station">Сбор за оформление\nв пункте назначения</string>
+    <string name="pd_sale_preparation_direction_btn_there">Туда</string>
+    <string name="pd_sale_preparation_direction_btn_there_back">Туда - Обратно</string>
+    <string name="pd_sale_preparation_one_pd_cost_value">%.2f р.</string>
+    <string name="pd_sale_preparation_total_pd_cost_value">%.2f р.</string>
+    <string name="pd_sale_preparation_fee_value">%.2f р.</string>
+    <string name="pd_sale_preparation_fee_value_no">Нет</string>
+    <string name="pd_sale_preparation_one_pd_cost_single">Стоимость 1 билета:</string>
+    <string name="pd_sale_preparation_one_pd_cost_baggage">Стоимость 1 квитанции:</string>
+    <string name="pd_sale_preparation_exemption_label">Льгота</string>
+    <string name="pd_sale_preparation_exemption_value">%1$d/%2$d%%</string>
+    <string name="pd_sale_preparation_exemption_value_no">Нет</string>
+    <string name="pd_sale_preparation_sft_error_msg">Ошибка компонента Безопасный билет</string>
+    <string name="pd_sale_preparation_sft_close_btn">Закрыть</string>
+    <string name="pd_sale_preparation_departure_station_hint">ОТКУДА</string>
+    <string name="pd_sale_preparation_destination_station_hint">КУДА</string>
+    <string name="pd_sale_preparation_transit_station_value">ч/з %1$s</string>
+    <string name="pd_sale_preparation_decrement_btn">-</string>
+    <string name="pd_sale_preparation_increment_btn">+</string>
+    <string name="pd_sale_preparation_total_cost">Итого:</string>
+    <string name="pd_sale_preparation_cost_with_fee">C учетом льготы и сбора</string>
+    <string name="pd_sale_preparation_payment_type_cash">Наличные</string>
+    <string name="pd_sale_preparation_payment_type_card">Банк. карта</string>
+    <string name="pd_sale_preparation_e_ticket_btn">Отправить электронный чек</string>
+    <string name="pd_sale_preparation_write_to_card_btn">Записать на\nБСК</string>
+    <string name="pd_sale_preparation_print_btn">Распечатать билет</string>
+    <string name="pd_sale_preparation_process_btn">Оформить</string>
+    <string name="pd_sale_preparation_exemption_in_different_regions_denied_error_msg">Оформление льготного\nтранзитного ПД\nнедоступно:\nвыбраны станции из\nразных субъектов РФ</string>
+    <string name="pd_sale_preparation_exemption_in_different_regions_denied_close_btn">Закрыть</string>
+    <string name="pd_sale_preparation_denied_for_print_error_msg">Запрещено оформление ПД данного вида на тип носителя "%1$s"</string>
+    <string name="pd_sale_preparation_denied_for_print_close_btn">Закрыть</string>
+    <string name="pd_sale_preparation_unhandled_error_occurred_dialog_message">Невозможно вычислить цену билета</string>
+    <string name="pd_sale_preparation_unhandled_error_occurred_dialog_positive">Ок</string>
+
+    <!-- SimplePdFragment -->
+    <string name="simple_pd_msg_not_allowed_for_train_category">Оформление на ПТК доплаты к льготному ПД запрещено</string>
+    <string name="simple_pd_msg_cant_find_exemption_info">Льгота отсутствует в НСИ</string>
+    <string name="simple_pd_msg_denied_for_ticket_type">Нельзя применить льготу %1$2d для данных категории поезда и типа билета</string>
+    <string name="simple_pd_not_allowed_for_train_category_ok">OK</string>
+
+    <!-- PrinterModeChoiceDialog -->
+    <string name="printer_mode_choice_dialog_title">Выберите тип устройства</string>
+    <string name="printer_mode_choice_dialog_printer_zebra">Zebra-EZ320K</string>
+    <string name="printer_mode_choice_dialog_printer_shtrih">ШТРИХ-МОБАЙЛ-ПТК</string>
+
+    <!-- PrinterEnterSerialNumberDialog -->
+    <string name="printer_enter_serial_number_dialog_hint">Введите заводской номер</string>
+    <string name="printer_enter_serial_number_dialog_error">Некорректное значение</string>
+    <string name="printer_enter_serial_number_dialog_ok">Ок</string>
+
+    <!-- ResultBarcodeCouponActivity -->
+    <string name="result_barcode_coupon_title">Талон ТППД</string>
+    <string name="result_barcode_coupon_code_is_valid">Код валиден</string>
+    <string name="result_barcode_coupon_station_label">Станция отправления:</string>
+    <string name="result_barcode_coupon_print_time_label">Дата печати:</string>
+    <string name="result_barcode_coupon_sell_pd_btn">ПД</string>
+    <string name="result_barcode_coupon_sell_baggage_btn">Багаж</string>
+    <string name="result_barcode_coupon_validity_yes">Действует</string>
+    <string name="result_barcode_coupon_validity_no">Не действует</string>
+    <string name="result_barcode_coupon_station_not_found">Не найдена</string>
+    <string name="result_barcode_coupon_msg_already_used">Код уже использован</string>
+    <string name="result_barcode_coupon_sale_pd_disabled_for_this_coupon">Талон ППД выдан на текущей станции. Оформление ПД не производится</string>
+    <string name="result_barcode_coupon_more_than_n_hours">Более 4-х часов назад</string>
+    <plurals name="result_barcode_coupon_more_than_n_hours">
+        <item quantity="zero">Более %1$d часов назад</item>
+        <item quantity="one">Более %1$d часа назад</item>
+        <item quantity="two">Более %1$d часов назад</item>
+        <item quantity="few">Более %1$d часов назад</item>
+        <item quantity="many">Более %1$d часов назад</item>
+        <item quantity="other">Более %1$d часов назад</item>
+    </plurals>
+    <string name="result_barcode_coupon_checking_progress">Выполняется проверка…</string>
+    <string name="result_barcode_coupon_tariff_not_found_msg">Не найден тариф\nдля оформления\nот станции\n%1$s</string>
+    <string name="result_barcode_coupon_tariff_not_found_cancel">Отмена</string>
+    <string name="result_barcode_coupon_tariff_not_found_continue">Продолжить</string>
+
+    <!-- InterfaceFragment -->
+    <string name="interface_fine_list_management">Вывод списка штрафов</string>
+
+    <!-- PosTypeChoiceDialog -->
+    <string name="pos_type_choice_dialog_title">Выберите тип устройства</string>
+    <string name="pos_type_choice_dialog_terminal_ingenico">Ingenico iCMP</string>
+    <string name="pos_type_choice_dialog_terminal_inpas">PAX D200</string>
+
+    <!--FineListManagementActivity-->
+    <string name="fine_list_management_fine_list_is_empty_dialog_message">Список штрафов пуст</string>
+    <string name="fine_list_management_fine_list_is_empty_dialog_close">Закрыть</string>
+
+    <!--OpenShiftSettingsFragment-->
+    <string name="open_shift_settings_test_pd_not_printed_msg">Необходимо\nраспечатать\nпробный ПД</string>
+    <string name="open_shift_settings_test_pd_not_printed_ok">Печать</string>
+    <string name="open_shift_settings_test_pd_not_printed_cancel">Отмена</string>
+    <string name="open_shift_settings_test_pd_fail_msg">Ошибка печати</string>
+
+    <!--SettingsManagementActivity-->
+    <string name="settings_management_apply_settings">Применение настроек</string>
+
+    <!--PrivateSettingsManagementActivity-->
+    <string name="private_settings_management_title">Частные настройки</string>
+
+    <!--CommonSettingsManagementActivity-->
+    <string name="common_settings_management_title">Общие настройки</string>
+
+    <!--ControlReadBscActivity-->
+    <string name="control_read_bsc_bring_bsc">Поднесите БСК\nк считывателю</string>
+    <string name="control_read_bsc_could_not_read">Информация с БСК\nне читается</string>
+    <string name="control_read_bsc_repeat_btn">Повторить считывание</string>
+    <string name="control_read_bsc_sale_new_pd_btn">Оформить новый ПД</string>
+    <string name="control_read_bsc_sale_new_pd_dialog_msg">Оформить новый\nПД?</string>
+    <string name="control_read_bsc_sale_new_pd_dialog_yes">Да</string>
+    <string name="control_read_bsc_sale_new_pd_dialog_no">Нет</string>
+
+    <!--RepealReadBscActivity-->
+    <string name="repeal_read_bsc_bring_bsc">Поднесите БСК\nк считывателю</string>
+    <string name="repeal_read_bsc_could_not_read">Информация с БСК\nне читается</string>
+    <string name="repeal_read_bsc_repeat_btn">Повторить считывание</string>
+
+    <!--ServiceTicketControlActivity-->
+    <string name="service_ticket_control_ticket_info">ПД</string>
+    <string name="service_ticket_control_card_info">БСК</string>
+
+    <!--TicketInfoFragment-->
+    <string name="ticket_info_not_valid">Не действует</string>
+    <string name="ticket_info_service_card_label">Служебная карта:</string>
+    <string name="ticket_info_travel_allowed">Проезд разрешен</string>
+    <string name="ticket_info_travel_not_allowed">Проезд запрещен</string>
+    <string name="ticket_info_turnstile_only">(только для открытия турникета)</string>
+    <string name="ticket_info_validity_time">Срок действия:</string>
+    <string name="ticket_info_coverage_area">Зона действия:</string>
+    <string name="ticket_info_all_area">Весь полигон</string>
+    <string name="ticket_info_unknown_zone">неизвест. код %1$d</string>
+    <string name="ticket_info_direction">Напр.:</string>
+    <string name="ticket_info_production_section">Уч.:</string>
+    <string name="ticket_info_station">Ст.:</string>
+    <string name="ticket_info_check_documents">Проверить документы</string>
+    <string name="ticket_info_not_valid_because">Не действует по причине:</string>
+    <string name="ticket_info_out_of_area_btn">Вне зоны</string>
+    <string name="ticket_info_no_documents_btn">Нет документов</string>
+    <string name="ticket_info_sale_new_pd_btn">Оформить новый ПД</string>
+    <string name="ticket_info_checking_progress">Выполняется проверка…</string>
+    <string name="ticket_info_error_invalid_device_id">Ключ ЭЦП невалиден</string>
+    <string name="ticket_info_error_revoked_eds_key">Ключ ЭЦП отозван</string>
+    <string name="ticket_info_error_invalid_eds_key">Ошибка цифровой подписи</string>
+    <string name="ticket_info_sale_new_pd_dialog_msg">Оформить\nновый ПД?</string>
+    <string name="ticket_info_sale_new_pd_dialog_yes">Да</string>
+    <string name="ticket_info_sale_new_pd_dialog_no">Нет</string>
+    <string name="ticket_info_error_no_data">Некорректные данные</string>
+
+    <!--CardInfoFragment-->
+    <string name="card_info_card_status_label">Статус БСК:</string>
+    <string name="card_info_card_status_valid">Действует</string>
+    <string name="card_info_card_status_in_stop_list">В стоп-листе</string>
+    <string name="card_info_card_status_has_expired">Срок действия истек</string>
+    <string name="card_info_card_valid_to_label">БСК действует до</string>
+    <string name="card_info_card_stop_list_reason_label">Причина постановки БСК\nв стоп-лист</string>
+    <string name="card_info_card_stop_list_unknown_reason">Причина неизвестна</string>
+    <string name="card_info_last_passage">Последний\nпроход: </string>
+    <string name="card_info_validity_date_time">Услуга действи-\nтельна до:</string>
+    <string name="card_info_passage_station">Станция\nпрохода:</string>
+    <string name="card_info_passage_out_station">Станция\nназначения:</string>
+    <string name="card_info_number_turniket">Номер\nустройства:</string>
+    <string name="card_info_passage_intersect">Проход:</string>
+    <string name="card_info_passage_exemption">Льгота:</string>
+    <string name="card_info_passage_fio">ФИО:</string>
+    <string name="card_info_passage_percentage">Размер льготы:</string>
+    <string name="card_info_passage_birthday">Дата рождения:</string>
+    <string name="card_info_card_type_bsc">БСК:</string>
+    <string name="card_info_card_type_skm">СКМ:</string>
+    <string name="card_info_card_type_skmo">СКМО:</string>
+    <string name="card_info_card_type_ipk">ИПК:</string>
+    <string name="card_info_card_type_troyka">Тройка:</string>
+    <string name="card_info_card_type_ett">ЭТТ:</string>
+    <string name="card_info_card_type_strelka">Стрелка:</string>
+    <string name="card_info_card_type_unknown">Неизвестный тип БСК</string>
+    <string name="card_info_exemption_value">%1$d%%</string>
+    <string name="card_info_passage_time_unknown">Не найдено</string>
+    <string name="card_info_passage_station_unknown">Не найдено</string>
+    <string name="card_info_passage_station_ptk">Списание поездки на ПТК</string>
+    <string name="card_info_prohod_not_valid">Проход не валиден</string>
+    <string name="card_info_prohod_valid">Проход валиден</string>
+    <string name="card_info_prohod_no_data">Нет данных прохода</string>
+
+    <!--SelectTransferStationsActivity-->
+    <string name="select_transfer_stations_title">Маршрут трансфера</string>
+    <string name="select_transfer_stations_departure_station_hint">ОТКУДА</string>
+    <string name="select_transfer_stations_destination_station_hint">КУДА</string>
+    <string name="select_transfer_stations_close">Закрыть</string>
+
+    <!--PdWithPlaceFragment-->
+    <string name="pd_with_place_departure_date_title">Отправление:</string>
+    <string name="pd_with_place_passenger_title">Пассажир:</string>
+    <string name="pd_with_place_document_title">Документ:</string>
+    <string name="pd_with_place_train_number_title">Поезд:</string>
+    <string name="pd_with_place_wagon_number_title">Вагон:</string>
+    <string name="pd_with_place_place_number_title">Место:</string>
+
+    <!--ServiceFeePdFragment-->
+    <string name="service_fee_pd_number_format">№ %06d</string>
+    <string name="service_fee_pd_date_to_unlimited">Неогранич.</string>
+    <string name="service_fee_pd_valid_pd">Действует</string>
+    <string name="service_fee_pd_invalid_pd">Не действует</string>
+    <string name="service_fee_pd_service_not_found">Услуга не найдена в НСИ</string>
+    <string name="service_fee_pd_date_actions_title">Срок действия: </string>
+    <string name="service_fee_pd_validity_from">с</string>
+    <string name="service_fee_pd_validity_to">по</string>
+
+    <!--CountTripsFragment-->
+    <string name="count_trips_sale_new_pd_dialog_msg">Оформить\nновый ПД?</string>
+    <string name="count_trips_sale_new_pd_dialog_yes">Да</string>
+    <string name="count_trips_sale_new_pd_dialog_no">Нет</string>
+    <string name="count_trips_valid_pd">Действует</string>
+    <string name="count_trips_invalid_pd">Не действует</string>
+    <string name="count_trips_error_pd_in_stop_list">ПД в стоп-листе</string>
+    <string name="count_trips_error_invalid_eds_key">Ошибка цифровой подписи</string>
+    <string name="count_trips_error_revoked_eds_key">Ключ ЭЦП отозван</string>
+    <string name="count_trips_exemption_label">Льгота</string>
+    <string name="count_trips_exemption_value">Нет</string>
+    <string name="count_trips_sale_with_surcharge_btn">Оформить доплату</string>
+    <string name="count_trips_pd_not_valid_btn">Билет НЕдействителен</string>
+    <string name="count_trips_validity_time_label">Срок действия:</string>
+    <string name="count_trips_validity_time_from_to">-</string>
+    <string name="count_trips_validity_time_from">с</string>
+    <string name="count_trips_validity_time_to">по</string>
+    <string name="count_trips_available_trips_label">Осталось поездок</string>
+    <string name="count_trips_available_trips_6000_label">на 6000:</string>
+    <string name="count_trips_available_trips_7000_label">на 7000:</string>
+    <string name="count_trips_last_passage">Последний\nпроход:</string>
+    <string name="count_trips_last_passage_label">Последний проход</string>
+    <string name="count_trips_last_passage_6000">на 6000:</string>
+    <string name="count_trips_last_passage_7000">на 7000:</string>
+    <string name="count_trips_no_passages">Проходов не было</string>
+    <string name="count_trips_more_n_hours">Более %d часов назад</string>
+    <string name="count_trips_no_passage_on_departure_station">Отсутствует проход на станции отправления</string>
+    <string name="count_trips_wrong_train_category_on_departure_station">Проход на станции отправления НЕ\nсоответствует категории поезда !</string>
+    <string name="count_trips_decrement_trip_btn">Списать поездку</string>
+    <string name="count_trips_decrement_trip_7000_btn">Списать поездку на 7000-ый поезд</string>
+    <string name="count_trips_fix_passage_mark_btn">Исправить метку прохода</string>
+    <string name="count_trips_decrement_trip_dialog_yes">Да</string>
+    <string name="count_trips_decrement_trip_dialog_no">Нет</string>
+
+    <!--SimplePdFragment-->
+    <string name="simple_pd_valid_pd">Действует</string>
+    <string name="simple_pd_invalid_pd">Не действует</string>
+    <string name="simple_pd_written_pd">Записан</string>
+
+    <!--MainScreenActivity-->
+    <string name="main_screen_control_label">Контроль</string>
+    <string name="main_screen_transfer_from">от %1$s</string>
+    <string name="main_screen_bsc_btn">БСК</string>
+    <string name="main_screen_barcode_btn">Штрихкод</string>
+    <string name="main_screen_sale_label">Оформление</string>
+    <string name="main_screen_pd_btn">ПД</string>
+    <string name="main_screen_baggage_btn">Багаж</string>
+    <string name="main_screen_transfer_btn">Трансфер</string>
+    <string name="main_screen_menu_btn">Меню</string>
+    <string name="main_screen_ask_ticketTape_attention_msg">До окончания билетной ленты осталось менее %1$d см, заменить?</string>
+    <string name="main_screen_ask_ticketTape_attention_ok">Да</string>
+    <string name="main_screen_ask_ticketTape_attention_no">Нет</string>
+
+    <!--ReadPdForTransferActivity-->
+    <string name="read_pd_for_transfer_msg">Считайте исходный ПД\nна пригородный поезд\nдля оформления трансфера</string>
+    <string name="read_pd_for_transfer_bsc_btn">БСК</string>
+    <string name="read_pd_for_transfer_barcode_btn">Штрихкод</string>
+
+    <!--DecrementTripActivity-->
+    <string name="decrement_trip_bring_bsc">Поднесите БСК\nк считывателю</string>
+    <string name="decrement_trip_card_not_found">Карта не найдена</string>
+    <string name="decrement_trip_could_not_decrement">Ошибка\nсписания поездки</string>
+    <string name="decrement_trip_repeat_btn">Повторить списание</string>
+    <string name="decrement_trip_cancel_btn">Отменить</string>
+
+    <!--TransferSaleStartActivity-->
+    <string name="transfer_sale_start_title">Оформление трансфера</string>
+    <string name="transfer_sale_start_departure_station_hint">ОТКУДА</string>
+    <string name="transfer_sale_start_direction">-</string>
+    <string name="transfer_sale_start_destination_station_hint">КУДА</string>
+    <string name="transfer_sale_start_transfer_type">Вид трансфера</string>
+    <string name="transfer_sale_start_continue_btn">Продолжить</string>
+    <string name="transfer_sale_start_no_routes_msg">Маршруты трансфера\nне найдены</string>
+    <string name="transfer_sale_start_no_routes_close_btn">Закрыть</string>
+
+    <!--TransferSalePreparationFragment-->
+    <string name="transfer_sale_preparation_title">Оформление трансфера</string>
+    <string name="transfer_sale_preparation_parent_pd_exemption">Льгота</string>
+    <string name="transfer_sale_preparation_parent_pd_exemption_no">Нет</string>
+    <string name="transfer_sale_preparation_parent_pd_validity_dates">Срок действия:</string>
+    <string name="transfer_sale_preparation_transfer_validity_dates">Дата проезда:</string>
+    <string name="transfer_sale_preparation_validity_dates_period">%1$s - %2$s</string>
+    <string name="transfer_sale_preparation_route">Маршрут:</string>
+    <string name="transfer_sale_preparation_route_value">%1$s -\n%2$s</string>
+    <string name="transfer_sale_preparation_fee_type_in_train">Сбор за оформление\nв поезде</string>
+    <string name="transfer_sale_preparation_fee_type_in_bus">Сбор за оформление\nв автобусе</string>
+    <string name="transfer_sale_preparation_fee_value_no">Нет</string>
+    <string name="transfer_sale_preparation_fee_value">%.2f р.</string>
+    <string name="transfer_sale_preparation_transfer_type">Вид трансфера</string>
+    <string name="transfer_sale_preparation_transfer_cost">Стоимость трансфера</string>
+    <string name="transfer_sale_preparation_transfer_cost_value">%.2f р.</string>
+    <string name="transfer_sale_preparation_total_cost">Итого:</string>
+    <string name="transfer_sale_preparation_total_cost_value">%.2f р.</string>
+    <string name="transfer_sale_preparation_payment_type_cash">Наличные</string>
+    <string name="transfer_sale_preparation_payment_type_card">Банк. карта</string>
+    <string name="transfer_sale_preparation_write_to_card_btn">Записать на\nБСК</string>
+    <string name="transfer_sale_preparation_print_btn">Распечатать билет</string>
+    <string name="transfer_sale_preparation_pd_number">ПД № %06d</string>
+    <string name="transfer_sale_preparation_dialog_loading">Пожалуйста подождите</string>
+    <string name="transfer_sale_preparation_unhandled_error_occurred_dialog_message">Невозможно вычислить цену билета</string>
+    <string name="transfer_sale_preparation_unhandled_error_occurred_dialog_positive">Ок</string>
+    <string name="transfer_sale_preparation_sft_error_dialog_message">Ошибка компонента Безопасный билет</string>
+    <string name="transfer_sale_preparation_sft_close_dialog_positive">Закрыть</string>
+
+    <!--ZoomPdFragment-->
+    <string name="zoom_pd_valid_pd">Действует</string>
+    <string name="zoom_pd_invalid_pd">Не действует</string>
+    <string name="zoom_pd_pd_number">№ %06d</string>
+    <string name="zoom_pd_pd_station_not_found">Не найдено</string>
+    <string name="zoom_pd_exemption_label">Льгота</string>
+    <string name="zoom_pd_exemption_no_value">Нет</string>
+    <string name="zoom_pd_date_time_label">Дата проезда:</string>
+    <string name="zoom_pd_date_time_no_value">Не найдено</string>
+    <string name="zoom_pd_validity_time_label">Срок действия:</string>
+    <string name="zoom_pd_validity_time_from_to">-</string>
+    <string name="zoom_pd_validity_time_from_no_value">Не найдено</string>
+    <string name="zoom_pd_validity_time_to_no_value">Не найдено</string>
+    <string name="zoom_pd_available_trips_label">Осталось поездок:</string>
+    <string name="zoom_pd_available_trips_6000_label">на 6000:</string>
+    <string name="zoom_pd_available_trips_7000_label">на 7000:</string>
+    <string name="zoom_pd_last_passage">Последний проход:</string>
+    <string name="zoom_pd_last_passage_label">Последний проход:</string>
+    <string name="zoom_pd_last_passage_6000">на 6000:</string>
+    <string name="zoom_pd_last_passage_7000">на 7000:</string>
+    <string name="zoom_pd_no_passages">Проходов не было</string>
+    <string name="zoom_pd_more_n_hours">Более %d часов назад</string>
+    <string name="zoom_pd_no_passage_on_departure_station">Отсутствует проход на станции отправления</string>
+    <string name="zoom_pd_wrong_train_category_on_departure_station">Проход на станции отправления НЕ\nсоответствует категории поезда !</string>
+    <string name="zoom_pd_close_btn">Закрыть</string>
+    <string name="zoom_pd_error_pd_in_stop_list">ПД в стоп-листе</string>
+    <string name="zoom_pd_error_invalid_eds_key">Ошибка цифровой подписи</string>
+    <string name="zoom_pd_error_revoked_eds_key">Ключ ЭЦП отозван</string>
+    <string name="zoom_pd_error_pd_is_annulled">ПД аннулирован</string>
+
+
+    <!--PdRepeal-->
+    <string name="pd_repeal_initializing">Инициализация…</string>
+    <string name="pd_repeal_aborted">ОПЕРАЦИЯ ПРЕРВАНА</string>
+    <string name="pd_repeal_aborted_ok_btn">Ок</string>
+
+    <!--PdRepealPosCancel-->
+    <string name="pd_repeal_pos_cancel">ПД аннулирован</string>
+    <string name="pd_repeal_pos_cancel_connecting">СОЕДИНЕНИЕ\nС БАНКОВСКИМ\nТЕРМИНАЛОМ</string>
+    <string name="pd_repeal_pos_cancel_no_connection">Нет соединения!\n\nПЕРЕЗАГРУЗИТЕ\nБАНКОВСКИЙ\nТЕРМИНАЛ</string>
+    <string name="pd_repeal_pos_cancel_no_connection_cancel_btn">Отмена</string>
+    <string name="pd_repeal_pos_cancel_processing">ОТМЕНА ОПЛАТЫ\nБАНКОВСКОЙ КАРТОЙ\n\nСледуйте инструкциям\nна экране банковского\nтерминала</string>
+
+    <!--PdRepealPosCancelPrintSlip-->
+    <string name="pd_repeal_pos_cancel_print_slip_printing">ИДЁТ ПЕЧАТЬ ЧЕКА</string>
+    <string name="pd_repeal_pos_cancel_print_slip_success_msg">Печать чека успешная?\n\nОТОРВИТЕ ЧЕК</string>
+    <string name="pd_repeal_pos_cancel_print_slip_success_repeat_btn">Повторить печать</string>
+    <string name="pd_repeal_pos_cancel_print_slip_success_continue_btn">Продолжить</string>
+    <string name="pd_repeal_pos_cancel_print_slip_fail_msg">Не удалось\nнапечатать чек</string>
+    <string name="pd_repeal_pos_cancel_print_slip_fail_repeat_btn">Повторить печать</string>
+    <string name="pd_repeal_pos_cancel_print_slip_fail_abort_btn">Прервать операцию</string>
+
+    <!--PdRepealPrintRepealCheck-->
+    <string name="pd_repeal_print_repeal_check_success_msg">Успешное\nаннулирование ПД</string>
+    <string name="pd_repeal_print_repeal_check_success_btn_ok">Ок</string>
+    <string name="pd_repeal_print_repeal_check_fail_msg">Не удалось напечатать\nчек аннулирования</string>
+    <string name="pd_repeal_print_repeal_check_btn_repeat">Повторить печать</string>
+    <string name="pd_repeal_print_repeal_check_btn_cancel">Прервать операцию</string>
+    <string name="pd_repeal_print_repeal_check_eklz_activation_required_msg">Требуется\nактивизация ЭКЛЗ</string>
+    <string name="pd_repeal_print_repeal_check_eklz_activation_start">Выполнить</string>
+    <string name="pd_repeal_print_repeal_check_eklz_activation_cancel">Отмена</string>
+    <string name="pd_repeal_print_repeal_check_shift_timeout_msg">Вышло 24 часа. Необходимо закрыть смену</string>
+    <string name="pd_repeal_print_repeal_check_shift_timeout_close_btn">Закрыть смену</string>
+    <string name="pd_repeal_print_repeal_check_shift_timeout_cancel_btn">Отмена</string>
+    <string name="pd_repeal_print_repeal_check_incorrect_fr_state_msg">Некорректное состояние ФР. Необходимо закрыть смену</string>
+    <string name="pd_repeal_print_repeal_check_incorrect_fr_state_close_btn">Закрыть смену</string>
+    <string name="pd_repeal_print_repeal_check_incorrect_fr_state_cancel_btn">Отмена</string>
+    <string name="pd_repeal_print_repeal_check_printing_msg">ИДЁТ ПЕЧАТЬ\nЧЕКА АННУЛИРОВАНИЯ</string>
+    <string name="pd_repeal_print_repeal_check_repeal_created_print_fail_msg">ПД аннулирован.\nОшибка печати</string>
+    <string name="pd_repeal_print_repeal_check_repeal_created_print_fail_repeat_btn">Повторить</string>
+    <string name="pd_repeal_print_repeal_check_repeal_created_print_fail_cancel_btn">Отменить</string>
+
+    <!-- OfdSettingsActivity -->
+    <string name="ofd_settings_title">Настройка связи с ОФД</string>
+    <string name="ofd_settings_ip">ip-адрес</string>
+    <string name="ofd_settings_port">Порт</string>
+    <string name="ofd_settings_timeout_s">Таймаут опроса, с</string>
+    <string name="ofd_settings_read">Прочитать</string>
+    <string name="ofd_settings_write">Записать</string>
+    <string name="ofd_settings_error_ip_format">Ошибка, некорректный ip</string>
+    <string name="ofd_settings_error_port_format">Ошибка, некорректный порт</string>
+    <string name="ofd_settings_error_timeout_format">Ошибка, некорректный таймаут</string>
+    <string name="ofd_settings_error_get_data">Ошибка, при получении данных с ФР</string>
+    <string name="ofd_settings_error_set_data">Ошибка, при записи данных в ФР</string>
+    <string name="ofd_settings_ready">Успешно</string>
+
+    <!-- SendDocsToOfdActivity -->
+    <string name="send_docs_to_ofd_title">Отправка данных в ОФД</string>
+    <string name="send_docs_to_ofd_unsent_documents">Неотправленных документов:</string>
+    <string name="send_docs_to_ofd_first_unsent_document_number">Номер первого неотправленного документа:</string>
+    <string name="send_docs_to_ofd_first_unsent_document_datetime">Дата создания первого неотправленного документа:</string>
+    <string name="send_docs_to_ofd_send">Отправить</string>
+    <string name="send_docs_to_ofd_update">Обновить</string>
+    <string name="send_docs_to_ofd_error">Ошибка, при получении данных с принтера</string>
+    <string name="send_docs_to_ofd_exist_unsent_docs_error">Есть неотправленные документы</string>
+    <string name="send_docs_to_ofd_not_all_docs_sent_error">Не все документы были отправлены</string>
+    <string name="send_docs_to_ofd_no_data">нет данных</string>
+    <string name="send_docs_to_ofd_progress">Обмен данными с ФР&#8230;</string>
+
+    <!--SqliteTransactionTest-->
+    <string name="sqlite_transaction_test_test_1_1">Тест 1&#8211;1</string>
+    <string name="sqlite_transaction_test_test_1_2">Тест 1&#8211;2</string>
+    <string name="sqlite_transaction_test_test_1_3">Тест 1&#8211;3</string>
+    <string name="sqlite_transaction_test_test_2_1">Тест 2&#8211;1</string>
+    <string name="sqlite_transaction_test_test_2_2">Тест 2&#8211;2</string>
+
+    <!-- ResultBarcodeActivity -->
+    <string name="result_barcode_activity_handle_progress">Обработка&#8230;</string>
+    <string name="result_barcode_activity_detecting_transfer_sale_progress">Определяем возможность оформить трансфер&#8230;</string>
+
+    <!-- RfidResultActivity -->
+    <string name="rfid_result_activity_handle_progress">Обработка&#8230;</string>
+    <string name="rfid_result_activity_detecting_transfer_sale_progress">Определяем возможность оформить трансфер&#8230;</string>
+
+    <!--ReadBscResultActivity-->
+    <string name="read_bsc_result_ticket_info">ПД</string>
+    <string name="read_bsc_result_card_info">БСК</string>
+
+    <!-- DefaultPdInfo -->
+    <string name="default_pd_info_default_no_exemption">Нет</string>
+    <string name="default_pd_info_surcharge_no_exemption">-</string>
+    <string name="default_pd_info_surcharge_category">Доплата до ск к док. № %06d</string>
+    <string name="default_pd_info_valid_pd">Действует</string>
+    <string name="default_pd_info_invalid_pd">Не действует</string>
+    <string name="default_pd_info_new_pd">Записан</string>
+    <string name="default_pd_info_station_not_found">Не найдено</string>
+    <string name="default_pd_info_pd_number">№ %06d</string>
+    <string name="default_pd_info_exemption_label">Льгота</string>
+    <string name="default_pd_info_date_time_label">Дата проезда:</string>
+    <string name="default_pd_info_date_time_no_value">Не найдено</string>
+    <string name="default_pd_info_validity_time_label">Срок действия:</string>
+    <string name="default_pd_info_validity_time_from_to">-</string>
+    <string name="default_pd_info_validity_time_from_no_value">Не найдено</string>
+    <string name="default_pd_info_validity_time_to_no_value">Не найдено</string>
+    <string name="default_pd_info_error_pd_in_stop_list">ПД в стоп-листе</string>
+    <string name="default_pd_info_error_pd_is_annulled">ПД аннулирован</string>
+    <string name="default_pd_info_surcharge_not_allowed_surcharge_denied_for_exemption">Оформление на ПТК доплаты к льготному ПД запрещено</string>
+    <string name="default_pd_info_surcharge_not_allowed_exemption_not_found">Льгота отсутствует в НСИ</string>
+    <string name="default_pd_info_surcharge_not_allowed_exemption_denied">Нельзя применить льготу %1$2d для данных категории поезда и типа билета</string>
+    <string name="default_pd_info_surcharge_not_allowed_positive">Ок</string>
+    <string name="default_pd_info_transfer_route_not_valid_to_parent_message">Маршрут исходного ПД не соответствует маршруту движения трансфера</string>
+    <string name="default_pd_info_transfer_route_not_valid_to_parent_positive">Закрыть</string>
+    <string name="default_pd_info_no_transfer_can_be_sold_message">На карте отсутствует исходный ПД, к которому может быть оформлен трансфер</string>
+    <string name="default_pd_info_no_transfer_can_be_sold_positive">Закрыть</string>
+    <string name="default_pd_info_confirm_pd_message">Укажите билет, по которому осуществляется проезд</string>
+    <string name="default_pd_info_confirm_pd_positive">Закрыть</string>
+    <string name="card_info_wallet_units_left">Осталось единиц</string>
+    <string name="card_info_wallet_time_over">Срок действия \"кошелек\"</string>
+    <string name="card_info_troyka_poezdki">Осталось поездок</string>
+    <string name="card_info_type_ticket">Тип билета</string>
+
+
+</resources>

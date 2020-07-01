@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/error_fragment_header"
+        style="@style/tv_pd_info_field"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:layout_marginLeft="@dimen/margin_for_button"
+        android:layout_marginRight="@dimen/margin_for_button"
+        android:layout_marginTop="7dp"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="@string/not_valid"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <ru.ppr.core.ui.widget.CustomTextView
+        android:id="@+id/error_fragment_message"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="@dimen/pd_fragment_text_size"
+        tools:text="Сообщение\nоб ошибке" />
+
+    <View
+        android:id="@+id/one_off_bottom_separator"
+        style="@style/separator_horizontal_gray_flat"
+        android:visibility="gone" />
+
+</LinearLayout>

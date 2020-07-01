@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_status_bar" />
+
+    <include layout="@layout/include_trip_service_info" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#999999" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/rootBtn"
+            style="@style/Core.App.Widget.Button.WhiteBlueSeparated"
+            android:text="@string/menu_working_root"
+            android:textColor="@color/defaultRed"
+            android:textStyle="bold" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/workingStateBtn"
+            style="@style/Core.App.Widget.Button.WhiteBlueSeparated"
+            android:text="@string/menu_working_state" />
+
+    </LinearLayout>
+
+</LinearLayout>

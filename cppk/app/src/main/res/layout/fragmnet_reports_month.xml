@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:padding="@dimen/global_horizontal_margin">
+
+        <ImageView
+            android:id="@+id/fragment_report_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/global_vertical_margin"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_list"/>
+
+        <TextView
+            android:id="@+id/monthDate"
+            style="@style/reports_shift_month_select"
+            android:layout_width="@dimen/width_for_enter_date_shift"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/fragment_report_ic"
+            android:background="@drawable/bg_white_with_corners_5dp"
+            android:hint="@string/reports_hint_month_date"></TextView>
+
+        <ru.ppr.cppk.ui.widget.FilterEditText
+            android:id="@+id/monthNum"
+            style="@style/reports_shift_month_select"
+            android:layout_width="@dimen/width_for_enter_date_shift"
+            android:layout_below="@id/fragment_report_ic"
+            android:background="@drawable/bg_white_with_corners_5dp"
+            android:digits="№ 0123456789"
+            android:hint="@string/reports_hint_month_number"
+            android:imeOptions="actionDone"
+            android:inputType="numberSigned"
+            android:maxLength="6"/>
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray"/>
+
+    <TextView
+        android:id="@+id/testMonthSheet"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/reports_test_month_sheet"/>
+
+    <TextView
+        android:id="@+id/monthSheet"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/reports_month_sheet"/>
+
+    <TextView
+        android:id="@+id/discountMonthSheet"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/reports_discount_month_sheet"/>
+
+    <TextView
+        android:id="@+id/BTMonthlySheet"
+        style="@style/btn_settings_white_blue"
+        android:text="@string/reports_bt_monthly_sheet"/>
+
+</LinearLayout>

@@ -1,0 +1,167 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="text_size_for_title">22sp</dimen>
+    <dimen name="text_size_for_sub_title">18sp</dimen>
+    <dimen name="text_size_for_count_trip_fragment">21sp</dimen>
+    <dimen name="repail_item_text_size">20sp</dimen>
+    <dimen name="padding_for_sub_title_left_right">16dp</dimen>
+    <dimen name="padding_for_sub_title_bottom_top">3dp</dimen>
+    <dimen name="date_passage_width">160dp</dimen>
+    <dimen name="horizontal_padding_for_item">8dp</dimen>
+    <dimen name="margin_for_item">8dp</dimen>
+    <dimen name="vertical_padding_for_item">8dp</dimen>
+    <dimen name="statistick_check_item_horizontal_margin">16dp</dimen>
+    <dimen name="radius_for_corners">5dp</dimen>
+    <dimen name="global_horizontal_margin">10dp</dimen>
+    <dimen name="global_horizontal_margin_divide_to_2">5dp</dimen>
+    <dimen name="global_vertical_margin">10dp</dimen>
+    <dimen name="default_height_for_activiti_title">50dp</dimen>
+    <dimen name="smart_actv_margin_vertical">4dp</dimen>
+    <dimen name="voskl_znak_height_little">270px</dimen>
+    <dimen name="voskl_znak_padding">60px</dimen>
+    <dimen name="hamburger_spinner_img_right_margin">10dp</dimen>
+    <dimen name="hamburger_spinner_margin">4dp</dimen>
+    <dimen name="hamburger_spinner_text_size">16sp</dimen>
+    <dimen name="text_large">36sp</dimen>
+    <dimen name="height_for_small_pd">150dp</dimen>
+    <dimen name="extra_margin">20dp</dimen>
+
+    <!-- Размеры для серых -->
+    <dimen name="text_size_for_button">40px</dimen>
+    <dimen name="margin_for_button">10dp</dimen>
+    <dimen name="height_for_button">100px</dimen>
+
+    <!-- Рамезры для больших синих кнопок -->
+    <dimen name="btn_blue_big_width">340dp</dimen>
+    <dimen name="btn_blue_big_height">110dp</dimen>
+    <dimen name="btn_blue_big_margin">10dp</dimen>
+
+    <!-- Размеры для фрагментов использования льготы -->
+    <dimen name="exemption_fragment_padding">16dp</dimen>
+    <dimen name="exemption_input_filed_padding">8dp</dimen>
+    <dimen name="exemption_block_padding">16dp</dimen>
+    <dimen name="exemption_padding_left_for_delete_exemption">50dp</dimen>
+
+    <!-- Размеры для экрана ввода пина -->
+    <dimen name="enter_pin_additional_bottom_pading_for_error_layout">10dp</dimen>
+    <dimen name="enter_pin_title_margin">15dp</dimen>
+    <dimen name="enter_pin_title_marginBottom">10dp</dimen>
+    <dimen name="enter_pin_text_size">22sp</dimen>
+    <dimen name="enter_pin_edit_text_margin">8dp</dimen>
+    <dimen name="enter_pin_dit_text_padding">16dp</dimen>
+
+    <!-- Размеры для welcome fragment -->
+    <dimen name="welcome_activity_textview_margins">30dp</dimen>
+    <dimen name="welcome_activity_fio_text_size">65px</dimen>
+    <dimen name="welcome_activity_role_text_size">24sp</dimen>
+    <dimen name="welcome_activity_role_margin_bottom">50dp</dimen>
+
+    <!-- Размеры для настроек -->
+    <dimen name="additional_settings_main_item_margin">16dp</dimen>
+    <dimen name="additional_settings_sub_item_margin">32dp</dimen>
+    <dimen name="additional_settings_sub_menu_text_size">36px</dimen>
+    <dimen name="additional_settings_sub_menu_margin_right">24px</dimen>
+    <dimen name="additional_settings_min_height_button">62dp</dimen>
+    <dimen name="additional_settings_padding_for_button">10dp</dimen>
+
+    <!-- Размеры для экрана информации о БСК -->
+    <dimen name="bsc_info_text_view_margin">10dp</dimen>
+    <dimen name="bsc_info_text_size">24sp</dimen>
+
+    <!-- Размеры для экрана открытия смены -->
+    <dimen name="open_shift_inner_view_padding">15dp</dimen>
+    <dimen name="open_shift_padding_in_layout_vertical">30dp</dimen>
+    <dimen name="open_shift_margin_in_layout_horizontal">25dp</dimen>
+    <dimen name="open_shift_title_text_size">20sp</dimen>
+    <dimen name="open_shift_value_text_size">30sp</dimen>
+
+    <!-- Размеры для MainMenu -->
+    <dimen name="main_menu_headers_text_size">20sp</dimen>
+
+    <!-- Размеры для sell pd success activity -->
+    <dimen name="sell_pd_success_img_horizontal_margin">60dp</dimen>
+
+    <!-- Размеры для фрагментов, отображающие билет -->
+    <dimen name="pd_fragment_text_size">17sp</dimen>
+    <dimen name="pd_fragment_text_size_large">27sp</dimen>
+    <dimen name="pd_fragment_horizontal_margin_large">7dp</dimen>
+    <!-- Размеры для smart_autocompleate_text_view -->
+    <dimen name="smart_actv_height_edite_text_field_for_stations">60dp</dimen>
+
+    <!-- Размеры для sell pd fragment -->
+    <dimen name="sell_pd_height_counter_pd_button">38dp</dimen>
+    <dimen name="sell_pd_width_counter_pd_button">50dp</dimen>
+    <dimen name="sell_pd_text_size_counter_pd">22sp</dimen>
+    <dimen name="sell_pd_total_cost_view_text_size">28sp</dimen>
+    <dimen name="sell_pd_counter_layout_width">155dp</dimen>
+    <dimen name="sell_pd_margin_between_counter_button">3dp</dimen>
+    <dimen name="sell_pd_height_sell_button">60dp</dimen>
+    <dimen name="text_size_for_caps_text">
+        14sp <!-- Размер текста для вьюх где текст написан капсом, но выглядеть должно маленькими буквами -->
+    </dimen>
+    <dimen name="sell_pd_text_size">34px</dimen>
+    <dimen name="toggle_button_height">40dp</dimen>
+    <dimen name="toggle_button_vertical_margin">8dp</dimen>
+    <dimen name="toggle_button_vertical_margin_divide_to_2">4dp</dimen>
+    <dimen name="sell_pd_fee_checkbox_padding_left">10dp</dimen>
+    <dimen name="sell_pd_exemption_height">40dp</dimen>
+    <dimen name="sell_pd_text_size_large">17sp</dimen>
+
+    <!-- размеры для экрана формирования отчетов -->
+    <dimen name="margin_between_box_and_text">18dp</dimen>
+    <dimen name="margin_vertical_for_chekck_box">20dp</dimen>
+    <dimen name="width_for_enter_date_field_label">45dp</dimen>
+    <dimen name="width_for_enter_date_shift">160dp</dimen>
+    <dimen name="width_for_enter_number_shift">136dp</dimen>
+    <dimen name="margin_for_print_control_journal_btn">22dp</dimen>
+
+    <!-- Размеры для экранов статистики -->
+    <dimen name="statistic_width_status_shift_field">170dp</dimen>
+    <dimen name="statistic_text_size_for_field">18sp</dimen>
+    <dimen name="statistic_text_size_for_title">22sp</dimen>
+    <dimen name="statistic_margin_left_for_field">23px</dimen>
+    <dimen name="statistic_item_margin_betwen_field">15dp</dimen>
+    <dimen name="satistic_item_margin_left">50px</dimen>
+    <dimen name="statistic_padding_for_title">20dp</dimen>
+    <dimen name="statistic_padding_for_green_field_vertical">5dp</dimen>
+    <dimen name="statistic_height_edit_text">40dp</dimen>
+    <dimen name="statistic_padding_for_edittext">10dp</dimen>
+
+    <!-- Размеры для диалога -->
+    <dimen name="cppk_dialog_text_size">60px</dimen>
+    <dimen name="cppk_dialog_hor_btn_width">146dp</dimen>
+    <dimen name="cppk_dialog_hor_btn_height">75dp</dimen>
+    <dimen name="cppk_dialog_width">340dp</dimen>
+    <dimen name="cppk_dialog_margin">20dp</dimen>
+    <dimen name="cppk_dialog_vertical_buttons_margin">7dp</dimen>
+    <dimen name="cppk_dialog_bottom_margin_for_bottom_button">12dp</dimen>
+
+    <!-- Размеры для экрана ввода данных для электронного билета -->
+    <dimen name="enter_e_ticket_bottom_buttons_margin">5dp</dimen>
+    <dimen name="enter_e_ticket_main_padding">10dp</dimen>
+    <dimen name="enter_e_ticket_edit_text_padding_right">40dp</dimen>
+    <dimen name="enter_e_ticket_x_margin_right">10dp</dimen>
+    <dimen name="enter_e_ticket_x_size">88px</dimen>
+    <dimen name="enter_e_ticket_x_padding">10dp</dimen>
+
+    <!-- ResultBarcodeCouponActivity -->
+    <dimen name="result_barcode_coupon_screen_margin">7dp</dimen>
+    <dimen name="app_padding_30dp">30dp</dimen>
+    <dimen name="app_padding_20dp">20dp</dimen>
+    <dimen name="dimen_btn_height_40dp">40dp</dimen>
+    <dimen name="dimen_btn_height_50dp">50dp</dimen>
+    <dimen name="app_text_size_22sp">22sp</dimen>
+    <dimen name="app_margin_15dp">15dp</dimen>
+    <dimen name="app_text_size_30sp">30sp</dimen>
+    <dimen name="app_margin_30dp">30dp</dimen>
+    <dimen name="app_text_size_27sp">27sp</dimen>
+
+    <dimen name="dimen_progress_bar_100dp">100dp</dimen>
+    <dimen name="dimen_progress_bar_300dp">300dp</dimen>
+    <dimen name="app_text_size_40sp">40sp</dimen>
+
+</resources>

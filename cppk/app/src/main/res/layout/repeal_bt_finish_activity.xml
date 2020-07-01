@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.ppr.cppk.ui.widget.LoggableViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--CUSTOM_POS_TERMINAL_CONNECTING-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/fragment_writings_2_top"
+            android:layout_marginBottom="100dp"
+            android:text="@string/terminal_establishing_connection"
+            android:textSize="28sp"
+            app:typeface="roboto_bold" />
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/custom_pos_terminal_connecting_timer"
+            style="@style/fragment_writings_2_bottom"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="155dp"
+            android:textSize="50sp"
+            app:typeface="roboto_bold" />
+
+    </FrameLayout>
+
+    <!--WRITING-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/writing_w"
+            style="@style/fragment_default_text" />
+
+    </FrameLayout>
+
+    <!--WRITING_BUTTON-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/writing_button_icon"
+            style="@style/fragment_icon" />
+
+        <TextView
+            android:id="@+id/writing_button_w"
+            style="@style/fragment_default_text" />
+
+        <FrameLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_button_b"
+                style="@style/fragment_button" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <!--WRITING_BUTTONS_2_LONG-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/writing_buttons_2_long_icon"
+            style="@style/fragment_icon" />
+
+        <TextView
+            android:id="@+id/writing_buttons_2_long_w"
+            style="@style/fragment_default_text" />
+
+        <LinearLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_buttons_2_long_b_top"
+                style="@style/fragment_button" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writing_buttons_2_long_b_bottom"
+                style="@style/fragment_button" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!--WRITINGS_2-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/writings_2_w_top"
+            style="@style/fragment_writings_2_top" />
+
+        <TextView
+            android:id="@+id/writings_2_w_bottom"
+            style="@style/fragment_writings_2_bottom" />
+
+    </FrameLayout>
+
+    <!--WRITINGS_2_BUTTON-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/writings_2_button_icon"
+            style="@style/fragment_icon" />
+
+        <TextView
+            android:id="@+id/writings_2_button_w_top"
+            style="@style/fragment_writings_2_top" />
+
+        <TextView
+            android:id="@+id/writings_2_button_w_bottom"
+            style="@style/fragment_writings_2_bottom" />
+
+        <FrameLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writings_2_button_b"
+                style="@style/fragment_button" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <!--WRITINGS_2_BUTTONS_2_LONG-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/writings_2_buttons_2_long_icon"
+            style="@style/fragment_icon" />
+
+        <TextView
+            android:id="@+id/writings_2_buttons_2_long_w_top"
+            style="@style/fragment_writings_2_top" />
+
+        <TextView
+            android:id="@+id/writings_2_buttons_2_long_w_bottom"
+            style="@style/fragment_writings_2_bottom" />
+
+        <LinearLayout style="@style/fragment_buttons_layout">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writings_2_buttons_2_long_b_top"
+                style="@style/fragment_buttons_many_button" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/writings_2_buttons_2_long_b_bottom"
+                style="@style/fragment_buttons_many_button" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</ru.ppr.cppk.ui.widget.LoggableViewFlipper>

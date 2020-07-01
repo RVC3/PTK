@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- SPLASH -->
+    <color name="splash_red">#FF0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green">#019354</color>
+
+    <color name="disable_text_color">#000000</color>
+    <color name="disable_text_color_gray">#999999</color>
+
+    <color name="red">#ED1B24</color>
+
+    <color name="green_pd">#4BA65C</color>
+
+    <!-- Цвет текста для основных заголовков -->
+    <color name="sell_pd_title_color">#7389AC</color>
+    <!-- Цвет активного элемента способа оплаты -->
+    <color name="payment_type_active">#216FC2</color>
+    <!-- Цвет неактивного элемента способа оплаты -->
+    <color name="payment_type_passive">#073768</color>
+
+    <color name="white_dark">#7A90B1</color>
+
+
+    <color name="black">#000000</color>
+    <color name="gray">#7d7d7d</color>
+    <color name="gray_tabhost_title">#747474</color>
+    <color name="gray_inactive">#999999</color>
+    <color name="blue">#0A4A8F</color>
+    <color name="blue_transparent">#F30A4A8F</color>
+    <color name="gray_2">#BCBCBC</color>
+
+    <color name="armSyncLogBackground">#333333</color>
+    <color name="armSyncGreenLineColor">#02482C</color>
+    <!-- Серый цвет для неактивных кнопок меню -->
+    <color name="gray_menu">#E5E5E5</color>
+
+    <!-- Серый цвет текста статус-бара -->
+    <color name="statusBarTextColor">#B9B9B9</color>
+    <color name="statusBarTextColorWhite">#0D4B88</color>
+    <color name="statusBarBatteryGreen">#019354</color>
+    <color name="statusBarBatteryYellow">#FFD21E</color>
+    <color name="statusBarBatteryRed">#FF0000</color>
+
+    <!-- Статистика продаж за последнюю смену StatisticSellForLastShiftFragment -->
+    <color name="statisticsSeparatorBackground">#9A9A9A</color>
+
+    <color name="start_open_shift_fragment_text_title_color">
+        #585858<!-- цвет для заголовков --></color>
+
+    <color name="reports_background_color">#D9D9D9</color>
+    <color name="reports_background_color_light">#EDEDED</color>
+
+    <color name="blue_dark">#07376A</color>
+
+
+    <!-- ResultBarcodeCouponActivity -->
+    <color name="result_barcode_coupon_error">@color/red</color>
+    <color name="result_barcode_coupon_success">@color/green</color>
+    <color name="result_barcode_coupon_normal">@android:color/black</color>
+
+    <!-- ServiceTicketControl.TicketInfoFragment -->
+    <color name="service_ticket_control_ticket_info_error">@color/red</color>
+    <color name="service_ticket_control_ticket_info_success">@color/green</color>
+
+    <!-- ServiceTicketControl.CardInfoFragment -->
+    <color name="service_ticket_control_card_info_error">@color/red</color>
+    <color name="service_ticket_control_card_info_success">@color/green</color>
+    <color name="service_ticket_control_card_info_normal">@android:color/black</color>
+
+    <!-- CountTripsFragment -->
+    <color name="count_trips_error">@color/red</color>
+    <color name="count_trips_success">@color/green</color>
+
+    <!-- SimplePdFragment -->
+    <color name="simple_pd_error">@color/red</color>
+    <color name="simple_pd_success">@color/green</color>
+    <color name="simple_pd_written">@color/blue</color>
+
+    <!-- ZoomPdFragment -->
+    <color name="zoom_pd_error">@color/red</color>
+    <color name="zoom_pd_success">@color/green</color>
+
+    <!-- DefaultPdInfo -->
+    <color name="default_pd_info_error">@color/red</color>
+    <color name="default_pd_info_success">@color/green</color>
+    <color name="default_pd_info_normal">@android:color/black</color>
+    <color name="default_pd_info_new_pd">@color/blue</color>
+    <color name="clr_background_progress_bar">#80000000</color>
+
+</resources>

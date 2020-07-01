@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_status_bar" />
+
+    <include layout="@layout/include_trip_service_info" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/working_state_terminal_id" />
+
+                <TextView
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/working_state_wifi_ssid" />
+
+                <TextView
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/working_state_bs_id" />
+
+                <TextView
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/working_state_software_version" />
+
+                <TextView
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/working_state_nsi_version" />
+
+                <TextView
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="end"
+                    android:text="@string/working_state_last_exchange" />
+
+                <TextView
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/working_state_not_exported" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/terminal_id"
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    tools:text="@string/working_state_no_data"
+                    tools:textColor="@color/defaultRed" />
+
+                <TextView
+                    android:id="@+id/wifi_ssid"
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    tools:text="@string/working_state_no_data"
+                    tools:textColor="@color/defaultRed" />
+
+                <TextView
+                    android:id="@+id/bs_id"
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="@string/working_state_no_data"
+                    tools:textColor="@color/defaultRed" />
+
+                <TextView
+                    android:id="@+id/software_version"
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/defaultGreen"
+                    android:textStyle="bold"
+                    tools:text="1.0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/nsi_version"
+                        style="@style/CapsText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:textStyle="bold"
+                        tools:text="@string/working_state_no_data"
+                        tools:textColor="@color/defaultRed" />
+
+                    <TextView
+                        android:id="@+id/nsi_version_date"
+                        style="@style/CapsText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/defaultGreen"
+                        android:textStyle="bold"
+                        tools:text="11.11.2017" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/last_exchange"
+                        style="@style/CapsText"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="0.8"
+                        android:gravity="center_vertical"
+                        android:textStyle="bold"
+                        tools:text="@string/working_state_ok"
+                        tools:textColor="@color/defaultGreen" />
+
+                    <TextView
+                        android:id="@+id/last_exchange_date"
+                        style="@style/CapsText"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:textStyle="bold"
+                        tools:text="02.12.2017 14:25"
+                        tools:textColor="@color/defaultGreen" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/not_exported"
+                    style="@style/CapsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/defaultGreen"
+                    android:textStyle="bold"
+                    tools:text="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/wifi_settings"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/working_state_wifi_settings" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/force_sync"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/working_state_force_sync" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/bs_connect"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/working_state_bs_connect" />
+
+    </LinearLayout>
+
+</LinearLayout>

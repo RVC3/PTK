@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/userId"
+            android:layout_width="164dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:text="10001" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="setUserId" />
+
+    </LinearLayout>
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/openProcessorNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="openProcessorNative"
+        android:visibility="gone" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/getStateNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="getStateNative"
+        android:visibility="gone" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/closeProcessorNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="closeProcessorNative"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/pull"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pull" />
+
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/pullTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pullTest" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/breakSft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сломать SFT" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/testSig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="testSig" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/getKeyInfoBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="getKeyInfo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/lastError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="getLastError" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/getState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="getState" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/updateFolders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="upFolders" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/createCheckRequest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Создать CheckReq" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/createSellRequest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Создать SellReq" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/createAllRequest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Создать AllReq" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/close_sft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close sft" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/takeLic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="take lic" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/clearLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="очистить лог" />
+
+    </LinearLayout>
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/ecpInitEnableBluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Init With Bluetooth" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/ecpInitDisableBluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Init Without Bluetooth" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/takeAndPull"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take and pull" />
+
+    <EditText
+        android:id="@+id/out"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine" />
+
+</LinearLayout>

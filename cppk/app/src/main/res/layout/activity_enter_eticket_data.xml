@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/blue"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mainBigTitle"
+        style="@style/black_title_with_white_text"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="0dp"
+        android:text="@string/e_ticket"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mainSmallTitle"
+        style="@style/black_title_with_white_text"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainBigTitle"
+        android:paddingBottom="@dimen/enter_e_ticket_main_padding"
+        android:text="@string/e_ticket_write_email_or_phone"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/enterDataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainSmallTitle"
+        android:orientation="vertical"
+        android:padding="@dimen/enter_e_ticket_main_padding"
+        android:paddingTop="5dp">
+
+        <RelativeLayout
+            android:id="@+id/emailPhoneTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/emailTitle"
+                style="@style/titles"
+                android:text="@string/e_ticket_email_phone" />
+
+            <TextView
+                android:id="@+id/phone10DigitTitle"
+                style="@style/titles"
+                android:layout_alignBaseline="@+id/emailTitle"
+                android:layout_toEndOf="@+id/emailTitle"
+                android:text="@string/e_ticket_10_digit"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/eTicketEmailPhoneEdit"
+                style="@style/edit_text_style"
+                android:layout_marginBottom="0dp"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingRight="@dimen/enter_e_ticket_edit_text_padding_right"
+                android:typeface="monospace" />
+
+            <ImageButton
+                android:id="@+id/eTicketEmailPhoneClearBtn"
+                android:layout_width="@dimen/enter_e_ticket_x_size"
+                android:layout_height="@dimen/enter_e_ticket_x_size"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/enter_e_ticket_x_margin_right"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/enter_e_ticket_x_padding"
+                android:scaleType="fitCenter"
+                android:src="@drawable/x" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/eTicketErrorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enterDataLayout"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        android:padding="@dimen/enter_e_ticket_main_padding">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/eticket_error_pic" />
+
+        <TextView
+            android:id="@+id/eTicketErrorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/e_ticket_email_and_phone_error"
+            android:textColor="@color/red"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="@dimen/enter_e_ticket_bottom_buttons_margin">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/eTicketCancel"
+            style="@style/btn_gray"
+            android:layout_margin="@dimen/enter_e_ticket_bottom_buttons_margin"
+            android:layout_weight="1"
+            android:text="@string/e_ticket_cancel" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/eTicketOk"
+            style="@style/btn_gray"
+            android:layout_margin="@dimen/enter_e_ticket_bottom_buttons_margin"
+            android:layout_weight="1"
+            android:text="@string/e_ticket_ok" />
+
+    </LinearLayout>
+
+</RelativeLayout>

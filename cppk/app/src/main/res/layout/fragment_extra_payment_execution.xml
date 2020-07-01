@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_for_fragment"
+        android:text="@string/extra_payment_execution_title" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:id="@+id/parentPdGroup"
+                    style="@style/ExtraPaymentExecution.Group">
+
+                    <ru.ppr.core.ui.widget.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/extra_payment_execution_parent_pd_base"
+                        android:textSize="17sp"
+                        app:typeface="roboto_bold" />
+
+                    <ru.ppr.core.ui.widget.CustomTextView
+                        android:id="@+id/parentPdTicketType"
+                        android:textSize="17sp"
+                        tools:text="Разовый полный" />
+
+                    <TextView
+                        android:id="@+id/parentPdNumber"
+                        android:textSize="17sp"
+                        tools:text="№ 000000" />
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ru.ppr.core.ui.widget.CustomTextView
+                            android:id="@+id/parentPdDepartureStation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAllCaps="true"
+                            android:textSize="17sp"
+                            app:typeface="roboto_bold"
+                            tools:text="Чехов" />
+
+                        <ImageView
+                            android:id="@+id/parentPdDirectionImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginRight="7dp"
+                            android:adjustViewBounds="true"
+                            tools:src="@drawable/there_back_direction" />
+
+                        <ru.ppr.core.ui.widget.CustomTextView
+                            android:id="@+id/parentPdDestinationStation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAllCaps="true"
+                            android:textSize="17sp"
+                            app:typeface="roboto_bold"
+                            tools:text="Шарапова охота" />
+                    </LinearLayout>
+
+                    <LinearLayout android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/extra_payment_execution_parent_pd_exemption"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/parentPdExemptionValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/extra_payment_execution_parent_pd_exemption_no"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/parentPdTrainCategory"
+                        android:textSize="17sp"
+                        tools:text="Пассажирский" />
+
+                    <LinearLayout android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/extra_payment_execution_parent_pd_start_date"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/parentPdStartDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="17sp"
+                            tools:text="01.01.1001" />
+                    </LinearLayout>
+
+                    <LinearLayout android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/extra_payment_execution_parent_pd_id_kkt"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/parentPdTerminalNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="17sp"
+                            tools:text="1234567" />
+                    </LinearLayout>
+
+                </TableLayout>
+
+                <LinearLayout
+                    android:id="@+id/formPdGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp">
+
+                        <FrameLayout
+                            android:id="@+id/departureStationContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginEnd="40dp"
+                            android:background="@drawable/bg_extra_payment_dep_station">
+
+                            <TextView
+                                android:id="@+id/departureStationLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/extra_payment_execution_departure_station_label"
+                                android:textColor="#cacaca" />
+
+                            <ru.ppr.cppk.ui.widget.StationEditText
+                                android:id="@+id/departureStationEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="bottom"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:textColor="@color/extra_payment_field_text_color"
+                                android:textStyle="bold"
+                                tools:text="МОСКВА-КАЛАНЧЕВСКАЯ" />
+                        </FrameLayout>
+
+                        <ImageButton
+                            android:id="@+id/clearStationsBtn"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:background="@null"
+                            android:src="@drawable/ic_clear_stations"
+                            tools:tint="@color/extra_payment_btn_tint_color" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <FrameLayout
+                            android:id="@+id/destinationStationContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginEnd="40dp"
+                            android:background="@drawable/bg_extra_payment_dest_station">
+
+                            <TextView
+                                android:id="@+id/destinationStationLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/extra_payment_execution_destination_station_label"
+                                android:textColor="#cacaca"
+                                tools:enabled="false" />
+
+                            <ru.ppr.cppk.ui.widget.StationEditText
+                                android:id="@+id/destinationStationEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="bottom"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:textColor="@color/extra_payment_field_text_color"
+                                android:textStyle="bold"
+                                tools:enabled="false"
+                                tools:text="СЕРПУХОВ" />
+                        </FrameLayout>
+
+                        <ImageButton
+                            android:id="@+id/swapStationsBtn"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:background="@null"
+                            android:src="@drawable/ic_swap_stations"
+                            tools:enabled="false"
+                            tools:tint="@color/extra_payment_btn_tint_color" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/tariffPlanContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_white_with_corners_5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tariffPlanLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/extra_payment_execution_tariff_label"
+                            android:textColor="#cacaca" />
+
+                        <Spinner
+                            android:id="@+id/tariffPlanSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            tools:listitem="@layout/item_spinner_extra_payment_tariff" />
+                    </FrameLayout>
+
+                    <View
+                        style="@style/separator_horizontal_blue"
+                        android:layout_marginTop="10dp" />
+
+                    <LinearLayout
+                        android:id="@+id/costGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <FrameLayout
+                            android:id="@+id/exemptionGroup"
+                            style="@style/ExtraPaymentExecution.Group"
+                            android:layout_height="@dimen/sell_pd_exemption_height"
+                            android:background="@drawable/bg_disable_able_blue_group"
+                            android:paddingBottom="0dp"
+                            android:paddingTop="0dp">
+
+                            <TextView
+                                android:id="@+id/exemptionLabel"
+                                style="@style/ExtraPaymentExecution.FieldLabel"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:button="@drawable/btn_extra_payment_checkbox"
+                                android:checked="false"
+                                android:text="@string/extra_payment_execution_exemption_label"
+                                tools:checked="true" />
+
+                            <TextView
+                                android:id="@+id/exemptionValue"
+                                style="@style/ExtraPaymentExecution.FieldValue"
+                                android:layout_gravity="end|center_vertical"
+                                android:text="@string/extra_payment_execution_exemption_no"
+                                android:textStyle="bold"
+                                tools:text="3456 / 100%" />
+                        </FrameLayout>
+
+                        <View
+                            android:id="@+id/separatorBeforeFee"
+                            style="@style/separator_horizontal_blue" />
+
+                        <FrameLayout
+                            android:id="@+id/feeGroup"
+                            style="@style/ExtraPaymentExecution.Group"
+                            android:background="@drawable/bg_disable_able_blue_group">
+
+                            <CheckBox
+                                android:id="@+id/feeCheckBox"
+                                style="@style/ExtraPaymentExecution.FieldLabel"
+                                android:layout_width="match_parent"
+                                android:button="@drawable/btn_extra_payment_checkbox"
+                                android:checked="true"
+                                android:paddingStart="10dp"
+                                android:text="@string/extra_payment_execution_fee_label_in_train" />
+
+                            <TextView
+                                android:id="@+id/feeValue"
+                                style="@style/ExtraPaymentExecution.FieldValue"
+                                android:layout_gravity="end|center_vertical"
+                                android:text="@string/extra_payment_execution_fee_no"
+                                android:textStyle="bold"
+                                tools:text="23.50 р." />
+                        </FrameLayout>
+
+                        <View
+                            android:id="@+id/separatorBeforeCost"
+                            style="@style/separator_horizontal_blue" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="13dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="13dp">
+
+                            <TextView
+                                android:id="@+id/onePdCostLabel"
+                                style="@style/ExtraPaymentExecution.FieldLabel"
+                                android:text="@string/extra_payment_execution_one_ticket_cost" />
+
+                            <TextView
+                                android:id="@+id/onePdCostValue"
+                                style="@style/ExtraPaymentExecution.FieldValue"
+                                android:layout_alignBaseline="@id/onePdCostLabel"
+                                android:layout_alignParentEnd="true"
+                                android:textStyle="bold"
+                                tools:text="130 р." />
+
+                            <TextView
+                                android:id="@+id/totalCostLabel"
+                                style="@style/ExtraPaymentExecution.FieldValue"
+                                android:layout_alignStart="@id/onePdCostLabel"
+                                android:layout_below="@id/onePdCostLabel"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/extra_payment_execution_total_cost"
+                                android:textAllCaps="true"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/pdWithFeeCostLabel"
+                                style="@style/ExtraPaymentExecution.FieldLabel"
+                                android:layout_alignStart="@id/onePdCostLabel"
+                                android:layout_below="@id/totalCostLabel"
+                                android:layout_marginTop="1dp"
+                                android:text="@string/extra_payment_execution_cost_with_fee"
+                                android:textAllCaps="true"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/totalCostValue"
+                                style="@style/ExtraPaymentExecution.FieldValue"
+                                android:layout_alignBaseline="@id/pdWithFeeCostLabel"
+                                android:layout_alignParentEnd="true"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                tools:text="180.00 р." />
+
+                        </RelativeLayout>
+
+                        <View
+                            style="@style/separator_horizontal_blue"
+                            android:layout_marginBottom="8dp" />
+
+                        <ru.ppr.core.ui.widget.SingleClickButton
+                            android:id="@+id/saleExtraPayment_sendETicketBtn"
+                            style="@style/SendETicketButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/toggle_button_height"
+                            android:layout_marginBottom="@dimen/toggle_button_vertical_margin"
+                            android:layout_marginLeft="@dimen/global_horizontal_margin"
+                            android:layout_marginRight="@dimen/global_horizontal_margin"
+                            android:layout_marginTop="0dp"
+                            android:text="@string/sendETicket" />
+
+                        <RadioGroup
+                            android:id="@+id/paymentTypeGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/paymentTypeCash"
+                                style="@style/ToggleButton.Item"
+                                android:layout_height="@dimen/toggle_button_height"
+                                android:checked="true"
+                                android:text="@string/extra_payment_execution_payment_type_cash" />
+
+                            <RadioButton
+                                android:id="@+id/paymentTypeCard"
+                                style="@style/ToggleButton.Item"
+                                android:layout_height="@dimen/toggle_button_height"
+                                android:text="@string/extra_payment_execution_payment_type_card" />
+                        </RadioGroup>
+
+                        <FrameLayout
+                            android:id="@+id/formPdBtnContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/green"
+                            android:padding="5dp">
+
+                            <ru.ppr.core.ui.widget.SingleClickButton
+                                android:id="@+id/formPdBtn"
+                                style="@style/Core.App.Widget.Button.Gray"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/sell_pd_height_sell_button"
+                                android:layout_gravity="center"
+                                android:text="@string/extra_payment_execution_form_btn" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ru.ppr.cppk.ui.widget.Overlay
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </FrameLayout>
+</LinearLayout>

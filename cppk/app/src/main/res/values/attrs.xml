@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SmartAutocompleateTextView">
+        <attr name="top_title" format="string"/>
+        <attr name="hint" format="string"/>
+        <attr name="title_text_size" format="dimension"/>
+        <attr name="corners_to_draw" format="enum">
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+            <enum name="full" value="3"/>
+        </attr>
+        <attr name="height_for_edit_text" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="HamburgerSpinner">
+        <attr name="spinner_title" format="string"/>
+        <attr name="spinner_text_size" format="dimension"/>
+        <attr name="spinner_height" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="RotateLoading">
+        <attr name="loading_width" format="dimension"/>
+        <attr name="loading_color" format="color"/>
+        <attr name="shadow_position" format="integer"/>
+        <attr name="loading_speed" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="CradleBall">
+        <attr name="cradle_ball_color" format="color" />
+    </declare-styleable>
+</resources>

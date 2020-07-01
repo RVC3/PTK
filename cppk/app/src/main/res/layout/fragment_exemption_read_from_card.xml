@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.ppr.cppk.ui.widget.LoggableViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewFlipper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--CHILD_BSC_WAIT-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/fragment_default_text"
+            android:text="@string/exemption_read_from_card_waiting_card" />
+
+    </FrameLayout>
+
+    <!--CHILD_BSC_READING-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/fragment_default_text"
+            android:text="@string/exemption_read_from_card_reading_card" />
+
+    </FrameLayout>
+
+    <!--CHILD_BSC_READ_SUCCESS-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/exemption_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="28sp"
+                tools:text="2204" />
+
+            <TextView
+                android:id="@+id/exemption_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                tools:text="100%" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/exemption_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="28sp"
+            tools:text="ОАО РЖД (по ЭТТ)" />
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginTop="16dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/bsc_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="14sp"
+                tools:text="ЭТТ" />
+
+            <TextView
+                android:id="@+id/bsc_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/bsc_type"
+                android:gravity="end"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                tools:text="200800111111197050800" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/fio_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/exemption_read_from_card_fio"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/fio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/fio_title"
+                android:gravity="end"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                tools:text="Иваново Л.И." />
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/use_exemption"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/exemption_read_from_card_use_exemption_btn" />
+
+    </LinearLayout>
+
+    <!--CHILD_BSC_READ_FAILED-->
+    <ru.ppr.core.ui.widget.SimpleLseView
+        android:id="@+id/simpleLseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</ru.ppr.cppk.ui.widget.LoggableViewFlipper>

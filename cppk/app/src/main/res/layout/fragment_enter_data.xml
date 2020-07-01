@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/enter_day_code_current_day_code_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/enter_data_current_value_title"
+            style="@style/additional_settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/enter_data_current_value_value"
+            style="@style/additional_settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/enter_day_code_error_day_code_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/enter_pin_additional_bottom_pading_for_error_layout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/voskl_znak_height_little"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@null"
+            android:padding="@dimen/voskl_znak_padding"
+            android:src="@drawable/icon_failed" />
+
+        <TextView
+            android:id="@+id/enter_data_error_message"
+            style="@style/enter_pin_error_view"
+            android:visibility="visible" />
+
+        <TextView
+            style="@style/enter_pin_error_view"
+            android:visibility="visible"
+            android:text="@string/dialog_incorrect_day_code_try_again" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/enter_data_new_value_title"
+        style="@style/titles"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/enter_data_new_value"
+        style="@style/edit_text_style"
+        android:inputType="number"
+        android:maxLength="4" />
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/run_departure_stations_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/horizontal_padding_for_item"
+        android:layout_marginTop="@dimen/vertical_padding_for_item"
+        android:text="Поиск станций отправления" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/run_destination_stations_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/horizontal_padding_for_item"
+        android:text="Поиск станций назначения" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/run_direct_tariffs_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/horizontal_padding_for_item"
+        android:text="Поиск прямых тарифов" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/run_transit_tariffs_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/vertical_padding_for_item"
+        android:layout_marginLeft="@dimen/horizontal_padding_for_item"
+        android:text="Поиск транзитных тарифов" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray_2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="@dimen/vertical_padding_for_item"
+            android:text="Станция отправления" />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_2"
+            android:gravity="center"
+            android:padding="@dimen/vertical_padding_for_item"
+            android:text="Станция назначения" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/vertical_padding_for_item"
+            android:text="Время" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+
+    <ListView
+        android:id="@+id/test_out"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

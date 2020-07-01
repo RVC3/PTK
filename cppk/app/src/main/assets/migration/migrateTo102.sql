@@ -1,0 +1,1 @@
+ALTER TABLE CPPKTicketControl ADD COLUMN TransferDepartureDateTime DATETIME DEFAULT NULL;

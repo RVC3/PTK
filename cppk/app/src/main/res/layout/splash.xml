@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/emergencyMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="@string/splash_emergency_mode"
+        android:textAllCaps="true"
+        android:textColor="#ff0000"
+        android:textSize="26sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/scanIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="17dp"
+        android:src="@drawable/scan"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/splash_msg_disabling_status_bar"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:typeface="roboto_bold" />
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/errorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/splash_msg_no_root"
+            android:textAllCaps="true"
+            android:textColor="#ff0000"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:typeface="roboto_bold" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/repeatBtn"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:text="@string/splash_repeat_btn"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/authBtn"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="@string/splash_auth_btn"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            tools:visibility="visible"
+            android:visibility="gone" />
+
+<!--        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/bscBtn"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="@string/BSC"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            tools:visibility="gone"
+            android:visibility="gone" />-->
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="17dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/splash_version"
+            android:textColor="#A5B4CC"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</FrameLayout>

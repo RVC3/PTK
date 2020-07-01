@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_white_with_corners_5dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/cppk_dialog_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/feedback_screen_title"
+        android:textSize="@dimen/cppk_dialog_text_size"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/message"
+        style="@style/cppk_dialog_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/cppk_dialog_margin"
+        android:layout_marginTop="@dimen/cppk_dialog_margin"
+        android:gravity="center"
+        android:text="@string/feedback_screen_message"/>
+
+    <EditText
+        android:id="@+id/inputEditText"
+        android:layout_width="match_parent"
+        android:gravity="top"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:lines="5"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/positiveBtn"
+            style="@style/btn_blue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cppk_dialog_hor_btn_height"
+            android:layout_margin="@dimen/cppk_dialog_vertical_buttons_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btn_blue_dialog_vertical"
+            android:text="@string/feedback_screen_send"
+            android:textSize="@dimen/cppk_dialog_text_size"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/negativeBtn"
+            style="@style/btn_blue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cppk_dialog_hor_btn_height"
+            android:layout_marginBottom="@dimen/cppk_dialog_bottom_margin_for_bottom_button"
+            android:layout_marginLeft="@dimen/cppk_dialog_vertical_buttons_margin"
+            android:layout_marginRight="@dimen/cppk_dialog_vertical_buttons_margin"
+            android:layout_marginTop="@dimen/cppk_dialog_vertical_buttons_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btn_blue_dialog_vertical"
+            android:text="@string/feedback_screen_cancel"
+            android:textSize="@dimen/cppk_dialog_text_size"/>
+    </LinearLayout>
+
+
+</LinearLayout>

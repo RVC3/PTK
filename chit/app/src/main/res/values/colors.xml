@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">@android:color/black</color>
+
+    <color name="defaultGreen">@color/app_success</color>
+    <color name="defaultRed">@color/app_error</color>
+
+    <!--BatteryLevelAndroidView-->
+    <color name="batteryLevelTextColor">@color/defaultGreen</color>
+    <color name="batteryLevelBatteryGreen">@color/defaultGreen</color>
+    <color name="batteryLevelBatteryYellow">#FFD21E</color>
+    <color name="batteryLevelBatteryRed">@color/defaultRed</color>
+
+    <!--PassengerListItem-->
+    <color name="passengerListItemFio">@android:color/black</color>
+    <color name="passengerListItemDocNumber">#3F3F3F</color>
+    <color name="passengerListBackground">#E1E1EA</color>
+
+    <color name="passengerItemBackgroundBoarded">#3c019354</color>
+    <color name="passengerItemBackgroundUnboarded">#3cffcc00</color>
+
+</resources>

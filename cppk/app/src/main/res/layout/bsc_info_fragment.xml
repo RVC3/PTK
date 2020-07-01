@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/bsc_info_bsc_number_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/type_bsc_title"
+                style="@style/tvBscInfoTitle" />
+
+            <TextView
+                android:id="@+id/bsc_number"
+                style="@style/tvBscInfoTitle"
+                android:layout_width="match_parent"
+                android:layout_below="@id/type_bsc_title"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/separator_horizontal_gray"
+                android:layout_below="@+id/bsc_number" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bsc_info_bsc_status_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/bsc_status_title"
+                style="@style/tvBscInfoTitle"
+                android:layout_height="wrap_content"
+                android:text="@string/status_bsc" />
+
+            <TextView
+                android:id="@+id/bsc_status_value"
+                style="@style/red_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/bsc_status_title"
+                android:layout_margin="@dimen/bsc_info_text_view_margin"
+                android:text="@string/status_yes_stop_list"
+                android:textSize="@dimen/bsc_info_text_size" />
+
+            <View
+                android:id="@+id/bsc_info_sep"
+                style="@style/separator_horizontal_gray"
+                android:layout_below="@+id/bsc_status_value" />
+
+            <TextView
+                android:id="@+id/bsc_time_is_end"
+                style="@style/tvBscInfoValue"
+                android:layout_below="@id/bsc_info_sep"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/bsc_time_is_end_separator"
+                style="@style/separator_horizontal_gray"
+                android:layout_below="@+id/bsc_time_is_end"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bsc_info_bsc_reason_stoplist_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/reason_value_title"
+                style="@style/tvBscInfoTitle"
+                android:layout_width="match_parent"
+                android:text="@string/reason_card_stop_list" />
+
+            <TextView
+                android:id="@+id/reason_value"
+                style="@style/tvBscInfoValue"
+                android:layout_width="match_parent"
+                android:layout_below="@id/reason_value_title"
+                android:textColor="@color/red" />
+
+            <View
+                style="@style/separator_horizontal_gray"
+                android:layout_below="@+id/reason_value" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bsc_info_last_pass_from_turnicket_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/last_pass_from_turniket_date_value"
+                style="@style/tvBscInfoValue"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="end" />
+
+            <TextView
+                android:id="@+id/last_pass_from_turniket_title"
+                style="@style/tvBscInfoTitle"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/last_pass_from_turniket_date_value"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/last_passage" />
+
+            <View
+                style="@style/separator_horizontal_gray"
+                android:layout_below="@id/last_pass_from_turniket_title" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bsc_info_last_pass_station_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/last_station_pass_title"
+                style="@style/tvBscInfoTitle"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/name_station_pass_title" />
+
+            <TextView
+                android:id="@+id/last_station_pass_value"
+                style="@style/tvBscInfoValue"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/last_station_pass_title"
+                android:gravity="right"
+                android:text="@string/not_found" />
+
+            <View
+                style="@style/separator_horizontal_gray"
+                android:layout_below="@id/last_station_pass_title" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llBSKLgota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bsc_info_text_view_margin"
+                android:layout_marginTop="@dimen/bsc_info_text_view_margin">
+
+                <TextView
+                    android:id="@+id/name_exemption_titile"
+                    style="@style/tvBscInfoTitle"
+                    android:layout_centerVertical="true"
+                    android:text="@string/exemption_title" />
+
+                <TextView
+                    android:id="@+id/name_exemption_value"
+                    style="@style/tvBscInfoValue"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="@dimen/bsc_info_text_view_margin"
+                    android:text="123"
+                    android:textColor="@color/green"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/name_exemption_value_string"
+                    style="@style/tvBscInfoTitle"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/name_exemption_value"
+                    android:paddingRight="@dimen/bsc_info_text_view_margin"
+                    android:text="" />
+            </RelativeLayout>
+
+            <View style="@style/separator_horizontal_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bsc_info_text_view_margin"
+                android:layout_marginTop="@dimen/bsc_info_text_view_margin">
+
+                <TextView
+                    android:id="@+id/FIO_title"
+                    style="@style/tvBscInfoTitle"
+                    android:text="@string/FIO_title" />
+
+                <TextView
+                    android:id="@+id/FIO_value"
+                    style="@style/tvBscInfoValue"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_vertical|end"
+                    android:gravity="end"
+                    android:paddingRight="@dimen/bsc_info_text_view_margin"
+                    android:text="@string/not_found" />
+            </LinearLayout>
+
+            <View style="@style/separator_horizontal_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/bsc_info_text_view_margin"
+                android:layout_marginTop="@dimen/bsc_info_text_view_margin">
+
+                <TextView
+                    android:id="@+id/exemption_on_bsc_title"
+                    style="@style/tvBscInfoTitle"
+                    android:text="@string/exemption_value_title" />
+
+                <TextView
+                    android:id="@+id/exemption_on_bsc_value"
+                    style="@style/tvBscInfoValue"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="end|center_vertical"
+                    android:paddingRight="@dimen/bsc_info_text_view_margin"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/separator_horizontal_gray" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

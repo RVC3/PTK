@@ -1,0 +1,128 @@
+[
+  {
+    "rawData": "41 24 41 00 21 00 15 00 02 72 88 41 00 00 00 00",
+    "type": 33,
+    "initDate": 949363200000,
+    "validityTime": 1517443200000,
+    "series": "0015",
+    "externalNumber": "0002728841",
+    "outerNumberBytes": "89 FF DB EC 22 00 00 00",
+    "rfidAtr": "00 88 06 2B BF 73",
+    "cardUID": "06 2B BF 73",
+    "formattedOuterNumber": "0015 0002728841",
+    "crystalSerialNumber": "06 2B BF 73 00 00 00 00",
+    "outerNumberString": "00150002728841",
+    "smartCard": {
+      "OuterNumber": "00150002728841",
+      "CrystalSerialNumber": "1941908230",
+      "Type": 33,
+      "UsageCount": 0,
+      "Track": 0
+    }
+  },
+  {
+    "rawData": "9D 25 9D 1B 23 00 00 00 03 52 55 94 00 00 00 00",
+    "type": 35,
+    "initDate": 1388275200000,
+    "validityTime": 1546041600000,
+    "series": "0000",
+    "externalNumber": "0003525594",
+    "outerNumberBytes": "DA CB 35 00 00 00 00 00",
+    "rfidAtr": "01 07 04 4A 33 12 29 31 80",
+    "cardUID": "04 4A 33 12 29 31 80",
+    "formattedOuterNumber": "0003525594",
+    "crystalSerialNumber": "04 4A 33 12 29 31 80 00",
+    "outerNumberString": "0003525594",
+    "smartCard": {
+      "OuterNumber": "0003525594",
+      "CrystalSerialNumber": "36082849487735300",
+      "Type": 35,
+      "UsageCount": 0,
+      "Track": 0
+    }
+  },
+  {
+    "rawData": "9E 28 83 1E 27 00 00 33 15 17 58 65 00 00 00 00",
+    "type": 39,
+    "initDate": 1428019200000,
+    "validityTime": 1588204800000,
+    "series": "0000",
+    "externalNumber": "03315175865",
+    "outerNumberBytes": "B9 91 99 C5 00 00 00 00",
+    "rfidAtr": "01 04 3F 68 62 6F 00 00 00",
+    "cardUID": "3F 68 62 6F",
+    "formattedOuterNumber": "03315175865",
+    "crystalSerialNumber": "3F 68 62 6F 00 00 00 00",
+    "outerNumberString": "03315175865",
+    "smartCard": {
+      "OuterNumber": "03315175865",
+      "CrystalSerialNumber": "1868720191",
+      "Type": 39,
+      "UsageCount": 0,
+      "Track": 0
+    }
+  },
+  {
+    "rawData": "00 00 74 1D 33 05 15 00 08 76 35 12 00 00 00 00",
+    "type": 51,
+    "initDate": 1416441600000,
+    "validityTime": 0,
+    "series": "0515",
+    "externalNumber": "0008763512",
+    "outerNumberBytes": "78 64 71 14 AF 04 00 00",
+    "rfidAtr": "00 07 04 9A E0 F6 3A 24 26",
+    "cardUID": "04 9A E0 F6 3A 24 26",
+    "formattedOuterNumber": "0515 0008763512",
+    "crystalSerialNumber": "04 9A E0 F6 3A 24 26 00",
+    "outerNumberString": "05150008763512",
+    "smartCard": {
+      "OuterNumber": "05150008763512",
+      "CrystalSerialNumber": "10735884783622660",
+      "Type": 51,
+      "UsageCount": 0,
+      "Track": 0
+    }
+  },
+  {
+    "rawData": "00 00 00 00 77 00 15 00 02 52 41 91 00 00 00 00",
+    "type": 119,
+    "initDate": 0,
+    "validityTime": 0,
+    "series": "0015",
+    "externalNumber": "0002524191",
+    "outerNumberBytes": "1F E0 D8 EC 22 00 00 00",
+    "rfidAtr": "01 04 26 E7 E5 75",
+    "cardUID": "26 E7 E5 75",
+    "formattedOuterNumber": "0015 0002524191",
+    "crystalSerialNumber": "26 E7 E5 75 00 00 00 00",
+    "outerNumberString": "00150002524191",
+    "smartCard": {
+      "OuterNumber": "00150002524191",
+      "CrystalSerialNumber": "1978001190",
+      "Type": 119,
+      "UsageCount": 0,
+      "Track": 0
+    }
+  },
+  {
+    "rawData": "22 01 12 15 24 20 08 00 97 05 08 22 1b b7 8f 29",
+    "type": 36,
+    "initDate": null,
+    "validityTime": 1451606399000,
+    "series": "",
+    "externalNumber": "20080097050822",
+    "outerNumberBytes": "7A 86 B4 86 D3 01 00 00",
+    "rfidAtr": "01 04 26 E7 E5 75",
+    "cardUID": "26 E7 E5 75",
+    "formattedOuterNumber": "20080097050822",
+    "crystalSerialNumber": "26 E7 E5 75 00 00 00 00",
+    "outerNumberString": "2008009705082",
+    "smartCard": {
+      "OuterNumber": "20080097050822",
+      "CrystalSerialNumber": "1978001190",
+      "Type": 36,
+      "UsageCount": 0,
+      "Track": 0
+    }
+  }
+]

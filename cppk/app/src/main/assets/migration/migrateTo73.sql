@@ -1,0 +1,1 @@
+UPDATE PtkSettingsPrivate SET value = null WHERE value == 'null';

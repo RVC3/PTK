@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/clear_log"
+        style="@style/btn_gray_access_color_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log"
+        android:layout_margin="5dp"
+        android:text="@string/device_any_clear_log" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/clear_log">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#000000"
+                android:gravity="center"
+                android:text="@string/device_any_connection"
+                android:textColor="#f6f2f2"
+                android:textSize="22sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/test_connection"
+                style="@style/btn_gray_access_color_gray"
+                android:layout_margin="5dp"
+                android:text="@string/device_any_test_connection" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/bind_device"
+                style="@style/btn_gray_access_color_gray"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/device_any_bind_device" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/mac_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:editable="false"
+                    android:ems="10" />
+
+                <EditText
+                    android:id="@+id/port"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:editable="false"
+                    android:ems="10" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#000000"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:text="@string/device_any_operations"
+                android:textColor="#f6f2f2"
+                android:textSize="22sp" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/test_host"
+                style="@style/btn_gray_access_color_gray"
+                android:layout_margin="5dp"
+                android:text="@string/settings_pos_terminal_test_host" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/admin_menu"
+                style="@style/btn_gray_access_color_gray"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/settings_pos_terminal_admin_menu" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/sync_with_tms"
+                style="@style/btn_gray_access_color_gray"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/settings_pos_terminal_sync_with_tms" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ru.ppr.core.ui.widget.SimpleLseView
+        android:id="@+id/simpleLseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<sftsdk3>
+    <logs>
+        <logDirectory>/storage/emulated/0/CPPKInternal/Log/InfotecsLog</logDirectory>
+        <enableLog>true</enableLog>
+        <logfileMaxSize>10240</logfileMaxSize>
+        <maxSizeAllFiles>102400</maxSizeAllFiles>
+    </logs>
+    <syncThread>
+        <syncDelay>100000000</syncDelay>
+        <retryCount>3</retryCount>
+        <needLoadKeyInfo>true</needLoadKeyInfo>
+        <ignoreKeyInfoLoadingErrors>true</ignoreKeyInfoLoadingErrors>
+    </syncThread>
+</sftsdk3>

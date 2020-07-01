@@ -1,0 +1,107 @@
+include ':ptk'
+project(":ptk").projectDir = file("cppk/app")
+
+include ':kuznyechik'
+project(":kuznyechik").projectDir = file("common/kuznyechik")
+
+include ':logger'
+project(":logger").projectDir = file("common/logger")
+
+include ':ptk_data'
+project(":ptk_data").projectDir = file("cppk/ptk_data")
+
+include ':ptk_localdb'
+project(":ptk_localdb").projectDir = file("cppk/ptk_localdb")
+
+include ':nsi_ptk'
+project(":nsi_ptk").projectDir = file("cppk/nsi_ptk")
+
+include ':security_ptk'
+project(":security_ptk").projectDir = file("cppk/security_ptk")
+
+include ':database'
+project(":database").projectDir = file("common/database")
+
+include ':database_greendao'
+project(":database_greendao").projectDir = file("common/database_greendao")
+
+include ':core'
+project(":core").projectDir = file("common/core")
+
+include ':core_ui'
+project(":core_ui").projectDir = file("common/core_ui")
+
+include ':core_domain'
+project(":core_domain").projectDir = file("common/core_domain")
+
+include ':edssft'
+project(":edssft").projectDir = file("common/edssft")
+
+include ':edssft_real'
+project(":edssft_real").projectDir = file("common/edssft_real")
+
+include ':utils'
+project(":utils").projectDir = file("common/utils")
+
+include ':rfid'
+project(":rfid").projectDir = file("devices/rfid")
+
+include ':rfidreal'
+project(":rfidreal").projectDir = file("devices/rfidreal")
+
+include ':barcode'
+project(":barcode").projectDir = file("devices/barcode")
+
+include ':barcodereal'
+project(":barcodereal").projectDir = file("devices/barcodereal")
+
+include ':cpcpowermgmt'
+project(":cpcpowermgmt").projectDir = file("libraries/cpcpowermgmt")
+
+include ':tarGz'
+project(":tarGz").projectDir = file("common/tarGz")
+
+include ':pos'
+project(":pos").projectDir = file("devices/pos")
+
+include ':inpas'
+project(":inpas").projectDir = file("devices/inpas")
+
+include ':ingenico'
+project(":ingenico").projectDir = file("devices/ingenico")
+
+include ':kkm'
+project(":kkm").projectDir = file("devices/kkm")
+
+include ':moebius'
+project(":moebius").projectDir = file("devices/moebius")
+
+include ':shtrih'
+project(":shtrih").projectDir = file("devices/shtrih")
+
+include ':pclutilities_1.4_fixed'
+project(":pclutilities_1.4_fixed").projectDir = file("devices/pclutilities_1.4_fixed")
+
+// Check In Terminal
+
+include ':chit'
+project(":chit").projectDir = file("chit/app")
+
+include ':chit_api'
+project(":chit_api").projectDir = file("chit/chit_api")
+
+include ':chit_localdb'
+project(":chit_localdb").projectDir = file("chit/chit_localdb")
+
+include ':chit_nsidb'
+project(":chit_nsidb").projectDir = file("chit/chit_nsidb")
+
+include ':chit_securitydb'
+project(":chit_securitydb").projectDir = file("chit/chit_securitydb")
+
+include ':chit_domain'
+project(":chit_domain").projectDir = file("chit/chit_domain")
+
+include ':chit_data'
+project(":chit_data").projectDir = file("chit/chit_data")
+include ':lan4gate'

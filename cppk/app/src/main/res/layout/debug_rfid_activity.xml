@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/readImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/readImage" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/writeImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/writeImage" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/clearMarkUltralight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clearMarkUltralight" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/setTrashToPassageMarkUltralight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setTrashToPassageMarkUltralight" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/setPassageMarkV5ToUltralight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setPassageMarkV5ToUltralight" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/readPassageMarkFromUltralightC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/readPassageMarkFromUltralightC" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/writeUlPd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/writeUlPd" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/readCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/readCard" />
+
+</LinearLayout>

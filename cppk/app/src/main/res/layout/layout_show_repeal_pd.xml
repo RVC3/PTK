@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/show_repeal_pd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    >
+
+    <TextView
+        style="@style/fragment_writings_2_top"
+        android:text="@string/printing_pd_failed_need_cancel_warning"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        style="@style/fragment_icon"
+        android:src="@drawable/icon_failed"
+        android:layout_gravity="top|center_horizontal"/>
+
+    <FrameLayout style="@style/fragment_buttons_layout">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/cancel_button"
+            style="@style/fragment_button"
+            android:text="@string/btnOk" />
+
+    </FrameLayout>
+
+</FrameLayout>

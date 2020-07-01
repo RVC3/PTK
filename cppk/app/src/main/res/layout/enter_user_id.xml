@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal">
+
+    <EditText
+        android:id="@+id/user_id_enter"
+        android:layout_width="600px"
+        android:layout_height="80px"
+        android:layout_marginTop="140px"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/pin_border_black_4px"
+        android:hint="@string/enter_user_id_hint"
+        android:inputType="number"
+        android:textSize="36px">
+
+        <requestFocus />
+    </EditText>
+
+
+
+    <LinearLayout
+        android:id="@+id/invalidUSerId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="88px"
+        android:layout_marginTop="200px"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/slesh_red" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/error_pin_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/incorrect_user_id"
+                android:textColor="@color/red"
+                android:textSize="40px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/try_again"
+                android:textColor="@color/red"
+                android:textSize="40px" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

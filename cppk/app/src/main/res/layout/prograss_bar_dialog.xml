@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fon_progress_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+<!--   <ImageView
+        android:id="@+id/vg_progress_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+       android:background="@color/white"/>-->
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:src="@drawable/img_read_bsc_transperent" />
+
+    <TextView
+        android:id="@+id/progress_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin_10dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/app_text_size_22sp" />
+
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="@dimen/app_margin_10dp">
+
+        <ru.ppr.cppk.utils.customProgressBar.RotateLoading
+            android:id="@+id/rl_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:loading_speed="10"
+            app:loading_width="5dp" />
+        <TextView
+            android:id="@+id/tv_timer_second"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/app_text_size_40sp"
+            android:textColor="@color/white"/>
+    </FrameLayout>
+
+</LinearLayout>

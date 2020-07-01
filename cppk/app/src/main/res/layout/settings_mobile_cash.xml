@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/activityTitle"
+        android:text="@string/mobile_cassa" />
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <RelativeLayout
+        android:id="@+id/additional_setting_is_activated_layout"
+        style="@style/additional_settings_layout_style"
+        android:onClick="onClick">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/adt_settings_text"
+            android:text="@string/is_activated" />
+
+        <ImageView
+            android:id="@+id/adtSettingIsActivatedCheckBox"
+            style="@style/arrow_checkbox"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <RelativeLayout
+        android:id="@+id/additional_setting_output_layout"
+        style="@style/additional_settings_layout_style"
+        android:onClick="onClick">
+
+        <ru.ppr.core.ui.widget.CustomTextView
+            style="@style/adt_settings_text"
+            android:text="@string/output" />
+
+        <ImageView
+            android:id="@+id/adtSettingOutputCheckbox"
+            style="@style/arrow_checkbox"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+    <LinearLayout
+        android:id="@+id/additional_setting_work_station_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="70dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:onClick="onClick"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/additional_setting_work_place_title"
+            style="@style/additional_settings_button"
+            android:text="@string/work_station" />
+
+        <TextView
+            android:id="@+id/additional_settings_work_place_value"
+            style="@style/additional_settings_button"
+            android:layout_marginRight="14dp"
+            android:textStyle="bold"
+            android:gravity="end" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            style="@style/arrow_next"
+            android:contentDescription="@null"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <View style="@style/separator_horizontal_gray" />
+
+</LinearLayout>

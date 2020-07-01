@@ -1,0 +1,1 @@
+ALTER TABLE TerminalDay ADD COLUMN CurrentSaleTransactionId INTEGER NOT NULL DEFAULT 0;

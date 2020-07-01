@@ -1,0 +1,2 @@
+ALTER TABLE PtkSettingsCommon ADD COLUMN logFullSQL BOOLEAN NOT NULL DEFAULT 0;
+UPDATE PtkSettingsCommon SET logFullSQL = 0;

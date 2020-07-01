@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_status_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/CapsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="10dp"
+            android:text="@string/root_reserve_create_restore_title"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            style="@style/CapsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:paddingStart="10dp"
+            android:text="@string/root_create_title"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/create_full_btn"
+                style="@style/Core.App.Widget.Button.Gray"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/root_create_full_btn" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/create_logs_btn"
+                style="@style/Core.App.Widget.Button.Gray"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/root_create_logs_btn" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/create_dbs_btn"
+                style="@style/Core.App.Widget.Button.Gray"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/root_create_dbs_btn" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/CapsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:paddingStart="10dp"
+            android:text="@string/root_restore_title"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/restore_full_btn"
+                style="@style/Core.App.Widget.Button.Gray"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/root_restore_full_btn" />
+
+            <ru.ppr.core.ui.widget.SingleClickButton
+                android:id="@+id/restore_dbs_btn"
+                style="@style/Core.App.Widget.Button.Gray"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/root_restore_dbs_btn" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/CapsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="10dp"
+            android:text="@string/root_eds_type_title"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
+
+        <Spinner
+            android:id="@+id/eds_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_height="?attr/listPreferredItemHeight" />
+
+        <TextView
+            style="@style/CapsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="10dp"
+            android:text="@string/root_barcode_type_title"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
+
+        <Spinner
+            android:id="@+id/barcode_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_height="?attr/listPreferredItemHeight" />
+
+        <TextView
+            style="@style/CapsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="10dp"
+            android:text="@string/root_rfid_type_title"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
+
+        <Spinner
+            android:id="@+id/rfid_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_height="?attr/listPreferredItemHeight" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/pdTitle"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:singleLine="false"
+            tools:text="Разовый полный" />
+
+        <TextView
+            android:id="@+id/validityLabel"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            tools:background="@color/red"
+            tools:text="Не действует" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pdNumber"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            tools:text="№000005" />
+
+        <TextView
+            android:id="@+id/pdError"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="0dp"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="Ключ ЭЦП невалиден"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/pd_fragment_horizontal_margin_large"
+        android:layout_marginRight="@dimen/pd_fragment_horizontal_margin_large">
+
+        <TextView
+            android:id="@+id/depStationName"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:textStyle="bold"
+            tools:text="МСК" />
+
+        <ImageView
+            android:id="@+id/directionImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/there_back_direction" />
+
+        <TextView
+            android:id="@+id/destStationName"
+            style="@style/tv_pd_info_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:textStyle="bold"
+            tools:text="ШАРАПОВА ОХОТА" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/trainCategoryName"
+        style="@style/tv_pd_info_field"
+        tools:text="Пассажирский" />
+
+    <LinearLayout
+        android:id="@+id/exemptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/exemptionLabel"
+            style="@style/tv_pd_info_field"
+            android:text="@string/exemption_title" />
+
+        <TextView
+            android:id="@+id/exemptionValue"
+            style="@style/tv_pd_info_field"
+            android:layout_width="match_parent"
+            android:gravity="end"
+            android:textStyle="bold"
+            tools:text="Нет" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/pdDateTimeLabel"
+            style="@style/tv_pd_info_field"
+            android:text="@string/sale_date_title" />
+
+        <TextView
+            android:id="@+id/pdDateTimeValue"
+            style="@style/tv_pd_info_field"
+            android:layout_width="match_parent"
+            android:gravity="end"
+            tools:text="15.04.2015" />
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/validityPeriodLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/validityPeriodLabel"
+            style="@style/tv_pd_info_field"
+            android:layout_gravity="start"
+            android:layout_rowSpan="2"
+            android:maxLines="1"
+            android:text="@string/date_actions_title"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/validityPeriodFromLabel"
+            style="@style/tv_pd_info_field"
+            android:text="@string/validity_with"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/validityPeriodFromValue"
+            style="@style/tv_pd_info_field"
+            android:layout_gravity="start"
+            android:gravity="end"
+            android:visibility="visible"
+            tools:text="12.02.2016" />
+
+        <TextView
+            android:id="@+id/validityPeriodToLabel"
+            style="@style/tv_pd_info_field"
+            android:text="@string/validity_to"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/validityPeriodToValue"
+            style="@style/tv_pd_info_field"
+            android:layout_gravity="start"
+            android:layout_marginBottom="0dp"
+            android:visibility="visible"
+            tools:text="12.03.2016" />
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/mobile_barcode_layout"
+        android:layout_height="wrap_content"
+        tools:visibility="visible"
+        >
+
+        <TextView
+            android:id="@+id/mobile_barcode_layout_valid_caption"
+            style="@style/tv_pd_info_field"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:text="Активация билета"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+
+        <TextView
+            android:id="@+id/mobile_barcode_layout_invalid_caption"
+            style="@style/tv_pd_info_field"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:textColor="@color/red"
+            android:text="Активация билета на ПТК уже произведена"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/date_title44444"
+                style="@style/tv_pd_info_field"
+                android:text="Станция:" />
+
+            <TextView
+                android:id="@+id/mobile_staion_activation_name"
+                style="@style/tv_pd_info_field"
+                android:layout_width="match_parent"
+                android:gravity="end"
+                tools:text="Кунцево 1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/d_title444"
+                style="@style/tv_pd_info_field"
+                android:text="Время:" />
+
+            <TextView
+                android:id="@+id/mobile_station_activation_time"
+                style="@style/tv_pd_info_field"
+                android:layout_width="match_parent"
+                android:gravity="end"
+                tools:text="12:05 20.08" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/global_horizontal_margin_divide_to_2"
+        android:layout_marginRight="@dimen/global_horizontal_margin_divide_to_2">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/mobile_ticket_register_history"
+            style="@style/btn_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginLeft="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginRight="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginTop="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_weight="1"
+            android:text="Список активаций билета"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/global_horizontal_margin_divide_to_2"
+        android:layout_marginRight="@dimen/global_horizontal_margin_divide_to_2">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/isValidPd"
+            style="@style/btn_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginLeft="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginRight="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginTop="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_weight="1"
+            android:text="@string/ticket_is_valid"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/saleExtraChargeBtn"
+            style="@style/btn_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginLeft="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginRight="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginTop="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_weight="1"
+            android:text="@string/sale_pd_extra_charge"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/global_horizontal_margin_divide_to_2"
+        android:layout_marginRight="@dimen/global_horizontal_margin_divide_to_2">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/isNotValidPd"
+            style="@style/btn_gray"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginLeft="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginRight="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginTop="@dimen/global_horizontal_margin_divide_to_2"
+            android:text="@string/ticket_is_not_valid"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/saleTransferBtn"
+            style="@style/btn_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginLeft="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginRight="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_marginTop="@dimen/global_horizontal_margin_divide_to_2"
+            android:layout_weight="1"
+            android:text="@string/sale_transfer"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/one_off_bottom_separator"
+        style="@style/separator_horizontal_gray_flat"
+        android:layout_marginTop="2dp" />
+
+</LinearLayout>

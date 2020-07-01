@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <ru.ppr.core.ui.widget.CustomTextView
+        android:id="@+id/fio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/passengerListItemFio"
+        android:textSize="22sp"
+        android:drawableTint="@color/passengerListItemFio"
+        android:drawableRight="@drawable/ic_passenger_boarding2"
+        android:paddingRight="2dp"
+        tools:text="Иванов А.П." />
+
+    <ru.ppr.core.ui.widget.CustomTextView
+        android:id="@+id/docNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:textColor="@color/passengerListItemDocNumber"
+        android:textSize="15sp"
+        tools:text="ПН*****8478" />
+
+</LinearLayout>

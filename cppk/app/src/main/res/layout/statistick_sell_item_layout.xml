@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/statistic_item_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/statistic_item_margin_betwen_field"
+        android:background="@color/statisticsSeparatorBackground" />
+
+    <TextView
+        android:id="@+id/statistic_sell_count_pd_title"
+        style="@style/statistic_item_value_style"
+        android:layout_below="@+id/statistic_item_separator"
+        android:hint="Платные"
+        android:textStyle="bold"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/statistic_sell_count_pd"
+        style="@style/statistic_item_title_style"
+        android:layout_width="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/statistic_sell_count_pd_title"
+        android:layout_marginLeft="@dimen/satistic_item_margin_left"
+        android:text="@string/statistic_count" />
+
+    <TextView
+        android:id="@+id/statistic_sell_count_pd_value"
+        style="@style/statistic_item_value_style"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/statistic_sell_count_pd_title"
+        android:text="834"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/statistic_sell_amount_pd"
+        style="@style/statistic_item_title_style"
+        android:layout_width="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/statistic_sell_count_pd"
+        android:layout_marginLeft="@dimen/satistic_item_margin_left"
+        android:paddingBottom="@dimen/statistic_item_margin_betwen_field"
+        android:text="@string/amount" />
+
+    <TextView
+        android:id="@+id/statistic_sell_amount_pd_value"
+        style="@style/statistic_item_value_style"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/statistic_sell_count_pd"
+        android:text="12 124"
+        android:textStyle="bold" />
+
+</RelativeLayout>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/statistics_controls_title"
+        style="@style/black_title_with_white_text"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/statistic_padding_for_title"
+        android:text="@string/statistics_check_title"/>
+
+    <View style="@style/separator_horizontal_gray"/>
+
+    <LinearLayout
+        android:id="@+id/dataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/statistic_item_margin_betwen_field">
+
+            <TextView
+                android:id="@+id/statistics_controls_shift_title"
+                style="@style/statisticsSaleForLastShift_1"
+                android:text="@string/shift"/>
+
+            <TextView
+                android:id="@+id/statistics_controls_shift_number"
+                style="@style/regular_field"
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@id/statistics_controls_shift_title"/>
+
+            <TextView
+                android:id="@+id/statistics_controls_shiftState"
+                style="@style/regular_field"
+                android:layout_width="@dimen/statistic_width_status_shift_field"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/statistics_sale_for_last_shift_status_blue_bg"
+                android:gravity="center"
+                android:text="@string/statistic_OPENED"
+                android:textAllCaps="true"
+                android:textColor="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/statistics_controls_shift_title"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/statistic_item_title_style"
+                        android:layout_width="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:text="@string/statistic_shift_opened"/>
+
+                    <TextView
+                        android:id="@+id/statistics_controls_shiftOpeningTime"
+                        style="@style/statistic_item_title_style"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="12.12.2012 12:12"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/statistic_item_title_style"
+                        android:layout_width="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:text="@string/statistic_shift_close"/>
+
+                    <TextView
+                        android:id="@+id/statistics_controls_shiftClosingTime"
+                        style="@style/statistic_item_title_style"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="0dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View style="@style/separator_horizontal_gray"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:rowCount="2">
+
+            <TextView
+                style="@style/statistic_item_title_style"
+                android:layout_gravity="left"
+                android:layout_marginBottom="10dp"
+                android:text="@string/statistics_check_total"/>
+
+            <TextView
+                android:id="@+id/statistics_controls_checkedTotalCount"
+                style="@style/statistic_item_title_style"
+                android:layout_marginRight="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                style="@style/statistic_item_title_style"
+                android:layout_gravity="left"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="30dp"
+                android:text="@string/statistics_check_total_unique"/>
+
+            <TextView
+                android:id="@+id/statistics_controls_checkedTotalUniqueCount"
+                style="@style/statistic_item_title_style"
+                android:layout_marginBottom="0dp"
+                android:layout_marginRight="20dp"
+                android:textStyle="bold"/>
+
+            <View
+                style="@style/separator_horizontal_gray"
+                android:layout_columnSpan="2"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="20dp"/>
+        </GridLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/statistick_check_item_horizontal_margin">
+
+            <TextView
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentStart="true"
+                android:text="@string/statistic_check_with_place"/>
+
+            <TextView
+                android:id="@+id/statistics_check_with_place_count"
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginLeft="@dimen/statistick_check_item_horizontal_margin"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/statistick_check_item_horizontal_margin">
+
+            <TextView
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentStart="true"
+                android:text="@string/statistic_check_without_place"/>
+
+            <TextView
+                android:id="@+id/statistics_check_without_place_count"
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginLeft="@dimen/statistick_check_item_horizontal_margin"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/statistick_check_item_horizontal_margin">
+
+            <TextView
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentStart="true"
+                android:text="@string/statistic_check_from_barcode"/>
+
+            <TextView
+                android:id="@+id/statistics_check_from_barcode_count"
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginLeft="@dimen/statistick_check_item_horizontal_margin"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/statistick_check_item_horizontal_margin">
+
+            <TextView
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentStart="true"
+                android:text="@string/statistic_check_from_bsc"/>
+
+            <TextView
+                android:id="@+id/statistics_check_from_bsc_count"
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginLeft="@dimen/statistick_check_item_horizontal_margin"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/statistick_check_item_horizontal_margin">
+
+            <TextView
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentStart="true"
+                android:text="@string/statistic_check_with_exemption"/>
+
+            <TextView
+                android:id="@+id/statistics_check_with_exemption_count"
+                style="@style/statistic_item_title_style"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_marginLeft="@dimen/statistick_check_item_horizontal_margin"/>
+
+    </LinearLayout>
+</LinearLayout>

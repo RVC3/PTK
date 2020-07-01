@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/additional_settings_min_height_button">
+
+        <TextView
+            android:id="@+id/menu_item_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tv_gray_blue"
+            android:padding="16dp"
+            android:textColor="@drawable/tc_btn_wb_sep_xml"
+            android:textSize="22sp" />
+
+        <View
+            style="@style/separator_horizontal_gray"
+            android:layout_below="@id/menu_item_text" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/additional_settings_main_item_margin">
+
+            <ImageView
+                android:id="@+id/arrowTop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/arrow_top_black"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/arrowBottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/arrow_bottom_black" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/additional_setting_place_for_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:orientation="vertical"></LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/black_title_with_white_text"
+        android:text="@string/select_transfer_stations_title" />
+
+    <LinearLayout
+        android:id="@+id/stationsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/bg_white_with_corners_5dp"
+        android:orientation="horizontal">
+
+        <ru.ppr.cppk.ui.widget.StationEditText
+            android:id="@+id/departureStationEditText"
+            style="@style/TransferSalePreparation.Station"
+            android:hint="@string/transfer_sale_start_departure_station_hint"
+            android:paddingBottom="5dp" />
+
+        <ImageView
+            android:id="@+id/directionImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@null"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:src="@drawable/there_direction" />
+
+        <ru.ppr.cppk.ui.widget.StationEditText
+            android:id="@+id/destinationStationEditText"
+            style="@style/TransferSalePreparation.Station"
+            android:hint="@string/transfer_sale_start_destination_station_hint"
+            android:paddingBottom="5dp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/selectTransferStationsCloseBtn"
+            style="@style/Core.App.Widget.Button.Gray"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:text="@string/select_transfer_stations_close" />
+
+        <ru.ppr.cppk.ui.widget.Overlay
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <Space
+            android:id="@+id/blockingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:soundEffectsEnabled="false"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

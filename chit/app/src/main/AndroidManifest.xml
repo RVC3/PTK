@@ -1,0 +1,88 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ru.ppr.chit">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/App.Theme"
+        tools:replace="android:theme">
+
+        <activity
+            android:name=".ui.activity.splash.SplashActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.activity.setdeviceid.SetDeviceIdActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.welcome.WelcomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.menu.MenuActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.readbsc.ReadBscActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.readbarcode.ReadBarcodeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.passengerlist.PassengerListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.ticketcontrol.TicketControlActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.workingstate.WorkingStateActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.readbsqrcode.ReadBsQrCodeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.setuser.SetUserActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.root.RootActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.rootaccess.RootAccessActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="ru.ppr.logger.ServiceLoggerMonitor"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

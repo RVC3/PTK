@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'build/generated/source/greendao']
+        }
+        debug {
+            java.srcDirs = ['src/debug/java']
+        }
+        release {
+            java.srcDirs = ['src/release/java']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+greendao {
+    schemaVersion 1
+    daoPackage 'ru.ppr.chit.securitydb.greendao'
+}
+
+dependencies {
+    // Android support
+    compile "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
+    // Database GreenDao
+    compile project(':database_greendao')
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/blue">
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="50dp" />
+
+        <TextView
+            android:id="@+id/write_status"
+            style="@style/status_operations_style"
+            android:layout_below="@id/progressBar1"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/actions_needed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/write_status"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:singleLine="false"
+            android:text="@string/pull_card_please"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/write_pd_to_card_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/repeat_button"
+            style="@style/btn_gray"
+            android:text="@string/repeat"/>
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/cancel_button"
+            style="@style/btn_gray"
+            android:text="@string/cancelOperation"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

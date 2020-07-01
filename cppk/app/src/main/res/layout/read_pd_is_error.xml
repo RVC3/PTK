@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/circleImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_failed"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="50dp" />
+
+    <ru.ppr.core.ui.widget.CustomTextView
+        android:id="@+id/read_pd_is_error_error_message"
+        style="@style/enter_pin_error_view"
+        android:layout_below="@id/circleImage"
+        android:text="@string/fail_read_from_bsc"
+        android:visibility="visible"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_large" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/btnWhyNotRead"
+            style="@style/btn_gray"
+            android:visibility="invisible"
+            android:text="@string/barcode_read_rules"
+            />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/sale_pd"
+            style="@style/btn_gray"
+            android:layout_marginTop="0dp"
+            android:text="@string/sale_pd" />
+
+        <ru.ppr.core.ui.widget.SingleClickButton
+            android:id="@+id/btnAgain"
+            style="@style/btn_gray"
+            android:layout_marginTop="0dp"
+            android:text="@string/repeat_read" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

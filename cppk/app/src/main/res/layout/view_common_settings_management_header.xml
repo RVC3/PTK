@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/printerSendToOfdCountTriggerLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Количество документов для включения отправки данных в ОФД" />
+
+    <EditText
+        android:id="@+id/printerSendToOfdCountTriggerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned" />
+
+    <TextView
+        android:id="@+id/printerSendToOfdPeriodTriggerLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Срок хранения документов в ФП для включения отправки данных в ОФД (в часах)" />
+
+    <EditText
+        android:id="@+id/printerSendToOfdPeriodTriggerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned" />
+</LinearLayout>

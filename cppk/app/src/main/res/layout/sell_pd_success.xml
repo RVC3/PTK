@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/sell_pd_success_write_pd_title"
+        android:text="@string/write_pd"
+        style="@style/black_title_with_white_text"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/sell_pd_success_pring_pd_is_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/sell_pd_success_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/sell_pd_success_img_horizontal_margin"
+            android:layout_marginTop="@dimen/sell_pd_success_img_horizontal_margin"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_success" />
+
+        <TextView
+            android:id="@+id/sell_pd_success_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sell_pd_success_img"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:textSize="28sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/selL_pd_success_layout_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/white">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/exec_read_bsc" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sell_pd_success_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/sellPd_sell_new_pd"
+        style="@style/btn_gray"
+        android:text="@string/sell_new_pd" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/sellPd_bay_baggage"
+        style="@style/btn_gray"
+        android:layout_marginTop="0dp"
+        android:text="@string/bay_new_baggage" />
+
+    <ru.ppr.core.ui.widget.SingleClickButton
+        android:id="@+id/sellPd_calculate_delivery"
+        style="@style/btn_gray"
+        android:layout_marginTop="0dp"
+        android:text="@string/calculate_delivery" />
+
+</LinearLayout>
