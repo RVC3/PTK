@@ -37,7 +37,7 @@ public class RfidReal_9000S implements IRfid {
      * Флаг активности (включенности) ридера
      */
     private boolean isOpened = false;
-//    private AscReader mReader = null;
+    private AscReader_9000S mReader = null;
     private PiccManager piccReader = null;
     public static final String TAG = RfidReal_9000S.class.getSimpleName();
 
@@ -45,7 +45,8 @@ public class RfidReal_9000S implements IRfid {
     public RfidReal_9000S(Context context, RfidReal.Config config){
         Logger.trace(TAG, "RfidReal_9000S() Constructor START");
         this.config = config;
-//        mReader = new AscReader(context);
+        //Создать экземпляр класса для Ридера SAM карт
+        mReader = new AscReader_9000S(context);
         if (piccReader == null){
             Logger.trace(TAG, "RfidReal_9000S() piccReader is creating");
             piccReader = new PiccManager();
@@ -71,6 +72,7 @@ public class RfidReal_9000S implements IRfid {
         String fTitle = "authenticateWithSamAuthorizationStrategy(sectorNumber=" + sectorNumber + " ," + "read=" + read + ") ";
 
         Logger.trace(TAG, fTitle + "START");
+        mReader.cscOpen();
         return true;
 /*        long time = getCurrentTime();
 
