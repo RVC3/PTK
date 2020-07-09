@@ -36,6 +36,7 @@ public class RfidReal_9000S implements IRfid {
     /**
      * Флаг активности (включенности) ридера
      */
+    private boolean is_mReaderOpen = false;
     private boolean isOpened = false;
     private AscReader_9000S mReader = null;
     private PiccManager piccReader = null;
@@ -68,15 +69,80 @@ public class RfidReal_9000S implements IRfid {
         }
     }
 
+
+    /**
+     * Поиск карты. Необходимая команда для осуществления авторизации
+     */
+    private boolean searchCard() {
+        return searchCard(new SearchCardRes());
+    }
+    /**
+     * Переинициализирует SAM модуль
+     */
+    private boolean initSAM(byte samSlotNumber) {
+        if (is_mReaderOpen) mReader.cscClose();
+        mReader.setSlot(samSlotNumber);
+        boolean res = mReader.cscOpen();
+        return res;
+    }
+
+    private enum AuthType {
+        mifareSamNxpAuthenticate, mifareSamNxpReAuthenticate;
+    }
+
+    private AuthType getAuthType(AuthData authData) {
+        if (authData.isAuthSuccess() && !authData.isReAuthDisabled())
+            return AuthType.mifareSamNxpReAuthenticate;
+        return AuthType.mifareSamNxpAuthenticate;
+    }
+
+    private byte mapKeyName(int code) {
+        if (code == 2) {
+            return (byte) 0x0B;
+        } else {
+            return (byte) 0x0A;
+        }
+    }
+
+
+    /**
+     * базовый метод авторизации
+     */
+    private boolean authWithSam(final SamAccessRule schemeRule, AuthType authType) {
+        String fTitle = "authWithSam(authType=" + authType + ") ";
+        Logger.trace(getClass(), "authWithSam(schemeRule=" + schemeRule.toString() + ", authType=" + authType + ") " + "START");
+
+        long time = getCurrentTime();
+        //номер блока для авторизации - любой блок в секторе, например нулевой
+        byte blockNumber = 0;
+        byte address = (byte) (schemeRule.getSectorNumber() * BLOCK_IN_THE_SECTOR + blockNumber);
+
+        // номер ключа на sam. 0-й ключ служебный, поэтому
+        // инкрементируем
+        byte samKeyNumber = (byte) (schemeRule.getCellNumber() + 1);
+        byte samKeyVersion = schemeRule.getSamKeyVersion();
+        byte samKeyName = mapKeyName(schemeRule.getKeyName());
+
+        int res = -1;
+        boolean out = false;
+
+        if (authType == AuthType.mifareSamNxpReAuthenticate) {
+            out = mReader.mifareSamNxpReAuthenticate(samKeyNumber, samKeyVersion, samKeyName, address);
+        } else {
+            out = mReader.mifareSamNxpAuthenticate(samKeyNumber, samKeyVersion, samKeyName, address);
+        }
+        Logger.trace(getClass(), fTitle + "FINISH result: " + ((out) ? "OK" : "FAILED") + getTimeString(time));
+        return out;
+    }
+
     private boolean authorizeWithSamAuthorizationStrategy(int sectorNumber, boolean read, SamAuthorizationStrategy samAuthorizationStrategy) {
         String fTitle = "authenticateWithSamAuthorizationStrategy(sectorNumber=" + sectorNumber + " ," + "read=" + read + ") ";
 
         Logger.trace(TAG, fTitle + "START");
-        mReader.cscOpen();
-        return true;
-/*        long time = getCurrentTime();
-
         boolean out = false;
+        long time = getCurrentTime();
+//        return true;
+
 
         if (cAuthData.isAuthSuccess() && cAuthData.getLastAuthSector() == sectorNumber) {
             SamAccessRule samAccessRule = samAuthorizationStrategy.getKey(sectorNumber, read);
@@ -121,7 +187,7 @@ public class RfidReal_9000S implements IRfid {
                     cAuthData.setPreviousSamAccessSchemeRule(schemeRule);
                     samAuthorizationStrategy.setLastSamAccessRuleStatus(out);
                     //Если ошиблись с ключем, тогда выполним обязательные операции для продолжения чтения
-                    killAuthAndResearch();
+//                    killAuthAndResearch();
                 }
 
                 cAuthData.setIsAuthSuccess(false);
@@ -134,15 +200,28 @@ public class RfidReal_9000S implements IRfid {
 
         Logger.trace(RfidReal.class, fTitle + "FINISH result: " + out + getTimeString(time));
 
-        return out;*/
+        return out;
     }
+
+    private boolean loadKey(StaticKeyAccessRule staticKeyAccessRule) {
+        String fTitle = "loadKey(key=" + CommonUtils.bytesToHexWithoutSpaces(staticKeyAccessRule.getKey()) + ") ";
+        Logger.trace(RfidReal.class, fTitle + "START");
+        long time = getCurrentTime();
+        if (!cAuthData.isKeyLoaded() || !staticKeyAccessRule.equals(cAuthData.getPreviousStaticKeyAccessRule())) {
+            boolean res = mReader.mifareLoadReaderKeyIndex((byte) 0, staticKeyAccessRule.getKey());
+            cAuthData.setIsKeyLoaded(res);
+        }
+        Logger.trace(RfidReal.class, fTitle + "FINISH res: " + ((cAuthData.isKeyLoaded()) ? "OK" : "FAILED") + getTimeString(time));
+        return cAuthData.isKeyLoaded();
+    }
+
 
     private boolean authorizeWithStaticKeyAuthorizationStrategy(int sectorNumber, boolean read, StaticKeyAuthorizationStrategy staticKeyAuthorizationStrategy) {
         String fTitle = "authorizeWithStaticKeyAuthorizationStrategy(sectorNumber=" + sectorNumber + " ," + "read=" + read + ") ";
 
         Logger.trace(RfidReal.class, fTitle + "START");
-        return true;
-/*        long time = getCurrentTime();
+//        return true;
+        long time = getCurrentTime();
 
         boolean out = false;
 
@@ -200,7 +279,7 @@ public class RfidReal_9000S implements IRfid {
 
         Logger.trace(RfidReal.class, fTitle + "FINISH result: " + out + getTimeString(time));
 
-        return out;*/
+        return out;
     }
 
     private RfidResult<byte[]> readFromClassic(int startSectorNumber,
@@ -582,7 +661,12 @@ public class RfidReal_9000S implements IRfid {
                     Logger.trace(TAG, "open() 3");
                     isOpened = (piccReader.open() == 0);
                     Logger.trace(TAG, "open() = " + isOpened);
+
                     if (!isOpened()) close();
+                    else{
+                        mReader.setSlot(Defines.SAM_SLOT_1);
+                        is_mReaderOpen = mReader.cscOpen();
+                    }
                 }
             }
         }
@@ -593,6 +677,10 @@ public class RfidReal_9000S implements IRfid {
     @Override
     public void close() {
         Logger.trace(TAG, "close() START");
+        if (is_mReaderOpen){
+            mReader.cscClose();
+            is_mReaderOpen = false;
+        }
         if (piccReader != null)
             piccReader.close();
         piccReader = null;

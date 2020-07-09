@@ -477,7 +477,7 @@ public class SplashActivity extends SystemBarActivity {
                             //TODO Uncomment
                             //HACK, forcefully setting to true to avoid error
                             boolean edsInitRes = edsSateRes.isSuccessful() && edsSateRes.getState() == SftEdsChecker.SFT_STATE_ALL_LICENSES;
-                            boolean skipErrors = true;
+                            boolean skipErrors = false;
 
                             if(skipErrors){
                                 edsInitRes = true;

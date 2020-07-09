@@ -4,6 +4,7 @@ import android.content.Context;
 import android.device.IccManager;
 import android.support.annotation.NonNull;
 
+import fr.coppernic.cpcframework.cpcask.Defines;
 import ru.ppr.logger.Logger;
 
 /**
@@ -16,12 +17,18 @@ public class AscReader_9000S implements IAscReader {
 
     private static final String TAG = AscReader_9000S.class.getSimpleName();
 
+    private int lastResult = Defines.RCSC_Ok;
     public static final byte SLOT_IC = 0x00;
     public static final byte SLOT_SAM1 = 0x01;
     public static final byte SLOT_SAM2 = 0x02;
     public static final byte TYPE_IC = 0x01;
     public static final byte TYPE_SLE4442 = 0x02;
     public static final byte VOLT_3 = 0x01;
+    private byte Slot;
+
+    public void setSlot(byte slot) {
+        Slot = slot;
+    }
 
     IccManager mIccManager = null;
 
@@ -37,6 +44,13 @@ public class AscReader_9000S implements IAscReader {
     @Override
     public void setPower(boolean on) {
 
+    }
+
+    /**
+     * Сейчас любая команда ридера может вернуть ошибку таймаута, в этом случае команды выполняются 2-3 секунды
+     */
+    public boolean isTimeoutError() {
+        return (lastResult == Defines.RCSC_Timeout);
     }
 
     @Override
@@ -133,7 +147,7 @@ public class AscReader_9000S implements IAscReader {
     public boolean cscOpen() {
         boolean result = true;
         //Открыть IC карту в IC слоте с напряжением 3V
-        int err = mIccManager.open(SLOT_SAM1, TYPE_IC, VOLT_3);
+        int err = mIccManager.open(Slot, TYPE_IC, VOLT_3);
         //Проверить, удалось ли открыть карту
         if(err < 0){
             //Ошибка открытия
