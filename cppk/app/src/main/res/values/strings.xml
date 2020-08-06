@@ -705,6 +705,7 @@
     <string name="pos_binding_port_hint">(порт)</string>
     <string name="pos_binding_msg_changing_failed">Не удалось привязать терминал</string>
     <string name="pos_binding_msg_changing_success">Терминал привязан</string>
+    <string name="implicit_intent_sending_fail">Не запущена программа LAN4Tap</string>
 
     <!-- Формирование отчетности -->
     <string name="reports_shift">Смена</string>
@@ -1700,6 +1701,5 @@
     <string name="card_info_wallet_time_over">Срок действия \"кошелек\"</string>
     <string name="card_info_troyka_poezdki">Осталось поездок</string>
     <string name="card_info_type_ticket">Тип билета</string>
-
 
 </resources>

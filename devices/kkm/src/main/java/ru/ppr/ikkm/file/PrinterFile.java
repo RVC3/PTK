@@ -75,6 +75,10 @@ public class PrinterFile extends Printer {
         ofdDocsState.setUnsentDocumentsCount(0);
     }
 
+    public int closePageImpl(int rotate){
+        return 0;
+    }
+
     @Override
     protected void initializeWithDriverImpl() throws Exception {
 

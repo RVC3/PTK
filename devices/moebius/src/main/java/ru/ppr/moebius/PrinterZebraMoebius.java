@@ -110,6 +110,10 @@ public class PrinterZebraMoebius extends Printer {
         Logger.trace(TAG, "MoebiusWrapper initialized");
     }
 
+    public int closePageImpl(int rotate){
+        return 0;
+    }
+
     @Override
     protected void terminateImpl() throws Exception {
         disconnectInternal(false);

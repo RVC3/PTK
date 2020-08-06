@@ -123,6 +123,9 @@ public class PrinterShtrih extends Printer {
         Logger.trace(TAG, "ShtrihFiscalPrinter created");
     }
 
+    public int closePageImpl(int rotate){
+        return 0;
+    }
     @Override
     public Timeouts getTimeouts() {
         return timeouts;

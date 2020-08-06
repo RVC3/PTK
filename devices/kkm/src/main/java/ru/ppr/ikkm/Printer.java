@@ -244,6 +244,13 @@ public abstract class Printer implements IPrinter {
         connected = false;
     }
 
+    public abstract int closePageImpl(int rotate);
+
+    @Override
+    public int closePage(int rotate) throws PrinterException{
+        return closePageImpl(rotate);
+    }
+
     @Override
     public ConnectResult connect() throws PrinterException {
         Logger.trace(TAG, "connect");
@@ -458,6 +465,7 @@ public abstract class Printer implements IPrinter {
 
     @Override
     public void printTextInNormalMode(String text) throws PrinterException {
+        Logger.info(TAG, "printTextInNormalMode_1, text = " + text);
         printTextInNormalMode(text, TextStyle.TEXT_NORMAL);
     }
 

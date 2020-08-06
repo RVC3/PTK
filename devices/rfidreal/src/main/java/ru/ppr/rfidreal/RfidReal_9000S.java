@@ -22,9 +22,12 @@ public class RfidReal_9000S implements IRfid {
     SearchCardRes scRes = new SearchCardRes();
     private static final int BYTE_IN_BLOCK = 16;
     public static final int BLOCK_IN_THE_SECTOR = 4;
-    byte keyBuf[] = {
-            (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff
-    };
+    byte keyBuf_0_sector[] = {
+            (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff, (byte) 0xff };
+    byte keyBuf_second_sector[] = {
+            (byte) 0x2a, (byte) 0xba, (byte) 0x95, (byte) 0x19, (byte) 0xf5, (byte) 0x74 };
+    byte keyBuf_seventh_sector[] = {
+            (byte) 0xa0, (byte) 0xa1, (byte) 0xa2, (byte) 0xa3, (byte) 0xa4, (byte) 0xa5 };
     byte auth_cmd_Buf[] = {(byte)0xff, (byte)0x82, (byte)0x00, (byte)0x00, (byte)0x06};
     byte do_auth_cmd_Buf[] = {(byte)0xff, (byte)0x88, (byte)0x00, (byte)0x60, (byte)0x00};
 
@@ -104,6 +107,19 @@ public class RfidReal_9000S implements IRfid {
         }
     }
 
+    // получить статический ключ по сквозному номеру блока
+    private byte [] get_KeyBuf(int ablockNumber){
+        int lsector = ablockNumber / BLOCK_IN_THE_SECTOR;
+        switch (lsector){
+            case 0: return keyBuf_0_sector;
+            case 2: return keyBuf_second_sector;
+            case 7: case 8: case 9:
+            case 10: case 11: case 12:
+            case 13: case 14: case 15:
+                return keyBuf_seventh_sector;
+            default: return keyBuf_0_sector;
+        }
+    }
 
     /**
      * базовый метод авторизации
@@ -255,6 +271,8 @@ public class RfidReal_9000S implements IRfid {
                         break;
                     }
                     out = mReader.mifareAuthenticate((byte) sectorNumber, (byte) staticKeyAccessRule.getKeyName(), addKeyPcd);
+
+
                     staticKeyAuthorizationStrategy.setLastStaticKeyStatus(out);
                     if (out) {
                         //авторизовались успешно - вываливаемся из цикла
@@ -273,6 +291,19 @@ public class RfidReal_9000S implements IRfid {
                 }
             }
         }
+        // !!!!!!!!!!!!!!!!!!!!
+        if (!out){  // если не получилось загрузить ключи, используем статические из таблицы
+                int ret = piccReader.m1_keyAuth(0, sectorNumber, 6, get_KeyBuf(sectorNumber), scRes.SNLen, scRes.SN);
+            Logger.trace(RfidReal.class, "m1_keyAuth sectorNumber = " + sectorNumber);
+            Logger.trace(RfidReal.class, "m1_keyAuth scRes.SNLen = " + scRes.SNLen);
+            Logger.trace(RfidReal.class, "m1_keyAuth scRes.SN = " + CommonUtils.bytesToHexWithoutSpaces(scRes.SN));
+            Logger.trace(RfidReal.class, "m1_keyAuth key = " + CommonUtils.bytesToHexWithoutSpaces(get_KeyBuf(sectorNumber)));
+                Logger.trace(RfidReal.class, "m1_keyAuth res = " + ret);
+                out = (ret == 0);
+//                final byte MODE = 0x00;
+//                piccReader.deactivate(MODE);
+        }
+        // !!!!!!!!!!!!!!!!!!!!
 
         cAuthData.setIsAuthSuccess(out);
         cAuthData.setLastAuthSector(sectorNumber);
@@ -298,11 +329,7 @@ public class RfidReal_9000S implements IRfid {
         long time = getCurrentTime();
         RfidResult<byte[]> result = new RfidResult<>(CardReadErrorType.OTHER, "ошибка открытия ридера");
         if (open()) {
-//            SearchCardRes scRes = new SearchCardRes();
-            int res = piccReader.activateEx(scRes.atr);
-            if (res == 0){
-
-            int block = startBlockNumber;
+                int block = startBlockNumber;
             int sector = startSectorNumber;
 
             byte[] tmpArray = new byte[blockCount * BYTE_IN_BLOCK];
@@ -320,24 +347,7 @@ public class RfidReal_9000S implements IRfid {
                     if (authorizeWithSamAuthorizationStrategy(sector, true, samAuthorizationStrategy)) {
                         // for SAM
                         byte[] tmp = new byte[BYTE_IN_BLOCK];
-//                        byte[] auth_cmd = new byte [BYTE_IN_BLOCK];
-//                        byte[] sw = new byte[2];
-//                        byte[] SN = new byte[16];
-//                        System.arraycopy(auth_cmd_Buf, 0, auth_cmd, 0, 5);
-//                        System.arraycopy(keyBuf, 0, auth_cmd, 5, 6);
-//                        Logger.trace(TAG, "cmd =" + CommonUtils.bytesToHexWithoutSpaces(auth_cmd));
-//                        int res1 = piccReader.apduTransmit(auth_cmd, 11, tmp, sw);
-//                        int SNLen = -1;
-                        Logger.trace(TAG, "UID = " + CommonUtils.bytesToHexWithoutSpaces(scRes.SN));
-                        Logger.trace(TAG, "SNLen = " + scRes.SNLen);
-                        int res1 = piccReader.m1_keyAuth(0, address, 6, keyBuf, scRes.SNLen, scRes.SN);
-                        Logger.trace(TAG, "m1_keyAuth =" + res1);
-//                           System.arraycopy(do_auth_cmd_Buf, 0, auth_cmd, 0, 5);
-//                           auth_cmd[3] = (byte)address;
-//                           res1 = piccReader.apduTransmit(auth_cmd, 6, tmp, sw);
-//                           Logger.trace(TAG, "m2_keyAuth =" + res1 + " " + sw[0] + " " + sw[1]);
-                        if (res1 >= 0){
-//                        if (mReader.mifareSamNxpReadBlock((byte) address, tmp)) {
+                        if (mReader.mifareSamNxpReadBlock((byte) address, tmp)) {
                             System.arraycopy(tmp, 0, tmpArray, i * BYTE_IN_BLOCK, BYTE_IN_BLOCK);
                         } else {
                             result = new RfidResult<>(CardReadErrorType.OTHER, "Error read from card");
@@ -350,30 +360,29 @@ public class RfidReal_9000S implements IRfid {
                         return result;
                     }
                 } else {
-                    if (authorizeWithStaticKeyAuthorizationStrategy(sector, true, staticKeyAuthorizationStrategy)) {
+                    if (authorizeWithStaticKeyAuthorizationStrategy(address, true, staticKeyAuthorizationStrategy)) {
                         // for NO SAM
                         byte[] tmp = new byte[BYTE_IN_BLOCK];
-//                        byte[] auth_cmd = new byte [BYTE_IN_BLOCK];
-//                        byte[] sw = new byte[2];
-//                        System.arraycopy(auth_cmd_Buf, 0, auth_cmd, 0, 5);
-//                        System.arraycopy(keyBuf, 0, auth_cmd, 5, 6);
-//                        int res1 = piccReader.apduTransmit(auth_cmd, 11, tmp, sw);
-//                        int SNLen = 7;
-                        Logger.trace(TAG, "SNLen = " + scRes.SNLen);
-                        int res1 = piccReader.m1_keyAuth(0, address, 6, keyBuf, scRes.SNLen, scRes.SN);
-                        Logger.trace(TAG, "m1_keyAuth =" + res1);
-//                            System.arraycopy(do_auth_cmd_Buf, 0, auth_cmd, 0, 5);
-//                        auth_cmd[3] = (byte)address;
-//                        res1 = piccReader.apduTransmit(auth_cmd, 6, tmp, sw);
-//                        Logger.trace(TAG, "m2_keyAuth =" + res1 + " " + sw[0] + " " + sw[1]);
-                        if (res1 >= 0){
-//                        if (mReader.mifareReadBlock((byte) address, tmp)) {
+
+                        // !!!!!!!!!!!!!!!!!!!!
+//                        int res = piccReader.activateEx(scRes.atr);
+//                        if (res == 0) {
+                            byte pReadBuf[] = new byte[20];
+
+                            int result1 = piccReader.m1_readBlock(address, pReadBuf);
+                            if (result1 > 0)
+                                System.arraycopy(pReadBuf, 0, tmpArray, i * BYTE_IN_BLOCK, BYTE_IN_BLOCK);
+                            Logger.trace(TAG, "m1_readBlock res= " + result1 + ", buf = " + CommonUtils.bytesToHexWithoutSpaces(pReadBuf));
+//                        }
+                        // !!!!!!!!!!!!!!!!!!!!
+
+/*                        if (mReader.mifareReadBlock((byte) address, tmp)) {
                             System.arraycopy(tmp, 0, tmpArray, i * BYTE_IN_BLOCK, BYTE_IN_BLOCK);
                         } else {
                             result = new RfidResult<>(CardReadErrorType.OTHER, "Error read from card");
                             Logger.trace(TAG, functionTitle + "FINISH res=" + result.getErrorMessage() + getTimeString(time));
                             return result;
-                        }
+                        }*/
                     } else {
                         result = new RfidResult<>(CardReadErrorType.AUTHORIZATION, "ошибка авторизации в секторе " + sector);
                         Logger.trace(TAG, functionTitle + "FINISH res=" + result.getErrorMessage() + getTimeString(time));
@@ -385,10 +394,6 @@ public class RfidReal_9000S implements IRfid {
             }
 
             result = new RfidResult<>(tmpArray);
-            final byte MODE = 0x00;
-            piccReader.deactivate(MODE);
-            }
-            else Logger.trace(TAG, "ACTIVATE process failed");
 
 //            softClose();
         }
@@ -681,8 +686,11 @@ public class RfidReal_9000S implements IRfid {
             mReader.cscClose();
             is_mReaderOpen = false;
         }
-        if (piccReader != null)
+        if (piccReader != null) {
+            final byte MODE = 0x00;
+            piccReader.deactivate(MODE);
             piccReader.close();
+        }
         piccReader = null;
         isOpened = false;
         Logger.trace(TAG, "close() FINISH");
@@ -700,10 +708,28 @@ public class RfidReal_9000S implements IRfid {
         return true;
     }
 
+    private boolean getFirmwareVersion(StringBuilder firmwareVersion) {
+        Logger.trace(getClass(), "getFirmwareVersion() START");
+        long time = getCurrentTime();
+        boolean out = mReader.cscVersionCsc(firmwareVersion);
+        Logger.trace(getClass(), "getFirmwareVersion() FINISH version = \"" + firmwareVersion + "\"" + getTimeString(time));
+        return out;
+    }
+
     @Override
     public boolean getFWVersion(String[] version) {
-        Logger.trace(TAG, "getFWVersion() START");
-        boolean out = getModel(version);
+        Logger.trace(getClass(), "getFWVersion() START");
+        long time = getCurrentTime();
+        boolean out = false;
+        StringBuilder fwVersion = new StringBuilder();
+        if (open()) {
+            if (getFirmwareVersion(fwVersion)) {
+                version[0] = fwVersion.toString();
+                out = true;
+            }
+//            softClose();
+        }
+        Logger.trace(getClass(), "getFWVersion() FINISH version = \"" + fwVersion + "\" res: " + ((out) ? "OK" : "ERROR") + getTimeString(time));
         return out;
     }
 
@@ -727,7 +753,8 @@ public class RfidReal_9000S implements IRfid {
         if (scRes.scanCard > 0) {
             scRes.SNLen = piccReader.antisel(scRes.SN, scRes.sak);
         }
-        return (scRes.SNLen > 0);
+        int res = piccReader.activateEx(scRes.atr);
+        return (scRes.SNLen > 0) && (res == 0);
     }
 
     private byte[] getUID(SearchCardRes scRes) {
@@ -768,11 +795,6 @@ public class RfidReal_9000S implements IRfid {
         Logger.info(TAG, "scRes.SN = " + scRes.SN[0] + " " + scRes.SN[1] + " " + scRes.SN[2] + " " + Integer.toHexString(scRes.SN[3]) + " " + Integer.toHexString(scRes.SN[4]) + " " + scRes.SN[5] + " " + Integer.toHexString(scRes.SN[6]) + " " + scRes.SN[7] + " " + scRes.SN[8] + " " + scRes.SN[9]);
         Logger.info(TAG, "scRes.sak = " + scRes.sak[0]);
         Logger.info(TAG, "scRes.SAK = " + scRes.SAK);
-
-        Logger.info(TAG, "ATR1 = " + scRes.atr[0] + " " + scRes.atr[1] + " " + scRes.atr[2] + " " + scRes.atr[3] + " " + scRes.atr[4] + " " + scRes.atr[5] + " " + scRes.atr[6] + " " + scRes.atr[7] + " " + scRes.atr[8] + " " + scRes.atr[9]);
-        Logger.info(TAG, "ATR2 = " + scRes.atr[10] + " " + scRes.atr[11] + " " + scRes.atr[12] + " " + scRes.atr[13] + " " + scRes.atr[14] + " " + scRes.atr[15] + " " + scRes.atr[16] + " " + scRes.atr[17] + " " + scRes.atr[18] + " " + scRes.atr[19]);
-        Logger.info(TAG, "ATR3 = " + scRes.atr[20] + " " + scRes.atr[21] + " " + scRes.atr[22] + " " + scRes.atr[23] + " " + scRes.atr[24] + " " + scRes.atr[25] + " " + scRes.atr[26] + " " + scRes.atr[27] + " " + scRes.atr[28] + " " + scRes.atr[29]);
-        Logger.info(TAG, "ATR4 = " + scRes.atr[30] + " " + scRes.atr[31]);
 
         CardData cardData = new CardData();
         cardData.setRfidAttr(realRfidAttr);

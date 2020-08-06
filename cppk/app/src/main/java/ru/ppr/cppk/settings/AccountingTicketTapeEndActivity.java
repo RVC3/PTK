@@ -120,10 +120,12 @@ public class AccountingTicketTapeEndActivity extends SystemBarActivity {
 
     private void printTapeEnd() {
 
+        Logger.info(TAG, "print 1...");
         final FeedbackProgressDialog progressDialog = new FeedbackProgressDialog(this);
         progressDialog.setMessage(getString(R.string.printer_PrintingNow));
         progressDialog.setCancelable(false);
         progressDialog.show();
+        Logger.info(TAG, "print 2...");
 
         Di.INSTANCE.printerManager().getOperationFactory().getGetOdometerValue()
                 .call()

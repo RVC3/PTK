@@ -15,6 +15,8 @@ import ru.ppr.ikkm.model.OfdSettings;
  */
 public interface IPrinter {
 
+    int closePage(int rotate) throws PrinterException;
+
     /**
      * Инициирует подключение к принтеру
      *
@@ -441,6 +443,7 @@ public interface IPrinter {
      * @throws PrinterException
      */
     void startSendingDocsToOfd() throws PrinterException;
+
 
     enum DocType {
         SALE(1), RETURN(2);

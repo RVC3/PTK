@@ -541,15 +541,16 @@ public class OpenShiftStartFragment extends FragmentParent implements OnClickLis
     private Observable<Boolean> checkNeedSkipShiftOpening() {
         return Di.INSTANCE.printerManager().getOperationFactory().getGetStateOperation().call()
                 .flatMap(state -> Observable.fromCallable(() -> {
-
                     if (!BigDecimal.ZERO.equals(shiftOpenTempData.cashInFR)) {
                         // В фискальнике лежат деньги, нельзя втихую продолжать
+                        Logger.trace(TAG, "checkNeedSkipShiftOpening  = false_1");
                         return false;
                     }
 
                     EklzChecker eklzChecker = di().printerManager().getEklzChecker();
                     if (!eklzChecker.check(state.getEKLZNumber(), state.getRegNumber())) {
                         // Сменилась ЭКЛЗ, нельзя втихую продолжать
+                        Logger.trace(TAG, "checkNeedSkipShiftOpening  = false_2");
                         return false;
                     }
 
@@ -559,10 +560,12 @@ public class OpenShiftStartFragment extends FragmentParent implements OnClickLis
                             int lastShiftNum = shiftEvent.getShiftNumber();
                             if (lastShiftNum + 1 == state.getShiftNum()) {
                                 // Всё норм, можно продолжать втихую
+                                Logger.trace(TAG, "checkNeedSkipShiftOpening  = true");
                                 return true;
                             }
                         }
                     }
+                    Logger.trace(TAG, "checkNeedSkipShiftOpening  = false_3");
                     return false;
                 }));
     }
@@ -642,7 +645,8 @@ public class OpenShiftStartFragment extends FragmentParent implements OnClickLis
                                                         // 4. Время с принтера
                                                         shiftOpenTempData.openTime = resultOpenShift.getOperationTime();
                                                         // 5. Номер открытой смены
-                                                        shiftOpenTempData.shiftNum = resultOpenShift.getShiftNum();
+//                                                        shiftOpenTempData.shiftNum = resultOpenShift.getShiftNum();
+                                                        shiftOpenTempData.shiftNum = 1;
                                                         // 6. сквозной номер документа
                                                         shiftOpenTempData.spndNumber = resultOpenShift.getSpndNumber();
                                                     })

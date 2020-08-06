@@ -73,6 +73,7 @@ public class TapeEndReportTpl extends PrinterTpl {
         printer.printTextInNormalMode(" ");
         printer.printTextInNormalMode(" ");
         printer.waitPendingOperations();
+        printer.closePage(0);
     }
 
     public static class Params {

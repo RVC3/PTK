@@ -2,11 +2,13 @@ package ru.ppr.cppk.printer.rx.operation.openShift;
 
 import java.util.Date;
 
+import ru.ppr.cppk.logic.creator.ShiftEventCreator;
 import ru.ppr.cppk.printer.PrinterResourcesManager;
 import ru.ppr.cppk.printer.TextFormatter;
 import ru.ppr.cppk.printer.paramBuilders.FiscalHeaderBuilder;
 import ru.ppr.cppk.printer.rx.operation.base.InClosedShiftOperation;
 import ru.ppr.ikkm.IPrinter;
+import ru.ppr.logger.Logger;
 import rx.Observable;
 
 /**
@@ -42,7 +44,9 @@ public abstract class OpenShiftOperation extends InClosedShiftOperation {
          */
         private int spndNumber;
 
+        private static final String TAG = Logger.makeLogTag(OpenShiftOperation.class);
         public Result(Date date, int shiftNum, int spndNumber) {
+            Logger.trace(TAG, "Result shiftNum = " + shiftNum);
             this.operationTime = date;
             this.shiftNum = shiftNum;
             this.spndNumber = spndNumber;

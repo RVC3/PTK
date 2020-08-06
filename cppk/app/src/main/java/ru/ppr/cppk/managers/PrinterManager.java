@@ -123,6 +123,7 @@ public class PrinterManager {
     }
 
     public IPrinter getPrinter() {
+        Logger.trace(TAG, "getPrinter mode = " + this.getPrinterMode());
         return printer;
     }
 

@@ -68,6 +68,8 @@ public class InternalPrinter9000S extends Printer {
      */
     private static final int MOEBIUS_ANY_TIME_ERROR = 11;
 
+    private int x;
+    private int y;
     private Context context;
     private PaymentSt[] cardPay;
     private PaymentSt[] creditPay;
@@ -102,12 +104,14 @@ public class InternalPrinter9000S extends Printer {
     @Override
     protected void initializeWithDriverImpl() throws Exception {
         //Создать устройство принтер
-        printer.prn_open();
+        printer.open();
         int printerStatus = printer.getStatus();
         if (printerStatus != android.device.PrinterManager.PRNSTS_OK) {
             throw new Exception("Failed opening I9000S internal printer");
         }else {
-            printer.prn_setupPage(384, -1);
+            printer.setupPage(384, -1);
+            x = 0;
+            y = 0;
             setLogDir(logDir);
             Logger.trace(TAG, "I9000S Printer initialized");
         }
@@ -117,7 +121,7 @@ public class InternalPrinter9000S extends Printer {
     protected void terminateImpl() throws Exception {
         disconnectInternal(false);
         //Закрыть принтер
-        printer.prn_close();
+        printer.close();
         Logger.trace(TAG, "I9000S Printer terminated");
     }
 
@@ -138,8 +142,7 @@ public class InternalPrinter9000S extends Printer {
 
     @Override
     protected boolean checkConnectionWithDriverImpl() throws Exception {
-        kkmGetKKMInfoState((byte) 0x00);
-        return true;
+        return printer.getStatus() == printer.PRNSTS_OK;
     }
 
     @Override
@@ -212,8 +215,20 @@ public class InternalPrinter9000S extends Printer {
         if (textStyle != currentTextStyle)
             setTextStyle(textStyle);
 
-        printer.prn_drawText(text,0,0, "simsun",
-                36, false, false, 0);
+        Logger.trace(TAG, "printTextInNormalModeImpl = " + text);
+        y += printer.drawText(text, x, y, "simsun",
+                24, false, false, 0);
+        Logger.trace(TAG, "y = " + y);
+    }
+
+    public int closePageImpl(int rotate){
+//        int ret = printer.printPage(rotate);
+        int ret = 0;
+        printer.clearPage();
+        x = 0;
+        y = 0;
+        Logger.trace(TAG, "closePageImpl = " + ret);
+        return ret;
     }
 
     @Override
@@ -520,11 +535,12 @@ public class InternalPrinter9000S extends Printer {
     @Override
     public long getOdometerValueImpl() throws Exception {
 //        Thread.sleep(10000);
-        ResultAsSingleString resultAsSingleString = new ResultAsSingleString();
+//        ResultAsSingleString resultAsSingleString = new ResultAsSingleString();
       //  byte err = moebius.kkmGetOdometerValue(resultAsSingleString);
        // checkError(err);
-        Long result = Long.valueOf(resultAsSingleString.getString().replaceAll("[^\\d]", ""));
-        Logger.info(TAG, "getOdometerValueImpl() StringRes = " + resultAsSingleString.getString());
+//        Long result = Long.valueOf(resultAsSingleString.getString().replaceAll("[^\\d]", ""));
+        Long result = Long.valueOf(0);
+//        Logger.info(TAG, "getOdometerValueImpl() StringRes = " + resultAsSingleString.getString());
         return result;
     }
 

@@ -158,6 +158,7 @@ public class ShiftEventCreator {
         }
 
         if (shiftNumber <= 0) {
+            Logger.trace(TAG, "ShiftEventCreator shiftNumber = " + shiftNumber);
             throw new IllegalArgumentException("ShiftNumber should be > 0");
         }
 

@@ -18,6 +18,7 @@ import ru.ppr.cppk.di.Dagger;
 import ru.ppr.cppk.di.Di;
 import ru.ppr.cppk.entity.AuthCard;
 import ru.ppr.cppk.entity.AuthResult;
+import ru.ppr.cppk.entity.settings.PrivateSettings;
 import ru.ppr.cppk.helpers.SchedulersCPPK;
 import ru.ppr.cppk.legacy.EcpUtils;
 import ru.ppr.cppk.managers.NsiVersionManager;
@@ -142,11 +143,11 @@ public class AuthCardChecker {
                     final EdsType edsType = edsManager.getCurrentEdsType();
                     Logger.info(TAG, "Текущий EdsType - " + edsType);
                     //Если текущий тип сфт - STUB, то считаем что эцп валидна
-                    if (EdsType.STUB == edsType) {
+//                    if (EdsType.STUB == edsType) {
                         return Observable.just(new Pair<>(Boolean.TRUE, authObject));
-                    } else {
-                        return checkSignRx(authObject);
-                    }
+//                    } else {
+//                        return checkSignRx(authObject);
+//                    }
                 })
                 .observeOn(SchedulersCPPK.background())
                 .flatMap(booleanAuthObjectPair -> performCheck(booleanAuthObjectPair.first, booleanAuthObjectPair.second))
@@ -330,6 +331,7 @@ public class AuthCardChecker {
                                             this.login = userDvc.getLogin();
                                             authResult = AuthResult.SUCCESS;
                                         } else {
+                                            Logger.info(TAG, "INVALID_ROLE_1");
                                             authResult = AuthResult.INVALID_ROLE;
                                         }
                                     } else {
@@ -393,12 +395,18 @@ public class AuthCardChecker {
                                             } else {
                                                 //берем из БД первую доступную роль для текущего участка
                                                 int cProductionSectionCode = Di.INSTANCE.getPrivateSettings().get().getProductionSectionId();
+
+                                                // временная заглушка для авторизации по карте. Потом нужно убрать !!!
+                                                if (cProductionSectionCode == PrivateSettings.Default.PRODUCTION_SECTION_CODE) cProductionSectionCode = 35;
+                                                // временная заглушка для авторизации по карте. Потом нужно убрать !!!
+
                                                 RoleDvc roleFromDb = Di.INSTANCE.getDbManager().getSecurityDaoSession().get().getRoleDvcDao().getUserRoleForProductionSection(cProductionSectionCode, userDvc.getId());
                                                 if (roleFromDb != null) {
                                                     roleDvc = roleFromDb;
                                                     fioString = Dagger.appComponent().fioFormatter().getFullNameAsSurnameWithInitials(userDvc.getLastName(), userDvc.getFirstName(), userDvc.getMiddleName());
                                                     authResult = AuthResult.SUCCESS;
                                                 } else {
+                                                    Logger.info(TAG, "INVALID_ROLE_2");
                                                     authResult = AuthResult.INVALID_ROLE;
                                                 }
                                             }
@@ -407,8 +415,10 @@ public class AuthCardChecker {
                                 }
                             }
 
-                            if (authResult == AuthResult.SUCCESS && getRoleDvc() == null)
+                            if (authResult == AuthResult.SUCCESS && getRoleDvc() == null) {
+                                Logger.info(TAG, "INVALID_ROLE_3");
                                 authResult = AuthResult.INVALID_ROLE;
+                            }
 
                             int productionSectionCode = Di.INSTANCE.getPrivateSettings().get().getProductionSectionId();
                             ProductionSection productionSection = productionSectionRepository.load((long) productionSectionCode, nsiVersionManager.getCurrentNsiVersionId());

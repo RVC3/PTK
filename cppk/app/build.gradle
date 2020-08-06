@@ -19,7 +19,9 @@ android {
 
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
+//        minSdkVersion 26
         targetSdkVersion rootProject.targetSdkVersion
+//        targetSdkVersion 26
         applicationId "ru.ppr.cppk"
         versionCode 1
         versionName getAppVersionName()

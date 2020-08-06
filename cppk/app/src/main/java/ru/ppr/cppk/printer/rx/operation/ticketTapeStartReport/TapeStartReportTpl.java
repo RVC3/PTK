@@ -3,6 +3,7 @@ package ru.ppr.cppk.printer.rx.operation.ticketTapeStartReport;
 import java.util.Date;
 
 import ru.ppr.cppk.printer.TextFormatter;
+import ru.ppr.cppk.InternalPrinter9000S;
 import ru.ppr.cppk.printer.tpl.PrinterTpl;
 import ru.ppr.cppk.printer.tpl.ReportClicheTpl;
 import ru.ppr.ikkm.IPrinter;
@@ -44,6 +45,7 @@ public class TapeStartReportTpl extends PrinterTpl {
         printer.printTextInNormalMode(" ");
         printer.printTextInNormalMode(" ");
         printer.waitPendingOperations();
+        printer.closePage(0);
     }
 
     public static class Params {

@@ -3,6 +3,7 @@ package ru.ppr.cppk;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -51,17 +52,16 @@ public class PosBindingActivity extends SystemBarActivity {
                         initiator.stop();
                         if (response.getStatus().getNumber() == 1){
                             Logger.trace("LAN4ResponseListener", "Status = 1" );
-                            Globals.getInstance().getToaster().showToast(R.string.pos_binding_msg_changing_success);
                             PosBindingActivity.isRunning = false;
-                            try {
+                            skip();
+/*                            try {
                                 Thread.sleep(3000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                             Navigator.navigateToSplashActivity(PosBindingActivity.this, false);
-                            finish();
+                            finish();*/
                         }
-                        else Globals.getInstance().getToaster().showToast(R.string.pos_binding_msg_changing_failed);
                         break;
                 }
             }
@@ -82,11 +82,7 @@ public class PosBindingActivity extends SystemBarActivity {
         @Override
         public void connected(Lan4Gate initiator) {
             //Код для обработки подключения. После данного события можно отправлять запросы
-//<<<<<<< HEAD
             Logger.trace("LAN4CommunicationListener", "Connect with LAN4Tap is established" );
-//=======
-            Logger.trace("onClick", "Connect with LAN4Tap is established" );
-//>>>>>>> 1b504430a565bfe7febb650362e4bcc135d53708
             sale = gate.getPreparedRequest(OperationsList.TestCommunication);
             gate.sendRequest(sale);
         }
@@ -138,6 +134,19 @@ public class PosBindingActivity extends SystemBarActivity {
         portView.setText(String.valueOf(SharedPreferencesUtils.getPosPort(this)));
     }
 
+
+// Если нет входящего соединения от LAN4Tap, отправить implicit intent для определения, запущено ли оно на устройстве
+    void send_implicit_activity_to_Lanter(){
+        Uri address = Uri.parse("http://developer.alexanderklimov.ru");
+        Intent openLinkIntent = new Intent(Intent.ACTION_VIEW, address);
+
+        if (openLinkIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(openLinkIntent);
+        } else {
+            Globals.getInstance().getToaster().showToast(R.string.pos_binding_msg_changing_failed);
+        }
+    }
+
     public void onClick(View view) {
         int id = view.getId();
 
@@ -172,14 +181,15 @@ public class PosBindingActivity extends SystemBarActivity {
                         .timeout(POS_TERMINAL_CONNECT_TIME, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
                         .subscribeOn(AndroidSchedulers.mainThread())
                         .subscribe(() -> {
-                                    Logger.trace("onClick", "Connect with LAN4Tap is established" );
-                                    Globals.getInstance().getToaster().showToast(R.string.pos_binding_msg_changing_success);
+                                    Logger.trace("subscribe", "Терминал привязан" );
+//                                    Globals.getInstance().getToaster().showToast(R.string.pos_binding_msg_changing_success);
                                     waitPosSubscription = null;
                                 },
                                 error -> {
                                     Logger.error(TAG, error);
                                     waitPosSubscription = null;
-                                    Globals.getInstance().getToaster().showToast(R.string.pos_binding_msg_changing_failed);
+//                                    Globals.getInstance().getToaster().showToast(R.string.pos_binding_msg_changing_failed);
+//                                    send_implicit_activity_to_Lanter();
                                 }
                         );
                 break;

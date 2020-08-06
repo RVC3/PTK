@@ -59,6 +59,33 @@ public class AscReader_9000S implements IAscReader {
 
     }
 
+    private int cscVersionCscDecompiled(StringBuilder sb) {
+        int timeout = 100;
+        Commands.giCSCTrame[0] = -128;
+        Commands.giCSCTrame[1] = 2;
+        Commands.giCSCTrame[2] = 1;
+        Commands.giCSCTrame[3] = 1;
+        Commands.giCSCTrame[4] = 0;
+        Commands.giCSCTrameLn = 5;
+        Commands.icsc_SetCRC();
+        int ret = cscSendReceive(timeout, Commands.giCSCTrame, Commands.giCSCTrameLn);
+        Commands.giCSCTrameLn -= 2;
+        byte[] rspBuf = new byte[256];
+        byte[] rspStatus = new byte[2];
+        Logger.trace(TAG, "cscVersionCscDecompiled buf= " + CommonUtils.bytesToHexWithoutSpaces(Commands.giCSCTrame));
+        lastResult = mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrameLn, rspBuf, rspStatus);
+        Logger.trace(TAG, "cscVersionCscDecompiled res= " + CommonUtils.bytesToHexWithoutSpaces(rspBuf));
+        if (ret < 0) {
+            return ret;
+        } else if (ret > 6) {
+            String szVersion = new String(rspBuf, 4, ret - 6);
+            sb.append(szVersion);
+            return Defines.RCSC_Ok;
+        } else {
+            return Defines.RCSC_Timeout;
+        }
+    }
+
     /**
      * Сейчас любая команда ридера может вернуть ошибку таймаута, в этом случае команды выполняются 2-3 секунды
      */
@@ -68,12 +95,29 @@ public class AscReader_9000S implements IAscReader {
 
     @Override
     public boolean cscVersionCsc(StringBuilder firmwareVersion) {
-        return false;
+        long timer = System.currentTimeMillis();
+//        int res = mReader.cscVersionCsc(firmwareVersion);
+        lastResult = cscVersionCscDecompiled(firmwareVersion);
+        boolean out = lastResult == Defines.RCSC_Ok;
+        addLog("cscVersionCsc() DONE {" + getResString(lastResult) + ", version=\"" + firmwareVersion + "\"} " + getResString(out) + getTimeString(timer));
+        return out;
     }
 
     @Override
     public boolean mifareLoadReaderKeyIndex(byte keyIndex, byte[] keyVal) {
-        return false;
+        long timer = System.currentTimeMillis();
+        byte[] status = new byte[1];
+        Commands.iMIFARE_LoadReaderKeyIndex(keyIndex, keyVal);
+        Commands.giCSCTrameLn -= 2;
+        byte[] rspBuf = new byte[256];
+        byte[] rspStatus = new byte[2];
+        Logger.trace(TAG, "mifareLoadReaderKeyIndex buf= " + CommonUtils.bytesToHexWithoutSpaces(Commands.giCSCTrame));
+        lastResult = mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrameLn, rspBuf, rspStatus);
+//        lastResult = mReader.mifareLoadReaderKeyIndex(keyIndex, keyVal, status);
+        boolean out = (lastResult > 0) && (rspStatus[0] == 0x90);
+        Logger.trace(TAG, "mifareLoadReaderKeyIndex lastResult = " + lastResult + ",  " + rspStatus[0] + " " + rspStatus[1]);
+        addLog("mifareLoadReaderKeyIndex(keyIndex=" + keyIndex + ", keyVal=" + getHex(keyVal) + ") DONE {" + getResString(lastResult) + ", status=" + getHex(status) + "} " + getResString(out) + getTimeString(timer));
+        return out;
     }
 
     @Override
@@ -133,12 +177,56 @@ public class AscReader_9000S implements IAscReader {
 
     @Override
     public boolean mifareSamNxpReadBlock(byte numBlock, byte[] dataRead) {
-        return false;
+        byte[] statusCard = new byte[1];
+        short[] statusSam = new short[1];
+        long timer = System.currentTimeMillis();
+        Commands.iMIFARE_SAMNXP_ReadBlock(numBlock);
+        Commands.giCSCTrameLn -= 2;
+        byte[] rspBuf = new byte[256];
+        byte[] rspStatus = new byte[2];
+        Logger.trace(TAG, "mifareSamNxpReadBlock buf= " + CommonUtils.bytesToHexWithoutSpaces(Commands.giCSCTrame));
+        lastResult = mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrameLn, rspBuf, rspStatus);
+        Logger.trace(TAG, "mifareSamNxpReadBlock lastResult = " + lastResult + ",  " + rspStatus[0] + " " + rspStatus[1]);
+
+        boolean out = (lastResult > 0) && (rspStatus[0] == 0x90);
+//        if (lastResult == Defines.RCSC_Ok && statusCard[0] == 1 && statusSam[0] == (short) 0x9000) {
+//            out = true;
+//        }
+
+        addLog("mifareSamNxpReadBlock(" +
+                "numBlock=" + numBlock +
+                ", statusCard=" + getHex(statusCard) +
+                ", statusSam[0]=" + statusSam[0] +
+                ", dataRead=" + getHex(dataRead) +
+                ") DONE {" + getResString(lastResult) +
+                "} " + getResString(out) + getTimeString(timer));
+        return out;
     }
 
     @Override
     public boolean mifareReadBlock(byte numBlock, byte[] dataRead) {
-        return false;
+        long timer = System.currentTimeMillis();
+        byte[] statusReadBlock = new byte[1];
+        Commands.iMIFARE_ReadBlock(numBlock);
+        Commands.giCSCTrameLn -= 2;
+        byte[] rspBuf = new byte[256];
+        byte[] rspStatus = new byte[2];
+        Logger.trace(TAG, "mifareReadBlock buf= " + CommonUtils.bytesToHexWithoutSpaces(Commands.giCSCTrame));
+        lastResult = mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrameLn, rspBuf, rspStatus);
+//        lastResult = mReader.mifareReadBlock(numBlock, dataRead, statusReadBlock);
+        Logger.trace(TAG, "mifareReadBlock lastResult = " + lastResult + ",  " + rspStatus[0] + " " + rspStatus[1]);
+        boolean out = (lastResult > 0) && (rspStatus[0] == 0x90);
+//        if (lastResult == Defines.RCSC_Ok && statusReadBlock[0] == 0) {
+//            out = true;
+//        }
+
+        addLog("mifareReadBlock(" +
+                "numBlock=" + numBlock +
+                ", dataRead=" + getHex(dataRead) +
+                ", statusReadBlock=" + getHex(statusReadBlock) +
+                ") DONE {" + getResString(lastResult) +
+                "} " + getResString(out) + getTimeString(timer));
+        return out;
     }
 
     @Override
@@ -223,16 +311,24 @@ public class AscReader_9000S implements IAscReader {
         byte blockDiversifier = (byte) 0;
 
         Commands.iMIFARE_SAMNXP_Authenticate(numKey, versionKey, keyAorB, numBlock, lgDiversifier, blockDiversifier);
+        Commands.giCSCTrameLn -= 1;
+        Commands.giCSCTrame[1] = (byte)0x82;
+        byte [] lbuf = new byte [25];
+        System.arraycopy(Commands.giCSCTrame, 4, Commands.giCSCTrame, 5, 6);
+        Commands.giCSCTrame[4] = 6;
 
         byte[] rspBuf = new byte[256];
         byte[] rspStatus = new byte[2];
-        mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrame.length, rspBuf, rspStatus);
+        lastResult = mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrameLn, rspBuf, rspStatus);
+        Logger.trace(TAG, "len = " + Commands.giCSCTrameLn + ",  " + CommonUtils.bytesToHexWithoutSpaces(Commands.giCSCTrame));
+        Logger.trace(TAG, "mifareSamNxpAuthenticate lastResult = " + lastResult + ",  " + rspStatus[0] + " " + rspStatus[1]);
+        boolean out = (lastResult > 0) && (rspStatus[0] == 0x90);
         //lastResult = mReader.mifareSamNxpAuthenticate(numKey, versionKey, keyAorB, numBlock, lgDiversifier, blockDiversifier, statusCard, statusSam);
         //boolean out = lastResult == Defines.RCSC_Ok && statusSam[0] == (short) 0x9000;
 
 
 
-        /*addLog("mifareSamNxpAuthenticate(" +
+        addLog("mifareSamNxpAuthenticate(" +
                 "numKey=" + numKey +
                 ", versionKey=" + versionKey +
                 ", keyAorB=" + getHex(keyAorB) +
@@ -242,15 +338,46 @@ public class AscReader_9000S implements IAscReader {
                 ", blockDiversifier=" + blockDiversifier +
                 ") DONE {" + getResString(lastResult) +
                 ", statusCard=" + getHex(statusCard) +
-                ", statusSam[0]=" + statusSam[0] +
-                "} " + getResString(out) + getTimeString(timer));*/
+                ", rspStatus[0]=" + rspStatus[0] +
+                "} " + getResString(out) + getTimeString(timer));
         //return out;
-        return false;
+        return out;
     }
 
     @Override
     public boolean mifareSamNxpReAuthenticate(byte numKey, byte versionKey, byte keyAorB, byte numBlock) {
-        return false;
+        long timer = System.currentTimeMillis();
+        //номер блока для авторизации - любой блок в секторе, например нулевой
+        byte blockNumber = 0;
+        byte[] statusCard = new byte[1];
+        short[] statusSam = new short[1];
+        byte lgDiversifier = (byte) 0;
+        byte blockDiversifier = (byte) 0;
+
+        Commands.iMIFARE_SAMNXP_ReAuthenticate(numKey, versionKey, keyAorB, numBlock, lgDiversifier, blockDiversifier);
+        Commands.giCSCTrameLn -= 2;
+        Commands.giCSCTrame[1] = (byte)0x82;
+
+        byte[] rspBuf = new byte[256];
+        byte[] rspStatus = new byte[2];
+        Logger.trace(TAG, "mifareSamNxpReAuthenticate buf= " + CommonUtils.bytesToHexWithoutSpaces(Commands.giCSCTrame));
+        lastResult = mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrameLn, rspBuf, rspStatus);
+
+        boolean out = (lastResult > 0) && (rspStatus[0] == 0x90);
+
+        addLog("mifareSamNxpReAuthenticate(" +
+                "numKey=" + numKey +
+                ", versionKey=" + versionKey +
+                ", keyAorB=" + getHex(keyAorB) +
+                ", versionKey=" + getHex(versionKey) +
+                ", numBlock=" + numBlock +
+                ", lgDiversifier=" + lgDiversifier +
+                ", blockDiversifier=" + blockDiversifier +
+                ") DONE {" + getResString(lastResult) +
+                ", statusCard=" + getHex(statusCard) +
+                ", statusSam[0]=" + rspStatus[0] +
+                "} " + getResString(out) + getTimeString(timer));
+        return out;
     }
 
     @Override
@@ -265,16 +392,18 @@ public class AscReader_9000S implements IAscReader {
 
         byte[] rspBuf = new byte[256];
         byte[] rspStatus = new byte[2];
-        mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrame.length, rspBuf, rspStatus);
+        Logger.trace(TAG, "mifareAuthenticate buf= " + CommonUtils.bytesToHexWithoutSpaces(Commands.giCSCTrame));
+        lastResult = mIccManager.apduTransmit(Commands.giCSCTrame, Commands.giCSCTrame.length, rspBuf, rspStatus);
         int vRet = rspStatus[0];
 
         Logger.info(TAG, "RSP STATUS 0 " + String.valueOf(rspStatus[0]));
         Logger.info(TAG, "RSP STATUS 1 " + String.valueOf(rspStatus[1]));
 
         //lastResult = mReader.mifareAuthenticate(numSector, keyAorB, keyIndex, mifareType, serialNumber, status);
-        boolean out = lastResult == Defines.RCSC_Ok && status[0] == 0;
+        boolean out = (lastResult > 0) && (rspStatus[0] == 0x90);
+        Logger.trace(TAG, "mifareAuthenticate res=" + ((out == true) ? "true, res = " + CommonUtils.bytesToHexWithoutSpaces(rspBuf) : "false"));
 
-        return false;
+        return out;
     }
 
     private void addLog(String text) {
