@@ -10,6 +10,7 @@ import ru.ppr.cppk.Holder;
 import ru.ppr.cppk.db.LocalDaoSession;
 import ru.ppr.cppk.helpers.CommonSettingsStorage;
 import ru.ppr.cppk.localdb.model.ShiftEvent;
+import ru.ppr.logger.Logger;
 import ru.ppr.nsi.entity.Version;
 import ru.ppr.nsi.repository.VersionRepository;
 
@@ -45,6 +46,8 @@ public class NsiVersionManager {
     }
 
     public int getCurrentNsiVersionId() {
+        Date ldate = getNviVersionDate(null);
+        Logger.trace("getCurrentNsiVersionId", "ldate = " + ldate.getDay() + "." + ldate.getMonth() + "." + ldate.getYear());
         return versionRepository.getVersionIdForDate(getNviVersionDate(null), getNsiStatuses());
     }
 
@@ -108,21 +111,29 @@ public class NsiVersionManager {
             boolean isShiftOpened = currentShiftEvent != null && currentShiftEvent.getStatus() != ShiftEvent.Status.ENDED;
 
             if (isShiftOpened) {
+                Logger.trace("getNviVersionDate", "isShiftOpened");
                 switch (currentShiftEvent.getStatus()) {
                     case STARTED: {
+                        Logger.trace("getNviVersionDate", "1");
                         startShiftEvent = currentShiftEvent;
                         break;
                     }
                     case TRANSFERRED: {
+                        Logger.trace("getNviVersionDate", "2");
                         startShiftEvent = localDaoSession.get().getShiftEventDao().getFirstShiftEventByShiftId(currentShiftEvent.getShiftId(), ShiftEvent.ShiftProgressStatus.FINISHED_STATUSES);
                         break;
                     }
                 }
             }
         } else {
+            Logger.trace("getNviVersionDate", "3");
             startShiftEvent = localDaoSession.get().getShiftEventDao().getFirstShiftEventByShiftId(shiftId, ShiftEvent.ShiftProgressStatus.FINISHED_STATUSES);
         }
 
+        if (startShiftEvent == null)
+            Logger.trace("getNviVersionDate", "startShiftEvent == null");
+        else
+            Logger.trace("getNviVersionDate", "startShiftEvent != null");
         return startShiftEvent != null ? startShiftEvent.getStartTime() : new Date();
     }
 

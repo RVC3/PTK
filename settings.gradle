@@ -58,6 +58,9 @@ project(":barcodereal").projectDir = file("devices/barcodereal")
 include ':cpcpowermgmt'
 project(":cpcpowermgmt").projectDir = file("libraries/cpcpowermgmt")
 
+include ':FNLibrary2'
+project(":FNLibrary2").projectDir = file("common/FNLibrary2")
+
 include ':tarGz'
 project(":tarGz").projectDir = file("common/tarGz")
 

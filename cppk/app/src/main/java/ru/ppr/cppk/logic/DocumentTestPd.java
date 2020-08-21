@@ -107,7 +107,13 @@ public class DocumentTestPd {
     }
 
     private void prepareBindingStation() {
-        Station bindingStation = stationRepository.load((long) privateSettingsHolder.get().getSaleStationCode(), nsiVersionManager.getCurrentNsiVersionId());
+        Logger.trace(TAG, "prepareBindingStation START");
+        long station_code = (long) privateSettingsHolder.get().getSaleStationCode();
+        int nsi_version_id = nsiVersionManager.getCurrentNsiVersionId();
+        nsi_version_id = 211;
+        Logger.trace(TAG, "station_code = " + station_code + ", nsi_version_id = " + nsi_version_id);
+        Station bindingStation = stationRepository.load(station_code, nsi_version_id);
+//        Station bindingStation = stationRepository.load((long) privateSettingsHolder.get().getSaleStationCode(), nsiVersionManager.getCurrentNsiVersionId());
         bindingStationName = bindingStation.getShortName();
         Logger.trace(TAG, "prepareBindingStation, bindingStationName = " + bindingStationName);
     }

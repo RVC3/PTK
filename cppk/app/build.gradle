@@ -159,6 +159,7 @@ dependencies {
     compile project(':core')
     compile project(':ptk_data')
     compile project(':kuznyechik')
+    compile project(':FNLibrary2')
     // Dagger
     compile "com.google.dagger:dagger:2.9"
     annotationProcessor "com.google.dagger:dagger-compiler:2.9"

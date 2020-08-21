@@ -105,17 +105,17 @@ public class PrinterBindingActivity extends SystemBarActivity {
 
             case R.id.selectBuiltinDeviceBtn:
                 if(!builtinSelected) {
+                    macAddressView.setText("00:00:00:00:00:00");
+                    builtinSelected = true;
+                    tmpPrinterMode = PrinterManager.PRINTER_MODE_BUILTIN;
+//                        printer.prn_paperForWard(2);
+                    tmpSerialNumber = StationDevice.STUB_SERIAL_NUMBER;
                     android.device.PrinterManager printer = new android.device.PrinterManager();
                     printer.prn_open();
                     printer.prn_setupPage(384, -1);
                     int lStatus = printer.prn_getStatus();
                     if (lStatus == android.device.PrinterManager.PRNSTS_OK) {
                         Globals.getInstance().getToaster().showToast(R.string.printer_binding_msg_changing_success);
-                        macAddressView.setText("00:00:00:00:00:00");
-                        builtinSelected = true;
-                        tmpPrinterMode = PrinterManager.PRINTER_MODE_BUILTIN;
-//                        printer.prn_paperForWard(2);
-                        tmpSerialNumber = StationDevice.STUB_SERIAL_NUMBER;
                         applyMAC(false);
                     } else
                         Globals.getInstance().getToaster().showToast(R.string.printer_binding_msg_changing_failed);

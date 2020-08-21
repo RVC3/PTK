@@ -206,6 +206,7 @@ public class MainScreenActivity extends SystemBarActivity {
     }
 
     private void startSellActivity(int sellType) {
+        Logger.debug(TAG, "startSellActivity() start");
         PdSaleParams pdSaleParams = new PdSaleParams();
         pdSaleParams.setTicketCategoryCode(sellType);
         pdSaleParams.setDirectionCode(TicketWayType.OneWay.getCode());

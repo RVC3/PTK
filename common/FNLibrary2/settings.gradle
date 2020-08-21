@@ -1,0 +1,2 @@
+include ':shtrih'
+project(":shtrih").projectDir = file("../../devices/shtrih")

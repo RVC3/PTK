@@ -101,6 +101,7 @@ public class PdSaleActivity extends SimpleMvpActivity implements PdSaleView {
         setContentView(R.layout.activity_fine_sale);
         di = new PdSaleDi(di());
 
+        Logger.debug(TAG, "PdSaleActivity.onCreate() start");
         PdSalePreparationFragment fragment = (PdSalePreparationFragment) getFragmentManager().findFragmentByTag(PdSalePreparationFragment.FRAGMENT_TAG);
         if (fragment != null) {
             pdSalePreparationFragment = fragment;
@@ -117,6 +118,7 @@ public class PdSaleActivity extends SimpleMvpActivity implements PdSaleView {
                 di.nsiDaoSession(),
                 di.ticketStorageTypeToTicketTypeChecker()
         );
+        Logger.debug(TAG, "PdSaleActivity.onCreate() finish");
     }
 
     @Override

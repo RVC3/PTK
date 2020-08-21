@@ -1,1 +1,1 @@
-adb install E:\Buisness\projects\PTK\cppk\app\build\outputs\apk\CPPK_1.80.201.11287.apk
+adb install E:\Buisness\PTK_11_08\cppk\app\build\outputs\apk\CPPK_1.80.201.11287.apk

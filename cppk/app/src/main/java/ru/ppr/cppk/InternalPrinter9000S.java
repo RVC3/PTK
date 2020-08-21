@@ -1,10 +1,14 @@
 package ru.ppr.cppk;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Environment;
+import android.os.Message;
+import android.os.RemoteException;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.moebiusdrvr.DateTimeFE;
 import com.moebiusdrvr.KKMDopInfo;
@@ -18,6 +22,7 @@ import com.moebiusdrvr.ResultAsString;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -28,6 +33,14 @@ import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import rs.fncore.Const;
+import rs.fncore.data.KKMInfo;
+import rs.fncore.data.OU;
+import rs.fncore.data.Shift;
+import rs.utils.app.MessageQueue;
+import rs.fncore.FiscalStorage;
+
+import ru.ppr.cppk.di.Di;
 import ru.ppr.ikkm.Printer;
 import ru.ppr.ikkm.TextStyle;
 import ru.ppr.ikkm.exception.DiscrepancyInTimeException;
@@ -46,7 +59,7 @@ import ru.ppr.utils.Decimals;
  *
  * @author Andrew Kopanev
  */
-public class InternalPrinter9000S extends Printer {
+public class InternalPrinter9000S extends Printer implements MessageQueue.MessageHandler{
 
     private static final String TAG = Logger.makeLogTag(ru.ppr.cppk.InternalPrinter9000S.class);
 
@@ -78,8 +91,50 @@ public class InternalPrinter9000S extends Printer {
     ///////////////////////
     private String printerMacAddress;
     ///////////////////////
+
     private TextStyle currentTextStyle = null;
     android.device.PrinterManager printer = new android.device.PrinterManager();
+
+    private KKMInfo _kkmInfo = new KKMInfo();
+    OU casier;
+
+    private class KKMInfoReader implements Globals.ProcessTask, Globals.ResultTask {
+        private String fn_serial = "не доступно", kkm_serial = "не доступно", shift_state = "не доступно", kkm_number = "не доступно";
+
+        @Override
+        public void onResult(int result) {
+            if(result == Const.Errors.NO_ERROR) {
+                kkm_serial = _kkmInfo.getKKMSerial();
+                shift_state = "не доступно";
+                if(_kkmInfo.isFNPresent())
+                    fn_serial = _kkmInfo.getFNNumber();
+                else  {
+                    fn_serial = "не доступно";
+                }
+                if(_kkmInfo.isFNActive() || _kkmInfo.isFNArchived()) {
+                    kkm_number = _kkmInfo.getKKMNumber();
+                    if(_kkmInfo.getShift().isOpen())
+                        Logger.trace(TAG, "Смена № " + _kkmInfo.getShift().getNumber() + " открыта.");
+                    else
+                        Logger.trace(TAG, "Смена № " + _kkmInfo.getShift().getNumber() + "закрыта");
+                } else
+                    Logger.trace(TAG, "не фискализирован");
+            } else {
+                Logger.trace(TAG, "Ошибка чтения информации код = " + result);
+            }
+        }
+
+        // Чтение информации о ККМ
+        @Override
+        public int execute(FiscalStorage storage, Globals.FNOperaionTask task, Object...args) {
+            try {
+                return storage.readKKMInfo(_kkmInfo);
+            } catch(RemoteException re) {
+                return Const.Errors.SYSTEM_ERROR;
+            }
+        }
+
+    }
 
     public InternalPrinter9000S(@NonNull final Context context,
                                @NonNull File logDir,
@@ -102,9 +157,44 @@ public class InternalPrinter9000S extends Printer {
     }
 
     @Override
+    public boolean onMessage(Message msg) {
+        if (msg.what == Globals.MSG_FISCAL_STORAGE_READY) {
+            int result = ((Number) msg.obj).intValue();
+            Logger.trace(TAG, "Инициализация завершена, код = " + result);
+            if (result == Const.Errors.NO_ERROR) {
+                updateKKMInfo();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    protected void init_fn(){
+        try {
+            if (!_kkmInfo.isFNActive()) {
+                Globals.get_fn_Instance().registerHandler(this);
+                Logger.debug(TAG, "Инициализация ядра..");
+                if (Globals.get_fn_Instance().initialize()) {
+                    Logger.debug(TAG, "updateKKMInfo");
+                    updateKKMInfo();
+                }
+                else {
+                }
+            }
+        }
+        catch(Exception e){
+            Logger.trace(TAG, e);
+        }
+
+    }
+
+    @Override
     protected void initializeWithDriverImpl() throws Exception {
         //Создать устройство принтер
-        printer.open();
+        if (printer.getStatus() != android.device.PrinterManager.PRNSTS_OK){
+            printer.close();
+            printer.open();
+        }
         int printerStatus = printer.getStatus();
         if (printerStatus != android.device.PrinterManager.PRNSTS_OK) {
             throw new Exception("Failed opening I9000S internal printer");
@@ -112,13 +202,24 @@ public class InternalPrinter9000S extends Printer {
             printer.setupPage(384, -1);
             x = 0;
             y = 0;
+            printer.clearPage();
             setLogDir(logDir);
             Logger.trace(TAG, "I9000S Printer initialized");
         }
+        init_fn();
+    }
+
+    private void updateKKMInfo() {
+        KKMInfoReader reader = new KKMInfoReader();
+        Globals.get_fn_Instance().newTask(Di.INSTANCE.getApp(), reader, reader).execute();
     }
 
     @Override
     protected void terminateImpl() throws Exception {
+        Globals.get_fn_Instance().removeHandler(this);
+        // Отключаемся от Фискального ядра
+        Globals.get_fn_Instance().deinitialize();
+
         disconnectInternal(false);
         //Закрыть принтер
         printer.close();
@@ -197,17 +298,19 @@ public class InternalPrinter9000S extends Printer {
 
     @Override
     protected void printTextInFiscalModeImpl(String text, TextStyle textStyle) throws Exception {
+        Logger.trace(TAG, "printTextInFiscalModeImpl ENTER");
         /*
          https://aj.srvdev.ru/browse/CPPKPP-25076
          https://terlis.intraservice.ru/Task/View/29911
          moebius.prn_tpm_write(8, new byte[0]) печатает каракули вместо пустой строки"
          */
-        if (TextUtils.isEmpty(text)) {
-            text = " ";
-        }
-        byte[] arrBytes = ByteUtils.concatArrays(text.getBytes("Cp1251"), CARRIAGE_RETURN_WITH_LINE_FEED);
+//        if (TextUtils.isEmpty(text)) {
+//            text = " ";
+//        }
+//        byte[] arrBytes = ByteUtils.concatArrays(text.getBytes("Cp1251"), CARRIAGE_RETURN_WITH_LINE_FEED);
        // byte err = moebius.prn_tpm_write(8, arrBytes);
        // checkError(err);
+        printTextInNormalModeImpl(text, textStyle);
     }
 
     @Override
@@ -221,9 +324,15 @@ public class InternalPrinter9000S extends Printer {
         Logger.trace(TAG, "y = " + y);
     }
 
+    @Override
+    protected void endFiscalDocumentImpl(DocType docType) throws Exception {
+        Logger.trace(TAG, "endFiscalDocumentImpl ENTER");
+        closePageImpl(0);
+    }
+
     public int closePageImpl(int rotate){
-//        int ret = printer.printPage(rotate);
-        int ret = 0;
+        int ret = printer.printPage(rotate);
+//        int ret = 0;
         printer.clearPage();
         x = 0;
         y = 0;
@@ -239,21 +348,44 @@ public class InternalPrinter9000S extends Printer {
 
     @Override
     protected void openShiftImpl(int operatorCode, String operatorName) throws Exception {
-        // Если дата время открытия превосходит дату время закрытия смены более чем на 24 часа,
-        // то необходимо дать четыре подряд команды открытия смены для нормального выполнения.
-
-        // Важный момент из документации:
-        // Если дата время открытия превосходит дату
-        // время закрытия смены более чем на 24 часа, то необходимо дать четыре подряд команды
-        // открытия смены для нормального выполнения.
-        byte err;
-        int counter = 1;
-
-            Logger.trace(TAG, "I9000S.kkmOpenShift() start, attempt#" + counter);
-           // err = moebius.kkmOpenShift(new DateTimeFE(), (byte) operatorCode, operatorName);
-            //Logger.trace(TAG, "moebius.kkmOpenShift() end, attempt#" + counter + ", err = " + err);
-
-
+        casier = new OU(operatorName); // Кассир по умолчанию
+        init_fn();
+        if (!_kkmInfo.isFNActive()){
+            Logger.trace(TAG, "В данном режиме ФН операция невозможна");
+            return;
+        }
+        Logger.trace(TAG, "I9000S.kkmOpenShift() start");
+        if (_kkmInfo.getShift().isOpen()){
+            Logger.trace(TAG, "Смена и так уже открыта");
+            return;
+        }
+            Globals.get_fn_Instance().newTask(Di.INSTANCE.getApp(), (storage, task, args) -> {
+                task.showProgress("Операция выполняется...");
+                try {
+                    int result;
+                    result = storage.toggleShift(casier, new Shift(), null);
+                    if(result == Const.Errors.NO_ERROR) // Обновляем информацию о ККМ
+                        storage.readKKMInfo(_kkmInfo);
+                    return result;
+                } catch(RemoteException re) {
+                    return Const.Errors.SYSTEM_ERROR;
+                }
+            }, result -> {
+                if(result == Const.Errors.NO_ERROR) {
+                    if(_kkmInfo.getShift().isOpen()) {
+                        Logger.trace(TAG, String.format("Смена %d успешно открыта", _kkmInfo.getShift().getNumber()));
+                        Toast.makeText(Di.INSTANCE.getApp(), String.format("Смена %d успешно открыта", _kkmInfo.getShift().getNumber()), Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Logger.trace(TAG, String.format("Смена %d не открыта. Ошибка", _kkmInfo.getShift().getNumber()));
+                        Toast.makeText(Di.INSTANCE.getApp(), String.format("Смена %d не открыта. Ошибка", _kkmInfo.getShift().getNumber()), Toast.LENGTH_SHORT).show();
+                    }
+                    new KKMInfoReader().onResult(result); // Отображаем новую информацию о смене
+                } else {
+                    Logger.trace(TAG, String.format("Операция выполнена с ошибкой %02X", result));
+                    Toast.makeText(Di.INSTANCE.getApp(), String.format("Операция выполнена с ошибкой %02X", result), Toast.LENGTH_LONG).show();
+                }
+            }).execute();
     }
 
     @Override
@@ -264,52 +396,81 @@ public class InternalPrinter9000S extends Printer {
 
     @Override
     protected boolean isShiftOpenedImpl() throws Exception {
-        KKMInfoStateData kkmInfoStateData = kkmGetKKMInfoState((byte) 0x00);
-        return ((kkmInfoStateData.State & 0x01) == 1);
+        updateKKMInfo();
+        Logger.trace(TAG, "isShiftOpenedImpl START. isOpen = " + _kkmInfo.getShift().isOpen());
+        return (_kkmInfo.getShift().isOpen());
     }
 
     @Override
     protected Date getDateImpl() throws Exception {
-        KKMInfoStateData kkmInfoStateData = kkmGetKKMInfoState((byte) 0x00);
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(kkmInfoStateData.Year,
-                kkmInfoStateData.Month - 1, //у принтера месяца начинаются с 1, в Calendar с 0
-                kkmInfoStateData.Day,
-                kkmInfoStateData.Hour,
-                kkmInfoStateData.Min,
-                kkmInfoStateData.Sec);
-        calendar.set(Calendar.MILLISECOND, 0);
-
-        return calendar.getTime();
+        Logger.trace(TAG, "getDateImpl START");
+        return _kkmInfo.getLastDocument().getDate();
     }
 
     @Override
     protected int getLastSPNDImpl() throws Exception {
-        return kkmGetKKMInfoState((byte) 0x00).DocNum;
-    }
+        return _kkmInfo.getShift().getLastDocumentNumber();    }
 
     @Override
     protected Date getLastCheckTimeImpl() throws Exception {
-        String receiptDateStr = kkmGetKKMInfoReg().getReceiptDate();
-        Date date = formatterForEklzTime.parse(receiptDateStr);
-        Logger.trace(TAG, "getLastCheckTimeImpl " + receiptDateStr + "; " + date.toString());
-        return date;
+        Logger.trace(TAG, "getLastCheckTimeImpl START");
+        long lwhen = _kkmInfo.getShift().getWhenOpen();
+        Calendar lcal = Calendar.getInstance();
+        lcal.setTimeInMillis(lwhen);
+        return lcal.getTime();
+//        return _kkmInfo.getLastDocument().getDate();
     }
 
     @Override
     protected int getShiftNumImpl() throws Exception {
         //полное количество закрытых смен
-        int kkm = kkmGetKKMInfoEx().TFiscal;
-        boolean opened = isShiftOpenedImpl();
-        return ((opened) ? kkm + 1 : kkm);
-        //https://aj.srvdev.ru/browse/CPPKPP-27401
-        //return (int) kkmGetKKMInfoState((byte) 0x00).NumShift;
+        Logger.trace(TAG, "getShiftNumImpl = " + _kkmInfo.getShift().getNumber());
+        updateKKMInfo();
+        return _kkmInfo.getShift().getNumber();
     }
 
     @Override
     protected void printZReportImpl() throws Exception {
-       // byte err = moebius.kkmCloseShift(new DateTimeFE(), (byte) 0xC0);
-       // checkError(err);
+        Logger.debug(TAG, "I9000S.kkmCloseShift() start");
+        init_fn();
+        if (!_kkmInfo.isFNActive()){
+            Logger.debug(TAG, "В данном режиме ФН операция невозможна");
+            return;
+        }
+        if (!_kkmInfo.getShift().isOpen()){
+            Logger.debug(TAG, "Смена и так уже закрыта");
+            return;
+        }
+        Globals.get_fn_Instance().newTask(Di.INSTANCE.getApp(), (storage, task, args) -> {
+            Logger.debug(TAG, "newTask start");
+            task.showProgress("Операция выполняется...");
+            try {
+                Logger.debug(TAG, String.format("Операция по закрытию смены выполняется..."));
+                int result;
+                result = storage.toggleShift(casier, new Shift(), null);
+                if(result == Const.Errors.NO_ERROR) // Обновляем информацию о ККМ
+                    storage.readKKMInfo(_kkmInfo);
+                return result;
+            } catch(RemoteException re) {
+                return Const.Errors.SYSTEM_ERROR;
+            }
+        }, result -> {
+            Logger.debug(TAG, "Result start");
+            if(result == Const.Errors.NO_ERROR) {
+                if(!_kkmInfo.getShift().isOpen()) {
+                    Logger.debug(TAG, String.format("Смена %d успешно закрыта", _kkmInfo.getShift().getNumber()));
+                    Toast.makeText(Di.INSTANCE.getApp(), String.format("Смена %d успешно закрыта", _kkmInfo.getShift().getNumber()), Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Logger.debug(TAG, String.format("Смена %d не закрыта. Ошибка", _kkmInfo.getShift().getNumber()));
+                    Toast.makeText(Di.INSTANCE.getApp(), String.format("Смена %d не закрыта. Ошибка", _kkmInfo.getShift().getNumber()), Toast.LENGTH_SHORT).show();
+                }
+                new KKMInfoReader().onResult(result); // Отображаем новую информацию о смене
+            } else {
+                Logger.debug(TAG, String.format("Операция выполнена с ошибкой %02X", result));
+                Toast.makeText(Di.INSTANCE.getApp(), String.format("Операция выполнена с ошибкой %02X", result), Toast.LENGTH_LONG).show();
+            }
+        }).execute();
     }
 
     @Override
@@ -446,6 +607,7 @@ public class InternalPrinter9000S extends Printer {
 
     @Override
     protected void startFiscalDocumentImpl(DocType docType) throws Exception {
+        initializeWithDriverImpl();
         /**
          * 1 – код оператора для ЭКЛЗ, максимальное значение в ЭКЛЗ этого параметра
          99, поэтому если вы передадите 255, в чеке все равно напечатается 99, хотя код оператора в
@@ -468,12 +630,7 @@ public class InternalPrinter9000S extends Printer {
         //byte err = moebius.mbs_head(oprCodeEklz, (byte) 1, "0");
 
 
-       // checkError(err);
-    }
-
-    @Override
-    protected void endFiscalDocumentImpl(DocType docType) throws Exception {
-
+       //checkError(err);
     }
 
     @Override
@@ -520,7 +677,7 @@ public class InternalPrinter9000S extends Printer {
     @Override
     protected void printTotalImpl(BigDecimal total, BigDecimal payment, PaymentType paymentType) throws Exception {
 
-
+/*
         int totalInt = total.multiply(Decimals.HUNDRED).intValue(); // переводим рубли в копейки
         int chgInt = payment.subtract(total).multiply(Decimals.HUNDRED).intValue(); // переводим рубли в копейки
         int paymentInt = payment.multiply(Decimals.HUNDRED).intValue(); // переводим рубли в копейки
@@ -528,7 +685,7 @@ public class InternalPrinter9000S extends Printer {
         int cashInt = paymentType == PaymentType.CASH ? paymentInt : 0;
         cardPay[0].Sum = paymentType == PaymentType.CARD ? paymentInt : 0;
 
-        //byte err = moebius.mbs_tot(totalInt, chgInt, cashInt, cardPay, creditPay, "xxx", 1, 1);
+        //byte err = moebius.mbs_tot(totalInt, chgInt, cashInt, cardPay, creditPay, "xxx", 1, 1);*/
        // checkError(err);
     }
 
@@ -546,17 +703,8 @@ public class InternalPrinter9000S extends Printer {
 
     @Override
     protected String getINNImpl() throws Exception {
-        /*String value = kkmGetKKMInfoReg().getINN();
-        //https://aj.srvdev.ru/browse/CPPKPP-27257
-        //смотрим первые 5 - если там нули, то отрезам до 10, если не нули, то до 12, т.к. в России других вариантов нет
-        if (value != null && value.length() == 15) {
-            if (value.indexOf("00000") == 0) {
-                value = value.substring(5);
-            } else value = value.substring(3);
-        }
-        Logger.info(ru.ppr.moebius.PrinterZebraMoebius.class.getSimpleName(), ": ---wrong-maybe--- getINNImpl() = " + value);
-        return value;*/
-        return "dd";
+        updateKKMInfo();
+        return _kkmInfo.ofd().getINN();
     }
 
     @Override
@@ -580,7 +728,10 @@ public class InternalPrinter9000S extends Printer {
 
     @Override
     protected String getFNSerialImpl() throws Exception {
-        return "dd";
+        String lsn = "не установлен";
+        if(_kkmInfo.isFNPresent())
+            lsn = _kkmInfo.getFNNumber();
+        return lsn;
     }
 
     @Override

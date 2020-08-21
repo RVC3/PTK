@@ -146,7 +146,7 @@ public class WiFiNetworkManager implements NetworkManager {
                     }
                 }, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
 
-                wifiManager.setWifiEnabled(false);
+//                wifiManager.setWifiEnabled(false);
 
             } else {
                 if (stateChangedListener != null) {

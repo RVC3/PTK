@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -62,6 +66,10 @@ import rx.android.schedulers.AndroidSchedulers;
 
 public class OpenShiftStartFragment extends FragmentParent implements OnClickListener {
 
+    private final static String FILE_NAME = "pos/log.txt";
+    private File getExternalPath() {
+        return(new File(Environment.getExternalStorageDirectory(), FILE_NAME));
+    }
     private static final String TAG = Logger.makeLogTag(OpenShiftStartFragment.class);
 
     private final FineRepository fineRepository;
@@ -392,10 +400,12 @@ public class OpenShiftStartFragment extends FragmentParent implements OnClickLis
 
     private void doStep(boolean next) {
 
+        Logger.trace(TAG, "doStep 1");
         if (next) {
             incrementStateIndex();
         }
 
+        Logger.trace(TAG, "doStep 2");
         if (currentStep == OpenShiftState.ReadyToOpenShift) {
             if (shiftOpenTempData.shiftInfo != null && shiftOpenTempData.shiftInfo.getStatus() != ShiftEvent.Status.ENDED) {
                 // Смена уже открыта, начнем с печати
@@ -403,6 +413,7 @@ public class OpenShiftStartFragment extends FragmentParent implements OnClickLis
             }
         }
 
+        Logger.trace(TAG, "doStep 3");
         //Если пробный ПД НЕ входит в список того, что нужно напечатать
         //при открытии смены или печать НЕобязательна, то пропускаем шаг
         if (currentStep == OpenShiftState.get(OpenShiftState.ShiftOpened.index() + commonSettingsPReportOpenShiftOrder(ReportType.TestPd)) &&
@@ -411,6 +422,7 @@ public class OpenShiftStartFragment extends FragmentParent implements OnClickLis
             currentStep = OpenShiftState.get(OpenShiftState.ShiftOpened.index() + commonSettingsPReportOpenShiftOrder(ReportType.TestShiftShit));
         }
 
+        Logger.trace(TAG, "doStep 4");
         //Если пробная сменная ведомость НЕ входит в список того, что нужно напечатать
         //при открытии смены или печать НЕобязательна, то пропускаем шаг
         if (currentStep.index() == OpenShiftState.ShiftOpened.index() + commonSettingsPReportOpenShiftOrder(ReportType.TestShiftShit) &&
@@ -421,18 +433,24 @@ public class OpenShiftStartFragment extends FragmentParent implements OnClickLis
         }
 
         if (currentStep == OpenShiftState.UnknownPrinterState) {
+            Logger.trace(TAG, "doStep 5");
             updatePrinterState();
         } else if (currentStep == OpenShiftState.PrepareForOpenShift) {
+            Logger.trace(TAG, "doStep 6");
             prepareForOpenShift();
         } else if (currentStep == OpenShiftState.ReadyToOpenShift) {
+            Logger.trace(TAG, "doStep 7");
             openShift();
         } else if (currentStep.index() == OpenShiftState.ShiftOpened.index() + commonSettingsPReportOpenShiftOrder(ReportType.TestPd) && commonSettingsPReportOpenShiftContains(ReportType.TestPd)) {
+            Logger.trace(TAG, "doStep 8");
             printTestPD();
         } else if (currentStep.index() == OpenShiftState.ShiftOpened.index() + commonSettingsPReportOpenShiftOrder(ReportType.TestShiftShit) && commonSettingsPReportOpenShiftContains(ReportType.TestShiftShit)) {
+            Logger.trace(TAG, "doStep 9");
             printTestShiftSheet();
             //проверка на двойку - если через настройки добавят что-то еще, то длина будет 3, а у нас обрабатываются только 2 репорт тайпа
             //без проверки открытие смены в таком случае повиснет, с проверкой - нет. Возможно этого никогда не случатся, но вдруг
         } else if (currentStep.index() == OpenShiftState.ShiftOpened.index() + (commonSettingsStorage.get().getReportOpenShift().length > 2 ? 2 : commonSettingsStorage.get().getReportOpenShift().length)) {
+            Logger.trace(TAG, "doStep 10");
             onAllStepsCompleted();
         }
     }
@@ -645,8 +663,9 @@ public class OpenShiftStartFragment extends FragmentParent implements OnClickLis
                                                         // 4. Время с принтера
                                                         shiftOpenTempData.openTime = resultOpenShift.getOperationTime();
                                                         // 5. Номер открытой смены
-//                                                        shiftOpenTempData.shiftNum = resultOpenShift.getShiftNum();
-                                                        shiftOpenTempData.shiftNum = 1;
+                                                        shiftOpenTempData.shiftNum = resultOpenShift.getShiftNum();
+//                                                        shiftOpenTempData.shiftNum = 1;
+                                                        Logger.trace(TAG, "Shift = " + shiftOpenTempData.shiftNum);
                                                         // 6. сквозной номер документа
                                                         shiftOpenTempData.spndNumber = resultOpenShift.getSpndNumber();
                                                     })

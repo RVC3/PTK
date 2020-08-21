@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName '1.0'
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    testCompile 'junit:junit:4.13'
+    androidTestCompile 'androidx.test.ext:junit:1.1.1'
+    androidTestCompile 'androidx.test.espresso:espresso-core:3.2.0'
+    compile project (":shtrih")
+//    compile ('com.google.zxing:core:3.4.0')
+//    compile fileTree(dir: '../../devices/shtrih/libs', include: ['zxing-3.2.2.jar'], exclude: [])
+}
+
+

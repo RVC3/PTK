@@ -146,7 +146,7 @@ public class ShiftManager {
     }
 
     public void openShift(int shiftNum, int spndNumber, Date openTime, BigDecimal cashInFR) throws Exception {
-
+        Logger.info(TAG, "Происходит операция открытия смены " + shiftNum);
         // Обрезаем секунды для времени открытия смены
         // http://agile.srvdev.ru/browse/CPPKPP-33040
         Calendar calendar = Calendar.getInstance();
