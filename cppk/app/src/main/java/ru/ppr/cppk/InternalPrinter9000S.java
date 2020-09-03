@@ -83,6 +83,7 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
 
     private int x;
     private int y;
+    private String fontName = "arial";
     private Context context;
     private PaymentSt[] cardPay;
     private PaymentSt[] creditPay;
@@ -188,6 +189,10 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
 
     }
 
+    public void set_x_y(){
+        x = 5;
+        y = 0;
+    }
     @Override
     protected void initializeWithDriverImpl() throws Exception {
         //Создать устройство принтер
@@ -200,8 +205,7 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
             throw new Exception("Failed opening I9000S internal printer");
         }else {
             printer.setupPage(384, -1);
-            x = 0;
-            y = 0;
+            set_x_y();
             printer.clearPage();
             setLogDir(logDir);
             Logger.trace(TAG, "I9000S Printer initialized");
@@ -291,6 +295,7 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
      * @throws Exception В случае ошибки
      */
     private void setTextStyle(@NonNull TextStyle textStyle) throws Exception {
+        Logger.trace(TAG, "setTextStyle ENTER");
         if (textStyle == TextStyle.FISCAL_NORMAL) execCpcl("! U1 SETLP DEJAVU16.CPF 0 16\r\n");
         else execCpcl("! U1 DEJAVU14.CPF 0 14\r\n"); //для обычной печати
         currentTextStyle = textStyle;
@@ -319,9 +324,8 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
             setTextStyle(textStyle);
 
         Logger.trace(TAG, "printTextInNormalModeImpl = " + text);
-        y += printer.drawText(text, x, y, "simsun",
+        y += printer.drawText(text, x, y, fontName,
                 24, false, false, 0);
-        Logger.trace(TAG, "y = " + y);
     }
 
     @Override
@@ -331,11 +335,12 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
     }
 
     public int closePageImpl(int rotate){
+        Logger.trace(TAG, "closePageImpl START");
         int ret = printer.printPage(rotate);
+        printer.paperFeed(16);  //paper feed
 //        int ret = 0;
         printer.clearPage();
-        x = 0;
-        y = 0;
+        set_x_y();
         Logger.trace(TAG, "closePageImpl = " + ret);
         return ret;
     }
@@ -497,6 +502,7 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
     @Override
     protected void printBarcodeImpl(byte[] data) throws Exception {
 
+        Logger.trace(TAG, "printBarcodeImpl() START");
         if (data == null)
             throw new NullPointerException("barcodeData is null");
 
@@ -505,9 +511,9 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
             если нужно увеличить отступт штрихкода до конца чека, то увеличиваем его
          */
 
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
+//        ByteArrayOutputStream os = new ByteArrayOutputStream();
 
-        String barcodeHeight;
+/*        String barcodeHeight;
 
         if (data.length == 82) {
             // разовый
@@ -518,12 +524,26 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
         } else {
             // стандарт
             barcodeHeight = "130";
+        }*/
+        int barcodeHeight;
+        if (data.length == 82) {
+            // разовый
+            barcodeHeight = 119;
+        } else if (data.length == 91) {
+            // доплата
+            barcodeHeight = 125;
+        } else {
+            // стандарт
+            barcodeHeight = 130;
         }
+        int width = 3;
+        int rotate = 0;
+        int barcodetype = 55; // BARCODE_PDF417
 
-        String firstBarcodeParams = "! 300 200 200 " + barcodeHeight + " 1\n";
+//        String firstBarcodeParams = "! 300 200 200 " + barcodeHeight + " 1\n";
 
         // первое число (300) отвечает за горизонтальное смещение
-        os.write(firstBarcodeParams.getBytes("UTF-8"));
+/*        os.write(firstBarcodeParams.getBytes("UTF-8"));
         os.write("B PDF-417 10 1 XD 2 YD 4 C 3 S 2\r\n".getBytes("UTF-8"));
         os.write(data);
         os.write("\r\n".getBytes("UTF-8"));
@@ -531,23 +551,32 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
         os.write("FORM\r\n".getBytes("UTF-8"));
         os.write("PRINT\r\n".getBytes("UTF-8"));
 
-        byte[] command = os.toByteArray();
+        byte[] command = os.toByteArray();*/
 
-        Logger.trace(TAG, "printBarcodeImpl(data=" + CommonUtils.bytesToHexWithoutSpaces(data) + ") command=" + CommonUtils.bytesToHexWithoutSpaces(command));
+//        Logger.trace(TAG, "printBarcodeImpl(data=" + CommonUtils.bytesToHexWithoutSpaces(data) + ") command=" + CommonUtils.bytesToHexWithoutSpaces(command));
+        Logger.trace(TAG, "bytesToHexWithoutSpaces(data=" + CommonUtils.bytesToHexWithoutSpaces(data));
+        Logger.trace(TAG, "getStringFromBytes(data=" + CommonUtils.getStringFromBytes(data));
+        Logger.trace(TAG, "getDecStringFromByteArray(data=" + CommonUtils.getDecStringFromByteArray(data));
 
-        if (command.length > 256)
+        if (data.length > 256)
             throw new IllegalArgumentException("printBarcode ERROR:  Length command for print barcode should be less 256 symbols");
 
         //До вызова cpcl команды обязательно проверить статус бумаги.
+        int err = printer.getStatus();
         //byte err = moebius.kkmCheckPaper();
-       //checkError(err);
+        if (err == printer.PRNSTS_OUT_OF_PAPER)
+            checkError(err);
 
         //как оказалось печать cpcl команды сбрасывает шрифт обратно в маленький (нормальный) - поэтому сбросим флаг.
         //CPPKPP-30814
         currentTextStyle = TextStyle.TEXT_NORMAL;
 
+        String ldata = CommonUtils.getStringFromBytes(data);
+        Logger.trace(TAG, "String = " + ldata);
+        err = printer.drawBarcode(ldata, x + 5, y, barcodetype, width, barcodeHeight, rotate);
         //err = moebius.sendBlockWithCheckPaper(command);
-        //checkError(err);
+        checkError(err);
+        closePageImpl(0);
     }
 
     @Override
@@ -894,22 +923,20 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
         throw new UnsupportedOperationException("Operation is not supported");
     }
 
-    private void checkError(byte err) throws Exception {
+    private void checkError(int err) throws Exception {
         if (err != 0) {
-            switch (err) {
-
-                case MOEBIUS_ANY_TIME_ERROR: {
-                    KKMInfoStateData kkmInfoStateData = kkmGetKKMInfoState((byte) 0x80);
-                    if (kkmInfoStateData.Hour >= 24) {
-                        throw new ShiftTimeOutException();
-                    } else {
-                        throw new DiscrepancyInTimeException();
-                    }
-                }
-
-                default:
-                    throw new MoebiusException(err);
-            }
+            if (err == printer.PRNSTS_OUT_OF_PAPER)
+                throw new Exception("I9000S internal printer: Out Of Paper");
+            if (err == printer.PRNSTS_OVER_HEAT)
+                throw new Exception("I9000S internal printer: Printer is over heat");
+            if (err == printer.PRNSTS_UNDER_VOLTAGE)
+                throw new Exception("I9000S internal printer: Printer is under voltage");
+            if (err == printer.PRNSTS_BUSY)
+                throw new Exception("I9000S internal printer: Printer is busy");
+            if (err == printer.PRNSTS_ERR)
+                throw new Exception("I9000S internal printer: Unknown error");
+            if (err == printer.PRNSTS_ERR_DRIVER)
+                throw new Exception("I9000S internal printer: Driver error");
         }
     }
 

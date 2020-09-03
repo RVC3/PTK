@@ -33,5 +33,6 @@ public class ZebraFiscalHeaderSetter {
         for (int i = 0; i < headerLines.size() - 1; i++) {
             printer.printTextInNormalMode(headerLines.get(i), TextStyle.FISCAL_NORMAL);
         }
+        printer.closePage(0);
     }
 }
