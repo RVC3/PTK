@@ -46,6 +46,7 @@ public class ShiftInfoTpl extends PrinterTpl {
         printer.printTextInNormalMode("РЕГИСТРАТОРУ");
         printer.printTextInNormalMode("=" + textFormatter.asMoney(params.cashFiscalRegister));
         printer.printTextInNormalMode(textFormatter.bigDelimiter());
+        printer.closePage(0);
 
     }
 

@@ -52,7 +52,7 @@ public class PdCountTpl extends PrinterTpl {
             printer.printTextInNormalMode(" АННУЛ.        =" + params.canceledPDcount);
         }
         printer.printTextInNormalMode(textFormatter.bigDelimiter());
-
+        printer.closePage(0);
     }
 
     public static class Params {

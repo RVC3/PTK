@@ -41,6 +41,7 @@ import rs.utils.app.MessageQueue;
 import rs.fncore.FiscalStorage;
 
 import ru.ppr.cppk.di.Di;
+import ru.ppr.cppk.utils.PrintFormat;
 import ru.ppr.ikkm.Printer;
 import ru.ppr.ikkm.TextStyle;
 import ru.ppr.ikkm.exception.DiscrepancyInTimeException;
@@ -81,8 +82,6 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
      */
     private static final int MOEBIUS_ANY_TIME_ERROR = 11;
 
-    private int x;
-    private int y;
     private String fontName = "arial";
     private Context context;
     private PaymentSt[] cardPay;
@@ -94,7 +93,7 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
     ///////////////////////
 
     private TextStyle currentTextStyle = null;
-    android.device.PrinterManager printer = new android.device.PrinterManager();
+    PrintManager_new printer = new PrintManager_new();
 
     private KKMInfo _kkmInfo = new KKMInfo();
     OU casier;
@@ -190,23 +189,22 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
     }
 
     public void set_x_y(){
-        x = 5;
-        y = 0;
+        printer.reset_currentYPoint();
     }
     @Override
     protected void initializeWithDriverImpl() throws Exception {
         //Создать устройство принтер
-        if (printer.getStatus() != android.device.PrinterManager.PRNSTS_OK){
+        if (printer.getStatus() != PrintManager_new.ERROR_NONE){
             printer.close();
-            printer.open();
         }
         int printerStatus = printer.getStatus();
-        if (printerStatus != android.device.PrinterManager.PRNSTS_OK) {
+        if (printerStatus != PrintManager_new.ERROR_NONE) {
             throw new Exception("Failed opening I9000S internal printer");
         }else {
-            printer.setupPage(384, -1);
+            printer.initPrint(this.context);
+//            printer.setupPage(384, -1);
             set_x_y();
-            printer.clearPage();
+//            printer.clearPage();
             setLogDir(logDir);
             Logger.trace(TAG, "I9000S Printer initialized");
         }
@@ -247,7 +245,7 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
 
     @Override
     protected boolean checkConnectionWithDriverImpl() throws Exception {
-        return printer.getStatus() == printer.PRNSTS_OK;
+        return printer.getStatus() == printer.ERROR_NONE;
     }
 
     @Override
@@ -324,8 +322,9 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
             setTextStyle(textStyle);
 
         Logger.trace(TAG, "printTextInNormalModeImpl = " + text);
-        y += printer.drawText(text, x, y, fontName,
-                24, false, false, 0);
+//        y += printer.drawText(text, x, y, fontName,
+//                24, false, false, 0);
+        printer.addText(text, PrintFormat.FONT_NORMAL, PrintFormat.ALIGN_LEFT);
     }
 
     @Override
@@ -336,10 +335,11 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
 
     public int closePageImpl(int rotate){
         Logger.trace(TAG, "closePageImpl START");
-        int ret = printer.printPage(rotate);
+//        int ret = printer.printPage(rotate);
+        int ret = printer.startPrint();
         printer.paperFeed(16);  //paper feed
 //        int ret = 0;
-        printer.clearPage();
+//        printer.clearPage();
         set_x_y();
         Logger.trace(TAG, "closePageImpl = " + ret);
         return ret;
@@ -564,7 +564,7 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
         //До вызова cpcl команды обязательно проверить статус бумаги.
         int err = printer.getStatus();
         //byte err = moebius.kkmCheckPaper();
-        if (err == printer.PRNSTS_OUT_OF_PAPER)
+        if (err == printer.ERROR_PAPERENDED)
             checkError(err);
 
         //как оказалось печать cpcl команды сбрасывает шрифт обратно в маленький (нормальный) - поэтому сбросим флаг.
@@ -573,7 +573,7 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
 
         String ldata = CommonUtils.getStringFromBytes(data);
         Logger.trace(TAG, "String = " + ldata);
-        err = printer.drawBarcode(ldata, x + 5, y, barcodetype, width, barcodeHeight, rotate);
+        err = printer.drawBarcode(ldata, 5, printer.getCurrentYPoint(), barcodetype, width, barcodeHeight, rotate);
         //err = moebius.sendBlockWithCheckPaper(command);
         checkError(err);
         closePageImpl(0);
@@ -925,17 +925,15 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
 
     private void checkError(int err) throws Exception {
         if (err != 0) {
-            if (err == printer.PRNSTS_OUT_OF_PAPER)
+            if (err == printer.ERROR_PAPERENDED)
                 throw new Exception("I9000S internal printer: Out Of Paper");
-            if (err == printer.PRNSTS_OVER_HEAT)
+            if (err == printer.ERROR_OVERHEAT)
                 throw new Exception("I9000S internal printer: Printer is over heat");
-            if (err == printer.PRNSTS_UNDER_VOLTAGE)
+            if (err == printer.ERROR_LOWVOL)
                 throw new Exception("I9000S internal printer: Printer is under voltage");
-            if (err == printer.PRNSTS_BUSY)
+            if (err == printer.ERROR_BUSY)
                 throw new Exception("I9000S internal printer: Printer is busy");
-            if (err == printer.PRNSTS_ERR)
-                throw new Exception("I9000S internal printer: Unknown error");
-            if (err == printer.PRNSTS_ERR_DRIVER)
+            if (err == printer.ERROR_HARDERR)
                 throw new Exception("I9000S internal printer: Driver error");
         }
     }

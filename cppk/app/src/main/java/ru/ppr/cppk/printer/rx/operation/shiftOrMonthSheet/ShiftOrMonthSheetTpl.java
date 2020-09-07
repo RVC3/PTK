@@ -92,6 +92,7 @@ public class ShiftOrMonthSheetTpl extends PrinterTpl {
             printer.printTextInNormalMode(" ");
         }
         printer.waitPendingOperations();
+        printer.closePage(0);
 
     }
 

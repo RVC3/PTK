@@ -142,6 +142,7 @@ public class ProfitTpl extends PrinterTpl {
         }
 
         printer.printTextInNormalMode(textFormatter.bigDelimiter());
+        printer.closePage(0);
     }
 
     public static class Params {
