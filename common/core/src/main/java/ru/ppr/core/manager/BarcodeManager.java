@@ -10,6 +10,7 @@ import javax.inject.Singleton;
 
 import ru.ppr.barcode.IBarcodeReader;
 import ru.ppr.barcode.file.BarcodeReaderFile;
+import ru.ppr.barcodereal.BarcodeReaderI9000S;
 import ru.ppr.barcodereal.BarcodeReaderMDI3100;
 import ru.ppr.core.domain.model.BarcodeType;
 import ru.ppr.logger.Logger;
@@ -69,6 +70,9 @@ public class BarcodeManager {
                     break;
                 case MDI3100:
                     reader = new BarcodeReaderMDI3100(context, configProvider.getBarcodeReaderMDI3100Config(), BARCODE_EXECUTOR_SERVICE);
+                    break;
+                case I9000S:
+                    reader = new BarcodeReaderI9000S(context, configProvider.getBarcodeReaderMDI3100Config(), BARCODE_EXECUTOR_SERVICE);
                     break;
                 default:
                     throw new IllegalStateException("Incorrect barcode type");

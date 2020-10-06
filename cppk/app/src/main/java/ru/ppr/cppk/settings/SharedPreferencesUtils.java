@@ -13,6 +13,7 @@ import ru.ppr.core.domain.model.RfidType;
 import ru.ppr.cppk.BuildConfig;
 import ru.ppr.cppk.GlobalConstants;
 import ru.ppr.cppk.Sounds.Ringtone.BeepType;
+import ru.ppr.cppk.di.Di;
 import ru.ppr.cppk.legacy.SamSlot;
 import ru.ppr.cppk.localdb.model.CashRegister;
 import ru.ppr.cppk.managers.PrinterManager;
@@ -567,8 +568,11 @@ public class SharedPreferencesUtils {
 
     public static BarcodeType getBarcodeType(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(GlobalConstants.SHARED_PREFERENCE, Context.MODE_PRIVATE);
+        String PhoneModel = Di.INSTANCE.getDeviceModel();
+        boolean is_9000S = PhoneModel.equals("i9000S");
+
         return BarcodeType.valueOf(sharedPreferences
-                .getString(GlobalConstants.BARCODE_TYPE, BuildConfig.USE_REAL_DEVICES_BY_DEFAULT ? BarcodeType.MDI3100.name() : BarcodeType.FILE.name()));
+                .getString(GlobalConstants.BARCODE_TYPE, BuildConfig.USE_REAL_DEVICES_BY_DEFAULT ? (is_9000S ? BarcodeType.I9000S.name() : BarcodeType.MDI3100.name()) : BarcodeType.FILE.name()));
     }
 
     public static void setBarcodeType(Context context, @NonNull BarcodeType type) {

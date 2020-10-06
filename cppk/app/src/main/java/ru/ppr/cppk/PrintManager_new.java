@@ -25,7 +25,7 @@ import com.google.zxing.BarcodeFormat;
  */
 public class PrintManager_new {
 
-    public static final int X0 = 5;
+    public static final int X0 = 10;
     public static final int dX = 2;
     public static final int ERROR_NONE = 0x00;
     public static final int ERROR_PAPERENDED = 0xF0;
@@ -230,6 +230,16 @@ public class PrintManager_new {
         mPrinter.paperFeed(avalue);
     }
 
+public int setupPage(int aWidth, int aHeight){
+        return mPrinter.setupPage(aWidth, aHeight);
+}
+
+public void setGrayLevel(int aParam){
+ mPrinter.setGrayLevel(aParam);
+}
+    public int drawBitmapEx(byte [] aBmp, int aXDest, int aYDest, int aWidth, int aHeight){
+        return mPrinter.drawBitmapEx(aBmp, aXDest, aYDest, aWidth, aHeight);
+    }
     public int drawBarcode(String adata, int ax, int ay, int atype, int awidth, int aheight, int arotate){
         return mPrinter.drawBarcode(adata, ax, ay, atype, awidth, aheight, arotate);
     }
@@ -486,7 +496,7 @@ public class PrintManager_new {
 */
             int status = mPrinter.getStatus();
             Log.e("PrintManager", ""+status);
-
+//int result = 0;
             int result = mPrinter.printPage(0);
 
             feedLine = 0;

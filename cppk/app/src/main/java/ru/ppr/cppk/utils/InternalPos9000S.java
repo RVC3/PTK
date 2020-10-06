@@ -3,54 +3,79 @@ package ru.ppr.cppk.utils;
 import android.content.Context;
 
 import org.lanter.lan4gate.ICommunicationCallback;
+import org.lanter.lan4gate.IRequest;
 import org.lanter.lan4gate.IResponse;
 import org.lanter.lan4gate.IResponseCallback;
 import org.lanter.lan4gate.Lan4Gate;
 import org.lanter.lan4gate.Messages.Fields.ResponseFieldsList;
+import org.lanter.lan4gate.Messages.OperationsList;
 
+import ru.ppr.cppk.PosBindingActivity;
 import ru.ppr.cppk.managers.AppNetworkManager;
+import ru.ppr.ingenico.core.IngenicoTerminal;
+import ru.ppr.inpas.lib.command.nonfinancial.CloseSessionCommand;
 import ru.ppr.ipos.IPos;
 import ru.ppr.ipos.exception.PosException;
 import ru.ppr.ipos.model.FinancialTransactionResult;
 import ru.ppr.ipos.model.TransactionResult;
 import ru.ppr.logger.Logger;
 
-class ResponseListener implements IResponseCallback {
-    @Override
-    public void newResponseMessage(IResponse response, Lan4Gate initiator) {
-        for (ResponseFieldsList field : response.getCurrentFieldsList()) {
-            // Код для обработки каждого поля
-            switch (field.getString()){
-            }
-        }
-    }
-}
-
-class CommunicationListener implements ICommunicationCallback {
-    @Override
-    public void communicationStarted(Lan4Gate initiator) {
-        //код для обработки запуска соединения
-    }
-
-    @Override
-    public void communicationStopped(Lan4Gate initiator) {
-        //код для обработки остановки соединения
-    }
-
-    @Override
-    public void connected(Lan4Gate initiator) {
-        //Код для обработки подключения. После данного события можно отправлять запросы
-    }
-
-    @Override
-    public void disconnected(Lan4Gate initiator) {
-        // код для обработки отключения
-    }
-}
 
 public class InternalPos9000S implements IPos {
 
+    class ResponseListener implements IResponseCallback {
+        @Override
+        public void newResponseMessage(IResponse response, Lan4Gate initiator) {
+            String lresult = "Результат операции ";
+            String lOperation = "";
+            for (ResponseFieldsList field : response.getCurrentFieldsList()) {
+                // Код для обработки каждого поля
+                switch (field.getString()){
+                    case "Status":
+                        status = response.getStatus().getNumber();
+                        break;
+                    case "OperationCode":
+                        int code = response.getOperationCode().getNumber();
+                        switch (code){
+                            case 1: lOperation = "Sale"; break;
+                            case 817: lOperation = "SelfTest"; break;
+                            case 802: lOperation = "Test Host"; break;
+                        }
+                        break;
+                }
+            }
+            lresult = lresult + lOperation + " = " + status;
+            running = false;
+        }
+    }
+
+    class CommunicationListener implements ICommunicationCallback {
+        @Override
+        public void communicationStarted(Lan4Gate initiator) {
+            //код для обработки запуска соединения
+        }
+
+        @Override
+        public void communicationStopped(Lan4Gate initiator) {
+            //код для обработки остановки соединения
+        }
+
+        @Override
+        public void connected(Lan4Gate initiator) {
+            //Код для обработки подключения. После данного события можно отправлять запросы
+            Logger.trace(TAG, "Connect with LAN4Tap is established" );
+        }
+
+        @Override
+        public void disconnected(Lan4Gate initiator) {
+            // код для обработки отключения
+        }
+    }
+
+    private static final String TAG = Logger.makeLogTag(InternalPos9000S.class);
     private final int port;
+    private Lan4Gate gate;
+    private int status = 0;
     /**
      * Таймаут подключения к терминалу
      */
@@ -120,13 +145,19 @@ public class InternalPos9000S implements IPos {
 
     @Override
     public void sale(int price, int saleTransactionId, ResultListener<FinancialTransactionResult> resultListener) {
-/*        InpasLogger.info(TAG, "Calling sale()");
+        Logger.trace(TAG, "Calling sale()");
+        IRequest sale;
 
         if (isReady()) {
-            execute(new SaleCommand(price, saleTransactionId), resultListener);
+            sale = gate.getPreparedRequest(OperationsList.Sale);
+            sale.setAmount(price);
+            sale.setCurrencyCode(643);
+            sale.setEcrMerchantNumber(1);
+            running = true;
+            gate.sendRequest(sale);
         } else {
-            throw new IllegalStateException("Wrong terminal state! State = " + String.valueOf(mTerminalState));
-        }*/
+            throw new IllegalStateException("Wrong terminal state!");
+        }
     }
 
     @Override
@@ -145,24 +176,28 @@ public class InternalPos9000S implements IPos {
      */
     @Override
     public void openSession(ResultListener<TransactionResult> resultListener) {
-/*        InpasLogger.info(TAG, "Calling openSession()");
+        Logger.trace(TAG, "Calling openSession()");
+//        gate.setPort(20501);
+
 
         if (isReady()) {
-            testHost(resultListener);
+//            if (!gate.linkIsConnected()) gate.start();
+//            testHost(resultListener);
         } else {
-            throw new IllegalStateException("Wrong terminal state! State = " + String.valueOf(mTerminalState));
-        }*/
+            throw new IllegalStateException("Wrong terminal state!");
+        }
     }
 
     @Override
     public void closeSession(ResultListener<TransactionResult> resultListener) {
-/*        InpasLogger.info(TAG, "Calling closeSession()");
+        Logger.trace(TAG, "Calling closeSession()");
 
         if (isReady()) {
-            execute(new CloseSessionCommand(0), resultListener); // В будущем: Check transaction number.
+            resultListener.onResult(null);
+//            execute(new CloseSessionCommand(0), resultListener); // В будущем: Check transaction number.
         } else {
-            throw new IllegalStateException("Wrong terminal state! State = " + String.valueOf(mTerminalState));
-        }*/
+            throw new IllegalStateException("Wrong terminal state!");
+        }
     }
 
     @Override
@@ -200,62 +235,65 @@ public class InternalPos9000S implements IPos {
 
     @Override
     public void addConnectionListener(ConnectionListener connectionListener) {
+        Logger.trace(TAG, "Calling addConnectionListener()");
 //        connectionListeners.add(connectionListener);
+        responseListener = new ResponseListener();
+        //Создание слушателя для состояния сетевого взаимодействия
+        communicationListener = new CommunicationListener();
+        gate.addResponseCallback(responseListener);
+        gate.addCommunicationCallback(communicationListener);
     }
 
     @Override
     public void removeConnectionListener(ConnectionListener connectionListener) {
+        Logger.trace(TAG, "Calling removeConnectionListener()");
 //        connectionListeners.remove(connectionListener);
+        gate.removeResponseCallback(responseListener);
+        gate.removeCommunicationCallback(communicationListener);
     }
 
     @Override
     public void prepareResources() throws PosException {
-//        if (!internetManager.enable()) {
-//            throw new PosException("Could not enable internet");
-//        }
+        Logger.trace(TAG, "Calling prepareResources()");
+        gate.setPort(20501);
+        if (!gate.linkIsConnected()) gate.start();
+        if (isReady()){
+//            sale(1, 0, null);
+//            while (!isReady());
+        }
     }
     @Override
     public void testSelf(ResultListener<TransactionResult> resultListener) {
-/*        InpasLogger.info(TAG, "Calling testSelf()");
+        Logger.trace(TAG, "Calling testSelf()");
+        IRequest sale;
 
         if (isReady()) {
-            setTerminalState(InpasTerminal.TerminalState.BUSY);
-
-            mResultListener = result -> {
-                if (resultListener != null) {
-                    resultListener.onResult(result);
-                }
-
-                mCountDownLatch.countDown();
-            };
-
-            try {
-                startConnectionTimer();
-                mPosDriver.process(new TestSelfCommand().getPacket());
-                mCountDownLatch = new CountDownLatch(1);
-                mCountDownLatch.await();
-            } catch (InterruptedException ex) {
-                InpasLogger.error(TAG, ex);
-            } finally {
-                setTerminalState(InpasTerminal.TerminalState.ACTIVE);
-            }
+            sale = gate.getPreparedRequest(OperationsList.SelfTest);
+            running = true;
+            gate.sendRequest(sale);
         } else {
-            throw new IllegalStateException("Wrong terminal state! State = " + String.valueOf(mTerminalState));
-        }*/
+            throw new IllegalStateException("Wrong terminal state!");
+        }
     }
     @Override
     public void testHost(ResultListener<TransactionResult> resultListener) {
-/*        InpasLogger.info(TAG, "Calling testHost()");
+        Logger.trace(TAG, "Calling testHost()");
+        IRequest sale;
 
         if (isReady()) {
-            execute(new TestHostCommand(), resultListener);
+            sale = gate.getPreparedRequest(OperationsList.Test);
+            running = true;
+            gate.sendRequest(sale);
         } else {
-            throw new IllegalStateException("Wrong terminal state! State = " + String.valueOf(mTerminalState));
-        }*/
+            throw new IllegalStateException("Wrong terminal state!");
+        }
     }
 
     @Override
     public void freeResources() throws PosException {
+        Logger.trace(TAG, "Calling freeResources()");
+        if (gate.linkIsConnected()) gate.stop();
+        running = false;
 //        if (!internetManager.disable()) {
 //            throw new PosException("Could not disable internet");
 //        }
@@ -272,8 +310,11 @@ public class InternalPos9000S implements IPos {
 
         this.internetManager = internetManager;
         this.port = port;
-        this.connectionTimeout = connectionTimeout;
+        setConnectionTimeout(connectionTimeout);
         this.running = false;
+        int ecrNumber = 1;
+        gate = new Lan4Gate(ecrNumber);
+        addConnectionListener(null);
     }
 
     @Override

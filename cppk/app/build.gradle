@@ -30,6 +30,19 @@ android {
         buildConfigField('int', 'SQLITE_STUDIO_SERVICE_PORT', '11404')
         buildConfigField('int', 'DATA_CONTRACTS_VERSION', "$dataContractsVersion")
         buildConfigField("boolean", "DISABLE_STUB_POS", "${isStubPosDisabled()}")
+        sourceSets{
+            main {
+                jniLibs.srcDirs = []
+                jni.srcDirs = ['src/main/jniLibs']
+            }
+        }
+        splits {
+            abi{
+                enable true
+                reset()
+                include 'armeabi'
+            }
+        }
     }
 
     dexOptions {

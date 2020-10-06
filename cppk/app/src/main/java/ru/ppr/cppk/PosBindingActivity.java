@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -53,7 +54,6 @@ public class PosBindingActivity extends SystemBarActivity {
                         if (response.getStatus().getNumber() == 1){
                             Logger.trace("LAN4ResponseListener", "Status = 1" );
                             PosBindingActivity.isRunning = false;
-                            skip();
 /*                            try {
                                 Thread.sleep(3000);
                             } catch (InterruptedException e) {
@@ -184,6 +184,8 @@ public class PosBindingActivity extends SystemBarActivity {
                                     Logger.trace("subscribe", "Терминал привязан" );
 //                                    Globals.getInstance().getToaster().showToast(R.string.pos_binding_msg_changing_success);
                                     waitPosSubscription = null;
+                                    SharedPreferencesUtils.setPosTerminalType(this, PosType.BUILTIN);
+                                    skip(true);
                                 },
                                 error -> {
                                     Logger.error(TAG, error);
@@ -195,7 +197,7 @@ public class PosBindingActivity extends SystemBarActivity {
                 break;
 
             case R.id.skipBtn:
-                skip();
+                skip(false);
                 break;
 
             default:
@@ -227,7 +229,7 @@ public class PosBindingActivity extends SystemBarActivity {
                 null);
     }
 
-    private void skip() {
+    private void skip(boolean aDisablePaymentViews) {
 
         if (isInProgress) {
             return;
@@ -237,7 +239,7 @@ public class PosBindingActivity extends SystemBarActivity {
         Observable
                 .fromCallable((Callable<Void>) () -> {
                     //запретим возможность использования если пропустили https://aj.srvdev.ru/browse/CPPKPP-32582
-                    Globals.getInstance().getPrivateSettingsHolder().get().setIsPosEnabled(false);
+                    Globals.getInstance().getPrivateSettingsHolder().get().setIsPosEnabled(aDisablePaymentViews);
                     Dagger.appComponent().privateSettingsRepository().savePrivateSettings(Globals.getInstance().getPrivateSettingsHolder().get());
                     SharedPreferencesUtils.setPosMacAddress(getApplicationContext(), "");
                     return null;
@@ -337,7 +339,7 @@ public class PosBindingActivity extends SystemBarActivity {
     private boolean isValidPosType(PosType posType) {
         boolean isValid = false;
 
-        if (posType == PosType.INGENICO || posType == PosType.INPAS) {
+        if (posType == PosType.INGENICO || posType == PosType.INPAS || posType == PosType.BUILTIN) {
             isValid = true;
         }
 

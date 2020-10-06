@@ -2,6 +2,7 @@ package ru.ppr.cppk;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Message;
 import android.os.RemoteException;
@@ -21,6 +22,8 @@ import com.moebiusdrvr.ResultAsString;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -54,6 +57,7 @@ import ru.ppr.logger.Logger;
 import ru.ppr.utils.ByteUtils;
 import ru.ppr.utils.CommonUtils;
 import ru.ppr.utils.Decimals;
+import android.device.zint.*;
 
 /**
  * Реализация обертки для драйвера встроенного принтера "i9000S".
@@ -152,6 +156,11 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
         this.printerMacAddress = printerMacAddress;
 
         initializeWithDriverImpl();
+/*        if (Build.VERSION_CODES.M >= Build.VERSION.SDK_INT) {
+            System.loadLibrary("UzintEncode_5.1");
+        } else {
+            System.loadLibrary("UzintEncode");
+        }*/
 
         Logger.trace(TAG, "I9000S Wrapper created");
     }
@@ -499,13 +508,26 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
         return 0;
     }
 
+    public static String byte2hex(byte[] data) {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < data.length; i++) {
+            String temp = Integer.toHexString(((int) data[i]) & 0xFF);
+            for (int t = temp.length(); t < 2; t++) {
+                sb.append("0");
+            }
+            sb.append(temp);
+        }
+        return sb.toString();
+    }
+
     @Override
     protected void printBarcodeImpl(byte[] data) throws Exception {
 
         Logger.trace(TAG, "printBarcodeImpl() START");
-        if (data == null)
+        if ((data == null) || (data.length <= 0))
             throw new NullPointerException("barcodeData is null");
 
+        int status = printer.getStatus();
         /*
             за высоту штрих-кода отвечает 3й параметр в первой строке
             если нужно увеличить отступт штрихкода до конца чека, то увеличиваем его
@@ -525,6 +547,16 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
             // стандарт
             barcodeHeight = "130";
         }*/
+
+/*String lFile = Environment.getExternalStorageDirectory() + "/pos/log.txt";
+        FileOutputStream fw = new FileOutputStream(lFile);
+try {
+    fw.write(data);
+}
+catch(Exception e) {
+    fw.close();
+}*/
+
         int barcodeHeight;
         if (data.length == 82) {
             // разовый
@@ -536,22 +568,30 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
             // стандарт
             barcodeHeight = 130;
         }
-        int width = 3;
+        int width = 2;
         int rotate = 0;
         int barcodetype = 55; // BARCODE_PDF417
+        int lx = 5;
 
-//        String firstBarcodeParams = "! 300 200 200 " + barcodeHeight + " 1\n";
+/*        width = 4;
+        barcodeHeight = 350;
+        barcodetype = 58; // QR
+        lx = 35;*/
 
-        // первое число (300) отвечает за горизонтальное смещение
-/*        os.write(firstBarcodeParams.getBytes("UTF-8"));
-        os.write("B PDF-417 10 1 XD 2 YD 4 C 3 S 2\r\n".getBytes("UTF-8"));
-        os.write(data);
-        os.write("\r\n".getBytes("UTF-8"));
-        os.write("ENDPDF\r\n".getBytes("UTF-8"));
-        os.write("FORM\r\n".getBytes("UTF-8"));
-        os.write("PRINT\r\n".getBytes("UTF-8"));
-
-        byte[] command = os.toByteArray();*/
+        if(status == printer.ERROR_NONE) {
+            printer.setupPage(384, -1);
+            printer.setGrayLevel(4);
+            String ldata = byte2hex(data);
+            Result result = EncodeHander.nativeEncode(barcodetype, 120, 10, 0, 1, 0, 0, 0, 0, 0,0, ldata.getBytes());
+            if(result != null && result.getRetCode() == 0) {
+                byte[] bitmapByteArray = new byte[result.getRawBytesSize()];
+                System.arraycopy(result.getRawBytes(), 0,bitmapByteArray,0, result.getRawBytesSize());
+                int res = printer.drawBitmapEx(bitmapByteArray, 0, 15,
+                        result.getSymbolWidth(), result.getSymbolHeight());
+            }
+        }
+        else
+            checkError(status);
 
 //        Logger.trace(TAG, "printBarcodeImpl(data=" + CommonUtils.bytesToHexWithoutSpaces(data) + ") command=" + CommonUtils.bytesToHexWithoutSpaces(command));
         Logger.trace(TAG, "bytesToHexWithoutSpaces(data=" + CommonUtils.bytesToHexWithoutSpaces(data));
@@ -563,17 +603,25 @@ public class InternalPrinter9000S extends Printer implements MessageQueue.Messag
 
         //До вызова cpcl команды обязательно проверить статус бумаги.
         int err = printer.getStatus();
-        //byte err = moebius.kkmCheckPaper();
         if (err == printer.ERROR_PAPERENDED)
             checkError(err);
 
         //как оказалось печать cpcl команды сбрасывает шрифт обратно в маленький (нормальный) - поэтому сбросим флаг.
         //CPPKPP-30814
         currentTextStyle = TextStyle.TEXT_NORMAL;
+//        String ldata = new String(data, 0, data.length);
 
-        String ldata = CommonUtils.getStringFromBytes(data);
+/*        StringBuilder lString = new StringBuilder("");
+        for (int i = 0; i < data.length; i ++){
+            int v = data[i] & 0xff;
+            String sv = Integer.toHexString(v);
+            if (sv.length() < 2) lString.append(0);
+            lString.append(sv);
+        }
+        String ldata = lString.toString();
+
         Logger.trace(TAG, "String = " + ldata);
-        err = printer.drawBarcode(ldata, 5, printer.getCurrentYPoint(), barcodetype, width, barcodeHeight, rotate);
+        err = printer.drawBarcode(ldata, lx, printer.getCurrentYPoint(), barcodetype, width, barcodeHeight, rotate);*/
         //err = moebius.sendBlockWithCheckPaper(command);
         checkError(err);
         closePageImpl(0);

@@ -14,7 +14,9 @@ public enum BarcodeType {
     /**
      *
      */
-    MDI3100(2);
+    MDI3100(2),
+    I9000S(3);
+
 
     private final int code;
 
